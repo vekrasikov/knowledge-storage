@@ -1,7 +1,6 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { Dashboard } from "./pages/Dashboard";
 import { RoadmapView } from "./pages/RoadmapView";
-import { TopicDetail } from "./pages/TopicDetail";
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/roadmap/:directionId" element={<RoadmapView />} />
-          <Route path="/roadmap/:directionId/:topicId" element={<TopicDetail />} />
         </Routes>
       </div>
     </HashRouter>

@@ -1,2 +1,66 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+/* Tree connector lines */
+.tree-children {
+  position: relative;
+  padding-left: 28px;
+}
+
+.tree-children::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 16px;
+  width: 2px;
+  background: #e2e8f0; /* slate-200 */
+}
+
+.tree-child {
+  position: relative;
+}
+
+.tree-child::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  width: 16px;
+  height: 2px;
+  background: #e2e8f0;
+}
+
+/* Collapse/expand animation */
+.collapsible {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.2s ease-out;
+}
+
+.collapsible.collapsed {
+  grid-template-rows: 0fr;
+}
+
+.collapsible > div {
+  overflow: hidden;
+}
+
+/* Side panel transitions */
+.panel-backdrop {
+  background: rgba(0, 0, 0, 0.3);
+  transition: opacity 0.2s ease-out;
+}
+
+.panel-slide-right {
+  transition: transform 0.3s ease-out;
+}
+
+.panel-slide-up {
+  transition: transform 0.3s ease-out;
+}
+
+/* Overall page styling */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
