@@ -4,6 +4,8 @@ import { getRoadmap } from "../data/roadmap";
 import { calcDirectionProgress } from "../utils/progress";
 import { useUserData } from "../hooks/useUserData";
 import { ProgressBar } from "../components/ProgressBar";
+import { SyncButton } from "../components/SyncButton";
+import { importData } from "../utils/storage";
 
 const DIRECTION_COLORS: Record<string, string> = {
   backend: "border-l-blue-500",
@@ -17,7 +19,7 @@ const DIRECTION_COLORS: Record<string, string> = {
 };
 
 export function Dashboard() {
-  const { data, handleExport, handleImport } = useUserData();
+  const { data, handleExport, handleImport, replaceData } = useUserData();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const roadmap = getRoadmap();
   const dirProgress = calcDirectionProgress(roadmap, data.progress);
@@ -52,26 +54,31 @@ export function Dashboard() {
               {overallDone} of {overallTotal} topics completed
             </p>
           </div>
-          <div className="flex gap-2">
-            <button
-              onClick={handleExport}
-              className="px-3 py-1.5 text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-all duration-200"
-            >
-              Export
-            </button>
-            <button
-              onClick={() => fileInputRef.current?.click()}
-              className="px-3 py-1.5 text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-all duration-200"
-            >
-              Import
-            </button>
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept=".json"
-              onChange={onImportFile}
-              className="hidden"
-            />
+          <div className="flex items-center gap-3">
+            <SyncButton data={data} onImport={replaceData} />
+            <div className="flex gap-1.5">
+              <button
+                onClick={handleExport}
+                className="px-2.5 py-1.5 text-xs bg-slate-100 hover:bg-slate-200 text-slate-500 rounded-lg transition-all duration-200"
+                title="Export JSON backup"
+              >
+                Export
+              </button>
+              <button
+                onClick={() => fileInputRef.current?.click()}
+                className="px-2.5 py-1.5 text-xs bg-slate-100 hover:bg-slate-200 text-slate-500 rounded-lg transition-all duration-200"
+                title="Import JSON backup"
+              >
+                Import
+              </button>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".json"
+                onChange={onImportFile}
+                className="hidden"
+              />
+            </div>
           </div>
         </div>
         <div className="mt-4">

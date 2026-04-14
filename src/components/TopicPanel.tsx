@@ -94,6 +94,28 @@ export function TopicPanel({ topicId, directionId: _directionId, onClose }: Topi
 
       {/* Content */}
       <div className="flex-1 overflow-y-auto p-4 space-y-6">
+        {/* Summary */}
+        {node.summary && (
+          <div className="text-sm text-slate-600 bg-slate-50 rounded-lg p-3 border border-slate-100">
+            {node.summary}
+          </div>
+        )}
+
+        {/* Resources */}
+        {node.resources && node.resources.length > 0 && (
+          <section>
+            <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">Resources</h3>
+            <ul className="space-y-1.5">
+              {node.resources.map((res, i) => (
+                <li key={i} className="text-sm text-slate-600 flex items-start gap-2">
+                  <span className="text-blue-400 mt-0.5 flex-shrink-0">&#8250;</span>
+                  <span>{res}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {/* Notes Section */}
         <section>
           <div className="flex items-center justify-between mb-3">

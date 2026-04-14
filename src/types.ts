@@ -3,7 +3,15 @@ export type Status = "not_started" | "in_progress" | "done";
 export interface RoadmapNode {
   id: string;
   title: string;
+  summary?: string;
+  resources?: string[];
   children?: RoadmapNode[];
+}
+
+export interface GitHubConfig {
+  token: string;
+  owner: string;
+  repo: string;
 }
 
 export interface Note {

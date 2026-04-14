@@ -88,8 +88,16 @@ export function useUserData() {
     [update]
   );
 
+  const replaceData = useCallback(
+    (newData: UserData) => {
+      update(() => newData);
+    },
+    [update]
+  );
+
   return {
     data,
+    replaceData,
     setProgress,
     addNote,
     updateNote,
