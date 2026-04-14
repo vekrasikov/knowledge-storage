@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { calcProgress, calcDirectionProgress } from "../../utils/progress";
-import type { RoadmapNode, UserData } from "../../types";
+import type { RoadmapNode } from "../../types";
 import { EMPTY_USER_DATA } from "../../utils/storage";
 
 const testTree: RoadmapNode[] = [
