@@ -10,6 +10,7 @@ const DIRECTION_COLORS: Record<string, string> = {
   arch: "border-l-purple-500",
   devops: "border-l-orange-500",
   "data-analysis": "border-l-cyan-500",
+  python: "border-l-yellow-500",
   "ai-agents": "border-l-pink-500",
   english: "border-l-green-500",
   "ai-dev-tools": "border-l-indigo-500",
