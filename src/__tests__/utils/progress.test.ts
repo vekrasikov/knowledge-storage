@@ -24,7 +24,7 @@ const testTree: RoadmapNode[] = [
 describe("calcProgress", () => {
   it("returns 0 for empty progress", () => {
     const result = calcProgress(testTree[0], EMPTY_USER_DATA.progress);
-    expect(result).toEqual({ total: 3, done: 0, percentage: 0 });
+    expect(result).toEqual({ total: 3, done: 0, inProgress: 0, percentage: 0 });
   });
 
   it("counts only leaf nodes as total", () => {
@@ -35,7 +35,13 @@ describe("calcProgress", () => {
   it("counts done leaf nodes", () => {
     const progress = { threads: "done" as const, spring: "done" as const };
     const result = calcProgress(testTree[0], progress);
-    expect(result).toEqual({ total: 3, done: 2, percentage: 67 });
+    expect(result).toEqual({ total: 3, done: 2, inProgress: 0, percentage: 67 });
+  });
+
+  it("counts in_progress leaf nodes", () => {
+    const progress = { threads: "in_progress" as const, spring: "done" as const };
+    const result = calcProgress(testTree[0], progress);
+    expect(result).toEqual({ total: 3, done: 1, inProgress: 1, percentage: 33 });
   });
 
   it("handles node with no children as single leaf", () => {
@@ -44,6 +50,7 @@ describe("calcProgress", () => {
     expect(calcProgress(leaf, progress)).toEqual({
       total: 1,
       done: 1,
+      inProgress: 0,
       percentage: 100,
     });
   });
@@ -54,7 +61,7 @@ describe("calcDirectionProgress", () => {
     const progress = { threads: "done" as const };
     const result = calcDirectionProgress(testTree, progress);
     expect(result).toEqual([
-      { id: "backend", title: "Backend", total: 3, done: 1, percentage: 33 },
+      { id: "backend", title: "Backend", total: 3, done: 1, inProgress: 0, percentage: 33 },
     ]);
   });
 });

@@ -3,6 +3,7 @@ import type { RoadmapNode, Status } from "../types";
 export interface ProgressInfo {
   total: number;
   done: number;
+  inProgress: number;
   percentage: number;
 }
 
@@ -25,8 +26,9 @@ export function calcProgress(
   const leaves = collectLeaves(node);
   const total = leaves.length;
   const done = leaves.filter((id) => progress[id] === "done").length;
+  const inProgress = leaves.filter((id) => progress[id] === "in_progress").length;
   const percentage = total === 0 ? 0 : Math.round((done / total) * 100);
-  return { total, done, percentage };
+  return { total, done, inProgress, percentage };
 }
 
 export function calcDirectionProgress(
