@@ -30,7 +30,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: touch dist/.nojekyll
-      - run: npx staticrypt dist/index.html -p "${{ secrets.SITE_PASSWORD }}" -o dist/index.html --short
+      - run: echo "y" | npx staticrypt dist/index.html -p "${{ secrets.SITE_PASSWORD }}" -d dist --remember 30
+      - run: rm -f dist/.staticrypt.json
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
