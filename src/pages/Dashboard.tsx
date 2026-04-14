@@ -5,6 +5,16 @@ import { calcDirectionProgress } from "../utils/progress";
 import { useUserData } from "../hooks/useUserData";
 import { ProgressBar } from "../components/ProgressBar";
 
+const DIRECTION_COLORS: Record<string, string> = {
+  backend: "border-l-blue-500",
+  arch: "border-l-purple-500",
+  devops: "border-l-orange-500",
+  "data-analysis": "border-l-cyan-500",
+  "ai-agents": "border-l-pink-500",
+  english: "border-l-green-500",
+  "ai-dev-tools": "border-l-indigo-500",
+};
+
 export function Dashboard() {
   const { data, handleExport, handleImport } = useUserData();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -27,54 +37,68 @@ export function Dashboard() {
   };
 
   const overallDone = dirProgress.reduce((s, d) => s + d.done, 0);
+  const overallInProgress = dirProgress.reduce((s, d) => s + d.inProgress, 0);
   const overallTotal = dirProgress.reduce((s, d) => s + d.total, 0);
   const overallPct = overallTotal === 0 ? 0 : Math.round((overallDone / overallTotal) * 100);
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold">Learning Roadmap</h1>
-        <div className="flex gap-2">
-          <button
-            onClick={handleExport}
-            className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg"
-          >
-            Export
-          </button>
-          <button
-            onClick={() => fileInputRef.current?.click()}
-            className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-lg"
-          >
-            Import
-          </button>
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept=".json"
-            onChange={onImportFile}
-            className="hidden"
+    <div className="max-w-3xl mx-auto p-4">
+      <div className="mb-8">
+        <div className="flex items-start justify-between mb-1">
+          <div>
+            <h1 className="text-3xl font-bold text-slate-900">Learning Roadmap</h1>
+            <p className="text-slate-500 mt-1">
+              {overallDone} of {overallTotal} topics completed
+            </p>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={handleExport}
+              className="px-3 py-1.5 text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-all duration-200"
+            >
+              Export
+            </button>
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              className="px-3 py-1.5 text-sm bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-all duration-200"
+            >
+              Import
+            </button>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept=".json"
+              onChange={onImportFile}
+              className="hidden"
+            />
+          </div>
+        </div>
+        <div className="mt-4">
+          <ProgressBar
+            variant="stacked"
+            done={overallDone}
+            inProgress={overallInProgress}
+            total={overallTotal}
+            label={`${overallPct}% complete`}
+            percentage={overallPct}
           />
         </div>
       </div>
 
-      <div className="mb-8">
-        <ProgressBar percentage={overallPct} label={`Overall: ${overallDone}/${overallTotal}`} />
-      </div>
-
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {dirProgress.map((dir) => (
           <Link
             key={dir.id}
             to={`/roadmap/${dir.id}`}
-            className="block p-4 bg-white rounded-lg shadow-sm border hover:border-blue-300 transition-colors"
+            className={`block p-5 bg-white rounded-xl border-l-4 ${DIRECTION_COLORS[dir.id] || "border-l-slate-300"} shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-200`}
           >
-            <div className="flex items-center justify-between mb-2">
-              <h2 className="text-lg font-semibold">{dir.title}</h2>
-              <span className="text-sm text-gray-500">
-                {dir.done}/{dir.total}
-              </span>
+            <h2 className="text-base font-semibold text-slate-800 mb-3">{dir.title}</h2>
+            <ProgressBar variant="stacked" done={dir.done} inProgress={dir.inProgress} total={dir.total} percentage={dir.percentage} />
+            <div className="flex gap-3 mt-2 text-xs text-slate-400">
+              {dir.done > 0 && <span className="text-emerald-600">{dir.done} done</span>}
+              {dir.inProgress > 0 && <span className="text-amber-600">{dir.inProgress} active</span>}
+              <span>{dir.total - dir.done - dir.inProgress} remaining</span>
             </div>
-            <ProgressBar percentage={dir.percentage} />
           </Link>
         ))}
       </div>

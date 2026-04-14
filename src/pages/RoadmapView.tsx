@@ -82,7 +82,7 @@ function TreeNode({
     return (
       <div className="tree-child">
         <div
-          className={`flex items-center gap-2 px-3 py-2 rounded-lg border cursor-pointer transition-all hover:shadow-sm ${leafColor} ${selectedRing}`}
+          className={`flex items-center gap-2 px-3 py-2 rounded-lg border cursor-pointer transition-all duration-200 hover:shadow-sm hover:scale-[1.01] ${leafColor} ${selectedRing}`}
           onClick={() => onSelectTopic(node.id)}
         >
           <span className="flex-1 text-sm font-medium">{node.title}</span>
@@ -115,7 +115,7 @@ function TreeNode({
     <div className="tree-child">
       <button
         onClick={() => setExpanded((v) => !v)}
-        className="w-full flex items-center gap-2 py-2 text-left hover:bg-slate-50 rounded-lg px-2 transition-colors group"
+        className="w-full flex items-center gap-2 py-2 text-left hover:bg-slate-50 rounded-lg px-2 transition-all duration-200 group"
       >
         <span className="text-slate-400 text-xs w-4 text-center flex-shrink-0 transition-transform duration-200" style={{ transform: expanded ? "rotate(90deg)" : "rotate(0deg)" }}>
           ▶
