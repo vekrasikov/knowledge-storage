@@ -1,0 +1,640 @@
+# Learning Roadmap — Viktor Krasikov
+# Goal: Fluent English, Strong Senior Java/Kotlin, Data Analyst interviews, AI Agents expertise
+# Structure: direction → topic → subtopic (leaf = trackable item)
+
+# ============================================================
+# 1. BACKEND (Java/Kotlin)
+# ============================================================
+- id: backend
+  title: "Backend (Java/Kotlin)"
+  children:
+    - id: java-modern
+      title: "Modern Java (21-25)"
+      children:
+        - id: virtual-threads
+          title: "Virtual Threads & Structured Concurrency"
+        - id: pattern-matching
+          title: "Pattern Matching (switch, records, sealed classes)"
+        - id: records-sealed
+          title: "Records & Sealed Classes for Domain Modeling"
+        - id: stream-gatherers
+          title: "Stream Gatherers API"
+        - id: foreign-function-api
+          title: "Foreign Function & Memory API"
+        - id: scoped-values
+          title: "Scoped Values (preview → finalization)"
+
+    - id: jvm-internals
+      title: "JVM Internals"
+      children:
+        - id: jmm-happens-before
+          title: "Java Memory Model & happens-before"
+        - id: heap-stack-metaspace
+          title: "Heap, Stack, Metaspace — object lifecycle"
+        - id: gc-g1
+          title: "G1GC: tuning, pause goals, mixed collections"
+        - id: gc-zgc-shenandoah
+          title: "ZGC & Shenandoah: ultra-low latency GC"
+        - id: jfr-async-profiler
+          title: "JFR & Async-Profiler: production profiling"
+        - id: class-loading-aot
+          title: "Class Loading & AOT (JEP 483)"
+        - id: threadlocal-leaks
+          title: "ThreadLocal leaks & memory dump analysis"
+
+    - id: concurrency
+      title: "Concurrency & Multithreading"
+      children:
+        - id: volatile-atomics
+          title: "volatile, AtomicXxx, VarHandle"
+        - id: locks-synchronized
+          title: "synchronized vs ReentrantLock strategies"
+        - id: concurrent-collections
+          title: "ConcurrentHashMap, CopyOnWriteArrayList"
+        - id: completable-future
+          title: "CompletableFuture patterns"
+        - id: virtual-threads-spring
+          title: "Virtual Threads in Spring Boot 3.2+"
+
+    - id: spring-ecosystem
+      title: "Spring Ecosystem"
+      children:
+        - id: spring-boot-3
+          title: "Spring Boot 3.x & Spring Framework 6"
+        - id: spring-virtual-threads
+          title: "spring.threads.virtual.enabled + WebMVC vs WebFlux"
+        - id: spring-security-oauth2
+          title: "Spring Security: OAuth2, OIDC, PKCE"
+        - id: spring-data-jpa
+          title: "Spring Data JPA: projections, specifications"
+        - id: rest-client
+          title: "RestClient (replaces RestTemplate)"
+        - id: jdbc-client
+          title: "JdbcClient (fluent JDBC)"
+        - id: spring-ai
+          title: "Spring AI: LLM integration in Spring"
+        - id: micrometer-observability
+          title: "Micrometer Observation API & OTEL bridge"
+        - id: graalvm-native
+          title: "GraalVM Native Image: AOT, reflection hints"
+
+    - id: kotlin-backend
+      title: "Kotlin"
+      children:
+        - id: kotlin-coroutines
+          title: "Coroutines & Flow"
+        - id: kotlin-idioms
+          title: "Sealed classes, data classes, extension functions"
+        - id: kotlin-dsl
+          title: "Kotlin DSL patterns"
+        - id: ktor
+          title: "Ktor 3.x basics"
+
+    - id: postgresql
+      title: "PostgreSQL Deep Dive"
+      children:
+        - id: pg-process-model
+          title: "Process-per-connection model & PgBouncer"
+        - id: pg-memory
+          title: "shared_buffers, work_mem, maintenance_work_mem"
+        - id: pg-indexing
+          title: "Indexes: B-Tree, GIN, BRIN, Partial"
+        - id: pg-explain-analyze
+          title: "EXPLAIN ANALYZE: plan reading & optimization"
+        - id: pg-mvcc
+          title: "MVCC, autovacuum, table bloat"
+        - id: pg-replication
+          title: "Replication & sharding strategies"
+        - id: pg-pgvector
+          title: "pgvector: vector search for AI/RAG"
+
+    - id: kafka
+      title: "Apache Kafka"
+      children:
+        - id: kafka-storage-model
+          title: "Storage model: Sequential I/O, Zero-copy"
+        - id: kafka-partitions
+          title: "Partitioning, consumer group rebalancing"
+        - id: kafka-exactly-once
+          title: "Exactly-once semantics & idempotent producers"
+        - id: kafka-reliability
+          title: "acks=all, min.insync.replicas, ISR"
+        - id: kafka-kraft
+          title: "KRaft: ZooKeeper removal"
+        - id: kafka-streams
+          title: "Kafka Streams basics"
+        - id: kafka-connect-debezium
+          title: "Kafka Connect & Debezium CDC"
+        - id: transactional-outbox
+          title: "Transactional Outbox Pattern"
+
+    - id: testing-strategy
+      title: "Testing Strategy"
+      children:
+        - id: junit5-assertj
+          title: "JUnit 5 + AssertJ + Mockito patterns"
+        - id: testcontainers
+          title: "Testcontainers: PostgreSQL, Kafka, Redis"
+        - id: contract-testing
+          title: "Contract Testing (Spring Cloud Contract / Pact)"
+        - id: architecture-tests
+          title: "ArchUnit: architecture rule enforcement"
+
+    - id: backend-platforms
+      title: "Platforms & Resources"
+      children:
+        - id: leetcode-practice
+          title: "LeetCode: NeetCode 150 (daily practice)"
+        - id: educative-java
+          title: "Educative: Java Multithreading, JVM Deep Dive"
+        - id: java-specialists
+          title: "javaspecialists.eu (Heinz Kabutz)"
+        - id: confluent-kafka-cert
+          title: "Confluent: CCDAK certification"
+        - id: book-effective-java
+          title: "Book: Effective Java (Joshua Bloch)"
+        - id: book-kafka-definitive
+          title: "Book: Kafka — The Definitive Guide 3rd Ed"
+        - id: pg-internals-book
+          title: "Book: PostgreSQL Internals Mastery"
+
+# ============================================================
+# 2. ARCHITECTURE & SYSTEM DESIGN
+# ============================================================
+- id: arch
+  title: "Arch + Проектирование"
+  children:
+    - id: system-design-hld
+      title: "System Design (HLD)"
+      children:
+        - id: sd-requirements
+          title: "Clarifying requirements: functional & non-functional"
+        - id: sd-capacity
+          title: "Capacity estimation: RPS, storage, bandwidth"
+        - id: sd-components
+          title: "HLD components: LB, API Gateway, caches, queues"
+        - id: sd-data-stores
+          title: "SQL vs NoSQL, sharding, replication"
+        - id: sd-caching
+          title: "Caching: Redis, CDN, cache invalidation"
+        - id: sd-failure-modes
+          title: "Failure modes, circuit breakers, retries"
+        - id: sd-cost-estimation
+          title: "Cost estimation (cloud pricing awareness)"
+        - id: sd-ai-components
+          title: "AI-aware design: vector DBs, LLM APIs, RAG"
+        - id: sd-cap-theorem
+          title: "CAP theorem & consistency models"
+
+    - id: low-level-design
+      title: "Low-Level Design (LLD) & Patterns"
+      children:
+        - id: solid-principles
+          title: "SOLID principles (deep, not superficial)"
+        - id: gof-patterns
+          title: "GoF patterns in modern context (Strategy, Observer, Builder)"
+        - id: composition-over-inheritance
+          title: "Composition over Inheritance"
+        - id: lld-grokking
+          title: "Educative: Grokking the Low Level Design Interview"
+
+    - id: ddd
+      title: "Domain-Driven Design"
+      children:
+        - id: ddd-bounded-contexts
+          title: "Bounded Contexts & Ubiquitous Language"
+        - id: ddd-aggregates
+          title: "Aggregates, Entities, Value Objects"
+        - id: ddd-events
+          title: "Domain Events & Event Storming"
+
+    - id: event-driven-arch
+      title: "Event-Driven Architecture"
+      children:
+        - id: event-sourcing
+          title: "Event Sourcing"
+        - id: cqrs
+          title: "CQRS"
+        - id: saga-pattern
+          title: "Saga Pattern (orchestration vs choreography)"
+        - id: outbox-pattern
+          title: "Outbox Pattern for reliable publishing"
+
+    - id: microservices
+      title: "Microservices Patterns"
+      children:
+        - id: service-mesh
+          title: "Service Mesh (Istio/Linkerd)"
+        - id: api-gateway
+          title: "API Gateway patterns"
+        - id: distributed-tracing
+          title: "Distributed Tracing (OpenTelemetry)"
+
+    - id: fintech-patterns
+      title: "Fintech Specifics"
+      children:
+        - id: real-time-payments
+          title: "Real-time payments architecture"
+        - id: fraud-detection
+          title: "Fraud detection: rules + ML hybrid"
+        - id: pci-dss
+          title: "PCI-DSS compliance basics"
+        - id: big-data-medallion
+          title: "Medallion Architecture: Bronze → Silver → Gold"
+
+    - id: arch-platforms
+      title: "Platforms & Resources"
+      children:
+        - id: bytebytego
+          title: "ByteByteGo (Alex Xu) — system design visuals"
+        - id: codemia-io
+          title: "Codemia.io — system design practice"
+        - id: hello-interview
+          title: "Hello Interview — structured SD prep"
+        - id: book-ddia
+          title: "Book: Designing Data-Intensive Applications (Kleppmann)"
+        - id: book-sd-interview
+          title: "Book: System Design Interview Vol 1 & 2 (Alex Xu)"
+        - id: educative-grokking
+          title: "Educative: Grokking System Design Interview"
+
+# ============================================================
+# 3. DEVOPS & CLOUD
+# ============================================================
+- id: devops
+  title: "DevOps & Cloud"
+  children:
+    - id: kubernetes-dev
+      title: "Kubernetes for Developers"
+      children:
+        - id: k8s-pods-deployments
+          title: "Pods, Deployments, Services"
+        - id: k8s-probes
+          title: "Liveness & Readiness probes"
+        - id: k8s-resources
+          title: "Resource requests/limits, HPA"
+        - id: k8s-configmaps-secrets
+          title: "ConfigMaps, Secrets, Helm basics"
+        - id: k8s-ckad
+          title: "CKAD certification prep"
+
+    - id: observability
+      title: "Observability"
+      children:
+        - id: otel
+          title: "OpenTelemetry: spans, metrics, logs"
+        - id: grafana-stack
+          title: "Grafana Stack: Loki + Tempo + Mimir"
+        - id: prometheus-alerting
+          title: "Prometheus & alerting (SLI/SLO)"
+        - id: structured-logging
+          title: "Structured logging patterns"
+
+    - id: ci-cd
+      title: "CI/CD"
+      children:
+        - id: github-actions
+          title: "GitHub Actions: pipelines, matrix builds"
+        - id: docker-multi-stage
+          title: "Docker: multi-stage builds, security scanning"
+        - id: argocd
+          title: "ArgoCD: GitOps deployments"
+
+    - id: security
+      title: "Security"
+      children:
+        - id: owasp-top10
+          title: "OWASP Top 10 & API Security Top 10"
+        - id: supply-chain
+          title: "Supply Chain: SBOM, Sigstore, Renovate"
+        - id: jwt-oauth2-deep
+          title: "JWT/OAuth2/OIDC deep dive (token rotation, PKCE)"
+
+    - id: troubleshooting
+      title: "Troubleshooting & Incidents"
+      children:
+        - id: incident-response
+          title: "Incident response: detect → mitigate → diagnose → RCA"
+        - id: jfr-production
+          title: "JFR/JMC for production troubleshooting"
+        - id: troubleshooting-cases
+          title: "Cases: OOM, high GC, deadlocks, slow queries"
+
+# ============================================================
+# 4. DATA ANALYSIS / DATA SCIENCE
+# ============================================================
+- id: data-analysis
+  title: "Data Analysis / Data Science"
+  children:
+    - id: sql-analytics
+      title: "Advanced SQL for Analytics"
+      children:
+        - id: window-functions
+          title: "Window Functions: ROW_NUMBER, RANK, LAG/LEAD"
+        - id: ctes-recursive
+          title: "CTEs (including recursive)"
+        - id: complex-joins
+          title: "Complex multi-table joins, self-joins"
+        - id: sql-interview-practice
+          title: "DataLemur + StrataScratch: daily practice"
+
+    - id: python-data
+      title: "Python for Data Analysis"
+      children:
+        - id: pandas
+          title: "Pandas: DataFrame, groupby, merge, pivot"
+        - id: numpy-basics
+          title: "NumPy: array operations"
+        - id: matplotlib-seaborn
+          title: "Matplotlib & Seaborn: visualization"
+        - id: jupyter-notebooks
+          title: "Jupyter Notebooks workflow"
+
+    - id: statistics
+      title: "Statistics & Experimentation"
+      children:
+        - id: descriptive-stats
+          title: "Descriptive: mean, median, variance, percentiles"
+        - id: distributions
+          title: "Distributions: normal, binomial, CLT"
+        - id: hypothesis-testing
+          title: "Hypothesis testing: t-test, chi-square, p-value"
+        - id: ab-testing
+          title: "A/B Testing: power, sample size, Bonferroni"
+        - id: correlation-causation
+          title: "Correlation vs Causation"
+
+    - id: visualization-tools
+      title: "BI & Visualization"
+      children:
+        - id: power-bi
+          title: "Power BI (primary — 28K+ jobs)"
+        - id: tableau-basics
+          title: "Tableau basics (secondary)"
+
+    - id: ml-basics
+      title: "ML Basics (DA-level)"
+      children:
+        - id: regression-classification
+          title: "Regression vs Classification concepts"
+        - id: overfitting-crossval
+          title: "Overfitting, cross-validation"
+        - id: genai-awareness
+          title: "GenAI/LLM: conceptual awareness for analysts"
+
+    - id: da-interview-prep
+      title: "DA Interview Prep"
+      children:
+        - id: product-analytics-cases
+          title: "Product analytics cases (DAU drop investigation)"
+        - id: take-home-project
+          title: "Kaggle: EDA portfolio project"
+        - id: behavioral-star
+          title: "STAR-format behavioral answers"
+
+    - id: da-platforms
+      title: "Platforms & Resources"
+      children:
+        - id: datalemur
+          title: "DataLemur — SQL + stats interview questions"
+        - id: stratascratch
+          title: "StrataScratch — real FAANG questions"
+        - id: datacamp
+          title: "DataCamp: Data Analyst with Python track"
+        - id: book-practical-stats
+          title: "Book: Practical Statistics for Data Scientists"
+        - id: book-storytelling-data
+          title: "Book: Storytelling with Data (Cole Knaflic)"
+
+# ============================================================
+# 5. AI AGENTS & LLM
+# ============================================================
+- id: ai-agents
+  title: "AI Agents & LLM"
+  children:
+    - id: llm-fundamentals
+      title: "LLM Fundamentals"
+      children:
+        - id: prompt-engineering
+          title: "Prompt Engineering: advanced techniques"
+        - id: embeddings
+          title: "Embeddings: models, similarity, use cases"
+        - id: rag-vs-finetuning
+          title: "RAG vs Fine-tuning trade-offs"
+        - id: tokenization
+          title: "Tokenization & context window management"
+
+    - id: agent-architectures
+      title: "Agent Architectures"
+      children:
+        - id: react-pattern
+          title: "ReAct: Reason + Act loop"
+        - id: plan-execute
+          title: "Plan-and-Execute pattern"
+        - id: multi-agent
+          title: "Multi-agent orchestration"
+        - id: human-in-loop
+          title: "Human-in-the-loop checkpoints"
+        - id: tool-calling
+          title: "Tool use / function calling patterns"
+
+    - id: agent-frameworks
+      title: "Agent Frameworks"
+      children:
+        - id: langgraph
+          title: "LangGraph: stateful agent workflows"
+        - id: openai-agents-sdk
+          title: "OpenAI Agents SDK"
+        - id: claude-agent-sdk
+          title: "Claude Agent SDK (Anthropic)"
+        - id: spring-ai-agents
+          title: "Spring AI: JVM-native agent building"
+        - id: crewai
+          title: "CrewAI: role-based multi-agent"
+
+    - id: mcp-protocol
+      title: "MCP (Model Context Protocol)"
+      children:
+        - id: mcp-spec
+          title: "MCP specification & architecture"
+        - id: mcp-server-building
+          title: "Building custom MCP servers"
+        - id: mcp-reference-servers
+          title: "Study: modelcontextprotocol/servers repo"
+
+    - id: rag-vectordb
+      title: "RAG & Vector Databases"
+      children:
+        - id: pgvector-rag
+          title: "pgvector: RAG with PostgreSQL"
+        - id: chroma-local
+          title: "Chroma: local vector DB"
+        - id: rag-pipeline
+          title: "End-to-end RAG pipeline design"
+        - id: chunking-strategies
+          title: "Chunking & retrieval strategies"
+
+    - id: agent-evals
+      title: "Agent Evaluation & Observability"
+      children:
+        - id: langsmith
+          title: "LangSmith: agent tracing & evals"
+        - id: agent-testing
+          title: "Agent testing patterns"
+        - id: guardrails
+          title: "Safety & guardrails"
+
+    - id: ai-portfolio
+      title: "GitHub Portfolio Projects"
+      children:
+        - id: project-mcp-server
+          title: "Project: MCP server for Jira/Confluence"
+        - id: project-rag-codebase
+          title: "Project: RAG over codebase (pgvector)"
+        - id: project-multi-agent-reviewer
+          title: "Project: Multi-agent code reviewer"
+        - id: project-spring-ai-api
+          title: "Project: Spring AI agent REST API"
+
+    - id: ai-platforms
+      title: "Platforms & Resources"
+      children:
+        - id: deeplearning-ai-agents
+          title: "DeepLearning.AI: AI Agents in LangGraph (free)"
+        - id: deeplearning-crewai
+          title: "DeepLearning.AI: Multi AI Agent Systems with CrewAI"
+        - id: anthropic-cookbook
+          title: "Anthropic Cookbook (GitHub)"
+        - id: book-llm-apps
+          title: "Book: Building LLM Powered Applications"
+
+# ============================================================
+# 6. ENGLISH (B2 → C1/Fluent)
+# ============================================================
+- id: english
+  title: "English (B2 → C1/Fluent)"
+  children:
+    - id: vocabulary-grammar
+      title: "Vocabulary & Grammar"
+      children:
+        - id: collocations-idioms
+          title: "Collocations, idioms, phrasal verbs"
+        - id: clozemaster-practice
+          title: "Clozemaster: Fluency Fast Track (50-100/day)"
+        - id: anki-srs
+          title: "Anki SRS: Cambridge Vocab + Phrasal Verbs decks"
+        - id: advanced-grammar
+          title: "Advanced grammar: inversion, cleft sentences, mixed conditionals"
+        - id: lingvist
+          title: "Lingvist: adaptive vocabulary learning"
+
+    - id: speaking
+      title: "Speaking & Pronunciation"
+      children:
+        - id: elsa-speak
+          title: "ELSA Speak: phoneme-level pronunciation"
+        - id: talkio-ai
+          title: "Talkio AI: 400+ tutors, dialect practice"
+        - id: langua-call-mode
+          title: "Langua: Call Mode — hands-free AI dialog"
+        - id: gliglish
+          title: "Gliglish: free 10min/day conversation (NEW)"
+        - id: shadowing
+          title: "Shadowing: TED/news 15 min daily"
+        - id: record-transcribe-fix
+          title: "Record-Transcribe-Fix: self-correction method"
+        - id: style-shift-drills
+          title: "Style-Shift Drills: formal/neutral/slang"
+
+    - id: writing
+      title: "Academic & Professional Writing"
+      children:
+        - id: write-improve
+          title: "Write & Improve (Cambridge) — free CEFR feedback"
+        - id: grammarly
+          title: "Grammarly: tone & clarity coaching"
+        - id: google-tech-writing
+          title: "Google Technical Writing Course (free)"
+        - id: blog-linkedin-writing
+          title: "Practice: blog posts & LinkedIn in English"
+
+    - id: reading-listening
+      title: "Reading & Listening"
+      children:
+        - id: lingq
+          title: "LingQ: any text → interactive lesson"
+        - id: language-reactor
+          title: "Language Reactor: Netflix/YouTube + dual subs"
+        - id: guardian-nyt
+          title: "Daily article: The Guardian / NYT"
+        - id: tech-podcasts
+          title: "Podcasts: Syntax, The Changelog, Software Engineering Daily"
+        - id: beelinguapp
+          title: "Beelinguapp: parallel text reading"
+
+    - id: tech-english
+      title: "Technical English"
+      children:
+        - id: tech-vocab
+          title: "IT terminology & system design vocabulary"
+        - id: tech-writing-practice
+          title: "RFC/Design doc writing in English"
+        - id: code-review-english
+          title: "Code review comments in English"
+        - id: business-english-pod
+          title: "Business English Pod: tech episodes"
+
+    - id: interview-english
+      title: "Interview English"
+      children:
+        - id: smalltalk2me
+          title: "SmallTalk2Me: CEFR test + mock job interview (NEW)"
+        - id: yoodli
+          title: "Yoodli: AI speech coach for interviews (NEW)"
+        - id: pramp-english
+          title: "Pramp: peer mock interviews (explain solutions in English)"
+        - id: interviewing-io
+          title: "interviewing.io: real FAANG engineers"
+        - id: star-method-english
+          title: "STAR behavioral answers in English"
+
+    - id: immersion
+      title: "Immersion & Community"
+      children:
+        - id: devices-english
+          title: "All devices → English, no subtitles"
+        - id: discord-english
+          title: "Discord: English + English Speaking Practice servers"
+        - id: hellotalk-tandem
+          title: "HelloTalk & Tandem: language exchange"
+        - id: toastmasters-online
+          title: "Toastmasters Online: presentation practice"
+        - id: chatgpt-claude-tutor
+          title: "ChatGPT/Claude: 24/7 conversation partner & grammar coach"
+
+    - id: english-phases
+      title: "Phases (Timeline)"
+      children:
+        - id: phase1-activation
+          title: "Phase 1 (1-3 мес): Activation — fix errors, build vocabulary"
+        - id: phase2-immersion
+          title: "Phase 2 (4-8 мес): Deep immersion — think in English"
+        - id: phase3-polish
+          title: "Phase 3 (9-12 мес): Polish — charisma, register mastery"
+
+# ============================================================
+# 7. AI-ASSISTED DEVELOPMENT (Cross-cutting skill)
+# ============================================================
+- id: ai-dev-tools
+  title: "AI-Assisted Development"
+  children:
+    - id: github-copilot
+      title: "GitHub Copilot: prompt engineering for code"
+    - id: cursor-ide
+      title: "Cursor / Windsurf: IDE-native AI"
+    - id: claude-code
+      title: "Claude Code: agentic terminal coding"
+    - id: ai-code-review
+      title: "AI code review & audit skills"
+    - id: ai-limitations
+      title: "AI limitations: hallucinations, bloat, security risks"
