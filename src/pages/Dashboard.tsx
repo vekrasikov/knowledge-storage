@@ -5,7 +5,6 @@ import { calcDirectionProgress } from "../utils/progress";
 import { useUserData } from "../hooks/useUserData";
 import { ProgressBar } from "../components/ProgressBar";
 import { SyncButton } from "../components/SyncButton";
-import { importData } from "../utils/storage";
 
 const DIRECTION_COLORS: Record<string, string> = {
   backend: "border-l-blue-500",

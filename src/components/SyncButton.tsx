@@ -1,5 +1,4 @@
 import { useState } from "react";
-import type { GitHubConfig } from "../types";
 import {
   loadGitHubConfig,
   saveGitHubConfig,
