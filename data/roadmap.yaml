@@ -140,13 +140,31 @@
         - id: architecture-tests
           title: "ArchUnit: architecture rule enforcement"
 
-    - id: backend-platforms
-      title: "Platforms & Resources"
+    - id: backend-practice
+      title: "Hands-on Practice"
       children:
+        - id: javarush
+          title: "JavaRush: 1200+ Java tasks with instant validation"
+        - id: exercism-java
+          title: "Exercism: Java & Kotlin tracks (mentored)"
+        - id: codewars-java
+          title: "Codewars: Java kata (5-6 kyu for warm-up)"
         - id: leetcode-practice
-          title: "LeetCode: NeetCode 150 (daily practice)"
+          title: "LeetCode: NeetCode 150 (daily, no IDE hints)"
         - id: educative-java
           title: "Educative: Java Multithreading, JVM Deep Dive"
+        - id: hyperskill-kotlin
+          title: "Hyperskill (JetBrains): Kotlin Developer track"
+        - id: spring-academy
+          title: "Spring Academy: official Spring Boot courses"
+        - id: testcontainers-workshop
+          title: "Testcontainers Workshop (GitHub)"
+        - id: kafka-tutorials-confluent
+          title: "Confluent Tutorials: hands-on Kafka labs"
+
+    - id: backend-platforms
+      title: "Books & Certifications"
+      children:
         - id: java-specialists
           title: "javaspecialists.eu (Heinz Kabutz)"
         - id: confluent-kafka-cert
@@ -242,21 +260,33 @@
         - id: big-data-medallion
           title: "Medallion Architecture: Bronze → Silver → Gold"
 
-    - id: arch-platforms
-      title: "Platforms & Resources"
+    - id: arch-practice
+      title: "Hands-on Practice"
       children:
         - id: bytebytego
           title: "ByteByteGo (Alex Xu) — system design visuals"
         - id: codemia-io
-          title: "Codemia.io — system design practice"
+          title: "Codemia.io — interactive system design problems"
         - id: hello-interview
-          title: "Hello Interview — structured SD prep"
+          title: "Hello Interview — structured SD mock sessions"
+        - id: educative-grokking
+          title: "Educative: Grokking System Design Interview"
+        - id: educative-lld
+          title: "Educative: Grokking Low Level Design Interview"
+        - id: pramp-sd
+          title: "Pramp: free peer system design mocks"
+
+    - id: arch-books
+      title: "Books"
+      children:
         - id: book-ddia
           title: "Book: Designing Data-Intensive Applications (Kleppmann)"
         - id: book-sd-interview
           title: "Book: System Design Interview Vol 1 & 2 (Alex Xu)"
-        - id: educative-grokking
-          title: "Educative: Grokking System Design Interview"
+        - id: book-ddd-evans
+          title: "Book: Domain-Driven Design (Eric Evans)"
+        - id: book-clean-arch
+          title: "Book: Clean Architecture (Robert Martin)"
 
 # ============================================================
 # 3. DEVOPS & CLOUD
@@ -319,6 +349,20 @@
           title: "JFR/JMC for production troubleshooting"
         - id: troubleshooting-cases
           title: "Cases: OOM, high GC, deadlocks, slow queries"
+
+    - id: devops-practice
+      title: "Hands-on Practice"
+      children:
+        - id: killercoda-k8s
+          title: "KillerCoda: interactive K8s labs (free)"
+        - id: kodekloud-devops
+          title: "KodeKloud: DevOps learning paths + labs"
+        - id: play-with-docker
+          title: "Play with Docker: browser-based Docker sandbox"
+        - id: github-actions-workshop
+          title: "GitHub: Actions Starter Workflows (hands-on)"
+        - id: ckad-exercises
+          title: "CKAD Exercises (GitHub: dgkanatsios/CKAD-exercises)"
 
 # ============================================================
 # 4. DATA ANALYSIS / DATA SCIENCE
@@ -392,22 +436,102 @@
         - id: behavioral-star
           title: "STAR-format behavioral answers"
 
-    - id: da-platforms
-      title: "Platforms & Resources"
+    - id: da-practice
+      title: "Hands-on Practice"
       children:
         - id: datalemur
-          title: "DataLemur — SQL + stats interview questions"
+          title: "DataLemur: daily SQL + stats questions"
         - id: stratascratch
-          title: "StrataScratch — real FAANG questions"
-        - id: datacamp
-          title: "DataCamp: Data Analyst with Python track"
+          title: "StrataScratch: real FAANG analyst questions"
+        - id: mode-analytics
+          title: "Mode Analytics: SQL tutorial + sandbox"
+        - id: kaggle-eda
+          title: "Kaggle: EDA competitions + micro-courses"
+        - id: power-bi-learn
+          title: "Microsoft Learn: Power BI (free, official)"
+
+    - id: da-books
+      title: "Books & Courses"
+      children:
         - id: book-practical-stats
           title: "Book: Practical Statistics for Data Scientists"
         - id: book-storytelling-data
           title: "Book: Storytelling with Data (Cole Knaflic)"
+        - id: book-sql-analysis
+          title: "Book: SQL for Data Analysis (Cathy Tanimura)"
+        - id: google-da-cert
+          title: "Coursera: Google Data Analytics Certificate"
 
 # ============================================================
-# 5. AI AGENTS & LLM
+# 5. PYTHON
+# ============================================================
+- id: python
+  title: "Python"
+  children:
+    - id: python-fundamentals
+      title: "Python Fundamentals (for Java dev)"
+      children:
+        - id: python-syntax
+          title: "Syntax, types, list/dict comprehensions"
+        - id: python-oop
+          title: "OOP in Python vs Java: dunder methods, decorators"
+        - id: python-modules
+          title: "Modules, packages, virtual environments (venv/poetry)"
+        - id: python-typing
+          title: "Type hints & mypy (static typing for Python)"
+        - id: python-async
+          title: "asyncio basics (coroutines, event loop)"
+        - id: python-testing
+          title: "pytest: fixtures, parametrize, mocking"
+
+    - id: python-data-libs
+      title: "Data Libraries"
+      children:
+        - id: py-pandas
+          title: "Pandas: DataFrame, groupby, merge, pivot"
+        - id: py-numpy
+          title: "NumPy: array operations, broadcasting"
+        - id: py-matplotlib
+          title: "Matplotlib & Seaborn: visualization"
+        - id: py-jupyter
+          title: "Jupyter Notebooks workflow"
+        - id: py-polars
+          title: "Polars: fast DataFrame alternative"
+
+    - id: python-ml
+      title: "ML & AI Libraries"
+      children:
+        - id: py-scikit-learn
+          title: "Scikit-learn: classification, regression, clustering"
+        - id: py-langchain
+          title: "LangChain / LangGraph for agents"
+        - id: py-fastapi
+          title: "FastAPI: REST APIs for ML models"
+        - id: py-pyspark
+          title: "PySpark: distributed data processing"
+
+    - id: python-practice
+      title: "Hands-on Practice"
+      children:
+        - id: educative-python
+          title: "Educative: Become a Python Developer"
+        - id: exercism-python
+          title: "Exercism: Python track (mentored)"
+        - id: codewars-python
+          title: "Codewars: Python kata"
+        - id: leetcode-python
+          title: "LeetCode: solve NeetCode 150 in Python too"
+        - id: kaggle-notebooks
+          title: "Kaggle: micro-courses + notebook competitions"
+        - id: datacamp-python
+          title: "DataCamp: Data Analyst with Python track"
+        - id: coursera-python-umich
+          title: "Coursera: Python for Everybody (U of Michigan)"
+        - id: realpython
+          title: "Real Python: tutorials & deep-dives"
+
+# ============================================================
+# 6. AI AGENTS & LLM
 # ============================================================
 - id: ai-agents
   title: "AI Agents & LLM"
@@ -496,17 +620,31 @@
         - id: project-spring-ai-api
           title: "Project: Spring AI agent REST API"
 
-    - id: ai-platforms
-      title: "Platforms & Resources"
+    - id: ai-practice
+      title: "Hands-on Practice"
       children:
         - id: deeplearning-ai-agents
           title: "DeepLearning.AI: AI Agents in LangGraph (free)"
         - id: deeplearning-crewai
           title: "DeepLearning.AI: Multi AI Agent Systems with CrewAI"
         - id: anthropic-cookbook
-          title: "Anthropic Cookbook (GitHub)"
+          title: "Anthropic Cookbook: hands-on examples (GitHub)"
+        - id: langchain-tutorials
+          title: "LangChain/LangGraph: official tutorials"
+        - id: openai-cookbook
+          title: "OpenAI Cookbook: agents + function calling (GitHub)"
+        - id: spring-ai-samples
+          title: "Spring AI: sample projects (GitHub)"
+        - id: huggingface-courses
+          title: "Hugging Face: NLP & Transformers course (free)"
+
+    - id: ai-books
+      title: "Books"
+      children:
         - id: book-llm-apps
           title: "Book: Building LLM Powered Applications"
+        - id: book-ai-engineering
+          title: "Book: AI Engineering (Chip Huyen, 2025)"
 
 # ============================================================
 # 6. ENGLISH (B2 → C1/Fluent)
