@@ -29,6 +29,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+      - run: touch dist/.nojekyll
       - run: npx staticrypt dist/index.html -p "${{ secrets.SITE_PASSWORD }}" -o dist/index.html --short
 
       - uses: actions/configure-pages@v5
