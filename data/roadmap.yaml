@@ -16,9 +16,9 @@
           title: "Collections Internals: HashMap, ConcurrentHashMap, LinkedHashMap"
           summary: "Deep understanding of HashMap's bucket array, linked-list-to-tree treeification (Java 8+), ConcurrentHashMap's segment-free CAS design, and LinkedHashMap's access/insertion ordering — topics that appear in virtually every Senior Java interview."
           resources:
-            - "Baeldung: A Guide to Java HashMap (baeldung.com)"
+            - "Baeldung Pro: A Guide to Java HashMap (baeldung.com)"
             - "OpenJDK source: java.util.HashMap (github.com/openjdk/jdk)"
-            - "Book: Java Generics and Collections (Naftalin & Wadler, O'Reilly)"
+            - "Book: Effective Java, Items 11-12 (Joshua Bloch)"
             - "YouTube: Nikita Lipsky — HashMap internals (JPoint conference)"
 
         - id: generics-deep
@@ -28,32 +28,32 @@
             - "Oracle JLS §4.5 — Parameterized Types (docs.oracle.com)"
             - "Angelika Langer: Java Generics FAQ (angelikalanger.com)"
             - "Book: Effective Java, Items 26-33 (Joshua Bloch)"
-            - "Baeldung: Wildcards in Java Generics (baeldung.com)"
+            - "Baeldung Pro: Wildcards in Java Generics (baeldung.com)"
 
         - id: exceptions-patterns
           title: "Exceptions: checked vs unchecked, try-with-resources"
           summary: "Knowing when to use checked versus unchecked exceptions shapes API design and forces callers to handle failures; try-with-resources (AutoCloseable) eliminates resource-leak bugs that have caused production incidents at scale."
           resources:
             - "Book: Effective Java, Items 69-77 (Joshua Bloch)"
-            - "Baeldung: Exception Handling in Java (baeldung.com)"
+            - "Baeldung Pro: Exception Handling in Java (baeldung.com)"
             - "Oracle Tutorial: The try-with-resources Statement (docs.oracle.com)"
-            - "DZone: Checked vs Unchecked Exceptions — The Debate Settled"
+            - "Exercism: Java track — error handling exercises (exercism.org/tracks/java)"
 
         - id: string-internals
           title: "String: immutability, String pool, StringBuilder"
           summary: "Strings are the most frequently allocated objects in Java; understanding the String pool (interning), immutability guarantees for thread safety, and when StringBuilder/StringJoiner outperforms concatenation prevents both correctness bugs and performance regressions."
           resources:
-            - "Baeldung: Guide to Java String Pool (baeldung.com)"
+            - "Baeldung Pro: Guide to Java String Pool (baeldung.com)"
             - "OpenJDK source: java.lang.String (github.com/openjdk/jdk)"
             - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter on String allocation"
-            - "InfoQ: String Deduplication in G1GC (infoq.com)"
+            - "Book: Modern Java in Action (Urma, Fusco, Mycroft) — String/streams chapter"
 
         - id: equals-hashcode
           title: "equals/hashCode contract, Comparable vs Comparator"
           summary: "Violating the equals/hashCode contract causes silent data corruption in HashMap and HashSet; understanding Comparable (natural ordering) vs Comparator (external ordering) is required for correct sorting and for designing domain objects used as map keys."
           resources:
             - "Book: Effective Java, Items 10-14 (Joshua Bloch)"
-            - "Baeldung: Java equals() and hashCode() Contracts (baeldung.com)"
+            - "Baeldung Pro: Java equals() and hashCode() Contracts (baeldung.com)"
             - "Oracle Tutorial: Object Ordering (docs.oracle.com)"
             - "Vlad Mihalcea: Why You Should Implement equals and hashCode in JPA Entities (vladmihalcea.com)"
 
@@ -62,9 +62,9 @@
           summary: "NIO (java.nio) replaced blocking I/O streams with Channels and Buffers, enabling selector-based multiplexing that powers high-throughput network servers; understanding direct vs heap buffers and scatter/gather operations is essential for writing low-latency I/O code."
           resources:
             - "Oracle Tutorial: Java NIO (docs.oracle.com/javase/tutorial/essential/io/)"
-            - "Baeldung: Introduction to Java NIO (baeldung.com)"
+            - "Baeldung Pro: Introduction to Java NIO (baeldung.com)"
             - "Book: Java NIO (Ron Hitchens, O'Reilly)"
-            - "GitHub: Java NIO Chat Server example (search 'java-nio-chat-server')"
+            - "Book: Java Performance (Scott Oaks, O'Reilly) — I/O and NIO performance chapter"
 
     - id: java-modern
       title: "Modern Java (21-25)"
@@ -74,9 +74,9 @@
           summary: "Project Loom's virtual threads (JEP 444, GA in Java 21) allow millions of concurrent lightweight threads without OS-thread overhead, fundamentally simplifying concurrent code; Structured Concurrency (JEP 453) adds a scoped lifetime model that makes cancellation and error propagation reliable."
           resources:
             - "JEP 444: Virtual Threads (openjdk.org/jeps/444)"
-            - "JEP 453: Structured Concurrency (openjdk.org/jeps/453)"
+            - "Book: Java Concurrency in Practice (Goetz) — foundational concepts apply"
             - "Inside Java Podcast: Episode on Project Loom (inside.java)"
-            - "Baeldung: Guide to Virtual Threads in Java 21 (baeldung.com)"
+            - "Baeldung Pro: Guide to Virtual Threads in Java 21 (baeldung.com)"
 
         - id: pattern-matching
           title: "Pattern Matching (switch, records, sealed classes)"
@@ -84,8 +84,8 @@
           resources:
             - "JEP 441: Pattern Matching for switch (openjdk.org/jeps/441)"
             - "Dev.java: Pattern Matching tutorials (dev.java)"
-            - "Baeldung: Pattern Matching in Java 21 (baeldung.com)"
-            - "YouTube: Brian Goetz — Data-Oriented Programming (JVM Language Summit)"
+            - "Baeldung Pro: Pattern Matching in Java 21 (baeldung.com)"
+            - "Book: Modern Java in Action, Part III (Urma, Fusco, Mycroft)"
 
         - id: records-sealed
           title: "Records & Sealed Classes for Domain Modeling"
@@ -93,7 +93,7 @@
           resources:
             - "JEP 395: Records (openjdk.org/jeps/395)"
             - "JEP 409: Sealed Classes (openjdk.org/jeps/409)"
-            - "Baeldung: Java Records (baeldung.com)"
+            - "Baeldung Pro: Java Records (baeldung.com)"
             - "Book: Modern Java in Action, Part IV (Urma, Fusco, Mycroft)"
 
         - id: stream-gatherers
@@ -102,8 +102,8 @@
           resources:
             - "JEP 461: Stream Gatherers (openjdk.org/jeps/461)"
             - "Inside Java: Stream Gatherers hands-on (inside.java)"
-            - "Baeldung: Stream Gatherers in Java 22 (baeldung.com)"
-            - "Dev.java: Gatherers API tutorial (dev.java)"
+            - "Baeldung Pro: Stream Gatherers in Java 22 (baeldung.com)"
+            - "Book: Modern Java in Action, Chapter 5 — Streams (Urma, Fusco, Mycroft)"
 
         - id: foreign-function-api
           title: "Foreign Function & Memory API"
@@ -111,7 +111,7 @@
           resources:
             - "JEP 454: Foreign Function & Memory API (openjdk.org/jeps/454)"
             - "Inside Java: FFM API tutorial (inside.java)"
-            - "Baeldung: Guide to the Foreign Function and Memory API (baeldung.com)"
+            - "Baeldung Pro: Guide to the Foreign Function and Memory API (baeldung.com)"
             - "OpenJDK Wiki: Panama Developer Guide (wiki.openjdk.org)"
 
         - id: scoped-values
@@ -120,8 +120,8 @@
           resources:
             - "JEP 481: Scoped Values (openjdk.org/jeps/481)"
             - "Inside Java: Scoped Values overview (inside.java)"
-            - "Baeldung: Scoped Values in Java 21 (baeldung.com)"
-            - "InfoQ: Project Loom — Scoped Values deep dive (infoq.com)"
+            - "Baeldung Pro: Scoped Values in Java 21 (baeldung.com)"
+            - "Book: Java Concurrency in Practice, Chapter 3 (Goetz et al.) — thread-local context"
 
     - id: jvm-internals
       title: "JVM Internals"
@@ -133,14 +133,14 @@
             - "JSR-133: Java Memory Model Specification (cs.umd.edu/~pugh/java/memoryModel/)"
             - "Book: Java Concurrency in Practice, Chapter 16 (Goetz et al.)"
             - "Shipilev: Close Encounters of The Java Memory Model Kind (shipilev.net)"
-            - "Baeldung: Java Memory Model (baeldung.com)"
+            - "Baeldung Pro: Java Memory Model (baeldung.com)"
 
         - id: heap-stack-metaspace
           title: "Heap, Stack, Metaspace — object lifecycle"
           summary: "Understanding how the JVM partitions memory into Eden/Survivor/Old generations (heap), per-thread stacks (frames, locals), and Metaspace (class metadata) is foundational for diagnosing OutOfMemoryError, tuning GC, and analysing heap dumps with tools like MAT or VisualVM."
           resources:
             - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapters 5-6"
-            - "Baeldung: Stack Memory and Heap Space in Java (baeldung.com)"
+            - "Baeldung Pro: Stack Memory and Heap Space in Java (baeldung.com)"
             - "OpenJDK Wiki: HotSpot Memory Management (wiki.openjdk.org)"
             - "YouTube: Nitsan Wakart — JVM Anatomy Park series (inside.java)"
 
@@ -151,7 +151,7 @@
             - "Oracle: Getting Started with G1GC (docs.oracle.com)"
             - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter 6"
             - "GCeasy.io: GC log analysis tool (gceasy.io)"
-            - "Baeldung: Guide to G1 Garbage Collector (baeldung.com)"
+            - "Baeldung Pro: Guide to G1 Garbage Collector (baeldung.com)"
 
         - id: gc-zgc-shenandoah
           title: "ZGC & Shenandoah: ultra-low latency GC"
@@ -160,7 +160,7 @@
             - "JEP 333: ZGC overview (openjdk.org/jeps/333)"
             - "RedHat: Shenandoah GC — Using Shenandoah (redhat.com)"
             - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter 6"
-            - "InfoQ: ZGC vs Shenandoah Benchmark (infoq.com)"
+            - "Baeldung Pro: ZGC vs Shenandoah comparison (baeldung.com)"
 
         - id: jfr-async-profiler
           title: "JFR & Async-Profiler: production profiling"
@@ -168,7 +168,7 @@
           resources:
             - "JDK Mission Control: official docs (github.com/openjdk/jmc)"
             - "async-profiler: GitHub repo + wiki (github.com/async-profiler/async-profiler)"
-            - "Baeldung: Guide to Java Flight Recorder (baeldung.com)"
+            - "Baeldung Pro: Guide to Java Flight Recorder (baeldung.com)"
             - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter 3"
 
         - id: class-loading-aot
@@ -177,14 +177,14 @@
           resources:
             - "JEP 483: Ahead-of-Time Class Loading & Linking (openjdk.org/jeps/483)"
             - "Oracle: Understanding the Java ClassLoader (docs.oracle.com)"
-            - "Baeldung: Class Loaders in Java (baeldung.com)"
+            - "Baeldung Pro: Class Loaders in Java (baeldung.com)"
             - "Inside Java: CDS and AOT deep dive (inside.java)"
 
         - id: threadlocal-leaks
           title: "ThreadLocal leaks & memory dump analysis"
           summary: "ThreadLocals that are not explicitly removed after use accumulate in thread-pool threads indefinitely, causing memory leaks and stale-data bugs; learning to identify these with heap dumps (Eclipse MAT, VisualVM) and fix them with try-finally or InheritableThreadLocal alternatives is a key Senior-level skill."
           resources:
-            - "Baeldung: Introduction to ThreadLocal in Java (baeldung.com)"
+            - "Baeldung Pro: Introduction to ThreadLocal in Java (baeldung.com)"
             - "Eclipse MAT documentation (eclipse.dev/mat/)"
             - "Shipilev: ThreadLocal and Memory Leaks (shipilev.net)"
             - "Book: Java Concurrency in Practice, Chapter 3 (Goetz et al.)"
@@ -198,7 +198,7 @@
           resources:
             - "Book: Java Concurrency in Practice, Chapters 3-4 (Goetz et al.)"
             - "JEP 193: Variable Handles (openjdk.org/jeps/193)"
-            - "Baeldung: Guide to VarHandle (baeldung.com)"
+            - "Baeldung Pro: Guide to VarHandle (baeldung.com)"
             - "Shipilev: Using JDK 9 Memory Order Modes (shipilev.net)"
 
         - id: locks-synchronized
@@ -206,36 +206,36 @@
           summary: "synchronized is simple and JVM-optimized (biased locking, lock elision), but ReentrantLock adds tryLock, interruptible acquisition, fair ordering, and separate Condition objects — knowing when to use each and understanding lock coarsening/splitting strategies is essential for high-throughput concurrent code."
           resources:
             - "Book: Java Concurrency in Practice, Chapters 13-14 (Goetz et al.)"
-            - "Baeldung: Guide to java.util.concurrent.Locks (baeldung.com)"
+            - "Baeldung Pro: Guide to java.util.concurrent.Locks (baeldung.com)"
             - "Oracle: Intrinsic Locks and Synchronization (docs.oracle.com)"
-            - "InfoQ: Java Lock Performance Analysis (infoq.com)"
+            - "Exercism: Java concurrency exercises (exercism.org/tracks/java)"
 
         - id: concurrent-collections
           title: "ConcurrentHashMap, CopyOnWriteArrayList"
           summary: "ConcurrentHashMap (fully lock-free reads via CAS, Java 8 no-segment redesign) and CopyOnWriteArrayList (snapshot-on-write, ideal for read-heavy, rarely-mutated lists) are the standard building blocks for thread-safe collection usage without coarse-grained synchronization."
           resources:
             - "Book: Java Concurrency in Practice, Chapter 5 (Goetz et al.)"
-            - "Baeldung: Guide to ConcurrentHashMap (baeldung.com)"
+            - "Baeldung Pro: Guide to ConcurrentHashMap (baeldung.com)"
             - "OpenJDK source: java.util.concurrent (github.com/openjdk/jdk)"
-            - "Baeldung: CopyOnWriteArrayList (baeldung.com)"
+            - "Baeldung Pro: CopyOnWriteArrayList (baeldung.com)"
 
         - id: completable-future
           title: "CompletableFuture patterns"
           summary: "CompletableFuture (Java 8) provides a rich composable API for async pipelines — thenCompose, thenCombine, allOf/anyOf, exceptionally, and custom Executors — enabling non-blocking I/O orchestration without reactive libraries, which every Senior Java developer must master."
           resources:
-            - "Baeldung: Guide to CompletableFuture (baeldung.com)"
+            - "Baeldung Pro: Guide to CompletableFuture (baeldung.com)"
             - "Book: Modern Java in Action, Chapter 15 (Urma, Fusco, Mycroft)"
-            - "DZone: CompletableFuture cheat sheet (dzone.com)"
+            - "Book: Java Concurrency in Practice, Chapter 6 (Goetz et al.) — task execution"
             - "Jenkov: Java CompletableFuture Tutorial (jenkov.com)"
 
         - id: virtual-threads-spring
           title: "Virtual Threads in Spring Boot 3.2+"
           summary: "Spring Boot 3.2 added first-class virtual thread support via spring.threads.virtual.enabled=true, replacing the default platform-thread executor in WebMVC and @Async — enabling high concurrency with blocking I/O without migrating to reactive WebFlux."
           resources:
+            - "Spring Academy: Spring Boot course (spring.academy/courses/spring-boot)"
             - "Spring Blog: Virtual Threads in Spring 6.1 / Boot 3.2 (spring.io/blog)"
-            - "Baeldung: Virtual Threads in Spring Boot (baeldung.com)"
-            - "JEP 444: Virtual Threads — migration guide section (openjdk.org)"
-            - "Dan Vega: Spring Boot + Virtual Threads demo (danvega.dev)"
+            - "Baeldung Pro: Virtual Threads in Spring Boot (baeldung.com)"
+            - "Book: Spring in Action, 6th Ed. (Craig Walls) — concurrency chapter"
 
     - id: spring-ecosystem
       title: "Spring Ecosystem"
@@ -245,98 +245,98 @@
           summary: "Spring Boot 3 / Spring Framework 6 require Java 17 baseline and bring Jakarta EE 10 namespace migration, improved observability via Micrometer, native compilation support, and the new HTTP interface client — the core platform upgrade every Java backend team has to execute."
           resources:
             - "Spring Boot 3.x Migration Guide (github.com/spring-projects/spring-boot/wiki)"
-            - "Spring Academy: Spring Boot course (spring.academy)"
-            - "Baeldung: What's New in Spring Boot 3 (baeldung.com)"
-            - "InfoQ: Spring Framework 6 Overview (infoq.com)"
+            - "Spring Academy: Spring Boot course (spring.academy/courses/spring-boot)"
+            - "Baeldung Pro: What's New in Spring Boot 3 (baeldung.com)"
+            - "Book: Spring in Action, 6th Ed. (Craig Walls, Manning)"
 
         - id: spring-virtual-threads
           title: "spring.threads.virtual.enabled + WebMVC vs WebFlux"
           summary: "Enabling virtual threads in Spring MVC collapses the traditional WebMVC vs WebFlux trade-off by allowing blocking code to scale like reactive — developers must understand the architectural differences (thread-per-request vs event-loop), pinning risks, and when WebFlux backpressure is still preferred."
           resources:
+            - "Spring Academy: Spring Boot course — concurrency module (spring.academy)"
             - "Spring Docs: Virtual Thread support (docs.spring.io)"
             - "Spring Blog: One step closer with Virtual Threads (spring.io/blog)"
-            - "Baeldung: Spring WebFlux vs Spring MVC (baeldung.com)"
-            - "YouTube: Sébastien Deleuze — Spring + Loom demo (SpringOne)"
+            - "Baeldung Pro: Spring WebFlux vs Spring MVC (baeldung.com)"
 
         - id: spring-security-oauth2
           title: "Spring Security: OAuth2, OIDC, PKCE"
           summary: "Spring Security 6 reworked the OAuth2/OIDC client and resource server APIs; understanding authorization_code + PKCE flow, JWT validation (JWK Set, claim mapping), and opaque token introspection is mandatory for securing modern API-first applications."
           resources:
+            - "Spring Academy: Spring Security course (spring.academy)"
             - "Spring Security OAuth2 Docs (docs.spring.io/spring-security)"
-            - "Baeldung: Spring Security OAuth2 (baeldung.com)"
-            - "Book: Spring Security in Action (Laurentiu Spilca, Manning)"
-            - "OAuth 2.0 Security Best Current Practice (RFC 9700, oauth.net)"
+            - "Baeldung Pro: Spring Security OAuth2 (baeldung.com)"
+            - "Book: Spring in Action, 6th Ed., Chapter 5 — Security (Craig Walls, Manning)"
 
         - id: spring-data-jpa
           title: "Spring Data JPA: projections, specifications"
           summary: "Spring Data JPA goes beyond basic CRUD — interface-based and DTO projections reduce over-fetching, Specifications enable type-safe dynamic queries, and understanding the N+1 problem with @EntityGraph or JOIN FETCH is critical for production database performance."
           resources:
+            - "Spring Academy: Spring Data JPA course (spring.academy)"
             - "Spring Data JPA Docs: Projections (docs.spring.io)"
-            - "Baeldung: Spring Data JPA Projections (baeldung.com)"
-            - "Vlad Mihalcea: Spring Data JPA and N+1 queries (vladmihalcea.com)"
+            - "Baeldung Pro: Spring Data JPA Projections (baeldung.com)"
             - "Book: High-Performance Java Persistence (Vlad Mihalcea)"
 
         - id: rest-client
           title: "RestClient (replaces RestTemplate)"
           summary: "RestClient (Spring 6.1+) is the new synchronous HTTP client with a fluent API that mirrors WebClient's ergonomics but runs on a simple thread-per-request model, replacing the aging RestTemplate; mastering it is necessary for any Spring-based service-to-service communication."
           resources:
+            - "Spring Academy: Building REST APIs course (spring.academy)"
             - "Spring Docs: RestClient (docs.spring.io)"
-            - "Spring Blog: RestClient introduction (spring.io/blog)"
-            - "Baeldung: Spring RestClient (baeldung.com)"
-            - "Dan Vega: RestClient tutorial (danvega.dev)"
+            - "Baeldung Pro: Spring RestClient (baeldung.com)"
+            - "Book: Spring in Action, 6th Ed. (Craig Walls, Manning)"
 
         - id: jdbc-client
           title: "JdbcClient (fluent JDBC)"
           summary: "JdbcClient (Spring 6.1+) provides a fluent, lambda-friendly API wrapping JdbcTemplate — enabling parameterized queries, row mapping, and update operations in a single chained call without the boilerplate of classic JdbcTemplate or the overhead of JPA for simple SQL use cases."
           resources:
+            - "Spring Academy: Spring Data course (spring.academy)"
             - "Spring Docs: JdbcClient (docs.spring.io)"
-            - "Spring Blog: JdbcClient introduction (spring.io/blog)"
-            - "Baeldung: Spring JdbcClient (baeldung.com)"
-            - "GitHub: Spring Data JDBC samples (github.com/spring-projects/spring-data-examples)"
+            - "Baeldung Pro: Spring JdbcClient (baeldung.com)"
+            - "Book: High-Performance Java Persistence (Vlad Mihalcea) — JDBC chapter"
 
         - id: spring-ai
           title: "Spring AI: LLM integration in Spring"
           summary: "Spring AI provides a portable, Spring-style abstraction over LLM providers (OpenAI, Anthropic, Ollama), vector stores, embedding models, and function-calling — enabling Java developers to build RAG pipelines, chatbots, and AI agents within the familiar Spring programming model."
           resources:
+            - "Spring Academy: Spring AI course (spring.academy)"
             - "Spring AI Docs (docs.spring.io/spring-ai)"
             - "Spring Blog: Introducing Spring AI (spring.io/blog)"
-            - "GitHub: Spring AI samples (github.com/spring-projects/spring-ai)"
-            - "Baeldung: Guide to Spring AI (baeldung.com)"
+            - "Baeldung Pro: Guide to Spring AI (baeldung.com)"
 
         - id: micrometer-observability
           title: "Micrometer Observation API & OTEL bridge"
           summary: "Micrometer Observation (Spring Boot 3+ default) unifies metrics, traces, and logs under a single instrumentation API with automatic bridging to OpenTelemetry, Prometheus, and Zipkin — making it the standard approach for adding observability to Spring services without vendor lock-in."
           resources:
+            - "Spring Academy: Spring Boot Observability module (spring.academy)"
             - "Micrometer Observation Docs (micrometer.io/docs)"
             - "Spring Boot Observability Guide (docs.spring.io)"
-            - "Baeldung: Observability with Spring Boot 3 (baeldung.com)"
-            - "OpenTelemetry Java Docs (opentelemetry.io/docs/instrumentation/java/)"
+            - "Baeldung Pro: Observability with Spring Boot 3 (baeldung.com)"
 
         - id: graalvm-native
           title: "GraalVM Native Image: AOT, reflection hints"
           summary: "GraalVM Native Image compiles Spring Boot apps to self-contained native executables with sub-100ms startup and low memory — but requires AOT metadata for reflection, proxies, and serialization; Spring Boot 3's AOT engine auto-generates most hints, making native viable for production serverless workloads."
           resources:
+            - "Spring Academy: Spring Boot Native module (spring.academy)"
             - "Spring Boot Native Image Docs (docs.spring.io)"
             - "GraalVM Native Image Docs (graalvm.io/native-image/)"
-            - "Baeldung: Spring Boot Native with GraalVM (baeldung.com)"
-            - "GitHub: Spring AOT samples (github.com/spring-projects/spring-aot-smoke-tests)"
+            - "Baeldung Pro: Spring Boot Native with GraalVM (baeldung.com)"
 
         - id: spring-bean-lifecycle
           title: "Bean lifecycle: @PostConstruct, BeanPostProcessor, init/destroy"
           summary: "Understanding the full Spring bean lifecycle — instantiation, dependency injection, BeanPostProcessor callbacks, @PostConstruct/@PreDestroy, and custom init/destroyMethod — is essential for writing correct initialization code, integrating third-party libraries, and avoiding subtle startup/shutdown ordering bugs."
           resources:
+            - "Spring Academy: Spring Framework core course (spring.academy)"
             - "Spring Docs: Bean Lifecycle (docs.spring.io/spring-framework/reference/core/beans/factory-nature.html)"
-            - "Baeldung: Spring Bean Lifecycle (baeldung.com)"
+            - "Baeldung Pro: Spring Bean Lifecycle (baeldung.com)"
             - "Book: Spring in Action, 6th Ed., Chapter 3 (Craig Walls, Manning)"
-            - "YouTube: Spring I/O — Bean lifecycle internals deep dive"
 
         - id: spring-transactional
           title: "@Transactional: propagation, isolation levels, proxy pitfalls"
           summary: "@Transactional is one of the most misused Spring annotations — self-invocation bypasses the proxy, REQUIRES_NEW creates independent transactions, and the wrong isolation level causes dirty reads or phantom reads; mastering propagation behaviours and proxy mechanics is critical for data-integrity in any Spring application."
           resources:
+            - "Spring Academy: Spring Data JPA course — transactions module (spring.academy)"
             - "Spring Docs: Transaction Management (docs.spring.io/spring-framework/reference/data-access/transaction.html)"
-            - "Baeldung: Transaction Propagation and Isolation in Spring (baeldung.com)"
-            - "Vlad Mihalcea: Spring @Transactional pitfalls (vladmihalcea.com)"
+            - "Baeldung Pro: Transaction Propagation and Isolation in Spring (baeldung.com)"
             - "Book: High-Performance Java Persistence, Part 3 (Vlad Mihalcea)"
 
         - id: spring-autoconfig
@@ -642,6 +642,50 @@
           resources:
             - "Confluent Developer Tutorials (developer.confluent.io/tutorials/)"
             - "Confluent: Kafka 101 course (developer.confluent.io/courses/kafka/)"
+
+    - id: backend-awesome-repos
+      title: "Awesome GitHub Repos"
+      children:
+        - id: awesome-java-repo
+          title: "awesome-java (akullpp) — 50k+ stars"
+          summary: "Curated list of awesome Java frameworks, libraries, software. The de-facto starting point for discovering quality Java tooling — covers web frameworks, persistence, concurrency, testing, distributed systems."
+          resources:
+            - "GitHub: github.com/akullpp/awesome-java (51k+ stars)"
+        - id: java-design-patterns-repo
+          title: "java-design-patterns (iluwatar) — 90k+ stars"
+          summary: "Comprehensive design patterns implemented in Java with explanations, UML diagrams, and runnable examples — the most popular GoF reference on GitHub. Covers creational, structural, behavioral, concurrency, architectural patterns."
+          resources:
+            - "GitHub: github.com/iluwatar/java-design-patterns (90k+ stars)"
+        - id: spring-petclinic
+          title: "spring-petclinic — official Spring sample app"
+          summary: "Reference Spring Boot application demonstrating idiomatic structure, JPA, REST, and CI/CD setup. Multiple variants (reactive, GraphQL, microservices) for studying different architectural approaches."
+          resources:
+            - "GitHub: github.com/spring-projects/spring-petclinic"
+            - "Variants: spring-petclinic-microservices, spring-petclinic-reactive"
+        - id: high-performance-java-samples
+          title: "high-performance-java-persistence (Mihalcea)"
+          summary: "Code samples from Vlad Mihalcea's High-Performance Java Persistence book — production-ready JPA/Hibernate patterns, N+1 fixes, batch operations, transaction strategies."
+          resources:
+            - "GitHub: github.com/vladmihalcea/high-performance-java-persistence"
+            - "Author blog: vladmihalcea.com — JPA deep dives"
+        - id: jvm-anatomy-park
+          title: "JVM Anatomy Park (Shipilëv)"
+          summary: "Aleksey Shipilëv's series of small JVM experiments demonstrating bytecode, JIT, GC behavior empirically — gold-standard reference for understanding JVM internals. Author also created JCStress, JOL."
+          resources:
+            - "Series: shipilev.net/jvm/anatomy-quarks/"
+            - "Tools: JOL (jol.openjdk.org), JCStress"
+        - id: kotlin-coroutines-samples
+          title: "kotlinx.coroutines (JetBrains)"
+          summary: "Official Kotlin coroutines library repository with comprehensive examples, guides, and design rationale — the canonical reference for understanding structured concurrency in Kotlin."
+          resources:
+            - "GitHub: github.com/Kotlin/kotlinx.coroutines"
+            - "Coroutines guide: kotlinlang.org/docs/coroutines-guide.html"
+        - id: awesome-kafka-repo
+          title: "awesome-kafka — curated Kafka resources"
+          summary: "Curated list of Apache Kafka tutorials, courses, books, tools, and Kafka Streams learning resources from the community."
+          resources:
+            - "GitHub: github.com/infoslack/awesome-kafka"
+            - "Confluent Examples: github.com/confluentinc/examples (production patterns)"
 
     - id: backend-platforms
       title: "Books & Certifications"
@@ -1052,6 +1096,53 @@
             - "Pramp.com — free peer mock interviews"
             - "interviewing.io — paid mocks with FAANG engineers"
 
+    - id: arch-awesome-repos
+      title: "Awesome GitHub Repos & Articles"
+      children:
+        - id: system-design-primer
+          title: "system-design-primer (donnemartin) — 295k+ stars"
+          summary: "The single most popular system design learning resource on GitHub — covers HLD topics, performance/scalability concepts, common patterns, and 24+ worked example problems with diagrams. Mandatory pre-reading for FAANG SD interviews."
+          resources:
+            - "GitHub: github.com/donnemartin/system-design-primer (295k+ stars)"
+            - "Translated to many languages, study sequentially"
+        - id: awesome-system-design-repo
+          title: "awesome-system-design-resources (ashishps1) — 38k+ stars"
+          summary: "Curated catalog of articles, videos, courses, and books for learning system design from beginner to advanced. Complements system-design-primer with more current resources (LLM systems, modern cloud patterns)."
+          resources:
+            - "GitHub: github.com/ashishps1/awesome-system-design-resources (38k+ stars)"
+        - id: awesome-scalability
+          title: "awesome-scalability (binhnguyennus) — 65k+ stars"
+          summary: "Real-world architecture stories and tech blog post archive from companies (Netflix, Uber, Airbnb, etc.) — the best source for understanding how systems are actually built at scale."
+          resources:
+            - "GitHub: github.com/binhnguyennus/awesome-scalability (65k+ stars)"
+        - id: ddd-resources-repo
+          title: "Awesome DDD (heynickc) — 13k+ stars"
+          summary: "Comprehensive list of DDD resources: books, articles, videos, sample apps, communities. The reference index for all things Domain-Driven Design."
+          resources:
+            - "GitHub: github.com/heynickc/awesome-ddd (13k+ stars)"
+            - "DDD Crew: github.com/ddd-crew (community templates and tools)"
+        - id: martin-fowler-articles
+          title: "Martin Fowler's articles archive"
+          summary: "Martin Fowler's blog and bliki — the canonical source for definitions and analyses of patterns: CQRS, Event Sourcing, Microservices, Strangler Fig, and many more. Authoritative."
+          resources:
+            - "Blog: martinfowler.com/articles.html"
+            - "Bliki: martinfowler.com/bliki/ — short pattern definitions"
+        - id: high-scalability-blog
+          title: "HighScalability blog"
+          summary: "Long-running blog publishing detailed real-world architecture case studies and weekly tech news roundups — invaluable for SD interview storytelling."
+          resources:
+            - "Blog: highscalability.com — Stuff The Internet Says weekly digest"
+        - id: coding-interview-university
+          title: "coding-interview-university (jwasham) — 320k+ stars"
+          summary: "Multi-month self-study plan for becoming a software engineer — covers algorithms, data structures, system design, OS concepts. Comprehensive but heavyweight; cherry-pick relevant sections."
+          resources:
+            - "GitHub: github.com/jwasham/coding-interview-university (320k+ stars)"
+        - id: tech-interview-handbook
+          title: "tech-interview-handbook (yangshun) — 130k+ stars"
+          summary: "Curated FAANG interview prep covering coding, system design, behavioral, salary negotiation. More focused and practical than coding-interview-university."
+          resources:
+            - "GitHub: github.com/yangshun/tech-interview-handbook (130k+ stars)"
+
     # ---- Books ----
     - id: arch-books
       title: "Books"
@@ -1115,6 +1206,7 @@
             - "YouTube: TechWorld with Nana — K8s probes explained"
             - "Learnk8s.io: Probe best practices article (learnk8s.io)"
             - "KillerCoda: probes lab (killercoda.com)"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Lukša) — Chapter 6: probes and lifecycle"
 
         - id: k8s-resources
           title: "Resource requests/limits, HPA"
@@ -1124,6 +1216,9 @@
             - "Learnk8s.io: Resource requests and limits deep dive"
             - "Kubernetes.io: Horizontal Pod Autoscaler walkthrough"
             - "Robusta.dev: HPA and VPA comparison blog post"
+            - "KillerCoda: Resource limits & HPA lab (killercoda.com)"
+            - "KodeKloud: Kubernetes for Developers — resource management module (kodekloud.com)"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Lukša) — Chapter 14: auto-scaling"
 
         - id: k8s-configmaps-secrets
           title: "ConfigMaps, Secrets, Helm basics"
@@ -1133,6 +1228,8 @@
             - "Helm.sh: Getting Started guide (helm.sh/docs/intro/quickstart)"
             - "Artifact Hub: public Helm chart registry (artifacthub.io)"
             - "KodeKloud: Helm for Beginners course (kodekloud.com)"
+            - "KillerCoda: ConfigMaps & Secrets lab (killercoda.com)"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Lukša) — Chapter 9: ConfigMaps and Secrets"
 
         - id: k8s-ckad
           title: "CKAD certification prep"
@@ -1152,7 +1249,7 @@
           resources:
             - "OpenTelemetry docs: Java instrumentation guide (opentelemetry.io/docs/languages/java)"
             - "CNCF: OpenTelemetry 101 talk (YouTube)"
-            - "Grafana Labs: OpenTelemetry + Grafana integration guide"
+            - "Grafana Labs: OpenTelemetry + Grafana integration guide (grafana.com/tutorials)"
             - "Book: Observability Engineering (Charity Majors, Liz Fong-Jones, George Miranda)"
 
         - id: grafana-stack
@@ -1163,6 +1260,7 @@
             - "Grafana Play: live demo environment (play.grafana.org)"
             - "YouTube: Grafana channel — LGTM stack deep dives"
             - "GitHub: grafana/tempo and grafana/loki — documentation repos"
+            - "Book: Observability Engineering (Charity Majors, Liz Fong-Jones, George Miranda)"
 
         - id: prometheus-alerting
           title: "Prometheus & alerting (SLI/SLO)"
@@ -1172,6 +1270,7 @@
             - "Google SRE Book: SLI/SLO chapters (free, sre.google/sre-book)"
             - "Awesome Prometheus alerts: github.com/samber/awesome-prometheus-alerts"
             - "YouTube: TechWorld with Nana — Prometheus & Grafana tutorial"
+            - "Book: Observability Engineering (Charity Majors, Liz Fong-Jones, George Miranda) — SLI/SLO chapter"
 
         - id: structured-logging
           title: "Structured logging patterns"
@@ -1181,6 +1280,7 @@
             - "Elastic: Structured Logging best practices guide (elastic.co/blog)"
             - "12factor.net: Logs as event streams (12factor.net/logs)"
             - "OpenTelemetry: log correlation with traces guide"
+            - "Book: Observability Engineering (Charity Majors, Liz Fong-Jones, George Miranda) — structured logging chapter"
 
     - id: ci-cd
       title: "CI/CD"
@@ -1193,6 +1293,8 @@
             - "GitHub: actions/starter-workflows — official template library"
             - "YouTube: TechWorld with Nana — GitHub Actions full tutorial"
             - "Udemy: GitHub Actions — The Complete Guide (Maximilian Schwarzmüller)"
+            - "GitHub Skills: Hello GitHub Actions course (skills.github.com, free)"
+            - "Book: The DevOps Handbook (Kim, Humble, Debois, Willis) — CI/CD pipeline principles"
 
         - id: docker-multi-stage
           title: "Docker: multi-stage builds, security scanning"
@@ -1202,6 +1304,7 @@
             - "Trivy docs: container image scanning (trivy.dev/docs)"
             - "Snyk Container: scanning guide (snyk.io/learn/container-security)"
             - "Hadolint: Dockerfile linter (github.com/hadolint/hadolint)"
+            - "Book: Docker Deep Dive (Nigel Poulton) — multi-stage builds and security"
 
         - id: argocd
           title: "ArgoCD: GitOps deployments"
@@ -1211,6 +1314,7 @@
             - "YouTube: TechWorld with Nana — ArgoCD full tutorial"
             - "CNCF: GitOps Principles (opengitops.dev)"
             - "Codefresh: GitOps vs CI/CD comparison article"
+            - "Book: The DevOps Handbook (Kim, Humble, Debois, Willis) — deployment pipeline patterns"
 
     - id: security
       title: "Security"
@@ -1281,13 +1385,15 @@
           resources:
             - "KillerCoda.com — free interactive K8s and Linux scenarios"
             - "KillerCoda: CKAD scenarios collection"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Lukša) — reference while doing labs"
 
         - id: kodekloud-devops
           title: "KodeKloud: DevOps learning paths + labs"
           summary: "KodeKloud combines video lectures with integrated browser-based labs for Kubernetes, Docker, Helm, Ansible, and Terraform, making it the most complete hands-on DevOps learning platform."
           resources:
-            - "KodeKloud.com — DevOps Engineer learning path (subscription)"
+            - "KodeKloud.com — DevOps Engineer learning path ($120/yr subscription)"
             - "KodeKloud Engineer: free hands-on tasks (engineer.kodekloud.com)"
+            - "Book: The DevOps Handbook (Kim, Humble, Debois, Willis) — culture and process reference"
 
         - id: play-with-docker
           title: "Play with Docker: browser-based Docker sandbox"
@@ -1295,6 +1401,7 @@
           resources:
             - "labs.play-with-docker.com — free 4-hour sandbox"
             - "Docker docs: Play with Docker guided tutorials"
+            - "Book: Docker Deep Dive (Nigel Poulton) — concise companion while practising"
 
         - id: github-actions-workshop
           title: "GitHub: Actions Starter Workflows (hands-on)"
@@ -1302,7 +1409,7 @@
           resources:
             - "GitHub: actions/starter-workflows repository"
             - "GitHub Actions official documentation (docs.github.com/actions)"
-            - "GitHub Skills: Hello GitHub Actions course (skills.github.com)"
+            - "GitHub Skills: Hello GitHub Actions course (skills.github.com, free)"
 
         - id: ckad-exercises
           title: "CKAD Exercises (GitHub: dgkanatsios/CKAD-exercises)"
@@ -1311,6 +1418,53 @@
             - "GitHub: dgkanatsios/CKAD-exercises (free)"
             - "KillerCoda: CKAD practice scenarios"
             - "CNCF: official CKAD exam curriculum page"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Lukša) — comprehensive CKAD reference"
+
+    - id: devops-awesome-repos
+      title: "Awesome GitHub Repos"
+      children:
+        - id: kubernetes-the-hard-way
+          title: "Kubernetes The Hard Way (Kelsey Hightower) — 41k+ stars"
+          summary: "The legendary tutorial that walks you through bootstrapping a Kubernetes cluster from scratch — no scripts, no automation. Builds deep understanding of every K8s component (etcd, API server, kubelet, networking)."
+          resources:
+            - "GitHub: github.com/kelseyhightower/kubernetes-the-hard-way (41k+ stars)"
+        - id: ckad-exercises-repo
+          title: "CKAD-exercises (dgkanatsios) — 9k+ stars"
+          summary: "Practical exercises for the Certified Kubernetes Application Developer exam, organized by curriculum domain — the most-used hands-on resource for CKAD prep."
+          resources:
+            - "GitHub: github.com/dgkanatsios/CKAD-exercises (9k+ stars)"
+        - id: awesome-kubernetes-repo
+          title: "awesome-kubernetes (ramitsurana) — 15k+ stars"
+          summary: "Curated list of K8s resources: tutorials, books, tools, examples, articles. The starting point for discovering the K8s ecosystem."
+          resources:
+            - "GitHub: github.com/ramitsurana/awesome-kubernetes (15k+ stars)"
+        - id: awesome-docker-repo
+          title: "awesome-docker (veggiemonk) — 30k+ stars"
+          summary: "Curated Docker resources, projects, and tools — references for container best practices, security scanning, multi-stage builds, and orchestration."
+          resources:
+            - "GitHub: github.com/veggiemonk/awesome-docker (30k+ stars)"
+        - id: awesome-actions-repo
+          title: "awesome-actions (sdras) — 25k+ stars"
+          summary: "Curated GitHub Actions workflows and reusable actions — saves hours when building CI/CD pipelines by reusing community-vetted patterns."
+          resources:
+            - "GitHub: github.com/sdras/awesome-actions (25k+ stars)"
+        - id: opentelemetry-demo
+          title: "OpenTelemetry Demo Application"
+          summary: "Reference microservices architecture instrumented with OpenTelemetry across multiple languages — best way to see end-to-end tracing, metrics, logs in practice."
+          resources:
+            - "GitHub: github.com/open-telemetry/opentelemetry-demo"
+            - "Includes: Jaeger, Prometheus, Grafana, OTel Collector"
+        - id: sre-google-book
+          title: "Google SRE Books (free online)"
+          summary: "Google's free SRE book series — Site Reliability Engineering, The SRE Workbook, Building Secure & Reliable Systems. Industry-standard reference for production operations and incident management."
+          resources:
+            - "Free online: sre.google/books/"
+        - id: 12-factor-app
+          title: "The Twelve-Factor App"
+          summary: "Methodology for building SaaS apps that are portable, scalable, and maintainable — foundational reading for cloud-native development. Heroku-authored, widely cited."
+          resources:
+            - "Manifesto: 12factor.net"
+            - "Heroku origin, applied across all modern PaaS"
 
 # ============================================================
 # 4. DATA ANALYSIS / DATA SCIENCE
@@ -1346,17 +1500,19 @@
           resources:
             - "SQLZoo: JOIN tutorial (sqlzoo.net)"
             - "DataLemur: JOIN-tagged questions (datalemur.com)"
-            - "Mode Analytics: SQL Joins tutorial"
+            - "Mode Analytics: SQL Joins tutorial (mode.com/sql-tutorial)"
             - "pgexercises.com: free PostgreSQL exercises with joins"
+            - "Book: SQL for Data Analysis (Cathy Tanimura) — Chapter 3: complex join patterns"
 
         - id: sql-interview-practice
           title: "DataLemur + StrataScratch: daily practice"
           summary: "DataLemur and StrataScratch aggregate real SQL questions from FAANG and Fortune 500 interviews, with company tags and difficulty ratings — daily practice on these platforms is the most direct preparation for data analyst screens."
           resources:
-            - "DataLemur.com — free SQL + statistics interview questions"
-            - "StrataScratch.com — real company SQL questions (free + paid tiers)"
+            - "DataLemur.com — free SQL + statistics interview questions (free/$10/mo premium)"
+            - "StrataScratch.com — real company SQL questions ($99/yr, 1000+ questions)"
             - "LeetCode: SQL 50 study plan (free)"
             - "HackerRank: SQL domain challenges (free)"
+            - "Book: SQL for Data Analysis (Cathy Tanimura) — real-world analytical SQL patterns"
 
     - id: python-data
       title: "Python for Data Analysis"
@@ -1456,6 +1612,7 @@
             - "Guy in a Cube: Power BI YouTube channel (free)"
             - "sqlbi.com: DAX guide and SQLBI courses"
             - "Microsoft: Power BI documentation (docs.microsoft.com/power-bi)"
+            - "Book: Storytelling with Data (Cole Nussbaumer Knaflic) — visualization principles for BI reports"
 
         - id: tableau-basics
           title: "Tableau basics (secondary)"
@@ -1533,30 +1690,32 @@
           title: "DataLemur: daily SQL + stats questions"
           summary: "DataLemur focuses specifically on the SQL and statistics questions asked by tech companies, with explanations written by ex-FAANG data scientists — the highest signal-to-noise ratio SQL prep resource."
           resources:
-            - "DataLemur.com — free daily SQL + statistics problems"
+            - "DataLemur.com — free daily SQL + statistics problems (free/$10/mo premium)"
             - "DataLemur: SQL Question Guide blog (datalemur.com/blog)"
 
         - id: stratascratch
           title: "StrataScratch: real FAANG analyst questions"
           summary: "StrataScratch aggregates actual SQL and Python questions tagged by company and role, enabling targeted preparation for specific employers and exposing you to the exact complexity level used in real screens."
           resources:
-            - "StrataScratch.com — company-tagged SQL & Python questions"
+            - "StrataScratch.com — company-tagged SQL & Python questions ($99/yr, 1000+ questions)"
             - "StrataScratch: Data Analytics Interview Prep guide"
 
         - id: mode-analytics
           title: "Mode Analytics: SQL tutorial + sandbox"
           summary: "Mode provides a real SQL editor with sample datasets, letting you practice analytical queries in an environment that mimics a professional BI tool workflow rather than a coding contest interface."
           resources:
-            - "Mode SQL Tutorial (mode.com/sql-tutorial) — free, beginner to advanced"
-            - "Mode Analytics: free sandbox workspace"
+            - "Mode Analytics: SQL Tutorial (mode.com/sql-tutorial) — free, beginner to advanced"
+            - "Mode Analytics: free sandbox workspace for running real queries"
+            - "Book: SQL for Data Analysis (Cathy Tanimura) — advanced SQL companion"
 
         - id: kaggle-eda
           title: "Kaggle: EDA competitions + micro-courses"
           summary: "Kaggle micro-courses are the fastest free path to practical data analysis skills, and competition notebooks expose you to professional-level EDA patterns from thousands of real data scientists."
           resources:
-            - "Kaggle Learn: micro-courses (kaggle.com/learn, free)"
+            - "Kaggle Learn: micro-courses (kaggle.com/learn, free) — Pandas, Seaborn, ML"
             - "Kaggle: Getting Started competitions (titanic, house prices)"
             - "Kaggle: Notebooks gallery — browse public EDA examples"
+            - "Book: Python for Data Analysis, 3rd Ed (Wes McKinney) — Pandas and NumPy companion"
 
         - id: power-bi-learn
           title: "Microsoft Learn: Power BI (free, official)"
@@ -1565,6 +1724,7 @@
             - "Microsoft Learn: Power BI (learn.microsoft.com/en-us/training/powerplatform/power-bi)"
             - "Microsoft: PL-300 certification learning path (free)"
             - "Power BI Community: forums + sample reports (community.powerbi.com)"
+            - "Book: Storytelling with Data (Cole Nussbaumer Knaflic) — visual communication principles"
 
     - id: da-books
       title: "Books & Courses"
@@ -1598,6 +1758,37 @@
             - "Coursera: Google Data Analytics Professional Certificate (coursera.org)"
             - "Google Career Certificates: employer recognition info (grow.google/certificates)"
             - "Reddit: r/dataanalysis — learner experiences and tips"
+
+    - id: da-awesome-repos
+      title: "Awesome GitHub Repos"
+      children:
+        - id: awesome-datascience-repo
+          title: "awesome-datascience (academic) — 27k+ stars"
+          summary: "Curated catalog of data science resources: courses, books, tools, datasets, podcasts. The reference index for discovering DA/DS learning materials."
+          resources:
+            - "GitHub: github.com/academic/awesome-datascience (27k+ stars)"
+        - id: data-engineering-roadmap
+          title: "data-engineer-roadmap (datastacktv)"
+          summary: "Visual roadmap of skills/tools to become a Data Engineer — useful for Data Analysts who want to understand the upstream data pipeline (relevant for cross-functional interview questions)."
+          resources:
+            - "GitHub: github.com/datastacktv/data-engineer-roadmap"
+        - id: dataset-collections
+          title: "awesome-public-datasets"
+          summary: "Curated list of free public datasets organized by topic — endless source of practice projects for your DA portfolio."
+          resources:
+            - "GitHub: github.com/awesomedata/awesome-public-datasets"
+            - "Kaggle Datasets: kaggle.com/datasets"
+        - id: 100-days-ml
+          title: "100-Days-Of-ML-Code (Avik-Jain) — 47k+ stars"
+          summary: "Day-by-day ML learning path with code examples — pragmatic introduction to ML concepts that every Data Analyst should understand at conceptual level."
+          resources:
+            - "GitHub: github.com/Avik-Jain/100-Days-Of-ML-Code (47k+ stars)"
+        - id: sql-leetcode-repo
+          title: "LeetCode-SQL Solutions"
+          summary: "Community-maintained SQL solutions for LeetCode database problems with explanations — pair with DataLemur for comprehensive interview practice."
+          resources:
+            - "GitHub: search 'LeetCode SQL Solutions' for top community repos"
+            - "Mode SQL Tutorial: mode.com/sql-tutorial"
 
 # ============================================================
 # 5. PYTHON
@@ -1648,6 +1839,7 @@
             - "Python docs: asyncio — docs.python.org/3/library/asyncio.html"
             - "ArjanCodes YouTube: asyncio explained — youtube.com/c/ArjanCodes"
             - "Book: Using Asyncio in Python (Caleb Hattingh)"
+            - "Book: High Performance Python, 2nd Ed (Gorelick & Ozsvald) — async and concurrency chapters"
         - id: python-testing
           title: "pytest: fixtures, parametrize, mocking"
           summary: "pytest is the de facto Python testing framework — more flexible than JUnit with powerful fixtures, parametrize decorators, and plugin ecosystem. A Java dev can transfer testing intuition quickly but must learn pytest-specific idioms like conftest.py and fixture scoping."
@@ -1656,6 +1848,7 @@
             - "Real Python: Effective Python Testing With pytest — realpython.com/pytest-python-testing"
             - "Python docs: unittest.mock — docs.python.org/3/library/unittest.mock.html"
             - "Book: Python Testing with pytest (Brian Okken)"
+            - "Book: Architecture Patterns with Python (Percival & Gregory) — TDD and DDD in Python"
 
     - id: python-data-libs
       title: "Data Libraries"
@@ -1665,17 +1858,19 @@
           summary: "Pandas is the primary Python library for tabular data manipulation — analogous to SQL but in-memory and scriptable; groupby, merge, and pivot are the core operations for any data analyst work. It's the most-asked tool in DA interviews alongside SQL."
           resources:
             - "Pandas official docs: pandas.pydata.org/docs"
-            - "Kaggle: Pandas micro-course — kaggle.com/learn/pandas"
+            - "Kaggle: Pandas micro-course — kaggle.com/learn/pandas (free)"
             - "Real Python: Pandas DataFrames — realpython.com/pandas-dataframe"
-            - "Book: Python for Data Analysis (Wes McKinney, creator of Pandas)"
+            - "Book: Python for Data Analysis, 3rd Ed (Wes McKinney, creator of Pandas)"
+            - "DataCamp: Data Manipulation with Pandas course (datacamp.com)"
         - id: py-numpy
           title: "NumPy: array operations, broadcasting"
           summary: "NumPy provides fast N-dimensional array operations that underpin Pandas, scikit-learn, and virtually every ML library — broadcasting rules replace explicit loops with vectorized math. Without NumPy intuition, ML library code reads like black magic."
           resources:
             - "NumPy official docs: numpy.org/doc/stable"
-            - "Kaggle: NumPy micro-tutorial — built into Pandas course"
+            - "Kaggle: NumPy micro-tutorial — built into Pandas course (free)"
             - "Real Python: Look Ma, No For-Loops — realpython.com/numpy-array-programming"
             - "Book: Python Data Science Handbook (Jake VanderPlas) — Chapter 2"
+            - "Book: Python for Data Analysis, 3rd Ed (Wes McKinney) — Chapter 4: NumPy basics"
         - id: py-matplotlib
           title: "Matplotlib & Seaborn: visualization"
           summary: "Matplotlib is the foundational Python plotting library; Seaborn builds on top of it with statistical chart types and better defaults for exploratory data analysis. Visualization is a must-have skill for DA interviews and portfolio projects."
@@ -1700,6 +1895,7 @@
             - "Polars vs Pandas migration guide: docs.pola.rs/user-guide/migration/pandas"
             - "Real Python: Polars overview — realpython.com/polars-python"
             - "GitHub: pola-rs/polars — read the examples directory"
+            - "Kaggle: Polars tutorial notebooks — search on kaggle.com (free)"
 
     - id: python-ml
       title: "ML & AI Libraries"
@@ -1791,6 +1987,45 @@
             - "Real Python Podcast: realpython.com/podcasts/rpp"
             - "Real Python: Learning Path for Python Basics — realpython.com/learning-paths/python-basics"
 
+    - id: python-awesome-repos
+      title: "Awesome GitHub Repos"
+      children:
+        - id: awesome-python-repo
+          title: "awesome-python (vinta) — 230k+ stars"
+          summary: "Curated list of Python frameworks, libraries, and software — the canonical index for discovering quality Python tools across all domains (web, data, ML, DevOps, GUI)."
+          resources:
+            - "GitHub: github.com/vinta/awesome-python (230k+ stars)"
+            - "Mirror site: awesome-python.com"
+        - id: python-cheatsheet
+          title: "python-cheatsheet (gto76) — 38k+ stars"
+          summary: "The most comprehensive single-file Python cheatsheet covering syntax, collections, types, regex, classes, decorators, async — invaluable quick reference for Java developers."
+          resources:
+            - "GitHub: github.com/gto76/python-cheatsheet (38k+ stars)"
+        - id: full-stack-fastapi
+          title: "full-stack-fastapi-template (tiangolo) — 35k+ stars"
+          summary: "Production-ready full-stack template by FastAPI's author: backend (FastAPI + SQLModel), frontend (React + TypeScript), CI/CD, Docker. Best reference for FastAPI patterns."
+          resources:
+            - "GitHub: github.com/fastapi/full-stack-fastapi-template (35k+ stars)"
+        - id: scientific-python-lectures
+          title: "Scientific Python Lectures (jrjohansson)"
+          summary: "Comprehensive Jupyter notebooks teaching NumPy, SciPy, Matplotlib, Pandas — used in many university courses, well-structured for self-study."
+          resources:
+            - "GitHub: github.com/jrjohansson/scientific-python-lectures"
+
+    - id: python-articles
+      title: "Articles & Long-form References"
+      children:
+        - id: pep8-style
+          title: "PEP 8: Python Style Guide"
+          summary: "The official Python style guide — required reading for writing idiomatic Python. Java developers especially benefit from understanding naming conventions and import organization."
+          resources:
+            - "PEP 8: peps.python.org/pep-0008/"
+        - id: hitchhikers-guide
+          title: "The Hitchhiker's Guide to Python"
+          summary: "Best-practices Python guide covering project structure, packaging, virtualenvs, testing, deployment — community-maintained, regularly updated."
+          resources:
+            - "Site: docs.python-guide.org"
+
 # ============================================================
 # 6. AI AGENTS & LLM
 # ============================================================
@@ -1806,8 +2041,9 @@
           resources:
             - "Anthropic: Prompt Engineering Guide — docs.anthropic.com/en/docs/build-with-claude/prompt-engineering"
             - "OpenAI: Prompt Engineering — platform.openai.com/docs/guides/prompt-engineering"
-            - "DeepLearning.AI: ChatGPT Prompt Engineering for Developers (free) — deeplearning.ai"
+            - "DeepLearning.AI: ChatGPT Prompt Engineering for Developers (free) — deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers"
             - "Anthropic Prompt Library: console.anthropic.com/library"
+            - "Book: Prompt Engineering for Developers (various) — covers chain-of-thought, few-shot, structured output patterns in production"
         - id: embeddings
           title: "Embeddings: models, similarity, use cases"
           summary: "Embeddings are dense vector representations of text that capture semantic meaning — they power semantic search, RAG retrieval, recommendation, and clustering. Understanding cosine similarity, embedding dimensionality, and model choice (OpenAI ada-002 vs local alternatives) is required for building any RAG system."
@@ -1816,14 +2052,18 @@
             - "Hugging Face: Sentence Transformers docs — sbert.net/docs"
             - "DeepLearning.AI: Building Systems with the ChatGPT API (free) — covers embeddings use cases"
             - "Pinecone: What are Embeddings? — pinecone.io/learn/vector-embeddings"
+            - "Hugging Face Learn: AI Agents course (free) — huggingface.co/learn/agents-course — covers open-source LLM embeddings"
+            - "Book: Natural Language Processing with Transformers (Tunstall, von Werra, Wolf) — O'Reilly — HuggingFace ecosystem deep dive"
         - id: rag-vs-finetuning
           title: "RAG vs Fine-tuning trade-offs"
           summary: "RAG retrieves relevant context at inference time (updatable, no training cost) while fine-tuning adjusts model weights for style or domain knowledge (static, expensive) — choosing wrong wastes significant time and money. Most production use cases are solved better by RAG, so understanding the decision criteria is a critical architect-level skill."
           resources:
             - "Anthropic: RAG vs Fine-tuning — docs.anthropic.com/en/docs/build-with-claude/rag"
             - "Blog: Patterns for Building LLM Apps (Chip Huyen) — huyenchip.com"
-            - "DeepLearning.AI: Building and Evaluating Advanced RAG (free)"
-            - "Book: AI Engineering (Chip Huyen, 2025) — Chapter on training vs prompting strategies"
+            - "DeepLearning.AI: Building and Evaluating Advanced RAG (free) — deeplearning.ai/short-courses/building-evaluating-advanced-rag"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — Chapter on training vs prompting strategies; definitive modern reference"
+            - "Book: Designing Machine Learning Systems (Chip Huyen) — O'Reilly — ML systems design context for RAG vs fine-tuning decisions"
+            - "Book: Building LLM Powered Applications (Valentina Alto) — Packt — LLM fundamentals and RAG patterns"
         - id: tokenization
           title: "Tokenization & context window management"
           summary: "Tokens are the unit of LLM billing and context limits — a misunderstanding of tokenization leads to truncated prompts, hallucinations, and unexpected costs. Managing context windows (what to include, summarization strategies, sliding windows) is critical for production agents that process long documents."
@@ -1832,6 +2072,7 @@
             - "Anthropic: Model context window docs — docs.anthropic.com/en/docs/about-claude/models"
             - "Real Python: Tokenization with tiktoken — search realpython.com"
             - "Blog: LLM Token Counting and Cost Estimation — cookbook.openai.com"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — covers context window management strategies in production systems"
 
     - id: agent-architectures
       title: "Agent Architectures"
@@ -1843,7 +2084,9 @@
             - "Original ReAct paper: arxiv.org/abs/2210.03629"
             - "LangChain: ReAct agent implementation — python.langchain.com/docs/modules/agents/agent_types/react"
             - "Anthropic: Tool use and ReAct patterns — docs.anthropic.com/en/docs/build-with-claude/tool-use"
-            - "DeepLearning.AI: AI Agents in LangGraph — deeplearning.ai (ReAct module)"
+            - "DeepLearning.AI: AI Agents in LangGraph (free) — deeplearning.ai/short-courses/ai-agents-in-langgraph (ReAct module)"
+            - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — structured deep dive on ReAct and agent loops"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — agent architecture chapter"
         - id: plan-execute
           title: "Plan-and-Execute pattern"
           summary: "Plan-and-Execute separates planning (generate a complete task plan) from execution (carry it out step by step), enabling better long-horizon task completion and easier debugging of where agents fail. It's the right architecture for complex multi-step tasks like automated code review or report generation."
@@ -1851,14 +2094,18 @@
             - "LangGraph: Plan-and-Execute tutorial — github.com/langchain-ai/langgraph/blob/main/examples/plan-and-execute"
             - "Blog: Plan-and-Execute Agents (LangChain blog) — blog.langchain.dev"
             - "OpenAI Cookbook: Planning agents — github.com/openai/openai-cookbook"
+            - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — includes Plan-and-Execute pattern"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — agent architecture and task decomposition strategies"
         - id: multi-agent
           title: "Multi-agent orchestration"
           summary: "Multi-agent systems decompose complex tasks across specialized agents (planner, researcher, critic, executor) — they mirror microservices architecture and are the key to building agents that exceed single-model context limits. For a backend developer, this section connects directly to distributed systems thinking."
           resources:
-            - "DeepLearning.AI: Multi AI Agent Systems with CrewAI (free) — deeplearning.ai"
+            - "DeepLearning.AI: Multi AI Agent Systems with CrewAI (free) — deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai"
             - "LangGraph: Multi-agent architectures — langchain-ai.github.io/langgraph/concepts/multi_agent"
             - "CrewAI docs: docs.crewai.com"
             - "Anthropic: Building effective agents — anthropic.com/research/building-effective-agents"
+            - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — multi-agent module"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — multi-agent systems chapter"
         - id: human-in-loop
           title: "Human-in-the-loop checkpoints"
           summary: "Human-in-the-loop (HITL) patterns allow an agent to pause and request human approval or input before taking irreversible actions — this is critical for production safety in fintech contexts (e.g., before executing a payment or sending a customer-facing message). LangGraph's interrupt mechanism is the current standard implementation."
@@ -1866,6 +2113,8 @@
             - "LangGraph: Human-in-the-loop guide — langchain-ai.github.io/langgraph/how-tos/human_in_the_loop"
             - "Anthropic: Human oversight patterns — docs.anthropic.com/en/docs/build-with-claude/overview"
             - "Blog: Designing safe AI agents — anthropic.com/research/building-effective-agents"
+            - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — HITL and interrupt module"
+            - "Anthropic Cookbook: github.com/anthropics/anthropic-cookbook — human-in-the-loop patterns with Claude"
         - id: tool-calling
           title: "Tool use / function calling patterns"
           summary: "Tool calling (function calling) lets LLMs invoke external APIs, databases, or code execution — it's the mechanism that makes agents actually useful beyond text generation. Designing good tool schemas (clear names, typed parameters, descriptions) has an outsized impact on agent reliability."
@@ -1873,7 +2122,8 @@
             - "Anthropic: Tool use documentation — docs.anthropic.com/en/docs/build-with-claude/tool-use"
             - "OpenAI: Function calling guide — platform.openai.com/docs/guides/function-calling"
             - "LangChain: Tools and toolkits — python.langchain.com/docs/modules/tools"
-            - "DeepLearning.AI: Functions, Tools and Agents with LangChain (free)"
+            - "DeepLearning.AI: Functions, Tools and Agents with LangChain (free) — deeplearning.ai/short-courses/functions-tools-agents-langchain"
+            - "Anthropic Cookbook: Tool use examples — github.com/anthropics/anthropic-cookbook/tree/main/tool_use"
 
     - id: agent-frameworks
       title: "Agent Frameworks"
@@ -1883,9 +2133,10 @@
           summary: "LangGraph models agent workflows as directed graphs with typed state — it solves the core production problems of stateful agents: checkpointing, branching, human-in-the-loop, and multi-agent coordination. It's currently the most production-ready Python agent framework and the one most tutorials are converging on."
           resources:
             - "LangGraph docs: langchain-ai.github.io/langgraph"
-            - "DeepLearning.AI: AI Agents in LangGraph (free) — deeplearning.ai"
+            - "DeepLearning.AI: AI Agents in LangGraph (free) — deeplearning.ai/short-courses/ai-agents-in-langgraph"
             - "LangGraph: Tutorials — github.com/langchain-ai/langgraph/tree/main/examples"
             - "LangChain blog: Why we built LangGraph — blog.langchain.dev"
+            - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — most structured LangGraph curriculum"
         - id: openai-agents-sdk
           title: "OpenAI Agents SDK"
           summary: "The OpenAI Agents SDK (formerly Swarm) provides a lightweight, opinionated framework for building multi-agent systems with OpenAI models — it uses handoffs between agents as the primary coordination primitive. It's simpler than LangGraph and good for OpenAI-centric stacks."
@@ -1893,29 +2144,33 @@
             - "OpenAI Agents SDK docs: openai.github.io/openai-agents-python"
             - "OpenAI Cookbook: Agents examples — github.com/openai/openai-cookbook/tree/main/examples/agents"
             - "OpenAI blog: Introducing the Agents SDK — openai.com/blog"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — compares agent SDK approaches and handoff patterns"
         - id: claude-agent-sdk
           title: "Claude Agent SDK (Anthropic)"
           summary: "Anthropic's Claude Agent SDK enables building sophisticated agentic workflows on top of Claude models with built-in tool use, computer use, and multi-step task capabilities. As a user of Claude Code (this very tool), you have direct practical experience — studying the SDK formalizes that knowledge."
           resources:
             - "Anthropic: Build with Claude — docs.anthropic.com/en/docs/agents-and-tools"
-            - "Anthropic Cookbook: github.com/anthropics/anthropic-cookbook"
+            - "Anthropic Cookbook: github.com/anthropics/anthropic-cookbook — authoritative Claude API patterns"
             - "Anthropic: Computer use guide — docs.anthropic.com/en/docs/build-with-claude/computer-use"
             - "Claude Code source patterns — study how Claude Code itself is built"
+            - "Anthropic Cookbook: MCP server examples — github.com/anthropics/anthropic-cookbook/tree/main/mcp"
         - id: spring-ai-agents
           title: "Spring AI: JVM-native agent building"
           summary: "Spring AI brings LLM integration into the Spring Boot ecosystem — chat clients, embedding models, vector stores, and tool calling all work with familiar Spring idioms like dependency injection and autoconfiguration. For a Java/Kotlin backend developer, this is the path of least resistance to production AI features in existing services."
           resources:
-            - "Spring AI docs: docs.spring.io/spring-ai/reference"
+            - "Spring AI docs: docs.spring.io/spring-ai/reference — official JVM agent building reference"
             - "Spring AI samples: github.com/spring-projects/spring-ai-examples"
             - "Spring Academy: Spring AI course — spring.academy"
             - "InfoQ: Spring AI deep-dive articles — infoq.com"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — architecture principles applicable to Spring AI integration"
         - id: crewai
           title: "CrewAI: role-based multi-agent"
           summary: "CrewAI defines agents as team members with roles, goals, and backstories — it abstracts multi-agent coordination into a crew metaphor with sequential or parallel task execution. It's popular for automating business workflows and a good practical introduction to multi-agent thinking."
           resources:
             - "CrewAI docs: docs.crewai.com"
-            - "DeepLearning.AI: Multi AI Agent Systems with CrewAI (free) — deeplearning.ai"
+            - "DeepLearning.AI: Multi AI Agent Systems with CrewAI (free) — deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai"
             - "CrewAI GitHub: github.com/crewAIInc/crewAI (study examples/)"
+            - "Book: Building LLM Powered Applications (Valentina Alto, Packt) — covers multi-agent workflow patterns"
 
     - id: mcp-protocol
       title: "MCP (Model Context Protocol)"
@@ -1928,6 +2183,7 @@
             - "MCP introduction: modelcontextprotocol.io/introduction"
             - "Anthropic blog: Introducing MCP — anthropic.com/news/model-context-protocol"
             - "MCP GitHub: github.com/modelcontextprotocol/specification"
+            - "Anthropic Cookbook: MCP server patterns — github.com/anthropics/anthropic-cookbook/tree/main/mcp"
         - id: mcp-server-building
           title: "Building custom MCP servers"
           summary: "Building a custom MCP server means exposing your own data sources and tools to Claude and other MCP clients — it's the highest-leverage AI integration skill for a backend developer who wants to make internal company systems AI-accessible. The server can be written in Python (FastMCP) or TypeScript."
@@ -1935,7 +2191,8 @@
             - "MCP: Building servers — modelcontextprotocol.io/docs/concepts/servers"
             - "FastMCP (Python SDK): github.com/jlowin/fastmcp"
             - "MCP TypeScript SDK: github.com/modelcontextprotocol/typescript-sdk"
-            - "Anthropic Cookbook: MCP examples — github.com/anthropics/anthropic-cookbook/tree/main/mcp"
+            - "Anthropic Cookbook: MCP examples — github.com/anthropics/anthropic-cookbook/tree/main/mcp — authoritative MCP server patterns"
+            - "Book: Building LLM Powered Applications (Valentina Alto, Packt) — LLM integration patterns relevant to MCP server design"
         - id: mcp-reference-servers
           title: "Study: modelcontextprotocol/servers repo"
           summary: "The official modelcontextprotocol/servers repository contains reference implementations for 20+ popular services (GitHub, Slack, PostgreSQL, filesystem, etc.) — studying their source code is the fastest way to learn MCP patterns, error handling, and best practices. It's also a practical resource pool of servers to use immediately."
@@ -1943,6 +2200,7 @@
             - "MCP servers repo: github.com/modelcontextprotocol/servers"
             - "MCP server registry: glama.ai/mcp/servers (community servers list)"
             - "Awesome MCP servers: github.com/punkpeye/awesome-mcp-servers"
+            - "Anthropic Cookbook: MCP examples — github.com/anthropics/anthropic-cookbook/tree/main/mcp"
 
     - id: rag-vectordb
       title: "RAG & Vector Databases"
@@ -1955,21 +2213,25 @@
             - "Supabase: Storing OpenAI embeddings in Postgres with pgvector — supabase.com/blog/openai-embeddings-postgres-vector"
             - "Spring AI: PgVector store docs — docs.spring.io/spring-ai/reference/api/vectordbs/pgvector.html"
             - "Timescale blog: pgvector performance guide — timescale.com/blog"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — vector store selection and RAG infrastructure chapter"
         - id: chroma-local
           title: "Chroma: local vector DB"
           summary: "Chroma is a lightweight, embeddable vector database that runs locally without any infrastructure setup — it's the easiest way to experiment with RAG pipelines before committing to a production vector store. Perfect for prototyping agent projects and portfolio demos."
           resources:
             - "Chroma docs: docs.trychroma.com"
             - "LangChain + Chroma integration — python.langchain.com/docs/integrations/vectorstores/chroma"
-            - "DeepLearning.AI: LangChain Chat with Your Data (free) — uses Chroma throughout"
+            - "DeepLearning.AI: LangChain Chat with Your Data (free) — deeplearning.ai/short-courses/langchain-chat-with-your-data — uses Chroma throughout"
+            - "Book: Building LLM Powered Applications (Valentina Alto, Packt) — hands-on RAG with vector stores"
         - id: rag-pipeline
           title: "End-to-end RAG pipeline design"
           summary: "A production RAG pipeline involves document loading, chunking, embedding, storing, retrieval, reranking, and generation — each step has multiple design choices that compound into overall quality. Understanding the full pipeline is essential to debug retrieval failures and optimize answer quality."
           resources:
             - "LangChain: RAG from scratch series — youtube.com/playlist (LangChain YouTube)"
-            - "DeepLearning.AI: Building and Evaluating Advanced RAG (free)"
+            - "DeepLearning.AI: Building and Evaluating Advanced RAG (free) — deeplearning.ai/short-courses/building-evaluating-advanced-rag"
             - "Anthropic: Contextual Retrieval blog post — anthropic.com/news/contextual-retrieval"
             - "LlamaIndex docs: RAG pipeline guide — docs.llamaindex.ai"
+            - "Book: Building LLM Powered Applications (Valentina Alto, Packt) — end-to-end RAG pipeline chapter"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — RAG evaluation and production pipeline design"
         - id: chunking-strategies
           title: "Chunking & retrieval strategies"
           summary: "How you split documents before embedding (fixed-size, semantic, recursive, sentence-window) dramatically affects retrieval quality — bad chunking is the most common cause of RAG hallucinations. Advanced strategies like HyDE (hypothetical document embeddings) and reranking with cross-encoders significantly improve precision."
@@ -1978,6 +2240,8 @@
             - "Blog: Advanced RAG Techniques (Akash Mathur) — medium.com"
             - "Anthropic: Contextual Retrieval — anthropic.com/news/contextual-retrieval"
             - "LlamaIndex: Node parsers and chunking — docs.llamaindex.ai/en/stable/module_guides/loading/node_parsers"
+            - "Hugging Face Learn: AI Agents course (free) — huggingface.co/learn/agents-course — retrieval strategies module"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — chunking and retrieval quality optimization"
 
     - id: agent-evals
       title: "Agent Evaluation & Observability"
@@ -1989,14 +2253,17 @@
             - "LangSmith docs: docs.smith.langchain.com"
             - "LangChain: Evaluating RAG pipelines with LangSmith — docs.smith.langchain.com/tutorials/rag"
             - "LangChain YouTube: LangSmith tutorials — youtube.com/@LangChain"
+            - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — includes LangSmith tracing module"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — agent evaluation and observability chapter"
         - id: agent-testing
           title: "Agent testing patterns"
           summary: "Testing agents requires a different approach than unit testing — LLM outputs are non-deterministic, so tests use semantic similarity checks, criteria-based graders, and human eval datasets rather than exact string matching. Building a test suite for your agents is what separates professional AI engineering from demo-ware."
           resources:
-            - "DeepLearning.AI: Automated Testing for LLMOps (free)"
+            - "DeepLearning.AI: Automated Testing for LLMOps (free) — deeplearning.ai/short-courses/automated-testing-llmops"
             - "Anthropic: Evals documentation — docs.anthropic.com/en/docs/build-with-claude/evals"
             - "OpenAI Evals framework: github.com/openai/evals"
             - "Blog: Testing LLM Applications (Hamel Husain) — hamel.dev"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — eval frameworks and production testing strategies"
         - id: guardrails
           title: "Safety & guardrails"
           summary: "Production AI agents need guardrails to prevent prompt injection, PII leakage, off-topic responses, and harmful outputs — especially critical in fintech where compliance and security are non-negotiable. Implementing input/output validation, content filtering, and rate limiting is a professional responsibility."
@@ -2005,6 +2272,8 @@
             - "Guardrails AI: guardrailsai.com/docs"
             - "Anthropic: Safety and responsible AI — anthropic.com/safety"
             - "Microsoft: Responsible AI guidelines — learn.microsoft.com/en-us/azure/ai-services/responsible-use-of-ai-overview"
+            - "Anthropic Cookbook: Safety patterns — github.com/anthropics/anthropic-cookbook"
+            - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — safety, guardrails, and responsible AI production chapter"
 
     - id: ai-portfolio
       title: "GitHub Portfolio Projects"
@@ -2017,6 +2286,7 @@
             - "Atlassian REST API docs: developer.atlassian.com/cloud/jira/platform/rest/v3"
             - "Reference: github.com/modelcontextprotocol/servers/tree/main/src/github (study this first)"
             - "FastMCP (Python): github.com/jlowin/fastmcp (recommended framework)"
+            - "Anthropic Cookbook: MCP server examples - github.com/anthropics/anthropic-cookbook/tree/main/mcp"
         - id: project-rag-codebase
           title: "Project: RAG over codebase (pgvector)"
           summary: "Building a RAG system that lets developers query a large codebase in natural language is a practical, portfolio-ready project that uses your existing PostgreSQL expertise alongside LLM skills. It demonstrates end-to-end AI engineering: embedding, vector search, retrieval, and generation."
@@ -2103,6 +2373,74 @@
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025)"
             - "Chip Huyen blog: huyenchip.com (free articles previewing book content)"
             - "Previous book: Designing Machine Learning Systems (Chip Huyen) — also recommended"
+
+    - id: ai-awesome-repos
+      title: "Awesome GitHub Repos"
+      children:
+        - id: anthropic-cookbook-repo
+          title: "anthropic-cookbook (Anthropic) — official"
+          summary: "Official Anthropic cookbook with Claude API examples: tool use, agents, vision, RAG, structured outputs. Updated regularly with new patterns. Best starting point for hands-on Claude development."
+          resources:
+            - "GitHub: github.com/anthropics/anthropic-cookbook"
+            - "Anthropic Courses: github.com/anthropics/courses (free skill-building)"
+        - id: openai-cookbook-repo
+          title: "openai-cookbook (OpenAI) — 70k+ stars"
+          summary: "Official OpenAI cookbook with examples for embeddings, function calling, fine-tuning, RAG, agents — applicable to many LLM patterns regardless of provider."
+          resources:
+            - "GitHub: github.com/openai/openai-cookbook (70k+ stars)"
+        - id: langchain-templates
+          title: "langchain (langchain-ai) — 110k+ stars"
+          summary: "Reference repository for the LangChain framework — explore examples/, langchain/agents/, and langgraph/ for production-ready agent patterns. The de-facto standard for building LLM apps in Python."
+          resources:
+            - "GitHub: github.com/langchain-ai/langchain (110k+ stars)"
+            - "GitHub: github.com/langchain-ai/langgraph (stateful agents)"
+        - id: awesome-llm-apps
+          title: "awesome-llm-apps (Shubhamsaboo) — 65k+ stars"
+          summary: "Collection of LLM apps with AI agents and RAG using OpenAI, Anthropic, Gemini, and open-source models — excellent for inspiration and copying patterns into your own portfolio."
+          resources:
+            - "GitHub: github.com/Shubhamsaboo/awesome-llm-apps (65k+ stars)"
+        - id: mcp-servers-repo
+          title: "modelcontextprotocol/servers — official MCP reference"
+          summary: "Reference implementations of MCP servers for filesystem, GitHub, Postgres, Slack, Google Drive — read these to understand the protocol and build your own."
+          resources:
+            - "GitHub: github.com/modelcontextprotocol/servers"
+            - "MCP spec: modelcontextprotocol.io"
+        - id: awesome-mcp-servers
+          title: "awesome-mcp-servers (punkpeye) — 30k+ stars"
+          summary: "Curated catalog of community MCP servers — discover what's been built and what gaps still exist for portfolio project ideas."
+          resources:
+            - "GitHub: github.com/punkpeye/awesome-mcp-servers (30k+ stars)"
+        - id: awesome-prompts
+          title: "awesome-chatgpt-prompts (f) — 130k+ stars"
+          summary: "Massive collection of curated prompts for various roles and tasks — useful library for prompt engineering practice and as inspiration for your own system prompts."
+          resources:
+            - "GitHub: github.com/f/awesome-chatgpt-prompts (130k+ stars)"
+        - id: papers-with-code
+          title: "Papers with Code"
+          summary: "ML papers paired with their code implementations and benchmarks — best source for understanding state-of-the-art and finding production-quality reference implementations."
+          resources:
+            - "Site: paperswithcode.com"
+
+    - id: ai-newsletters-blogs
+      title: "Newsletters & Blogs to Follow"
+      children:
+        - id: simon-willison-blog
+          title: "Simon Willison's Weblog"
+          summary: "The most influential daily blog on practical LLM/AI engineering — Simon (Datasette/Django co-creator) writes prolifically about new models, tools, prompt patterns, and pitfalls. Required reading."
+          resources:
+            - "Blog: simonwillison.net"
+            - "Newsletter: subscribe via the blog"
+        - id: anthropic-research
+          title: "Anthropic Research & Engineering Blogs"
+          summary: "Anthropic's official engineering and research blog — articles on Constitutional AI, prompt caching, agent design patterns, and case studies from real customer deployments."
+          resources:
+            - "Engineering: anthropic.com/research, anthropic.com/engineering"
+            - "Claude Code best practices: anthropic.com/engineering/claude-code-best-practices"
+        - id: latent-space-newsletter
+          title: "Latent Space (Swyx)"
+          summary: "Premier AI engineering newsletter and podcast — interviews founders/engineers from OpenAI, Anthropic, etc.; deep technical analysis of new models and frameworks."
+          resources:
+            - "Newsletter: latent.space"
 
 # ============================================================
 # 6. ENGLISH (B2 → C1/Fluent)
@@ -2401,6 +2739,42 @@
             - "SmallTalk2Me: monthly mock interviews to track CEFR progress"
             - "Style-Shift Drills: daily 5-minute exercise reformulating the same message in 3 registers"
 
+    - id: english-awesome-repos
+      title: "Awesome Repos & Communities"
+      children:
+        - id: anki-shared-decks
+          title: "Anki Shared Decks for English Advanced"
+          summary: "Community-maintained Anki decks for advanced English: Cambridge Vocabulary in Use, IELTS Advanced, technical English for IT — high-quality SRS material curated by language teachers."
+          resources:
+            - "AnkiWeb shared decks: ankiweb.net/shared/decks/english"
+            - "Recommended: 'English Vocabulary in Use Advanced' deck"
+            - "Recommended: 'AWL — Academic Word List' deck"
+        - id: english-tech-vocab-repo
+          title: "tech-vocab GitHub repos"
+          summary: "Community-curated lists of IT/tech vocabulary with Russian translations, common interview phrases, and English for code reviews."
+          resources:
+            - "Search GitHub: 'english for developers', 'tech vocabulary'"
+            - "Repo: github.com/ZuzooVn/machine-learning-for-software-engineers (mixed content but English-heavy)"
+        - id: tech-podcast-list
+          title: "Curated tech podcast lists"
+          summary: "Lists of advanced English tech podcasts ideal for B2+ listening practice — covers diverse accents and technical registers."
+          resources:
+            - "GitHub: github.com/rShetty/awesome-podcasts"
+            - "Recommended: Software Engineering Daily, The Changelog, Syntax, Lex Fridman Podcast"
+        - id: english-discord-communities
+          title: "Discord & Reddit Communities"
+          summary: "Active English-practice communities for daily exposure and live conversation — pick 1-2 to join and participate weekly."
+          resources:
+            - "Discord: 'English' server (1M+ members), 'English Speaking Practice' server"
+            - "Reddit: r/EnglishLearning (advanced threads), r/JustEnglish"
+        - id: writing-toolkit
+          title: "Writing Toolkit (free tools)"
+          summary: "Combination of free writing tools that complement Grammarly: Hemingway Editor (clarity), DeepL Write (rephrasing), Vale (style linting for technical docs)."
+          resources:
+            - "Hemingway Editor: hemingwayapp.com (free web)"
+            - "DeepL Write: deepl.com/write (free, AI rephrasing)"
+            - "Vale: vale.sh (CLI prose linter for tech docs)"
+
 # ============================================================
 # 7. AI-ASSISTED DEVELOPMENT (Cross-cutting skill)
 # ============================================================
@@ -2447,3 +2821,22 @@
         - "Blog: When AI writes insecure code — search security.googleblog.com and snyk.io/blog"
         - "Anthropic: Claude's limitations — docs.anthropic.com/en/docs/about-claude/limitations"
         - "Paper: Hallucination in Large Language Models — search arxiv.org for recent surveys"
+    - id: awesome-claude-code
+      title: "awesome-claude-code (community)"
+      summary: "Curated catalog of Claude Code workflows, slash commands, MCP servers, and skills built by the community — best place to discover patterns and steal ideas for your own configuration."
+      resources:
+        - "GitHub: search 'awesome-claude-code' for community lists"
+        - "Anthropic Skills marketplace: docs.anthropic.com/en/docs/claude-code/skills"
+    - id: awesome-cursor
+      title: "awesome-cursorrules + Cursor Directory"
+      summary: "Curated repository of .cursorrules files and Cursor-specific configurations for various languages and frameworks — saves significant tuning time when adopting Cursor."
+      resources:
+        - "GitHub: github.com/PatrickJS/awesome-cursorrules"
+        - "Cursor Directory: cursor.directory"
+    - id: ai-coding-benchmarks
+      title: "AI coding benchmarks (SWE-Bench, etc.)"
+      summary: "Tracking benchmarks (SWE-Bench, HumanEval, LiveCodeBench) helps you understand which models are actually best for which coding tasks — informed model selection saves money and time."
+      resources:
+        - "SWE-Bench: swebench.com — real GitHub issue resolution benchmark"
+        - "Aider leaderboard: aider.chat/docs/leaderboards"
+        - "LiveCodeBench: livecodebench.github.io"
