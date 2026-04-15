@@ -1,0 +1,324 @@
+- id: data-analysis
+  title: "Data Analysis / Data Science"
+  children:
+
+    - id: sql-analytics
+      title: "Advanced SQL for Analytics"
+      children:
+        - id: window-functions
+          title: "Window Functions: ROW_NUMBER, RANK, LAG/LEAD"
+          summary: "Window functions perform calculations across a set of rows related to the current row without collapsing them into groups; ROW_NUMBER, RANK, DENSE_RANK, LAG, and LEAD appear in 80%+ of advanced SQL interview questions."
+          resources:
+            - "Mode Analytics: Window Functions tutorial (mode.com/sql-tutorial/sql-window-functions)"
+            - "DataLemur: Window Functions question bank (datalemur.com)"
+            - "PostgreSQL docs: Window Functions (postgresql.org/docs/current/tutorial-window.html)"
+            - "Book: SQL for Data Analysis, Chapter 4 (Cathy Tanimura)"
+
+        - id: ctes-recursive
+          title: "CTEs (including recursive)"
+          summary: "Common Table Expressions improve query readability by naming intermediate result sets; recursive CTEs enable hierarchical data traversal (org charts, bill of materials) that would otherwise require procedural code."
+          resources:
+            - "PostgreSQL docs: WITH Queries (Common Table Expressions)"
+            - "StrataScratch: CTE practice problems (stratascratch.com)"
+            - "Mode Analytics: Advanced SQL — CTEs module"
+            - "Book: SQL for Data Analysis, Chapter 5 (Cathy Tanimura)"
+
+        - id: complex-joins
+          title: "Complex multi-table joins, self-joins"
+          summary: "Complex joins (multi-table, self-joins, lateral joins) are the foundation of analytical queries that span multiple entities; getting them wrong produces silent data duplications or missing rows that corrupt downstream metrics."
+          resources:
+            - "SQLZoo: JOIN tutorial (sqlzoo.net)"
+            - "DataLemur: JOIN-tagged questions (datalemur.com)"
+            - "Mode Analytics: SQL Joins tutorial (mode.com/sql-tutorial)"
+            - "pgexercises.com: free PostgreSQL exercises with joins"
+            - "Book: SQL for Data Analysis (Cathy Tanimura) — Chapter 3: complex join patterns"
+
+        - id: sql-interview-practice
+          title: "DataLemur + StrataScratch: daily practice"
+          summary: "DataLemur and StrataScratch aggregate real SQL questions from FAANG and Fortune 500 interviews, with company tags and difficulty ratings — daily practice on these platforms is the most direct preparation for data analyst screens."
+          resources:
+            - "DataLemur.com — free SQL + statistics interview questions (free/$10/mo premium)"
+            - "StrataScratch.com — real company SQL questions ($99/yr, 1000+ questions)"
+            - "LeetCode: SQL 50 study plan (free)"
+            - "HackerRank: SQL domain challenges (free)"
+            - "Book: SQL for Data Analysis (Cathy Tanimura) — real-world analytical SQL patterns"
+
+    - id: python-data
+      title: "Python for Data Analysis"
+      children:
+        - id: pandas
+          title: "Pandas: DataFrame, groupby, merge, pivot"
+          summary: "Pandas is the universal Python library for structured data manipulation; mastering groupby aggregations, merge strategies, and pivot tables covers 90% of real-world data wrangling tasks an analyst encounters."
+          resources:
+            - "Pandas official docs: 10 minutes to pandas (pandas.pydata.org/docs)"
+            - "Kaggle: Pandas micro-course (free, kaggle.com/learn/pandas)"
+            - "Book: Python for Data Analysis, 3rd Ed (Wes McKinney, creator of Pandas)"
+            - "DataCamp: Data Manipulation with Pandas course"
+
+        - id: numpy-basics
+          title: "NumPy: array operations"
+          summary: "NumPy provides the high-performance n-dimensional array that underpins Pandas, Scikit-learn, and TensorFlow; understanding broadcasting and vectorised operations is essential for writing efficient data pipelines."
+          resources:
+            - "NumPy official docs: NumPy quickstart (numpy.org/doc/stable/user/quickstart.html)"
+            - "Kaggle: Intro to Machine Learning — NumPy section"
+            - "CS231n: Python/NumPy tutorial (cs231n.github.io/python-numpy-tutorial)"
+            - "Book: Python for Data Analysis, Chapter 4 (Wes McKinney)"
+
+        - id: matplotlib-seaborn
+          title: "Matplotlib & Seaborn: visualization"
+          summary: "Matplotlib is the foundation for Python plotting; Seaborn adds a high-level declarative interface for statistical charts that are directly portfolio-ready, covering distributions, correlations, and categorical comparisons."
+          resources:
+            - "Matplotlib docs: tutorials (matplotlib.org/stable/tutorials)"
+            - "Seaborn docs: gallery + API (seaborn.pydata.org)"
+            - "Kaggle: Data Visualization micro-course (free)"
+            - "Book: Storytelling with Data (Cole Knaflic) — visualization principles"
+
+        - id: jupyter-notebooks
+          title: "Jupyter Notebooks workflow"
+          summary: "Jupyter Notebooks are the standard environment for exploratory data analysis and sharing reproducible research; mastering cell execution order, magic commands, and export workflows is a baseline DA skill."
+          resources:
+            - "JupyterLab docs: getting started (jupyter.org/documentation)"
+            - "Kaggle: free Jupyter kernel environment for all notebooks"
+            - "Real Python: Jupyter Notebook introduction (realpython.com)"
+            - "nbviewer.org — share and view notebooks publicly"
+
+    - id: statistics
+      title: "Statistics & Experimentation"
+      children:
+        - id: descriptive-stats
+          title: "Descriptive: mean, median, variance, percentiles"
+          summary: "Descriptive statistics are the first lens every analyst applies to a dataset; knowing when median is more meaningful than mean and how to interpret variance and percentiles prevents misleading summaries."
+          resources:
+            - "Khan Academy: Statistics & Probability (free, khanacademy.org)"
+            - "StatQuest: Statistics fundamentals playlist (YouTube, free)"
+            - "Book: Practical Statistics for Data Scientists, Ch 1-2 (Bruce & Bruce)"
+            - "DataLemur: Statistics interview questions (datalemur.com)"
+
+        - id: distributions
+          title: "Distributions: normal, binomial, CLT"
+          summary: "Understanding common probability distributions and the Central Limit Theorem is the theoretical foundation for hypothesis testing, confidence intervals, and A/B testing — all of which appear in data analyst interviews."
+          resources:
+            - "StatQuest: Probability Distributions playlist (YouTube, free)"
+            - "Khan Academy: Statistics — distributions module"
+            - "Book: Practical Statistics for Data Scientists, Ch 2 (Bruce & Bruce)"
+            - "Seeing Theory: interactive statistics visualizations (seeing-theory.brown.edu, free)"
+
+        - id: hypothesis-testing
+          title: "Hypothesis testing: t-test, chi-square, p-value"
+          summary: "Hypothesis testing is the statistical framework for making data-driven decisions; misunderstanding p-values and Type I/II errors is one of the most common mistakes analysts make, and a frequent interview topic."
+          resources:
+            - "StatQuest: Hypothesis Testing playlist (YouTube, free)"
+            - "Book: Practical Statistics for Data Scientists, Ch 3 (Bruce & Bruce)"
+            - "DataLemur: Statistics interview problems (datalemur.com)"
+            - "Khan Academy: Significance Tests module"
+
+        - id: ab-testing
+          title: "A/B Testing: power, sample size, Bonferroni"
+          summary: "A/B testing is the primary tool for product experimentation; statistical power, sample size calculation, and multiple testing correction (Bonferroni, FDR) are essential to run experiments that aren't underpowered or p-hacked."
+          resources:
+            - "Evan Miller: A/B Testing sample size calculator (evanmiller.org)"
+            - "Udacity: A/B Testing course by Google (free, YouTube/Udacity)"
+            - "Book: Trustworthy Online Controlled Experiments (Kohavi, Tang, Xu)"
+            - "Optimizely: Stats Engine white paper (free)"
+
+        - id: correlation-causation
+          title: "Correlation vs Causation"
+          summary: "Confounding variables and Simpson's paradox make correlation analysis misleading without causal reasoning; every product analyst needs this foundation to avoid presenting spurious insights to stakeholders."
+          resources:
+            - "Spurious Correlations: tylervigen.com — memorable examples"
+            - "Book: The Book of Why (Judea Pearl & Dana Mackenzie)"
+            - "StatQuest: Correlation vs Causation video (YouTube)"
+            - "Coursera: A Crash Course in Causality (UPenn, free audit)"
+
+    - id: visualization-tools
+      title: "BI & Visualization"
+      children:
+        - id: power-bi
+          title: "Power BI (primary — 28K+ jobs)"
+          summary: "Power BI is the most in-demand BI tool in enterprise job postings; mastering DAX measures, data model relationships, and report publishing on the Power BI Service is required for most DA roles in non-tech companies."
+          resources:
+            - "Microsoft Learn: Power BI learning paths (free, learn.microsoft.com/power-bi)"
+            - "Guy in a Cube: Power BI YouTube channel (free)"
+            - "sqlbi.com: DAX guide and SQLBI courses"
+            - "Microsoft: Power BI documentation (docs.microsoft.com/power-bi)"
+            - "Book: Storytelling with Data (Cole Nussbaumer Knaflic) — visualization principles for BI reports"
+
+        - id: tableau-basics
+          title: "Tableau basics (secondary)"
+          summary: "Tableau is the second-most requested BI tool and dominates in data-heavy industries like finance and healthcare; proficiency with calculated fields, LOD expressions, and Tableau Public demonstrates analytical storytelling skills."
+          resources:
+            - "Tableau Public: free desktop version + gallery (public.tableau.com)"
+            - "Tableau Training: free e-learning (training.tableau.com)"
+            - "YouTube: Andy Kriebel — Makeover Monday tutorials"
+            - "Book: Storytelling with Data (Cole Knaflic) — applicable to Tableau"
+
+    - id: ml-basics
+      title: "ML Basics (DA-level)"
+      children:
+        - id: regression-classification
+          title: "Regression vs Classification concepts"
+          summary: "Understanding regression (predicting continuous values) and classification (predicting categories) at a conceptual level allows analysts to collaborate with data scientists, interpret model outputs, and identify when ML adds value."
+          resources:
+            - "StatQuest: Machine Learning playlist (YouTube, free)"
+            - "Kaggle: Intro to Machine Learning micro-course (free)"
+            - "Book: An Introduction to Statistical Learning (James et al., free PDF at statlearning.com)"
+            - "Coursera: Machine Learning Specialization (Andrew Ng)"
+
+        - id: overfitting-crossval
+          title: "Overfitting, cross-validation"
+          summary: "Overfitting (model memorises training data) and cross-validation (robust model evaluation) are fundamental ML concepts that determine whether a model will generalise; analysts need these to critically evaluate model quality claims."
+          resources:
+            - "StatQuest: Bias and Variance playlist (YouTube, free)"
+            - "Scikit-learn docs: Cross-validation guide (scikit-learn.org)"
+            - "Kaggle: Intermediate Machine Learning — Overfitting module"
+            - "Book: Practical Statistics for Data Scientists, Ch 6 (Bruce & Bruce)"
+
+        - id: genai-awareness
+          title: "GenAI/LLM: conceptual awareness for analysts"
+          summary: "Data analysts increasingly use LLMs for text analysis, report generation, and code assistance; understanding tokenisation, context windows, hallucination risks, and prompt engineering makes analysts 10x more productive with these tools."
+          resources:
+            - "Anthropic: Claude prompt engineering guide (docs.anthropic.com)"
+            - "OpenAI: ChatGPT for Data Analysis guide (openai.com)"
+            - "DeepLearning.AI: ChatGPT Prompt Engineering for Developers (free, short course)"
+            - "Ethan Mollick: One Useful Thing newsletter (substack) — practical AI for professionals"
+
+    - id: da-interview-prep
+      title: "DA Interview Prep"
+      children:
+        - id: product-analytics-cases
+          title: "Product analytics cases (DAU drop investigation)"
+          summary: "Product case interviews test structured diagnostic reasoning — decomposing a metric drop into hypotheses (seasonality, bug, feature change, external) using data; this is the primary interview format at tech companies like Meta and Airbnb."
+          resources:
+            - "Book: Decode and Conquer (Lewis Lin) — case framework"
+            - "DataMetis: DAU drop framework (datametis.com)"
+            - "YouTube: Emma Ding — Product Analytics Case Studies"
+            - "Exponent: Product Analytics Interview prep (tryexponent.com)"
+
+        - id: take-home-project
+          title: "Kaggle: EDA portfolio project"
+          summary: "A polished Kaggle EDA notebook demonstrates end-to-end analytical thinking, data cleaning, visualisation, and insight communication — a concrete portfolio artifact that differentiates candidates without prior job experience."
+          resources:
+            - "Kaggle.com: Datasets + Notebooks for EDA"
+            - "Kaggle: EDA competitions (kaggle.com/competitions)"
+            - "GitHub Pages: host your EDA project publicly"
+            - "Towards Data Science: EDA tutorial articles (towardsdatascience.com)"
+
+        - id: behavioral-star
+          title: "STAR-format behavioral answers"
+          summary: "Behavioral questions (Tell me about a time you…) are evaluated using the STAR framework (Situation, Task, Action, Result); prepared STAR stories that quantify impact distinguish senior candidates from junior ones."
+          resources:
+            - "LeetCode Discuss: behavioral question bank"
+            - "Exponent: Data Analyst behavioral interview guide"
+            - "Book: Cracking the PM Interview — STAR chapter (applicable to analysts)"
+            - "Pramp: free behavioral mock interviews (pramp.com)"
+
+    - id: da-practice
+      title: "Hands-on Practice"
+      children:
+        - id: datalemur
+          title: "DataLemur: daily SQL + stats questions"
+          summary: "DataLemur focuses specifically on the SQL and statistics questions asked by tech companies, with explanations written by ex-FAANG data scientists — the highest signal-to-noise ratio SQL prep resource."
+          resources:
+            - "DataLemur.com — free daily SQL + statistics problems (free/$10/mo premium)"
+            - "DataLemur: SQL Question Guide blog (datalemur.com/blog)"
+
+        - id: stratascratch
+          title: "StrataScratch: real FAANG analyst questions"
+          summary: "StrataScratch aggregates actual SQL and Python questions tagged by company and role, enabling targeted preparation for specific employers and exposing you to the exact complexity level used in real screens."
+          resources:
+            - "StrataScratch.com — company-tagged SQL & Python questions ($99/yr, 1000+ questions)"
+            - "StrataScratch: Data Analytics Interview Prep guide"
+
+        - id: mode-analytics
+          title: "Mode Analytics: SQL tutorial + sandbox"
+          summary: "Mode provides a real SQL editor with sample datasets, letting you practice analytical queries in an environment that mimics a professional BI tool workflow rather than a coding contest interface."
+          resources:
+            - "Mode Analytics: SQL Tutorial (mode.com/sql-tutorial) — free, beginner to advanced"
+            - "Mode Analytics: free sandbox workspace for running real queries"
+            - "Book: SQL for Data Analysis (Cathy Tanimura) — advanced SQL companion"
+
+        - id: kaggle-eda
+          title: "Kaggle: EDA competitions + micro-courses"
+          summary: "Kaggle micro-courses are the fastest free path to practical data analysis skills, and competition notebooks expose you to professional-level EDA patterns from thousands of real data scientists."
+          resources:
+            - "Kaggle Learn: micro-courses (kaggle.com/learn, free) — Pandas, Seaborn, ML"
+            - "Kaggle: Getting Started competitions (titanic, house prices)"
+            - "Kaggle: Notebooks gallery — browse public EDA examples"
+            - "Book: Python for Data Analysis, 3rd Ed (Wes McKinney) — Pandas and NumPy companion"
+
+        - id: power-bi-learn
+          title: "Microsoft Learn: Power BI (free, official)"
+          summary: "Microsoft's official Power BI learning paths cover everything from first report to enterprise-level data model design, with hands-on exercises and free certification exam preparation."
+          resources:
+            - "Microsoft Learn: Power BI (learn.microsoft.com/en-us/training/powerplatform/power-bi)"
+            - "Microsoft: PL-300 certification learning path (free)"
+            - "Power BI Community: forums + sample reports (community.powerbi.com)"
+            - "Book: Storytelling with Data (Cole Nussbaumer Knaflic) — visual communication principles"
+
+    - id: da-books
+      title: "Books & Courses"
+      children:
+        - id: book-practical-stats
+          title: "Book: Practical Statistics for Data Scientists"
+          summary: "This book bridges classical statistics and machine learning with Python/R examples, covering exactly the concepts that appear in data analyst and data science interviews at a practical depth, not a textbook depth."
+          resources:
+            - "O'Reilly: Practical Statistics for Data Scientists, 2nd Ed (Bruce, Bruce & Gedeck)"
+            - "GitHub: gedeck/practical-statistics-for-data-scientists — code examples (free)"
+
+        - id: book-storytelling-data
+          title: "Book: Storytelling with Data (Cole Knaflic)"
+          summary: "Data storytelling is the skill that turns correct analysis into business impact; Knaflic's book teaches choosing the right chart, removing clutter, and guiding audience attention — skills that separate analysts from reporting monkeys."
+          resources:
+            - "Amazon: Storytelling with Data (Cole Nussbaumer Knaflic)"
+            - "StorytellingWithData.com — free blog + SWD challenge exercises"
+            - "YouTube: Cole Knaflic — Storytelling with Data talks"
+
+        - id: book-sql-analysis
+          title: "Book: SQL for Data Analysis (Cathy Tanimura)"
+          summary: "This O'Reilly book focuses specifically on the analytical SQL patterns used in real business settings — cohort analysis, funnel metrics, time series — going well beyond what most SQL tutorials cover."
+          resources:
+            - "O'Reilly: SQL for Data Analysis (Cathy Tanimura)"
+            - "GitHub: cathytanimura/sql_book — code examples (free)"
+
+        - id: google-da-cert
+          title: "Coursera: Google Data Analytics Certificate"
+          summary: "Google's 8-course certificate provides a structured end-to-end introduction to data analytics covering spreadsheets, SQL, R, and Tableau, making it ideal for career changers who need a credentialed foundation recognised by recruiters."
+          resources:
+            - "Coursera: Google Data Analytics Professional Certificate (coursera.org)"
+            - "Google Career Certificates: employer recognition info (grow.google/certificates)"
+            - "Reddit: r/dataanalysis — learner experiences and tips"
+
+    - id: da-awesome-repos
+      title: "Awesome GitHub Repos"
+      children:
+        - id: awesome-datascience-repo
+          title: "awesome-datascience (academic) — 27k+ stars"
+          summary: "Curated catalog of data science resources: courses, books, tools, datasets, podcasts. The reference index for discovering DA/DS learning materials."
+          resources:
+            - "GitHub: github.com/academic/awesome-datascience (27k+ stars)"
+        - id: data-engineering-roadmap
+          title: "data-engineer-roadmap (datastacktv)"
+          summary: "Visual roadmap of skills/tools to become a Data Engineer — useful for Data Analysts who want to understand the upstream data pipeline (relevant for cross-functional interview questions)."
+          resources:
+            - "GitHub: github.com/datastacktv/data-engineer-roadmap"
+        - id: dataset-collections
+          title: "awesome-public-datasets"
+          summary: "Curated list of free public datasets organized by topic — endless source of practice projects for your DA portfolio."
+          resources:
+            - "GitHub: github.com/awesomedata/awesome-public-datasets"
+            - "Kaggle Datasets: kaggle.com/datasets"
+        - id: 100-days-ml
+          title: "100-Days-Of-ML-Code (Avik-Jain) — 47k+ stars"
+          summary: "Day-by-day ML learning path with code examples — pragmatic introduction to ML concepts that every Data Analyst should understand at conceptual level."
+          resources:
+            - "GitHub: github.com/Avik-Jain/100-Days-Of-ML-Code (47k+ stars)"
+        - id: sql-leetcode-repo
+          title: "LeetCode-SQL Solutions"
+          summary: "Community-maintained SQL solutions for LeetCode database problems with explanations — pair with DataLemur for comprehensive interview practice."
+          resources:
+            - "GitHub: search 'LeetCode SQL Solutions' for top community repos"
+            - "Mode SQL Tutorial: mode.com/sql-tutorial"
+
+# ============================================================
+# 5. PYTHON
+# ============================================================
