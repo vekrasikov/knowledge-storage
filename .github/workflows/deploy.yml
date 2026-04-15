@@ -32,7 +32,10 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: touch dist/.nojekyll
-      - run: echo "y" | npx staticrypt dist/index.html -p "${{ secrets.SITE_PASSWORD }}" -d dist --remember 30
+      - name: Encrypt index.html with staticrypt
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.SITE_PASSWORD }}
+        run: npx staticrypt dist/index.html -d dist --remember 30 --short --salt e8fc710ba097a414d40f981b3d3d46f8
       - run: rm -f dist/.staticrypt.json
 
       - uses: actions/configure-pages@v5
