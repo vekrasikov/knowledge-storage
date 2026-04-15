@@ -35,7 +35,19 @@ jobs:
       - name: Encrypt index.html with staticrypt
         env:
           STATICRYPT_PASSWORD: ${{ secrets.SITE_PASSWORD }}
-        run: npx staticrypt dist/index.html -d dist --remember 30 --short --salt e8fc710ba097a414d40f981b3d3d46f8
+        run: |
+          set -e
+          if [ -z "$STATICRYPT_PASSWORD" ]; then
+            echo "ERROR: SITE_PASSWORD secret is not set"
+            exit 1
+          fi
+          npx staticrypt dist/index.html -d dist --remember 30 --short --salt e8fc710ba097a414d40f981b3d3d46f8
+          if ! grep -q "staticrypt-html" dist/index.html; then
+            echo "ERROR: staticrypt did not encrypt index.html"
+            head -10 dist/index.html
+            exit 1
+          fi
+          echo "✓ index.html encrypted successfully"
       - run: rm -f dist/.staticrypt.json
 
       - uses: actions/configure-pages@v5
