@@ -1,0 +1,287 @@
+- id: devops
+  title: "DevOps & Cloud"
+  children:
+
+    - id: kubernetes-dev
+      title: "Kubernetes for Developers"
+      children:
+        - id: k8s-pods-deployments
+          title: "Pods, Deployments, Services"
+          summary: "Pods, Deployments, and Services are the core primitives every developer must understand to ship code to Kubernetes; misunderstanding their lifecycle leads to flaky rollouts and networking bugs in production."
+          resources:
+            - "Kubernetes.io: official Concepts documentation (kubernetes.io/docs/concepts)"
+            - "KillerCoda: Kubernetes interactive labs (killercoda.com)"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Luksa)"
+            - "KodeKloud: Kubernetes for Developers path (kodekloud.com)"
+
+        - id: k8s-probes
+          title: "Liveness & Readiness probes"
+          summary: "Probes tell Kubernetes whether a container is alive and ready to receive traffic; misconfigured probes cause cascading restarts or premature traffic routing to cold pods during rolling deployments."
+          resources:
+            - "Kubernetes.io: Configure Liveness, Readiness and Startup Probes (official docs)"
+            - "YouTube: TechWorld with Nana — K8s probes explained"
+            - "Learnk8s.io: Probe best practices article (learnk8s.io)"
+            - "KillerCoda: probes lab (killercoda.com)"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Lukša) — Chapter 6: probes and lifecycle"
+
+        - id: k8s-resources
+          title: "Resource requests/limits, HPA"
+          summary: "Resource requests and limits prevent noisy-neighbor CPU starvation; HPA autoscales pods based on metrics, which is the primary mechanism for handling traffic spikes without over-provisioning."
+          resources:
+            - "Kubernetes.io: Resource Management for Pods (official docs)"
+            - "Learnk8s.io: Resource requests and limits deep dive"
+            - "Kubernetes.io: Horizontal Pod Autoscaler walkthrough"
+            - "Robusta.dev: HPA and VPA comparison blog post"
+            - "KillerCoda: Resource limits & HPA lab (killercoda.com)"
+            - "KodeKloud: Kubernetes for Developers — resource management module (kodekloud.com)"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Lukša) — Chapter 14: auto-scaling"
+
+        - id: k8s-configmaps-secrets
+          title: "ConfigMaps, Secrets, Helm basics"
+          summary: "ConfigMaps and Secrets externalise configuration from container images; Helm packages Kubernetes manifests into reusable charts, which is the de-facto standard for deploying applications in production clusters."
+          resources:
+            - "Kubernetes.io: ConfigMaps and Secrets docs"
+            - "Helm.sh: Getting Started guide (helm.sh/docs/intro/quickstart)"
+            - "Artifact Hub: public Helm chart registry (artifacthub.io)"
+            - "KodeKloud: Helm for Beginners course (kodekloud.com)"
+            - "KillerCoda: ConfigMaps & Secrets lab (killercoda.com)"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Lukša) — Chapter 9: ConfigMaps and Secrets"
+
+        - id: k8s-ckad
+          title: "CKAD certification prep"
+          summary: "The CNCF Certified Kubernetes Application Developer exam validates practical K8s skills under time pressure; passing it signals competence to hiring teams and provides a structured learning path for dev-focused K8s usage."
+          resources:
+            - "CNCF: CKAD exam curriculum (training.linuxfoundation.org)"
+            - "GitHub: dgkanatsios/CKAD-exercises — free practice problems"
+            - "KillerCoda: CKAD scenarios (killercoda.com)"
+            - "KodeKloud: CKAD with Tests course (kodekloud.com)"
+
+    - id: observability
+      title: "Observability"
+      children:
+        - id: otel
+          title: "OpenTelemetry: spans, metrics, logs"
+          summary: "OpenTelemetry is the vendor-neutral CNCF standard for instrumenting services; mastering it means you can wire any Java/Kotlin app into Jaeger, Grafana, or Datadog without framework lock-in."
+          resources:
+            - "OpenTelemetry docs: Java instrumentation guide (opentelemetry.io/docs/languages/java)"
+            - "CNCF: OpenTelemetry 101 talk (YouTube)"
+            - "Grafana Labs: OpenTelemetry + Grafana integration guide (grafana.com/tutorials)"
+            - "Book: Observability Engineering (Charity Majors, Liz Fong-Jones, George Miranda)"
+
+        - id: grafana-stack
+          title: "Grafana Stack: Loki + Tempo + Mimir"
+          summary: "The Grafana LGTM stack (Loki for logs, Grafana for dashboards, Tempo for traces, Mimir for metrics) provides a cost-effective open-source alternative to Datadog for full-stack observability."
+          resources:
+            - "Grafana Labs: official tutorials (grafana.com/tutorials)"
+            - "Grafana Play: live demo environment (play.grafana.org)"
+            - "YouTube: Grafana channel — LGTM stack deep dives"
+            - "GitHub: grafana/tempo and grafana/loki — documentation repos"
+            - "Book: Observability Engineering (Charity Majors, Liz Fong-Jones, George Miranda)"
+
+        - id: prometheus-alerting
+          title: "Prometheus & alerting (SLI/SLO)"
+          summary: "Prometheus is the dominant cloud-native metrics system; defining SLIs (indicators) and SLOs (objectives) on top of Prometheus metrics transforms reactive firefighting into proactive reliability engineering."
+          resources:
+            - "Prometheus.io: official docs and querying guide"
+            - "Google SRE Book: SLI/SLO chapters (free, sre.google/sre-book)"
+            - "Awesome Prometheus alerts: github.com/samber/awesome-prometheus-alerts"
+            - "YouTube: TechWorld with Nana — Prometheus & Grafana tutorial"
+            - "Book: Observability Engineering (Charity Majors, Liz Fong-Jones, George Miranda) — SLI/SLO chapter"
+
+        - id: structured-logging
+          title: "Structured logging patterns"
+          summary: "Structured logs (JSON with consistent fields) transform logs from text blobs into queryable data; adding trace IDs, correlation IDs, and business context fields makes production debugging orders of magnitude faster."
+          resources:
+            - "Logback docs: JSON encoder configuration (logback.qos.ch)"
+            - "Elastic: Structured Logging best practices guide (elastic.co/blog)"
+            - "12factor.net: Logs as event streams (12factor.net/logs)"
+            - "OpenTelemetry: log correlation with traces guide"
+            - "Book: Observability Engineering (Charity Majors, Liz Fong-Jones, George Miranda) — structured logging chapter"
+
+    - id: ci-cd
+      title: "CI/CD"
+      children:
+        - id: github-actions
+          title: "GitHub Actions: pipelines, matrix builds"
+          summary: "GitHub Actions is the most widely used CI/CD platform for open-source and enterprise projects; mastering matrix builds, reusable workflows, and secrets management covers the majority of real-world pipeline needs."
+          resources:
+            - "GitHub Actions official docs (docs.github.com/actions)"
+            - "GitHub: actions/starter-workflows — official template library"
+            - "YouTube: TechWorld with Nana — GitHub Actions full tutorial"
+            - "Udemy: GitHub Actions — The Complete Guide (Maximilian Schwarzmüller)"
+            - "GitHub Skills: Hello GitHub Actions course (skills.github.com, free)"
+            - "Book: The DevOps Handbook (Kim, Humble, Debois, Willis) — CI/CD pipeline principles"
+
+        - id: docker-multi-stage
+          title: "Docker: multi-stage builds, security scanning"
+          summary: "Multi-stage builds reduce production image size by 5-10x by discarding build tools; combining them with vulnerability scanning (Trivy, Snyk) and non-root user configuration is the baseline for production-grade container security."
+          resources:
+            - "Docker docs: Multi-stage builds best practices (docs.docker.com)"
+            - "Trivy docs: container image scanning (trivy.dev/docs)"
+            - "Snyk Container: scanning guide (snyk.io/learn/container-security)"
+            - "Hadolint: Dockerfile linter (github.com/hadolint/hadolint)"
+            - "Book: Docker Deep Dive (Nigel Poulton) — multi-stage builds and security"
+
+        - id: argocd
+          title: "ArgoCD: GitOps deployments"
+          summary: "ArgoCD implements GitOps by treating Git as the single source of truth for cluster state, providing declarative deployments with automatic drift detection and instant rollback — the standard for Kubernetes delivery pipelines."
+          resources:
+            - "ArgoCD docs: Getting Started (argo-cd.readthedocs.io)"
+            - "YouTube: TechWorld with Nana — ArgoCD full tutorial"
+            - "CNCF: GitOps Principles (opengitops.dev)"
+            - "Codefresh: GitOps vs CI/CD comparison article"
+            - "Book: The DevOps Handbook (Kim, Humble, Debois, Willis) — deployment pipeline patterns"
+
+    - id: security
+      title: "Security"
+      children:
+        - id: owasp-top10
+          title: "OWASP Top 10 & API Security Top 10"
+          summary: "OWASP Top 10 catalogues the most critical web application risks; the API Security Top 10 adds API-specific attack vectors like broken object-level authorization that are endemic in microservices architectures."
+          resources:
+            - "OWASP Top 10: owasp.org/Top10"
+            - "OWASP API Security Top 10: owasp.org/www-project-api-security"
+            - "PortSwigger Web Security Academy: free labs for each OWASP category (portswigger.net/web-security)"
+            - "Book: The Web Application Hacker's Handbook (Stuttard & Pinto)"
+
+        - id: supply-chain
+          title: "Supply Chain: SBOM, Sigstore, Renovate"
+          summary: "Software supply chain attacks (Log4Shell, SolarWinds) made SBOM generation, artifact signing with Sigstore, and automated dependency updates with Renovate essential practices for any serious engineering organisation."
+          resources:
+            - "SLSA framework: slsa.dev — supply chain levels for software artifacts"
+            - "Sigstore docs: signing and verification (sigstore.dev/docs)"
+            - "Renovate docs: dependency update automation (docs.renovatebot.com)"
+            - "CISA: Software Bill of Materials guide (cisa.gov/sbom)"
+
+        - id: jwt-oauth2-deep
+          title: "JWT/OAuth2/OIDC deep dive (token rotation, PKCE)"
+          summary: "JWT attacks (algorithm confusion, none alg) and OAuth2 flows (PKCE for SPAs, device flow, token introspection) are standard security interview topics and real-world vulnerabilities when misconfigured."
+          resources:
+            - "auth0.com: JWT Introduction (jwt.io/introduction)"
+            - "OAuth2 RFC 6749 and RFC 7636 (PKCE) — official specs"
+            - "PortSwigger: JWT attacks lab (portswigger.net/web-security/jwt)"
+            - "Book: OAuth 2 in Action (Justin Richer & Antonio Sanso)"
+
+    - id: troubleshooting
+      title: "Troubleshooting & Incidents"
+      children:
+        - id: incident-response
+          title: "Incident response: detect → mitigate → diagnose → RCA"
+          summary: "Structured incident response (detection, mitigation, root cause analysis, blameless postmortem) is what separates reliable organisations from chaotic ones; knowing the playbook is expected at senior/staff level."
+          resources:
+            - "Google SRE Book: Incident Management chapter (free, sre.google/sre-book)"
+            - "PagerDuty Incident Response guide (response.pagerduty.com, free)"
+            - "Blameless: SRE and postmortem templates (blameless.com/blog)"
+            - "Book: The Site Reliability Workbook (Beyer et al., free at sre.google)"
+
+        - id: jfr-production
+          title: "JFR/JMC for production troubleshooting"
+          summary: "Java Flight Recorder captures low-overhead JVM diagnostics in production; Java Mission Control visualises allocation hotspots, lock contention, and GC pressure that are invisible in application metrics."
+          resources:
+            - "Oracle JFR documentation (docs.oracle.com/en/java/javase/21/jfapi)"
+            - "JDK Mission Control downloads & guides (adoptium.net)"
+            - "Async Profiler GitHub: async-profiler/async-profiler — flame graphs"
+            - "Nitsan Wakart (JVM perf blog): psy-lob-saw.blogspot.com"
+
+        - id: troubleshooting-cases
+          title: "Cases: OOM, high GC, deadlocks, slow queries"
+          summary: "Diagnosing OOM errors, GC pressure, thread deadlocks, and slow queries are the four most common production JVM incidents; each has a distinct investigation workflow that must be practiced before an incident, not during one."
+          resources:
+            - "Netflix Tech Blog: JVM performance articles"
+            - "Baeldung: Guide to Java OOM errors (baeldung.com)"
+            - "pganalyze.com: EXPLAIN ANALYZE guide for slow query diagnosis"
+            - "Book: Java Performance (Scott Oaks, O'Reilly)"
+
+    - id: devops-practice
+      title: "Hands-on Practice"
+      children:
+        - id: killercoda-k8s
+          title: "KillerCoda: interactive K8s labs (free)"
+          summary: "KillerCoda provides browser-based Kubernetes environments with guided scenarios, eliminating the need for a local cluster setup and making it the fastest way to get hands-on K8s practice."
+          resources:
+            - "KillerCoda.com — free interactive K8s and Linux scenarios"
+            - "KillerCoda: CKAD scenarios collection"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Lukša) — reference while doing labs"
+
+        - id: kodekloud-devops
+          title: "KodeKloud: DevOps learning paths + labs"
+          summary: "KodeKloud combines video lectures with integrated browser-based labs for Kubernetes, Docker, Helm, Ansible, and Terraform, making it the most complete hands-on DevOps learning platform."
+          resources:
+            - "KodeKloud.com — DevOps Engineer learning path ($120/yr subscription)"
+            - "KodeKloud Engineer: free hands-on tasks (engineer.kodekloud.com)"
+            - "Book: The DevOps Handbook (Kim, Humble, Debois, Willis) — culture and process reference"
+
+        - id: play-with-docker
+          title: "Play with Docker: browser-based Docker sandbox"
+          summary: "Play with Docker provides a free 4-hour multi-node Docker environment in the browser, ideal for experimenting with networking, volumes, and multi-container setups without any local installation."
+          resources:
+            - "labs.play-with-docker.com — free 4-hour sandbox"
+            - "Docker docs: Play with Docker guided tutorials"
+            - "Book: Docker Deep Dive (Nigel Poulton) — concise companion while practising"
+
+        - id: github-actions-workshop
+          title: "GitHub: Actions Starter Workflows (hands-on)"
+          summary: "Working through GitHub's official starter workflows and building custom pipelines is the most practical way to learn Actions, since you see real matrix builds, artifact caching, and environment deployments in context."
+          resources:
+            - "GitHub: actions/starter-workflows repository"
+            - "GitHub Actions official documentation (docs.github.com/actions)"
+            - "GitHub Skills: Hello GitHub Actions course (skills.github.com, free)"
+
+        - id: ckad-exercises
+          title: "CKAD Exercises (GitHub: dgkanatsios/CKAD-exercises)"
+          summary: "The dgkanatsios CKAD exercise repo is the most popular free resource for exam preparation, covering all curriculum domains with imperative kubectl commands and declarative YAML solutions."
+          resources:
+            - "GitHub: dgkanatsios/CKAD-exercises (free)"
+            - "KillerCoda: CKAD practice scenarios"
+            - "CNCF: official CKAD exam curriculum page"
+            - "Book: Kubernetes in Action, 2nd Ed (Marko Lukša) — comprehensive CKAD reference"
+
+    - id: devops-awesome-repos
+      title: "Awesome GitHub Repos"
+      children:
+        - id: kubernetes-the-hard-way
+          title: "Kubernetes The Hard Way (Kelsey Hightower) — 41k+ stars"
+          summary: "The legendary tutorial that walks you through bootstrapping a Kubernetes cluster from scratch — no scripts, no automation. Builds deep understanding of every K8s component (etcd, API server, kubelet, networking)."
+          resources:
+            - "GitHub: github.com/kelseyhightower/kubernetes-the-hard-way (41k+ stars)"
+        - id: ckad-exercises-repo
+          title: "CKAD-exercises (dgkanatsios) — 9k+ stars"
+          summary: "Practical exercises for the Certified Kubernetes Application Developer exam, organized by curriculum domain — the most-used hands-on resource for CKAD prep."
+          resources:
+            - "GitHub: github.com/dgkanatsios/CKAD-exercises (9k+ stars)"
+        - id: awesome-kubernetes-repo
+          title: "awesome-kubernetes (ramitsurana) — 15k+ stars"
+          summary: "Curated list of K8s resources: tutorials, books, tools, examples, articles. The starting point for discovering the K8s ecosystem."
+          resources:
+            - "GitHub: github.com/ramitsurana/awesome-kubernetes (15k+ stars)"
+        - id: awesome-docker-repo
+          title: "awesome-docker (veggiemonk) — 30k+ stars"
+          summary: "Curated Docker resources, projects, and tools — references for container best practices, security scanning, multi-stage builds, and orchestration."
+          resources:
+            - "GitHub: github.com/veggiemonk/awesome-docker (30k+ stars)"
+        - id: awesome-actions-repo
+          title: "awesome-actions (sdras) — 25k+ stars"
+          summary: "Curated GitHub Actions workflows and reusable actions — saves hours when building CI/CD pipelines by reusing community-vetted patterns."
+          resources:
+            - "GitHub: github.com/sdras/awesome-actions (25k+ stars)"
+        - id: opentelemetry-demo
+          title: "OpenTelemetry Demo Application"
+          summary: "Reference microservices architecture instrumented with OpenTelemetry across multiple languages — best way to see end-to-end tracing, metrics, logs in practice."
+          resources:
+            - "GitHub: github.com/open-telemetry/opentelemetry-demo"
+            - "Includes: Jaeger, Prometheus, Grafana, OTel Collector"
+        - id: sre-google-book
+          title: "Google SRE Books (free online)"
+          summary: "Google's free SRE book series — Site Reliability Engineering, The SRE Workbook, Building Secure & Reliable Systems. Industry-standard reference for production operations and incident management."
+          resources:
+            - "Free online: sre.google/books/"
+        - id: 12-factor-app
+          title: "The Twelve-Factor App"
+          summary: "Methodology for building SaaS apps that are portable, scalable, and maintainable — foundational reading for cloud-native development. Heroku-authored, widely cited."
+          resources:
+            - "Manifesto: 12factor.net"
+            - "Heroku origin, applied across all modern PaaS"
+
+# ============================================================
+# 4. DATA ANALYSIS / DATA SCIENCE
+# ============================================================

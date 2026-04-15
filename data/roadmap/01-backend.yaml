@@ -1,0 +1,723 @@
+- id: backend
+  title: "Backend (Java/Kotlin)"
+  children:
+    - id: interview-fundamentals
+      title: "Interview Fundamentals"
+      children:
+        - id: collections-internals
+          title: "Collections Internals: HashMap, ConcurrentHashMap, LinkedHashMap"
+          summary: "Deep understanding of HashMap's bucket array, linked-list-to-tree treeification (Java 8+), ConcurrentHashMap's segment-free CAS design, and LinkedHashMap's access/insertion ordering — topics that appear in virtually every Senior Java interview."
+          resources:
+            - "Baeldung Pro: A Guide to Java HashMap (baeldung.com)"
+            - "OpenJDK source: java.util.HashMap (github.com/openjdk/jdk)"
+            - "Book: Effective Java, Items 11-12 (Joshua Bloch)"
+            - "YouTube: Nikita Lipsky — HashMap internals (JPoint conference)"
+
+        - id: generics-deep
+          title: "Generics: type erasure, wildcards, PECS principle"
+          summary: "Generics enable compile-time type safety, but type erasure means generic info is stripped at runtime — understanding this is essential for avoiding ClassCastException surprises and writing correct library code with wildcards (PECS: Producer Extends, Consumer Super)."
+          resources:
+            - "Oracle JLS §4.5 — Parameterized Types (docs.oracle.com)"
+            - "Angelika Langer: Java Generics FAQ (angelikalanger.com)"
+            - "Book: Effective Java, Items 26-33 (Joshua Bloch)"
+            - "Baeldung Pro: Wildcards in Java Generics (baeldung.com)"
+
+        - id: exceptions-patterns
+          title: "Exceptions: checked vs unchecked, try-with-resources"
+          summary: "Knowing when to use checked versus unchecked exceptions shapes API design and forces callers to handle failures; try-with-resources (AutoCloseable) eliminates resource-leak bugs that have caused production incidents at scale."
+          resources:
+            - "Book: Effective Java, Items 69-77 (Joshua Bloch)"
+            - "Baeldung Pro: Exception Handling in Java (baeldung.com)"
+            - "Oracle Tutorial: The try-with-resources Statement (docs.oracle.com)"
+            - "Exercism: Java track — error handling exercises (exercism.org/tracks/java)"
+
+        - id: string-internals
+          title: "String: immutability, String pool, StringBuilder"
+          summary: "Strings are the most frequently allocated objects in Java; understanding the String pool (interning), immutability guarantees for thread safety, and when StringBuilder/StringJoiner outperforms concatenation prevents both correctness bugs and performance regressions."
+          resources:
+            - "Baeldung Pro: Guide to Java String Pool (baeldung.com)"
+            - "OpenJDK source: java.lang.String (github.com/openjdk/jdk)"
+            - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter on String allocation"
+            - "Book: Modern Java in Action (Urma, Fusco, Mycroft) — String/streams chapter"
+
+        - id: equals-hashcode
+          title: "equals/hashCode contract, Comparable vs Comparator"
+          summary: "Violating the equals/hashCode contract causes silent data corruption in HashMap and HashSet; understanding Comparable (natural ordering) vs Comparator (external ordering) is required for correct sorting and for designing domain objects used as map keys."
+          resources:
+            - "Book: Effective Java, Items 10-14 (Joshua Bloch)"
+            - "Baeldung Pro: Java equals() and hashCode() Contracts (baeldung.com)"
+            - "Oracle Tutorial: Object Ordering (docs.oracle.com)"
+            - "Vlad Mihalcea: Why You Should Implement equals and hashCode in JPA Entities (vladmihalcea.com)"
+
+        - id: io-nio
+          title: "Java I/O & NIO: Channels, Buffers, non-blocking I/O"
+          summary: "NIO (java.nio) replaced blocking I/O streams with Channels and Buffers, enabling selector-based multiplexing that powers high-throughput network servers; understanding direct vs heap buffers and scatter/gather operations is essential for writing low-latency I/O code."
+          resources:
+            - "Oracle Tutorial: Java NIO (docs.oracle.com/javase/tutorial/essential/io/)"
+            - "Baeldung Pro: Introduction to Java NIO (baeldung.com)"
+            - "Book: Java NIO (Ron Hitchens, O'Reilly)"
+            - "Book: Java Performance (Scott Oaks, O'Reilly) — I/O and NIO performance chapter"
+
+    - id: java-modern
+      title: "Modern Java (21-25)"
+      children:
+        - id: virtual-threads
+          title: "Virtual Threads & Structured Concurrency"
+          summary: "Project Loom's virtual threads (JEP 444, GA in Java 21) allow millions of concurrent lightweight threads without OS-thread overhead, fundamentally simplifying concurrent code; Structured Concurrency (JEP 453) adds a scoped lifetime model that makes cancellation and error propagation reliable."
+          resources:
+            - "JEP 444: Virtual Threads (openjdk.org/jeps/444)"
+            - "Book: Java Concurrency in Practice (Goetz) — foundational concepts apply"
+            - "Inside Java Podcast: Episode on Project Loom (inside.java)"
+            - "Baeldung Pro: Guide to Virtual Threads in Java 21 (baeldung.com)"
+
+        - id: pattern-matching
+          title: "Pattern Matching (switch, records, sealed classes)"
+          summary: "Pattern matching for switch (JEP 441) lets you combine type checks and deconstruction in a single expression, eliminating verbose instanceof chains; combined with sealed classes it enables exhaustive case analysis that the compiler enforces, reducing runtime errors."
+          resources:
+            - "JEP 441: Pattern Matching for switch (openjdk.org/jeps/441)"
+            - "Dev.java: Pattern Matching tutorials (dev.java)"
+            - "Baeldung Pro: Pattern Matching in Java 21 (baeldung.com)"
+            - "Book: Modern Java in Action, Part III (Urma, Fusco, Mycroft)"
+
+        - id: records-sealed
+          title: "Records & Sealed Classes for Domain Modeling"
+          summary: "Records (JEP 395) provide concise, immutable data carriers with auto-generated equals/hashCode/toString, while sealed classes (JEP 409) restrict class hierarchies to a known set of subtypes — together they enable algebraic data types that make domain models expressive and safe."
+          resources:
+            - "JEP 395: Records (openjdk.org/jeps/395)"
+            - "JEP 409: Sealed Classes (openjdk.org/jeps/409)"
+            - "Baeldung Pro: Java Records (baeldung.com)"
+            - "Book: Modern Java in Action, Part IV (Urma, Fusco, Mycroft)"
+
+        - id: stream-gatherers
+          title: "Stream Gatherers API"
+          summary: "Stream Gatherers (JEP 461, preview Java 22, second preview Java 23) provide a general extension point for the Stream API — similar to custom Collectors but operating mid-pipeline — enabling stateful windowing, scanning, and sampling operations not possible with existing stream operations."
+          resources:
+            - "JEP 461: Stream Gatherers (openjdk.org/jeps/461)"
+            - "Inside Java: Stream Gatherers hands-on (inside.java)"
+            - "Baeldung Pro: Stream Gatherers in Java 22 (baeldung.com)"
+            - "Book: Modern Java in Action, Chapter 5 — Streams (Urma, Fusco, Mycroft)"
+
+        - id: foreign-function-api
+          title: "Foreign Function & Memory API"
+          summary: "The Foreign Function & Memory API (JEP 454, GA in Java 22) replaces JNI with a safe, performant way to call native libraries and manage off-heap memory with proper lifecycle control — critical for high-performance workloads like ML inference and systems integrations."
+          resources:
+            - "JEP 454: Foreign Function & Memory API (openjdk.org/jeps/454)"
+            - "Inside Java: FFM API tutorial (inside.java)"
+            - "Baeldung Pro: Guide to the Foreign Function and Memory API (baeldung.com)"
+            - "OpenJDK Wiki: Panama Developer Guide (wiki.openjdk.org)"
+
+        - id: scoped-values
+          title: "Scoped Values (preview → finalization)"
+          summary: "Scoped Values (JEP 446/481) are an immutable alternative to ThreadLocal designed for virtual threads — they share a single value safely across a dynamic scope without risk of memory leaks, making context propagation in highly concurrent applications simpler and more efficient."
+          resources:
+            - "JEP 481: Scoped Values (openjdk.org/jeps/481)"
+            - "Inside Java: Scoped Values overview (inside.java)"
+            - "Baeldung Pro: Scoped Values in Java 21 (baeldung.com)"
+            - "Book: Java Concurrency in Practice, Chapter 3 (Goetz et al.) — thread-local context"
+
+    - id: jvm-internals
+      title: "JVM Internals"
+      children:
+        - id: jmm-happens-before
+          title: "Java Memory Model & happens-before"
+          summary: "The Java Memory Model defines when writes made by one thread are guaranteed to be visible to another; the happens-before relation is the only formal tool for reasoning about thread-safe code, and misunderstanding it leads to subtle data races that manifest only under load."
+          resources:
+            - "JSR-133: Java Memory Model Specification (cs.umd.edu/~pugh/java/memoryModel/)"
+            - "Book: Java Concurrency in Practice, Chapter 16 (Goetz et al.)"
+            - "Shipilev: Close Encounters of The Java Memory Model Kind (shipilev.net)"
+            - "Baeldung Pro: Java Memory Model (baeldung.com)"
+
+        - id: heap-stack-metaspace
+          title: "Heap, Stack, Metaspace — object lifecycle"
+          summary: "Understanding how the JVM partitions memory into Eden/Survivor/Old generations (heap), per-thread stacks (frames, locals), and Metaspace (class metadata) is foundational for diagnosing OutOfMemoryError, tuning GC, and analysing heap dumps with tools like MAT or VisualVM."
+          resources:
+            - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapters 5-6"
+            - "Baeldung Pro: Stack Memory and Heap Space in Java (baeldung.com)"
+            - "OpenJDK Wiki: HotSpot Memory Management (wiki.openjdk.org)"
+            - "YouTube: Nitsan Wakart — JVM Anatomy Park series (inside.java)"
+
+        - id: gc-g1
+          title: "G1GC: tuning, pause goals, mixed collections"
+          summary: "G1 (Garbage-First) is the default GC since Java 9, dividing the heap into equal-sized regions and using predictable pause-time goals; knowing how to tune MaxGCPauseMillis, understand mixed collections, and read GC logs is essential for meeting SLAs in production services."
+          resources:
+            - "Oracle: Getting Started with G1GC (docs.oracle.com)"
+            - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter 6"
+            - "GCeasy.io: GC log analysis tool (gceasy.io)"
+            - "Baeldung Pro: Guide to G1 Garbage Collector (baeldung.com)"
+
+        - id: gc-zgc-shenandoah
+          title: "ZGC & Shenandoah: ultra-low latency GC"
+          summary: "ZGC (GA Java 15) and Shenandoah (GA in OpenJDK, backported to Java 8+) are concurrent GCs that keep pauses below 1ms regardless of heap size by doing most work concurrently with the application — critical knowledge for latency-sensitive fintech or real-time systems."
+          resources:
+            - "JEP 333: ZGC overview (openjdk.org/jeps/333)"
+            - "RedHat: Shenandoah GC — Using Shenandoah (redhat.com)"
+            - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter 6"
+            - "Baeldung Pro: ZGC vs Shenandoah comparison (baeldung.com)"
+
+        - id: jfr-async-profiler
+          title: "JFR & Async-Profiler: production profiling"
+          summary: "Java Flight Recorder (JFR) is a low-overhead (< 1%) production profiler built into the JDK for capturing CPU, memory, lock, and I/O events; async-profiler samples at the OS level via perf_events, capturing native frames that JFR misses — together they form the standard toolkit for diagnosing production performance issues."
+          resources:
+            - "JDK Mission Control: official docs (github.com/openjdk/jmc)"
+            - "async-profiler: GitHub repo + wiki (github.com/async-profiler/async-profiler)"
+            - "Baeldung Pro: Guide to Java Flight Recorder (baeldung.com)"
+            - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter 3"
+
+        - id: class-loading-aot
+          title: "Class Loading & AOT (JEP 483)"
+          summary: "Class loading (Bootstrap → Platform → App classloader hierarchy, delegation model) governs how code enters the JVM; AOT class loading (JEP 483, Java 24) caches loaded/linked/initialized class state to dramatically reduce startup time — essential for serverless and container workloads."
+          resources:
+            - "JEP 483: Ahead-of-Time Class Loading & Linking (openjdk.org/jeps/483)"
+            - "Oracle: Understanding the Java ClassLoader (docs.oracle.com)"
+            - "Baeldung Pro: Class Loaders in Java (baeldung.com)"
+            - "Inside Java: CDS and AOT deep dive (inside.java)"
+
+        - id: threadlocal-leaks
+          title: "ThreadLocal leaks & memory dump analysis"
+          summary: "ThreadLocals that are not explicitly removed after use accumulate in thread-pool threads indefinitely, causing memory leaks and stale-data bugs; learning to identify these with heap dumps (Eclipse MAT, VisualVM) and fix them with try-finally or InheritableThreadLocal alternatives is a key Senior-level skill."
+          resources:
+            - "Baeldung Pro: Introduction to ThreadLocal in Java (baeldung.com)"
+            - "Eclipse MAT documentation (eclipse.dev/mat/)"
+            - "Shipilev: ThreadLocal and Memory Leaks (shipilev.net)"
+            - "Book: Java Concurrency in Practice, Chapter 3 (Goetz et al.)"
+
+    - id: concurrency
+      title: "Concurrency & Multithreading"
+      children:
+        - id: volatile-atomics
+          title: "volatile, AtomicXxx, VarHandle"
+          summary: "volatile guarantees visibility and prevents reordering but not atomicity; AtomicXxx classes provide CAS-based lock-free operations; VarHandle (Java 9) exposes fine-grained memory-order semantics (plain, opaque, acquire/release, volatile) for building high-performance concurrent data structures."
+          resources:
+            - "Book: Java Concurrency in Practice, Chapters 3-4 (Goetz et al.)"
+            - "JEP 193: Variable Handles (openjdk.org/jeps/193)"
+            - "Baeldung Pro: Guide to VarHandle (baeldung.com)"
+            - "Shipilev: Using JDK 9 Memory Order Modes (shipilev.net)"
+
+        - id: locks-synchronized
+          title: "synchronized vs ReentrantLock strategies"
+          summary: "synchronized is simple and JVM-optimized (biased locking, lock elision), but ReentrantLock adds tryLock, interruptible acquisition, fair ordering, and separate Condition objects — knowing when to use each and understanding lock coarsening/splitting strategies is essential for high-throughput concurrent code."
+          resources:
+            - "Book: Java Concurrency in Practice, Chapters 13-14 (Goetz et al.)"
+            - "Baeldung Pro: Guide to java.util.concurrent.Locks (baeldung.com)"
+            - "Oracle: Intrinsic Locks and Synchronization (docs.oracle.com)"
+            - "Exercism: Java concurrency exercises (exercism.org/tracks/java)"
+
+        - id: concurrent-collections
+          title: "ConcurrentHashMap, CopyOnWriteArrayList"
+          summary: "ConcurrentHashMap (fully lock-free reads via CAS, Java 8 no-segment redesign) and CopyOnWriteArrayList (snapshot-on-write, ideal for read-heavy, rarely-mutated lists) are the standard building blocks for thread-safe collection usage without coarse-grained synchronization."
+          resources:
+            - "Book: Java Concurrency in Practice, Chapter 5 (Goetz et al.)"
+            - "Baeldung Pro: Guide to ConcurrentHashMap (baeldung.com)"
+            - "OpenJDK source: java.util.concurrent (github.com/openjdk/jdk)"
+            - "Baeldung Pro: CopyOnWriteArrayList (baeldung.com)"
+
+        - id: completable-future
+          title: "CompletableFuture patterns"
+          summary: "CompletableFuture (Java 8) provides a rich composable API for async pipelines — thenCompose, thenCombine, allOf/anyOf, exceptionally, and custom Executors — enabling non-blocking I/O orchestration without reactive libraries, which every Senior Java developer must master."
+          resources:
+            - "Baeldung Pro: Guide to CompletableFuture (baeldung.com)"
+            - "Book: Modern Java in Action, Chapter 15 (Urma, Fusco, Mycroft)"
+            - "Book: Java Concurrency in Practice, Chapter 6 (Goetz et al.) — task execution"
+            - "Jenkov: Java CompletableFuture Tutorial (jenkov.com)"
+
+        - id: virtual-threads-spring
+          title: "Virtual Threads in Spring Boot 3.2+"
+          summary: "Spring Boot 3.2 added first-class virtual thread support via spring.threads.virtual.enabled=true, replacing the default platform-thread executor in WebMVC and @Async — enabling high concurrency with blocking I/O without migrating to reactive WebFlux."
+          resources:
+            - "Spring Academy: Spring Boot course (spring.academy/courses/spring-boot)"
+            - "Spring Blog: Virtual Threads in Spring 6.1 / Boot 3.2 (spring.io/blog)"
+            - "Baeldung Pro: Virtual Threads in Spring Boot (baeldung.com)"
+            - "Book: Spring in Action, 6th Ed. (Craig Walls) — concurrency chapter"
+
+    - id: spring-ecosystem
+      title: "Spring Ecosystem"
+      children:
+        - id: spring-boot-3
+          title: "Spring Boot 3.x & Spring Framework 6"
+          summary: "Spring Boot 3 / Spring Framework 6 require Java 17 baseline and bring Jakarta EE 10 namespace migration, improved observability via Micrometer, native compilation support, and the new HTTP interface client — the core platform upgrade every Java backend team has to execute."
+          resources:
+            - "Spring Boot 3.x Migration Guide (github.com/spring-projects/spring-boot/wiki)"
+            - "Spring Academy: Spring Boot course (spring.academy/courses/spring-boot)"
+            - "Baeldung Pro: What's New in Spring Boot 3 (baeldung.com)"
+            - "Book: Spring in Action, 6th Ed. (Craig Walls, Manning)"
+
+        - id: spring-virtual-threads
+          title: "spring.threads.virtual.enabled + WebMVC vs WebFlux"
+          summary: "Enabling virtual threads in Spring MVC collapses the traditional WebMVC vs WebFlux trade-off by allowing blocking code to scale like reactive — developers must understand the architectural differences (thread-per-request vs event-loop), pinning risks, and when WebFlux backpressure is still preferred."
+          resources:
+            - "Spring Academy: Spring Boot course — concurrency module (spring.academy)"
+            - "Spring Docs: Virtual Thread support (docs.spring.io)"
+            - "Spring Blog: One step closer with Virtual Threads (spring.io/blog)"
+            - "Baeldung Pro: Spring WebFlux vs Spring MVC (baeldung.com)"
+
+        - id: spring-security-oauth2
+          title: "Spring Security: OAuth2, OIDC, PKCE"
+          summary: "Spring Security 6 reworked the OAuth2/OIDC client and resource server APIs; understanding authorization_code + PKCE flow, JWT validation (JWK Set, claim mapping), and opaque token introspection is mandatory for securing modern API-first applications."
+          resources:
+            - "Spring Academy: Spring Security course (spring.academy)"
+            - "Spring Security OAuth2 Docs (docs.spring.io/spring-security)"
+            - "Baeldung Pro: Spring Security OAuth2 (baeldung.com)"
+            - "Book: Spring in Action, 6th Ed., Chapter 5 — Security (Craig Walls, Manning)"
+
+        - id: spring-data-jpa
+          title: "Spring Data JPA: projections, specifications"
+          summary: "Spring Data JPA goes beyond basic CRUD — interface-based and DTO projections reduce over-fetching, Specifications enable type-safe dynamic queries, and understanding the N+1 problem with @EntityGraph or JOIN FETCH is critical for production database performance."
+          resources:
+            - "Spring Academy: Spring Data JPA course (spring.academy)"
+            - "Spring Data JPA Docs: Projections (docs.spring.io)"
+            - "Baeldung Pro: Spring Data JPA Projections (baeldung.com)"
+            - "Book: High-Performance Java Persistence (Vlad Mihalcea)"
+
+        - id: rest-client
+          title: "RestClient (replaces RestTemplate)"
+          summary: "RestClient (Spring 6.1+) is the new synchronous HTTP client with a fluent API that mirrors WebClient's ergonomics but runs on a simple thread-per-request model, replacing the aging RestTemplate; mastering it is necessary for any Spring-based service-to-service communication."
+          resources:
+            - "Spring Academy: Building REST APIs course (spring.academy)"
+            - "Spring Docs: RestClient (docs.spring.io)"
+            - "Baeldung Pro: Spring RestClient (baeldung.com)"
+            - "Book: Spring in Action, 6th Ed. (Craig Walls, Manning)"
+
+        - id: jdbc-client
+          title: "JdbcClient (fluent JDBC)"
+          summary: "JdbcClient (Spring 6.1+) provides a fluent, lambda-friendly API wrapping JdbcTemplate — enabling parameterized queries, row mapping, and update operations in a single chained call without the boilerplate of classic JdbcTemplate or the overhead of JPA for simple SQL use cases."
+          resources:
+            - "Spring Academy: Spring Data course (spring.academy)"
+            - "Spring Docs: JdbcClient (docs.spring.io)"
+            - "Baeldung Pro: Spring JdbcClient (baeldung.com)"
+            - "Book: High-Performance Java Persistence (Vlad Mihalcea) — JDBC chapter"
+
+        - id: spring-ai
+          title: "Spring AI: LLM integration in Spring"
+          summary: "Spring AI provides a portable, Spring-style abstraction over LLM providers (OpenAI, Anthropic, Ollama), vector stores, embedding models, and function-calling — enabling Java developers to build RAG pipelines, chatbots, and AI agents within the familiar Spring programming model."
+          resources:
+            - "Spring Academy: Spring AI course (spring.academy)"
+            - "Spring AI Docs (docs.spring.io/spring-ai)"
+            - "Spring Blog: Introducing Spring AI (spring.io/blog)"
+            - "Baeldung Pro: Guide to Spring AI (baeldung.com)"
+
+        - id: micrometer-observability
+          title: "Micrometer Observation API & OTEL bridge"
+          summary: "Micrometer Observation (Spring Boot 3+ default) unifies metrics, traces, and logs under a single instrumentation API with automatic bridging to OpenTelemetry, Prometheus, and Zipkin — making it the standard approach for adding observability to Spring services without vendor lock-in."
+          resources:
+            - "Spring Academy: Spring Boot Observability module (spring.academy)"
+            - "Micrometer Observation Docs (micrometer.io/docs)"
+            - "Spring Boot Observability Guide (docs.spring.io)"
+            - "Baeldung Pro: Observability with Spring Boot 3 (baeldung.com)"
+
+        - id: graalvm-native
+          title: "GraalVM Native Image: AOT, reflection hints"
+          summary: "GraalVM Native Image compiles Spring Boot apps to self-contained native executables with sub-100ms startup and low memory — but requires AOT metadata for reflection, proxies, and serialization; Spring Boot 3's AOT engine auto-generates most hints, making native viable for production serverless workloads."
+          resources:
+            - "Spring Academy: Spring Boot Native module (spring.academy)"
+            - "Spring Boot Native Image Docs (docs.spring.io)"
+            - "GraalVM Native Image Docs (graalvm.io/native-image/)"
+            - "Baeldung Pro: Spring Boot Native with GraalVM (baeldung.com)"
+
+        - id: spring-bean-lifecycle
+          title: "Bean lifecycle: @PostConstruct, BeanPostProcessor, init/destroy"
+          summary: "Understanding the full Spring bean lifecycle — instantiation, dependency injection, BeanPostProcessor callbacks, @PostConstruct/@PreDestroy, and custom init/destroyMethod — is essential for writing correct initialization code, integrating third-party libraries, and avoiding subtle startup/shutdown ordering bugs."
+          resources:
+            - "Spring Academy: Spring Framework core course (spring.academy)"
+            - "Spring Docs: Bean Lifecycle (docs.spring.io/spring-framework/reference/core/beans/factory-nature.html)"
+            - "Baeldung Pro: Spring Bean Lifecycle (baeldung.com)"
+            - "Book: Spring in Action, 6th Ed., Chapter 3 (Craig Walls, Manning)"
+
+        - id: spring-transactional
+          title: "@Transactional: propagation, isolation levels, proxy pitfalls"
+          summary: "@Transactional is one of the most misused Spring annotations — self-invocation bypasses the proxy, REQUIRES_NEW creates independent transactions, and the wrong isolation level causes dirty reads or phantom reads; mastering propagation behaviours and proxy mechanics is critical for data-integrity in any Spring application."
+          resources:
+            - "Spring Academy: Spring Data JPA course — transactions module (spring.academy)"
+            - "Spring Docs: Transaction Management (docs.spring.io/spring-framework/reference/data-access/transaction.html)"
+            - "Baeldung Pro: Transaction Propagation and Isolation in Spring (baeldung.com)"
+            - "Book: High-Performance Java Persistence, Part 3 (Vlad Mihalcea)"
+
+        - id: spring-autoconfig
+          title: "Auto-configuration: @Conditional, spring.factories mechanism"
+          summary: "Spring Boot auto-configuration uses @Conditional annotations (on class, bean, property, resource) evaluated at startup to wire sensible defaults; understanding spring.factories / AutoConfiguration.imports and writing custom starters is essential for library authors and for diagnosing unexpected bean wiring in large applications."
+          resources:
+            - "Spring Docs: Auto-configuration (docs.spring.io/spring-boot/reference/using/auto-configuration.html)"
+            - "Baeldung: Create a Custom Auto-Configuration with Spring Boot (baeldung.com)"
+            - "Spring Blog: Condition annotations deep dive (spring.io/blog)"
+            - "Book: Spring Boot in Practice (Somnath Musib, Manning)"
+
+        - id: spring-mvc-flow
+          title: "Spring MVC: request lifecycle, DispatcherServlet, filters"
+          summary: "Every HTTP request in Spring MVC passes through DispatcherServlet → HandlerMapping → HandlerAdapter → ViewResolver (or MessageConverter for REST); understanding the full lifecycle, including Servlet Filters vs Spring HandlerInterceptors vs @ControllerAdvice, is necessary for building correct middleware and debugging request-handling issues."
+          resources:
+            - "Spring Docs: DispatcherServlet (docs.spring.io/spring-framework/reference/web/webmvc/mvc-servlet.html)"
+            - "Baeldung: Spring MVC Tutorial (baeldung.com)"
+            - "Baeldung: Filters vs HandlerInterceptors in Spring (baeldung.com)"
+            - "Book: Spring in Action, 6th Ed., Chapters 2-3 (Craig Walls, Manning)"
+
+    - id: kotlin-backend
+      title: "Kotlin"
+      children:
+        - id: kotlin-coroutines
+          title: "Coroutines & Flow"
+          summary: "Kotlin coroutines provide structured concurrency with suspend functions, CoroutineScope, and Dispatchers, enabling sequential-looking async code; Flow adds cold reactive streams with backpressure support — together they are the primary async concurrency model for Kotlin backends and Android."
+          resources:
+            - "Kotlin Coroutines Guide (kotlinlang.org/docs/coroutines-guide.html)"
+            - "Book: Kotlin Coroutines: Deep Dive (Marcin Moskała, Kt.Academy)"
+            - "Baeldung: Introduction to Kotlin Coroutines (baeldung.com)"
+            - "Roman Elizarov: Structured Concurrency (elizarov.medium.com)"
+
+        - id: kotlin-idioms
+          title: "Sealed classes, data classes, extension functions"
+          summary: "Kotlin's sealed classes (exhaustive when expressions), data classes (auto-generated equals/copy/componentN), and extension functions (add methods to closed types) are idiomatic patterns that reduce boilerplate, improve domain modelling, and are heavily used in Spring/Ktor Kotlin backends."
+          resources:
+            - "Kotlin Docs: Sealed Classes (kotlinlang.org/docs/sealed-classes.html)"
+            - "Book: Kotlin in Action, 2nd Ed. (Jemerov & Isakova, Manning)"
+            - "Kotlin by Example (play.kotlinlang.org/byExample)"
+            - "Baeldung: Kotlin Data Classes (baeldung.com)"
+
+        - id: kotlin-dsl
+          title: "Kotlin DSL patterns"
+          summary: "Kotlin's combination of lambdas with receivers, operator overloading, and infix functions enables the creation of type-safe DSLs used in Gradle build scripts, Spring Security config, Exposed ORM, and Ktor routing — a skill that sets Kotlin library authors apart."
+          resources:
+            - "Kotlin Docs: Type-safe builders (kotlinlang.org/docs/type-safe-builders.html)"
+            - "Book: Kotlin in Action, 2nd Ed., Chapter 11 (Manning)"
+            - "Gradle Kotlin DSL Primer (docs.gradle.org/current/userguide/kotlin_dsl.html)"
+            - "Baeldung: Kotlin DSL Basics (baeldung.com)"
+
+        - id: ktor
+          title: "Ktor 3.x basics"
+          summary: "Ktor is JetBrains' lightweight, coroutines-first HTTP framework for building asynchronous servers and clients in pure Kotlin; Ktor 3.x brings performance improvements and a refined plugin API, making it a popular choice when a full Spring stack is overkill."
+          resources:
+            - "Ktor Official Docs (ktor.io/docs)"
+            - "JetBrains: Ktor Tutorials (ktor.io/learn)"
+            - "Baeldung: Introduction to Ktor (baeldung.com)"
+            - "GitHub: Ktor samples (github.com/ktorio/ktor-samples)"
+
+    - id: postgresql
+      title: "PostgreSQL Deep Dive"
+      children:
+        - id: pg-process-model
+          title: "Process-per-connection model & PgBouncer"
+          summary: "PostgreSQL spawns a separate OS process per client connection, making connection count a critical resource; PgBouncer provides connection pooling (session, transaction, statement modes) that reduces backend process overhead — essential knowledge for any production PostgreSQL deployment at scale."
+          resources:
+            - "PostgreSQL Docs: Connections and Authentication (postgresql.org/docs)"
+            - "PgBouncer Docs (pgbouncer.org/usage.html)"
+            - "Citus: PostgreSQL Connection Pooling (citusdata.com/blog)"
+            - "Baeldung: Connection Pooling with PgBouncer (baeldung.com)"
+
+        - id: pg-memory
+          title: "shared_buffers, work_mem, maintenance_work_mem"
+          summary: "Correct PostgreSQL memory configuration is the single highest-ROI tuning activity — shared_buffers controls the shared cache, work_mem affects sort/hash join performance per query (multiplicative with connections), and maintenance_work_mem controls VACUUM/index build speed."
+          resources:
+            - "PostgreSQL Docs: Resource Consumption (postgresql.org/docs/current/runtime-config-resource.html)"
+            - "PGTune: automatic PostgreSQL config generator (pgtune.leopard.in.ua)"
+            - "Citus: The Art of PostgreSQL (postgresql.org — EDB blog)"
+            - "Book: PostgreSQL: Up and Running (Regina Obe & Leo Hsu, O'Reilly)"
+
+        - id: pg-indexing
+          title: "Indexes: B-Tree, GIN, BRIN, Partial"
+          summary: "Choosing the right index type is fundamental to query performance: B-Tree for equality/range, GIN for full-text search and JSONB containment, BRIN for large sequential data (time-series), and partial indexes for filtering a subset of rows — each with distinct write amplification trade-offs."
+          resources:
+            - "PostgreSQL Docs: Indexes (postgresql.org/docs/current/indexes.html)"
+            - "Cybertec: PostgreSQL Index Types (cybertec-postgresql.com/blog)"
+            - "Baeldung: PostgreSQL Indexes Guide (baeldung.com)"
+            - "Book: The Art of PostgreSQL (Dimitri Fontaine)"
+
+        - id: pg-explain-analyze
+          title: "EXPLAIN ANALYZE: plan reading & optimization"
+          summary: "EXPLAIN ANALYZE executes a query and returns the actual execution plan with row counts, timing, and buffer statistics; reading node types (Seq Scan vs Index Scan vs Bitmap Heap Scan vs Hash Join), identifying plan regressions, and understanding statistics staleness is the core skill of PostgreSQL query optimization."
+          resources:
+            - "PostgreSQL Docs: Using EXPLAIN (postgresql.org/docs/current/using-explain.html)"
+            - "explain.dalibo.com: visual EXPLAIN ANALYZE viewer"
+            - "Cybertec: EXPLAIN ANALYZE deep dive (cybertec-postgresql.com/blog)"
+            - "pganalyze: EXPLAIN Insights documentation (pganalyze.com/docs)"
+
+        - id: pg-mvcc
+          title: "MVCC, autovacuum, table bloat"
+          summary: "PostgreSQL's MVCC appends new row versions on every UPDATE/DELETE instead of modifying in place, enabling concurrent reads without locks but requiring autovacuum to reclaim dead tuples; understanding bloat, the visibility map, and freeze mechanisms is essential to prevent table bloat and XID wraparound in high-write systems."
+          resources:
+            - "PostgreSQL Docs: MVCC (postgresql.org/docs/current/mvcc.html)"
+            - "Cybertec: Table Bloat and VACUUM (cybertec-postgresql.com/blog)"
+            - "Baeldung: PostgreSQL MVCC (baeldung.com)"
+            - "Book: PostgreSQL Internals Mastery (Egor Rogov)"
+
+        - id: pg-replication
+          title: "Replication & sharding strategies"
+          summary: "PostgreSQL streaming replication (physical WAL shipping) provides HA and read scaling; logical replication enables selective table replication and CDC with tools like Debezium; sharding via Citus or application-level partitioning addresses write-scale limits — all patterns common in fintech architectures."
+          resources:
+            - "PostgreSQL Docs: High Availability and Replication (postgresql.org/docs)"
+            - "Citus Data: Distributed PostgreSQL (citusdata.com/blog)"
+            - "Patroni: HA PostgreSQL (github.com/zalando/patroni)"
+            - "Book: The Internals of PostgreSQL (Egor Rogov, postgrespro.com)"
+
+        - id: pg-pgvector
+          title: "pgvector: vector search for AI/RAG"
+          summary: "pgvector extends PostgreSQL with a vector data type and approximate nearest-neighbor indexes (IVFFlat, HNSW), enabling semantic similarity search directly in the database — the simplest way to add RAG capabilities to a Spring Boot application without a separate vector database."
+          resources:
+            - "pgvector GitHub (github.com/pgvector/pgvector)"
+            - "Spring AI: Vector Store with pgvector (docs.spring.io/spring-ai)"
+            - "Supabase: pgvector guide (supabase.com/docs/guides/database/extensions/pgvector)"
+            - "Baeldung: pgvector with Spring AI (baeldung.com)"
+
+    - id: kafka
+      title: "Apache Kafka"
+      children:
+        - id: kafka-storage-model
+          title: "Storage model: Sequential I/O, Zero-copy"
+          summary: "Kafka achieves extreme throughput by writing to append-only log segments on disk (sequential I/O is 100x faster than random), and uses the OS sendfile() syscall (zero-copy) to transfer data from disk to network without user-space buffering — understanding this explains Kafka's benchmark performance and capacity planning."
+          resources:
+            - "Confluent: The Pathologies of Big Data — Jay Kreps (engineering.linkedin.com)"
+            - "Book: Kafka: The Definitive Guide, 2nd Ed., Chapter 5 (Gwen Shapira et al.)"
+            - "Kafka Docs: Design (kafka.apache.org/documentation/#design)"
+            - "Jay Kreps: The Log (engineering.linkedin.com/distributed-systems/log)"
+
+        - id: kafka-partitions
+          title: "Partitioning, consumer group rebalancing"
+          summary: "Partitions are Kafka's unit of parallelism — a topic with N partitions can be consumed by N consumers in a group simultaneously; understanding partition assignment strategies (RoundRobin, Sticky, CooperativeSticky) and the rebalance protocol (stop-the-world vs incremental) is critical for building low-latency consumer applications."
+          resources:
+            - "Book: Kafka: The Definitive Guide, 2nd Ed., Chapter 4 (Gwen Shapira et al.)"
+            - "Confluent: Incremental Cooperative Rebalancing (confluent.io/blog)"
+            - "Kafka Docs: Consumer Group Protocol (kafka.apache.org/documentation)"
+            - "Baeldung: Apache Kafka Consumer Groups (baeldung.com)"
+
+        - id: kafka-exactly-once
+          title: "Exactly-once semantics & idempotent producers"
+          summary: "Kafka's exactly-once semantics (EOS) combines idempotent producers (PID + sequence numbers eliminate duplicates on retry), transactional APIs (atomic write across partitions), and transactional consumers (read_committed isolation) — enabling end-to-end exactly-once processing critical for financial transaction pipelines."
+          resources:
+            - "Confluent: Exactly-Once Semantics in Apache Kafka (confluent.io/blog)"
+            - "Book: Kafka: The Definitive Guide, 2nd Ed., Chapter 8 (Gwen Shapira et al.)"
+            - "Kafka Docs: Transactions (kafka.apache.org/documentation/#transactions)"
+            - "Baeldung: Kafka Exactly Once Semantics (baeldung.com)"
+
+        - id: kafka-reliability
+          title: "acks=all, min.insync.replicas, ISR"
+          summary: "Producer acks=all (or -1) combined with min.insync.replicas=2 ensures a write is not acknowledged until at least 2 replicas in the ISR have persisted it, providing durability guarantees; the ISR (In-Sync Replica) set is the source of truth for replication lag, and this configuration triangle is the most common interview topic around Kafka reliability."
+          resources:
+            - "Kafka Docs: Replication (kafka.apache.org/documentation/#replication)"
+            - "Confluent: Kafka Replication Deep Dive (confluent.io/blog)"
+            - "Book: Kafka: The Definitive Guide, 2nd Ed., Chapter 6 (Gwen Shapira et al.)"
+            - "Baeldung: Kafka Producer acks Configuration (baeldung.com)"
+
+        - id: kafka-kraft
+          title: "KRaft: ZooKeeper removal"
+          summary: "KRaft (Kafka Raft Metadata mode, GA in Kafka 3.3) replaces ZooKeeper with an internal Raft-based metadata quorum, simplifying deployment, removing the ZooKeeper operational burden, and enabling larger cluster metadata capacity — Kafka 4.0 fully removed ZooKeeper support."
+          resources:
+            - "Kafka KRaft Migration Guide (kafka.apache.org/documentation/#kraft)"
+            - "Confluent: KRaft — Apache Kafka Without ZooKeeper (confluent.io/blog)"
+            - "KIP-500: Replace ZooKeeper with a Self-Managed Metadata Quorum (cwiki.apache.org)"
+            - "Baeldung: Kafka KRaft Mode (baeldung.com)"
+
+        - id: kafka-streams
+          title: "Kafka Streams basics"
+          summary: "Kafka Streams is a client library (not a separate cluster) for building stateful stream processing applications — supporting map/filter transformations, aggregations, joins, windowing, and state stores backed by changelog topics — enabling event-driven microservices with exactly-once processing."
+          resources:
+            - "Kafka Streams Docs (kafka.apache.org/documentation/streams/)"
+            - "Confluent: Kafka Streams Tutorials (developer.confluent.io)"
+            - "Book: Kafka Streams in Action, 2nd Ed. (Bill Bejeck, Manning)"
+            - "Baeldung: Intro to Kafka Streams (baeldung.com)"
+
+        - id: kafka-connect-debezium
+          title: "Kafka Connect & Debezium CDC"
+          summary: "Kafka Connect provides a scalable, fault-tolerant framework for streaming data between Kafka and external systems via source/sink connectors; Debezium is the leading CDC connector that reads database transaction logs (PostgreSQL WAL, MySQL binlog) to capture every row-level change as a Kafka event."
+          resources:
+            - "Kafka Connect Docs (kafka.apache.org/documentation/#connect)"
+            - "Debezium Docs (debezium.io/documentation/)"
+            - "Confluent: Change Data Capture with Debezium (confluent.io/blog)"
+            - "Baeldung: CDC Using Debezium (baeldung.com)"
+
+        - id: transactional-outbox
+          title: "Transactional Outbox Pattern"
+          summary: "The Transactional Outbox pattern solves the dual-write problem: instead of writing to a database and publishing to Kafka in separate transactions (risking inconsistency), both writes go to the same database transaction, and a relay (Debezium CDC or polling) publishes outbox rows as Kafka events — the standard pattern for reliable event publishing in fintech microservices."
+          resources:
+            - "microservices.io: Transactional Outbox Pattern (microservices.io/patterns/data/transactional-outbox.html)"
+            - "Debezium: Outbox Event Router (debezium.io/documentation)"
+            - "Baeldung: Transactional Outbox Pattern with Spring and Debezium (baeldung.com)"
+            - "Book: Designing Data-Intensive Applications, Chapter 11 (Martin Kleppmann)"
+
+    - id: testing-strategy
+      title: "Testing Strategy"
+      children:
+        - id: junit5-assertj
+          title: "JUnit 5 + AssertJ + Mockito patterns"
+          summary: "JUnit 5 (Jupiter) with its extension model, parameterized tests, and @Nested classes; AssertJ's fluent assertions with rich failure messages; and Mockito's @InjectMocks/@Mock/@Captor — this trio is the standard Java testing stack and mastery of all three is expected in Senior Java interviews."
+          resources:
+            - "JUnit 5 User Guide (junit.org/junit5/docs/current/user-guide/)"
+            - "AssertJ Docs (assertj.github.io/assertj-core/)"
+            - "Mockito Docs (site.mockito.org)"
+            - "Baeldung: JUnit 5 + Mockito + AssertJ guides (baeldung.com)"
+
+        - id: testcontainers
+          title: "Testcontainers: PostgreSQL, Kafka, Redis"
+          summary: "Testcontainers spins up real Docker containers in JUnit tests, replacing in-memory fakes with production-identical infrastructure — catching driver version mismatches, SQL dialect issues, and Kafka serialization bugs that mocked tests miss; Spring Boot 3.1+ has built-in Testcontainers auto-configuration."
+          resources:
+            - "Testcontainers Docs (testcontainers.com/guides/)"
+            - "Spring Boot Testcontainers integration (docs.spring.io/spring-boot)"
+            - "Baeldung: Testing with Testcontainers (baeldung.com)"
+            - "Testcontainers Workshop (github.com/testcontainers/workshop-spring-boot)"
+
+        - id: contract-testing
+          title: "Contract Testing (Spring Cloud Contract / Pact)"
+          summary: "Contract testing verifies API compatibility between services at build time, before integration testing — consumer-driven contracts (Pact) let consumers define expectations that providers must satisfy, catching breaking changes far earlier and cheaper than end-to-end tests."
+          resources:
+            - "Spring Cloud Contract Docs (spring.io/projects/spring-cloud-contract)"
+            - "Pact Docs (docs.pact.io)"
+            - "Baeldung: Consumer Driven Contracts with Pact (baeldung.com)"
+            - "Martin Fowler: Consumer-Driven Contracts (martinfowler.com/articles/consumerDrivenContracts.html)"
+
+        - id: architecture-tests
+          title: "ArchUnit: architecture rule enforcement"
+          summary: "ArchUnit lets you write JUnit tests that enforce architectural rules — no circular dependencies between packages, all services must depend on repositories and not vice versa, no direct persistence access from controllers — catching architecture violations in CI before they accumulate into structural debt."
+          resources:
+            - "ArchUnit Docs (archunit.org/userguide/html/000_Index.html)"
+            - "Baeldung: ArchUnit with Spring Boot (baeldung.com)"
+            - "GitHub: TNG/ArchUnit-Examples (github.com/TNG/ArchUnit-Examples)"
+            - "InfoQ: Enforcing Architecture with ArchUnit (infoq.com)"
+
+    - id: backend-practice
+      title: "Hands-on Practice"
+      children:
+        - id: javarush
+          title: "JavaRush: 1200+ Java tasks with instant validation"
+          summary: "JavaRush provides 1200+ gamified Java coding tasks organized by topic — from OOP and generics to collections and multithreading — with instant browser-based validation, making it ideal for systematic Java fundamentals practice alongside theory."
+          resources:
+            - "JavaRush (javarush.com)"
+            - "JavaRush Learning Path documentation (javarush.com/learning)"
+
+        - id: exercism-java
+          title: "Exercism: Java & Kotlin tracks (mentored)"
+          summary: "Exercism offers community-mentored practice tracks for Java and Kotlin with curated exercises designed to teach idiomatic usage; mentor code reviews provide the feedback loop missing from solo practice and accelerate the internalization of language best practices."
+          resources:
+            - "Exercism Java Track (exercism.org/tracks/java)"
+            - "Exercism Kotlin Track (exercism.org/tracks/kotlin)"
+
+        - id: codewars-java
+          title: "Codewars: Java kata (5-6 kyu for warm-up)"
+          summary: "Codewars kata at 5-6 kyu level are effective warm-up exercises for reinforcing Java syntax, Stream API, and algorithm basics without the pressure of LeetCode timing, making them ideal for daily coding habit formation."
+          resources:
+            - "Codewars (codewars.com)"
+            - "Codewars: Java kata collection (codewars.com/kata/search/java)"
+
+        - id: leetcode-practice
+          title: "LeetCode: NeetCode 150 (daily, no IDE hints)"
+          summary: "The NeetCode 150 is a curated set of 150 LeetCode problems covering all major DSA patterns (sliding window, two pointers, trees, graphs, DP) — solving them without IDE autocompletion simulates whiteboard/online assessment conditions required by FAANG and top-tier companies."
+          resources:
+            - "NeetCode 150 roadmap (neetcode.io/roadmap)"
+            - "LeetCode (leetcode.com)"
+            - "NeetCode YouTube: video solutions (youtube.com/@NeetCode)"
+
+        - id: educative-java
+          title: "Educative: Java Multithreading, JVM Deep Dive"
+          summary: "Educative's interactive courses on Java Multithreading and JVM internals provide browser-based coding environments with structured content that bridges the gap between theory (books) and practice (coding challenges), ideal for interview preparation."
+          resources:
+            - "Educative: Java Multithreading (educative.io)"
+            - "Educative: JVM Deep Dive (educative.io)"
+
+        - id: hyperskill-kotlin
+          title: "Hyperskill (JetBrains): Kotlin Developer track"
+          summary: "Hyperskill's Kotlin Developer track is JetBrains' official project-based learning platform — learners build real applications (bots, web servers, tools) while progressing through Kotlin fundamentals, coroutines, and Spring, with adaptive theory topics filling knowledge gaps."
+          resources:
+            - "Hyperskill: Kotlin Developer (hyperskill.org/tracks/18)"
+            - "JetBrains Academy (jetbrains.com/academy/)"
+
+        - id: spring-academy
+          title: "Spring Academy: official Spring Boot courses"
+          summary: "Spring Academy is Pivotal/VMware's official learning platform with instructor-quality courses on Spring Boot, Spring Security, Spring Data, and testing — the highest-fidelity source for learning Spring as the framework team intended it to be used."
+          resources:
+            - "Spring Academy (spring.academy)"
+            - "Spring Academy: Spring Boot course (spring.academy/courses/spring-boot)"
+
+        - id: testcontainers-workshop
+          title: "Testcontainers Workshop (GitHub)"
+          summary: "The official Testcontainers Workshop on GitHub is a hands-on lab guiding developers through integrating Testcontainers with Spring Boot, PostgreSQL, Kafka, and Redis — the fastest way to gain practical Testcontainers proficiency through guided exercises."
+          resources:
+            - "Testcontainers Workshop (github.com/testcontainers/workshop-spring-boot)"
+            - "Testcontainers: Getting Started guide (testcontainers.com/guides/)"
+
+        - id: kafka-tutorials-confluent
+          title: "Confluent Tutorials: hands-on Kafka labs"
+          summary: "Confluent Developer's tutorial platform provides guided, runnable Kafka labs (producer/consumer, Kafka Streams, Schema Registry, ksqlDB) with Docker-based environments — the most practical way to go from Kafka theory to working code."
+          resources:
+            - "Confluent Developer Tutorials (developer.confluent.io/tutorials/)"
+            - "Confluent: Kafka 101 course (developer.confluent.io/courses/kafka/)"
+
+    - id: backend-awesome-repos
+      title: "Awesome GitHub Repos"
+      children:
+        - id: awesome-java-repo
+          title: "awesome-java (akullpp) — 50k+ stars"
+          summary: "Curated list of awesome Java frameworks, libraries, software. The de-facto starting point for discovering quality Java tooling — covers web frameworks, persistence, concurrency, testing, distributed systems."
+          resources:
+            - "GitHub: github.com/akullpp/awesome-java (51k+ stars)"
+        - id: java-design-patterns-repo
+          title: "java-design-patterns (iluwatar) — 90k+ stars"
+          summary: "Comprehensive design patterns implemented in Java with explanations, UML diagrams, and runnable examples — the most popular GoF reference on GitHub. Covers creational, structural, behavioral, concurrency, architectural patterns."
+          resources:
+            - "GitHub: github.com/iluwatar/java-design-patterns (90k+ stars)"
+        - id: spring-petclinic
+          title: "spring-petclinic — official Spring sample app"
+          summary: "Reference Spring Boot application demonstrating idiomatic structure, JPA, REST, and CI/CD setup. Multiple variants (reactive, GraphQL, microservices) for studying different architectural approaches."
+          resources:
+            - "GitHub: github.com/spring-projects/spring-petclinic"
+            - "Variants: spring-petclinic-microservices, spring-petclinic-reactive"
+        - id: high-performance-java-samples
+          title: "high-performance-java-persistence (Mihalcea)"
+          summary: "Code samples from Vlad Mihalcea's High-Performance Java Persistence book — production-ready JPA/Hibernate patterns, N+1 fixes, batch operations, transaction strategies."
+          resources:
+            - "GitHub: github.com/vladmihalcea/high-performance-java-persistence"
+            - "Author blog: vladmihalcea.com — JPA deep dives"
+        - id: jvm-anatomy-park
+          title: "JVM Anatomy Park (Shipilëv)"
+          summary: "Aleksey Shipilëv's series of small JVM experiments demonstrating bytecode, JIT, GC behavior empirically — gold-standard reference for understanding JVM internals. Author also created JCStress, JOL."
+          resources:
+            - "Series: shipilev.net/jvm/anatomy-quarks/"
+            - "Tools: JOL (jol.openjdk.org), JCStress"
+        - id: kotlin-coroutines-samples
+          title: "kotlinx.coroutines (JetBrains)"
+          summary: "Official Kotlin coroutines library repository with comprehensive examples, guides, and design rationale — the canonical reference for understanding structured concurrency in Kotlin."
+          resources:
+            - "GitHub: github.com/Kotlin/kotlinx.coroutines"
+            - "Coroutines guide: kotlinlang.org/docs/coroutines-guide.html"
+        - id: awesome-kafka-repo
+          title: "awesome-kafka — curated Kafka resources"
+          summary: "Curated list of Apache Kafka tutorials, courses, books, tools, and Kafka Streams learning resources from the community."
+          resources:
+            - "GitHub: github.com/infoslack/awesome-kafka"
+            - "Confluent Examples: github.com/confluentinc/examples (production patterns)"
+
+    - id: backend-platforms
+      title: "Books & Certifications"
+      children:
+        - id: java-specialists
+          title: "javaspecialists.eu (Heinz Kabutz)"
+          summary: "Heinz Kabutz's Java Specialists Newsletter and courses go far beyond standard tutorials into concurrency internals, JVM behavior, and performance edge cases — a must-follow resource for Java developers aiming for genuine Senior/Principal expertise."
+          resources:
+            - "Java Specialists Newsletter (javaspecialists.eu)"
+            - "Java Specialists: Concurrency Course (javaspecialists.eu/courses/)"
+
+        - id: confluent-kafka-cert
+          title: "Confluent: CCDAK certification"
+          summary: "The Confluent Certified Developer for Apache Kafka (CCDAK) validates practical Kafka knowledge — producer/consumer configuration, Kafka Streams, Schema Registry, and Connect — and is recognised by employers as a signal of production-level Kafka competence."
+          resources:
+            - "Confluent CCDAK (confluent.io/certification/)"
+            - "CCDAK Study Guide (confluent.io/learn/apache-kafka-certification/)"
+            - "Udemy: Apache Kafka Series — Confluent Certification (udemy.com)"
+
+        - id: book-effective-java
+          title: "Book: Effective Java (Joshua Bloch)"
+          summary: "Effective Java (3rd edition, 2018) is the single most influential Java book, presenting 90 battle-tested items on API design, generics, lambdas, concurrency, and serialization written by the designer of the Java Collections Framework — required reading for any Senior Java engineer."
+          resources:
+            - "Book: Effective Java, 3rd Ed. (Joshua Bloch, Addison-Wesley, 2018)"
+            - "Summary notes: Effective Java 3rd Edition (github.com/david-sauvage/effective-java-summary)"
+
+        - id: book-kafka-definitive
+          title: "Book: Kafka — The Definitive Guide 3rd Ed"
+          summary: "The Definitive Guide covers Kafka architecture, producers, consumers, cluster management, Kafka Streams, and Kafka Connect with practical configuration guidance — co-authored by Confluent engineers who built Kafka, it is the canonical reference for production Kafka usage."
+          resources:
+            - "Book: Kafka: The Definitive Guide, 3rd Ed. (Gwen Shapira et al., O'Reilly, free PDF at confluent.io)"
+            - "Confluent: free book download (confluent.io/resources/kafka-the-definitive-guide)"
+
+        - id: pg-internals-book
+          title: "Book: PostgreSQL Internals Mastery"
+          summary: "Egor Rogov's 'PostgreSQL Internals' (available at postgrespro.com) provides the deepest publicly available explanation of PostgreSQL's storage engine, MVCC, WAL, query planner, and buffer manager — essential reading for Senior developers who need to go beyond query tuning to understand why the database behaves as it does."
+          resources:
+            - "PostgreSQL Internals (Egor Rogov, free at postgrespro.com/community/books/internals)"
+            - "Book: PostgreSQL: Up and Running, 3rd Ed. (Regina Obe & Leo Hsu, O'Reilly)"
+
+# ============================================================
+# 2. ARCHITECTURE & SYSTEM DESIGN
+# ============================================================

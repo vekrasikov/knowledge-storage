@@ -1,0 +1,453 @@
+- id: arch
+  title: "Arch + Проектирование"
+  children:
+
+    # ---- NEW: Algorithms & Data Structures ----
+    - id: algorithms-ds
+      title: "Algorithms & Data Structures"
+      children:
+        - id: algo-big-o
+          title: "Big O Notation & Complexity Analysis"
+          summary: "Big O describes how algorithm runtime or memory scales with input size; understanding it lets you reason about performance bottlenecks before writing a single line of code and is the foundation of every technical interview."
+          resources:
+            - "NeetCode.io — Big O section (free video lessons)"
+            - "Big-O Cheat Sheet: bigocheatsheet.com"
+            - "Book: Cracking the Coding Interview — Chapter 1 (Gayle Laakmann McDowell)"
+            - "CS50x on edX — Algorithms week (free)"
+
+        - id: algo-common-patterns
+          title: "Common Patterns: Two Pointers, Sliding Window, BFS/DFS, Binary Search"
+          summary: "These 4-6 patterns cover ~80% of LeetCode medium problems; recognizing the pattern instantly reduces a hard problem to a template and dramatically shortens interview solving time."
+          resources:
+            - "NeetCode 150 playlist (YouTube, free) — pattern-grouped"
+            - "Educative: Grokking the Coding Interview Patterns (interactive)"
+            - "LeetCode: pattern-tagged problem lists (Two Pointers, BFS, etc.)"
+            - "AlgoMonster: pattern roadmap (algomonster.io)"
+
+        - id: algo-data-structures
+          title: "Core DS: Arrays, LinkedList, Stack, Queue, Tree, Graph, Heap"
+          summary: "Mastery of core data structures determines which algorithm you reach for; trees, graphs, and heaps appear constantly in both coding interviews and real system design decisions."
+          resources:
+            - "Visualgo.net — animated visualizations of all core structures (free)"
+            - "CS Fundamentals on Coursera: Algorithms (Stanford, Tim Roughgarden)"
+            - "Book: Introduction to Algorithms (CLRS) — reference chapters per structure"
+            - "Educative: Data Structures for Coding Interviews (Java/Python)"
+
+        - id: algo-dynamic-programming
+          title: "Dynamic Programming fundamentals"
+          summary: "DP converts exponential brute-force solutions to polynomial time by memoizing overlapping subproblems; it's the highest-difficulty pattern in FAANG screens and separates senior candidates from the rest."
+          resources:
+            - "NeetCode: DP playlist (YouTube, free) — 1-D → 2-D → intervals"
+            - "Educative: Grokking Dynamic Programming Patterns for Coding Interviews"
+            - "Leetcode DP study plan (free, curated progression)"
+            - "Book: Dynamic Programming for Coding Interviews (Meenakshi & Kamal Rawat)"
+
+    # ---- System Design (HLD) — with new sd-sql-interviews ----
+    - id: system-design-hld
+      title: "System Design (HLD)"
+      children:
+        - id: sd-requirements
+          title: "Clarifying requirements: functional & non-functional"
+          summary: "Spending 5-10 minutes defining scope, scale, and constraints before drawing boxes prevents designing the wrong system; interviewers score heavily on this step because it mirrors real engineering discovery."
+          resources:
+            - "Hello Interview: Requirements Clarification guide (hellointerview.com)"
+            - "ByteByteGo: System Design Template video (YouTube)"
+            - "Book: System Design Interview Vol 1, Chapter 1 (Alex Xu)"
+            - "GitHub: donnemartin/system-design-primer — requirements section"
+
+        - id: sd-capacity
+          title: "Capacity estimation: RPS, storage, bandwidth"
+          summary: "Back-of-the-envelope math helps you choose the right data store and replication strategy; getting order-of-magnitude estimates right shows pragmatic engineering judgment."
+          resources:
+            - "Book: System Design Interview Vol 1, Chapter 2 — Estimation (Alex Xu)"
+            - "ByteByteGo Newsletter: Capacity Estimation cheat sheet"
+            - "Educative: Grokking Modern System Design — Estimation module"
+            - "Codemia.io: capacity estimation drills (codemia.io)"
+
+        - id: sd-components
+          title: "HLD components: LB, API Gateway, caches, queues"
+          summary: "Load balancers, API gateways, caches, and message queues are the Lego bricks of distributed systems; knowing when and why to introduce each prevents over- or under-engineering."
+          resources:
+            - "ByteByteGo: individual component deep-dives (YouTube / newsletter)"
+            - "GitHub: donnemartin/system-design-primer — individual components"
+            - "Educative: Grokking Modern System Design Interview"
+            - "Book: Designing Data-Intensive Applications, Chapters 5-11 (Kleppmann)"
+
+        - id: sd-data-stores
+          title: "SQL vs NoSQL, sharding, replication"
+          summary: "Choosing the wrong database topology is one of the costliest architectural mistakes; understanding consistency/availability trade-offs and partitioning strategies is mandatory for senior-level design discussions."
+          resources:
+            - "CMU Database Group lectures (YouTube, free)"
+            - "Book: Designing Data-Intensive Applications, Part II (Kleppmann)"
+            - "ByteByteGo: SQL vs NoSQL deep dive (newsletter + video)"
+            - "MongoDB University: data modeling free courses (university.mongodb.com)"
+
+        - id: sd-caching
+          title: "Caching: Redis, CDN, cache invalidation"
+          summary: "Caching is the fastest way to improve read throughput and reduce DB load, but invalidation strategies (write-through, write-back, write-around) and stampede protection are where real-world bugs hide."
+          resources:
+            - "Redis University: RU101 Introduction to Redis (free, university.redis.io)"
+            - "ByteByteGo: Caching Strategies video (YouTube)"
+            - "Book: System Design Interview Vol 1 — Design a Cache chapter (Alex Xu)"
+            - "Cloudflare Learning: How CDN caching works (free article)"
+
+        - id: sd-failure-modes
+          title: "Failure modes, circuit breakers, retries"
+          summary: "Distributed systems fail partially and unpredictably; circuit breakers, exponential backoff, and bulkheads are the vocabulary for designing resilient services that degrade gracefully instead of cascading."
+          resources:
+            - "Release It! (Michael Nygard) — stability patterns (Book)"
+            - "Resilience4j docs: circuit breaker + retry patterns (resilience4j.readme.io)"
+            - "Netflix Tech Blog: Hystrix and Chaos Engineering articles"
+            - "AWS Well-Architected Framework — Reliability pillar (free, docs.aws.amazon.com)"
+
+        - id: sd-cost-estimation
+          title: "Cost estimation (cloud pricing awareness)"
+          summary: "Architecture decisions directly translate to monthly cloud bills; engineers who can estimate cost trade-offs (e.g., DynamoDB vs RDS vs self-managed) are valued by product teams and avoid expensive surprises."
+          resources:
+            - "AWS Pricing Calculator (calculator.aws)"
+            - "Google Cloud Pricing overview (cloud.google.com/pricing)"
+            - "The Cloud Cost Handbook (cloudcostshandbook.com, free)"
+            - "FinOps Foundation: Introduction to FinOps (free, finops.org)"
+
+        - id: sd-ai-components
+          title: "AI-aware design: vector DBs, LLM APIs, RAG"
+          summary: "Modern backends increasingly include LLM inference, embedding pipelines, and vector retrieval; understanding their latency, cost, and failure profiles is becoming a baseline for senior architects."
+          resources:
+            - "Pinecone Learning Center: vector database concepts (learn.pinecone.io)"
+            - "LangChain docs: RAG architecture guide (python.langchain.com)"
+            - "ByteByteGo: Designing a RAG System video (YouTube)"
+            - "Book: AI Engineering (Chip Huyen, 2025)"
+
+        - id: sd-cap-theorem
+          title: "CAP theorem & consistency models"
+          summary: "CAP theorem states that a distributed system can guarantee at most two of Consistency, Availability, Partition tolerance; knowing this helps you explain trade-offs in database choice to interviewers and stakeholders."
+          resources:
+            - "Martin Kleppmann: 'Please stop calling databases CP or AP' (blog, 2015)"
+            - "Book: Designing Data-Intensive Applications, Chapter 9 (Kleppmann)"
+            - "Jepsen.io: consistency models reference (jepsen.io/consistency)"
+            - "AWS re:Invent: Consistency Models in DynamoDB (YouTube)"
+
+        - id: sd-sql-interviews
+          title: "SQL Interviews: ACID, isolation levels, deadlocks, normalization"
+          summary: "SQL internals questions (ACID guarantees, READ COMMITTED vs SERIALIZABLE, deadlock detection, 3NF/BCNF normalization) appear in 70%+ of backend/data engineer screens and are easy marks if drilled systematically."
+          resources:
+            - "Use The Index, Luke (use-the-index-luke.com) — free deep-dive on SQL internals"
+            - "CMU 15-445 Database Systems lectures (YouTube, free)"
+            - "DataLemur: SQL interview question bank (datalemur.com)"
+            - "Book: Database Internals (Alex Petrov) — ACID + isolation levels chapters"
+
+    # ---- LLD & Patterns ----
+    - id: low-level-design
+      title: "Low-Level Design (LLD) & Patterns"
+      children:
+        - id: solid-principles
+          title: "SOLID principles (deep, not superficial)"
+          summary: "SOLID is the vocabulary of clean object-oriented design; deep understanding (not just reciting the acronym) lets you spot coupling issues in code reviews and guide refactoring discussions at senior level."
+          resources:
+            - "RefactoringGuru: SOLID explanations with examples (refactoring.guru/solid)"
+            - "Book: Clean Code, Chapters 7-10 (Robert Martin)"
+            - "Pluralsight: SOLID Principles of Object-Oriented Design (video course)"
+            - "GitHub: heycorey/solid-principles-java — practical examples"
+
+        - id: gof-patterns
+          title: "GoF patterns in modern context (Strategy, Observer, Builder)"
+          summary: "The Gang of Four patterns remain the most common design vocabulary in Java/Kotlin codebases; interviewers expect you to apply them situationally, not recite them from a book."
+          resources:
+            - "RefactoringGuru: Design Patterns catalog (refactoring.guru/design-patterns)"
+            - "Book: Head First Design Patterns, 2nd Ed (Freeman & Robson)"
+            - "Educative: Design Patterns in Java — interactive course"
+            - "iluwatar/java-design-patterns on GitHub — real-world implementations"
+
+        - id: composition-over-inheritance
+          title: "Composition over Inheritance"
+          summary: "Inheritance hierarchies become rigid and brittle at scale; composition enables flexible, testable code and is the principle behind dependency injection, strategy pattern, and modern frameworks."
+          resources:
+            - "Book: Effective Java, Item 18 — Favor composition over inheritance (Bloch)"
+            - "RefactoringGuru: Composite pattern (refactoring.guru)"
+            - "ThoughtWorks Blog: 'Why composition is often better than inheritance'"
+            - "Kotlin docs: delegation (kotlinlang.org/docs/delegation.html)"
+
+        - id: lld-grokking
+          title: "Educative: Grokking the Low Level Design Interview"
+          summary: "This course teaches structured LLD problem-solving — from requirements → class diagrams → code — using canonical examples like parking lot, elevator, and chess, which are the most common LLD interview questions."
+          resources:
+            - "Educative.io: Grokking the Low Level Design Interview Using OOD Principles"
+            - "GitHub: prasadgujar/low-level-design-primer — free OOD examples"
+            - "YouTube: Gaurav Sen — Low Level Design playlist"
+            - "NeetCode: OOP Design playlist (YouTube)"
+
+    # ---- DDD ----
+    - id: ddd
+      title: "Domain-Driven Design"
+      children:
+        - id: ddd-bounded-contexts
+          title: "Bounded Contexts & Ubiquitous Language"
+          summary: "Bounded contexts define explicit model boundaries that prevent semantic collisions when multiple teams work on the same domain; ubiquitous language aligns code, tests, and conversations around the same vocabulary."
+          resources:
+            - "Book: Domain-Driven Design Distilled (Vaughn Vernon) — accessible intro"
+            - "Martin Fowler: BoundedContext article (martinfowler.com)"
+            - "DDD Community: ddd-community.com — free patterns reference"
+            - "Udemy: Domain-Driven Design & Microservices for Architects (Owais Khan)"
+
+        - id: ddd-aggregates
+          title: "Aggregates, Entities, Value Objects"
+          summary: "Aggregates enforce consistency boundaries within a bounded context; distinguishing entities (identity-based) from value objects (value-based) leads to cleaner domain models with fewer data integrity bugs."
+          resources:
+            - "Book: Domain-Driven Design (Eric Evans) — Chapters 5-6"
+            - "Book: Implementing Domain-Driven Design (Vaughn Vernon)"
+            - "Microsoft: DDD guide for microservices (docs.microsoft.com/en-us/dotnet/architecture)"
+            - "YouTube: Greg Young — DDD/CQRS conference talks"
+
+        - id: ddd-events
+          title: "Domain Events & Event Storming"
+          summary: "Domain events capture what happened in the business domain and are the connective tissue between aggregates and bounded contexts; event storming is a collaborative discovery workshop that reveals domain complexity fast."
+          resources:
+            - "Alberto Brandolini: Introducing Event Storming (book, leanpub.com)"
+            - "Martin Fowler: Domain Event pattern (martinfowler.com)"
+            - "EventStorming.com — official site with free guides"
+            - "YouTube: Vaughn Vernon — Implementing Domain Events"
+
+    # ---- Event-Driven Architecture ----
+    - id: event-driven-arch
+      title: "Event-Driven Architecture"
+      children:
+        - id: event-sourcing
+          title: "Event Sourcing"
+          summary: "Event sourcing stores state as an immutable log of events instead of current values, enabling full audit trails, temporal queries, and replayable state — critical in fintech for transaction history and compliance."
+          resources:
+            - "Martin Fowler: Event Sourcing article (martinfowler.com)"
+            - "EventStore: Getting Started with Event Sourcing (eventstore.com/blog)"
+            - "Book: Designing Data-Intensive Applications, Chapter 11 (Kleppmann)"
+            - "YouTube: Greg Young — CQRS and Event Sourcing (NDC conference)"
+
+        - id: cqrs
+          title: "CQRS"
+          summary: "Command Query Responsibility Segregation separates the write model (commands) from the read model (queries), enabling independent scaling and optimized read projections — often paired with event sourcing for complex domains."
+          resources:
+            - "Martin Fowler: CQRS article (martinfowler.com)"
+            - "Microsoft: CQRS pattern guide (docs.microsoft.com/azure/architecture/patterns/cqrs)"
+            - "Axon Framework docs: CQRS with Java (axoniq.io)"
+            - "YouTube: Udi Dahan — CQRS pitfalls and patterns"
+
+        - id: saga-pattern
+          title: "Saga Pattern (orchestration vs choreography)"
+          summary: "Sagas coordinate multi-step distributed transactions without two-phase commit by using compensating transactions; choosing orchestration (central coordinator) vs choreography (event-driven) has deep implications for observability and coupling."
+          resources:
+            - "Microservices.io: Saga pattern reference (microservices.io/patterns/data/saga.html)"
+            - "Book: Microservices Patterns, Chapter 4 (Chris Richardson)"
+            - "YouTube: Chris Richardson — Saga pattern talk (SpringOne)"
+            - "Temporal.io docs: Saga implementation guide"
+
+        - id: outbox-pattern
+          title: "Outbox Pattern for reliable publishing"
+          summary: "The transactional outbox guarantees at-least-once event delivery by writing events to the same DB transaction as business data, then relaying them asynchronously — eliminating the dual-write problem in microservices."
+          resources:
+            - "Microservices.io: Transactional Outbox pattern (microservices.io)"
+            - "Debezium blog: Outbox pattern with CDC (debezium.io/blog)"
+            - "Book: Microservices Patterns, Chapter 3 (Chris Richardson)"
+            - "Gunnar Morling: Outbox pattern blog post (morling.dev)"
+
+    # ---- Microservices ----
+    - id: microservices
+      title: "Microservices Patterns"
+      children:
+        - id: service-mesh
+          title: "Service Mesh (Istio/Linkerd)"
+          summary: "A service mesh moves cross-cutting concerns (mTLS, retries, circuit breaking, traffic shaping) out of application code into a sidecar infrastructure layer, enabling zero-trust networking and progressive delivery at scale."
+          resources:
+            - "Istio docs: Getting Started (istio.io/latest/docs/setup)"
+            - "Linkerd docs: Architecture overview (linkerd.io/docs)"
+            - "Book: The Service Mesh (Lee Calcote & Zack Butcher)"
+            - "CNCF: Service Mesh landscape (cncf.io)"
+
+        - id: api-gateway
+          title: "API Gateway patterns"
+          summary: "API gateways centralize cross-cutting concerns like auth, rate limiting, SSL termination, and request routing; understanding patterns like BFF (Backend for Frontend) is essential for multi-client architectures."
+          resources:
+            - "Kong docs: API Gateway concepts (docs.konghq.com)"
+            - "AWS API Gateway developer guide (docs.aws.amazon.com/apigateway)"
+            - "Martin Fowler: BFF pattern (martinfowler.com/articles/BaekendForFrontend.html)"
+            - "ByteByteGo: API Gateway deep dive (YouTube)"
+
+        - id: distributed-tracing
+          title: "Distributed Tracing (OpenTelemetry)"
+          summary: "Distributed tracing reconstructs the path of a request across microservices, making it possible to find latency bottlenecks and failure points that logs alone cannot reveal."
+          resources:
+            - "OpenTelemetry docs: Getting started with Java (opentelemetry.io/docs/languages/java)"
+            - "Jaeger docs: Architecture overview (jaegertracing.io/docs)"
+            - "Book: Observability Engineering (Charity Majors et al.)"
+            - "YouTube: CNCF — OpenTelemetry 101 session"
+
+    # ---- Fintech ----
+    - id: fintech-patterns
+      title: "Fintech Specifics"
+      children:
+        - id: real-time-payments
+          title: "Real-time payments architecture"
+          summary: "Real-time payment systems require sub-second idempotent processing, exactly-once guarantees, and regulatory compliance; understanding clearing, settlement, and ISO 20022 messaging is essential for fintech backend roles."
+          resources:
+            - "Stripe Engineering Blog: payments infrastructure articles (stripe.com/blog/engineering)"
+            - "AWS: Real-Time Payment Processing whitepaper (docs.aws.amazon.com)"
+            - "Book: Payments Systems in the U.S. (Carol Coye Benson)"
+            - "ISO 20022 overview (iso20022.org)"
+
+        - id: fraud-detection
+          title: "Fraud detection: rules + ML hybrid"
+          summary: "Modern fraud detection layers deterministic rule engines (fast, explainable) with ML models (adaptive, handles novel patterns); understanding velocity checks, device fingerprinting, and model drift is key in fintech."
+          resources:
+            - "Google: Rules-based vs ML fraud detection article (cloud.google.com)"
+            - "Stripe Radar docs: rules configuration (stripe.com/docs/radar)"
+            - "Book: Machine Learning for Financial Risk Management (Alexander McNeil et al.)"
+            - "Fraud Detection with Graph Neural Networks — Neo4j blog"
+
+        - id: pci-dss
+          title: "PCI-DSS compliance basics"
+          summary: "PCI-DSS mandates security controls for any system that stores, processes, or transmits cardholder data; even backend developers must understand scope, tokenization, and audit requirements to build compliant systems."
+          resources:
+            - "PCI Security Standards Council: official guides (pcisecuritystandards.org)"
+            - "Stripe: PCI compliance overview (stripe.com/docs/security)"
+            - "AWS: Architecting for PCI DSS whitepaper"
+            - "Book: PCI Compliance, 4th Ed (Branden Williams & Anton Chuvakin)"
+
+        - id: big-data-medallion
+          title: "Medallion Architecture: Bronze → Silver → Gold"
+          summary: "The medallion (lakehouse) architecture organizes data into raw, cleaned, and business-ready layers, enabling reliable data pipelines that serve both real-time analytics and ML feature stores."
+          resources:
+            - "Databricks: Medallion Architecture guide (databricks.com/glossary/medallion-architecture)"
+            - "Delta Lake docs: medallion pattern (delta.io)"
+            - "Book: Fundamentals of Data Engineering (Joe Reis & Matt Housley)"
+            - "dbt Labs blog: data modeling best practices"
+
+    # ---- Practice ----
+    - id: arch-practice
+      title: "Hands-on Practice"
+      children:
+        - id: bytebytego
+          title: "ByteByteGo (Alex Xu) — system design visuals"
+          summary: "ByteByteGo translates complex distributed systems concepts into memorable visual diagrams and bite-sized explanations, making it the most popular preparation resource for system design interviews."
+          resources:
+            - "ByteByteGo.com — paid newsletter + video library"
+            - "YouTube: ByteByteGo channel (free weekly videos)"
+            - "Book: System Design Interview Vol 1 & 2 (Alex Xu)"
+
+        - id: codemia-io
+          title: "Codemia.io — interactive system design problems"
+          summary: "Codemia provides structured system design exercises with built-in evaluation rubrics, filling the gap between reading theory and practicing the actual interview whiteboard flow."
+          resources:
+            - "Codemia.io — main platform (subscription)"
+            - "Hello Interview blog: how to use Codemia (hellointerview.com)"
+
+        - id: hello-interview
+          title: "Hello Interview — structured SD mock sessions"
+          summary: "Hello Interview offers live mock system design sessions with senior engineers from top tech companies, providing real-time feedback on structure, depth, and communication — the closest proxy to the real interview."
+          resources:
+            - "Hello Interview platform (hellointerview.com)"
+            - "Hello Interview: System Design guide library (free articles)"
+
+        - id: educative-grokking
+          title: "Educative: Grokking System Design Interview"
+          summary: "The original structured system design course that popularized template-based preparation; covers 20+ canonical systems (URL shortener, Twitter, Netflix) with detailed component breakdowns."
+          resources:
+            - "Educative.io: Grokking Modern System Design Interview"
+            - "Educative.io: Grokking the System Design Interview (original)"
+
+        - id: educative-lld
+          title: "Educative: Grokking Low Level Design Interview"
+          summary: "Provides step-by-step OOD problem solving for the most common LLD interview questions, from requirements gathering through class diagram to working code in Java/Python/C++."
+          resources:
+            - "Educative.io: Grokking the Low Level Design Interview Using OOD Principles"
+            - "GitHub: prasadgujar/low-level-design-primer (free)"
+
+        - id: pramp-sd
+          title: "Pramp: free peer system design mocks"
+          summary: "Pramp matches you with a peer for free live mock interviews where you alternate roles as interviewer and candidate, building both articulation and evaluation skills essential for senior screens."
+          resources:
+            - "Pramp.com — free peer mock interviews"
+            - "interviewing.io — paid mocks with FAANG engineers"
+
+    - id: arch-awesome-repos
+      title: "Awesome GitHub Repos & Articles"
+      children:
+        - id: system-design-primer
+          title: "system-design-primer (donnemartin) — 295k+ stars"
+          summary: "The single most popular system design learning resource on GitHub — covers HLD topics, performance/scalability concepts, common patterns, and 24+ worked example problems with diagrams. Mandatory pre-reading for FAANG SD interviews."
+          resources:
+            - "GitHub: github.com/donnemartin/system-design-primer (295k+ stars)"
+            - "Translated to many languages, study sequentially"
+        - id: awesome-system-design-repo
+          title: "awesome-system-design-resources (ashishps1) — 38k+ stars"
+          summary: "Curated catalog of articles, videos, courses, and books for learning system design from beginner to advanced. Complements system-design-primer with more current resources (LLM systems, modern cloud patterns)."
+          resources:
+            - "GitHub: github.com/ashishps1/awesome-system-design-resources (38k+ stars)"
+        - id: awesome-scalability
+          title: "awesome-scalability (binhnguyennus) — 65k+ stars"
+          summary: "Real-world architecture stories and tech blog post archive from companies (Netflix, Uber, Airbnb, etc.) — the best source for understanding how systems are actually built at scale."
+          resources:
+            - "GitHub: github.com/binhnguyennus/awesome-scalability (65k+ stars)"
+        - id: ddd-resources-repo
+          title: "Awesome DDD (heynickc) — 13k+ stars"
+          summary: "Comprehensive list of DDD resources: books, articles, videos, sample apps, communities. The reference index for all things Domain-Driven Design."
+          resources:
+            - "GitHub: github.com/heynickc/awesome-ddd (13k+ stars)"
+            - "DDD Crew: github.com/ddd-crew (community templates and tools)"
+        - id: martin-fowler-articles
+          title: "Martin Fowler's articles archive"
+          summary: "Martin Fowler's blog and bliki — the canonical source for definitions and analyses of patterns: CQRS, Event Sourcing, Microservices, Strangler Fig, and many more. Authoritative."
+          resources:
+            - "Blog: martinfowler.com/articles.html"
+            - "Bliki: martinfowler.com/bliki/ — short pattern definitions"
+        - id: high-scalability-blog
+          title: "HighScalability blog"
+          summary: "Long-running blog publishing detailed real-world architecture case studies and weekly tech news roundups — invaluable for SD interview storytelling."
+          resources:
+            - "Blog: highscalability.com — Stuff The Internet Says weekly digest"
+        - id: coding-interview-university
+          title: "coding-interview-university (jwasham) — 320k+ stars"
+          summary: "Multi-month self-study plan for becoming a software engineer — covers algorithms, data structures, system design, OS concepts. Comprehensive but heavyweight; cherry-pick relevant sections."
+          resources:
+            - "GitHub: github.com/jwasham/coding-interview-university (320k+ stars)"
+        - id: tech-interview-handbook
+          title: "tech-interview-handbook (yangshun) — 130k+ stars"
+          summary: "Curated FAANG interview prep covering coding, system design, behavioral, salary negotiation. More focused and practical than coding-interview-university."
+          resources:
+            - "GitHub: github.com/yangshun/tech-interview-handbook (130k+ stars)"
+
+    # ---- Books ----
+    - id: arch-books
+      title: "Books"
+      children:
+        - id: book-ddia
+          title: "Book: Designing Data-Intensive Applications (Kleppmann)"
+          summary: "The single most recommended book for system design interviews and senior engineering roles; covers replication, partitioning, transactions, consistency, and stream processing with rare academic rigor and practical clarity."
+          resources:
+            - "O'Reilly: Designing Data-Intensive Applications (dataintensive.net)"
+            - "Martin Kleppmann's companion site (dataintensive.net) — free chapter samples"
+            - "Book reading group guides on GitHub"
+
+        - id: book-sd-interview
+          title: "Book: System Design Interview Vol 1 & 2 (Alex Xu)"
+          summary: "The definitive interview prep books for HLD; Vol 1 covers fundamentals and 16 classic designs, Vol 2 adds 13 more complex real-world systems with detailed trade-off analysis."
+          resources:
+            - "ByteByteGo.com — companion site for both volumes"
+            - "Amazon: System Design Interview Vol 1 (Alex Xu)"
+            - "Amazon: System Design Interview Vol 2 (Alex Xu)"
+
+        - id: book-ddd-evans
+          title: "Book: Domain-Driven Design (Eric Evans)"
+          summary: "The original blue book that coined bounded contexts, aggregates, and ubiquitous language; dense but essential for understanding why DDD patterns exist and how to apply them in complex domains."
+          resources:
+            - "Amazon: Domain-Driven Design (Eric Evans, Addison-Wesley)"
+            - "DDD Community: ddd-community.com — supplementary resources"
+            - "Book: Domain-Driven Design Distilled (Vernon) — lighter companion"
+
+        - id: book-clean-arch
+          title: "Book: Clean Architecture (Robert Martin)"
+          summary: "Clean Architecture defines the dependency rule (outer layers depend on inner layers, not vice versa) and provides a framework for building systems that are independently testable, deployable, and scalable."
+          resources:
+            - "Amazon: Clean Architecture (Robert C. Martin)"
+            - "8thlight.com/blog — Robert Martin's blog with free architecture articles"
+            - "GitHub: mattia-battiston/clean-architecture-example — Java reference impl"
+
+# ============================================================
+# 3. DEVOPS & CLOUD
+# ============================================================
