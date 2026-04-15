@@ -14,6 +14,43 @@ export interface GitHubConfig {
   repo: string;
 }
 
+export type DayKey = "mon" | "tue" | "wed" | "thu" | "fri";
+
+export interface StudyDay {
+  day: DayKey;
+  topicId: string;
+  minutes: number;
+}
+
+export interface StudyWeek {
+  week: number;
+  title: string;
+  days: StudyDay[];
+}
+
+export interface StudyPhase {
+  id: string;
+  title: string;
+  weeks: number[];
+  color: string;
+}
+
+export interface RecurringPractice {
+  topicId: string;
+  minutes: number;
+  label: string;
+}
+
+export interface StudyPlan {
+  config: {
+    dailyMinutes: number;
+    studyDays: DayKey[];
+  };
+  recurring: Record<DayKey, RecurringPractice>;
+  phases: StudyPhase[];
+  weeks: StudyWeek[];
+}
+
 export interface Note {
   id: string;
   text: string;

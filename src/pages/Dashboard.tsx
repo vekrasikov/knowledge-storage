@@ -52,6 +52,12 @@ export function Dashboard() {
             <p className="text-slate-500 mt-1">
               {overallDone} of {overallTotal} topics completed
             </p>
+            <Link
+              to="/timeline"
+              className="inline-flex items-center gap-1.5 mt-2 text-sm text-blue-600 hover:underline"
+            >
+              View 24-week study plan →
+            </Link>
           </div>
           <div className="flex items-center gap-3">
             <SyncButton data={data} onImport={replaceData} />
