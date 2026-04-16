@@ -14,6 +14,8 @@
             - "Big-O Cheat Sheet: bigocheatsheet.com"
             - "Book: Cracking the Coding Interview — Chapter 1 (Gayle Laakmann McDowell)"
             - "CS50x on edX — Algorithms week (free)"
+          phase: phase-2-cs-foundations
+          phaseOrder: 10
 
         - id: algo-common-patterns
           title: "Common Patterns: Two Pointers, Sliding Window, BFS/DFS, Binary Search"
@@ -23,6 +25,8 @@
             - "Educative: Grokking the Coding Interview Patterns (interactive)"
             - "LeetCode: pattern-tagged problem lists (Two Pointers, BFS, etc.)"
             - "AlgoMonster: pattern roadmap (algomonster.io)"
+          phase: phase-2-cs-foundations
+          phaseOrder: 20
 
         - id: algo-data-structures
           title: "Core DS: Arrays, LinkedList, Stack, Queue, Tree, Graph, Heap"
@@ -32,6 +36,8 @@
             - "CS Fundamentals on Coursera: Algorithms (Stanford, Tim Roughgarden)"
             - "Book: Introduction to Algorithms (CLRS) — reference chapters per structure"
             - "Educative: Data Structures for Coding Interviews (Java/Python)"
+          phase: phase-2-cs-foundations
+          phaseOrder: 30
 
         - id: algo-dynamic-programming
           title: "Dynamic Programming fundamentals"
@@ -41,6 +47,8 @@
             - "Educative: Grokking Dynamic Programming Patterns for Coding Interviews"
             - "Leetcode DP study plan (free, curated progression)"
             - "Book: Dynamic Programming for Coding Interviews (Meenakshi & Kamal Rawat)"
+          phase: phase-2-cs-foundations
+          phaseOrder: 40
 
     # ---- System Design (HLD) — with new sd-sql-interviews ----
     - id: system-design-hld
@@ -54,6 +62,8 @@
             - "ByteByteGo: System Design Template video (YouTube)"
             - "Book: System Design Interview Vol 1, Chapter 1 (Alex Xu)"
             - "GitHub: donnemartin/system-design-primer — requirements section"
+          phase: phase-2-cs-foundations
+          phaseOrder: 50
 
         - id: sd-capacity
           title: "Capacity estimation: RPS, storage, bandwidth"
@@ -63,6 +73,8 @@
             - "ByteByteGo Newsletter: Capacity Estimation cheat sheet"
             - "Educative: Grokking Modern System Design — Estimation module"
             - "Codemia.io: capacity estimation drills (codemia.io)"
+          phase: phase-2-cs-foundations
+          phaseOrder: 60
 
         - id: sd-components
           title: "HLD components: LB, API Gateway, caches, queues"
@@ -72,6 +84,8 @@
             - "GitHub: donnemartin/system-design-primer — individual components"
             - "Educative: Grokking Modern System Design Interview"
             - "Book: Designing Data-Intensive Applications, Chapters 5-11 (Kleppmann)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 10
 
         - id: sd-data-stores
           title: "SQL vs NoSQL, sharding, replication"
@@ -81,6 +95,8 @@
             - "Book: Designing Data-Intensive Applications, Part II (Kleppmann)"
             - "ByteByteGo: SQL vs NoSQL deep dive (newsletter + video)"
             - "MongoDB University: data modeling free courses (university.mongodb.com)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 20
 
         - id: sd-caching
           title: "Caching: Redis, CDN, cache invalidation"
@@ -90,6 +106,8 @@
             - "ByteByteGo: Caching Strategies video (YouTube)"
             - "Book: System Design Interview Vol 1 — Design a Cache chapter (Alex Xu)"
             - "Cloudflare Learning: How CDN caching works (free article)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 30
 
         - id: sd-failure-modes
           title: "Failure modes, circuit breakers, retries"
@@ -99,6 +117,8 @@
             - "Resilience4j docs: circuit breaker + retry patterns (resilience4j.readme.io)"
             - "Netflix Tech Blog: Hystrix and Chaos Engineering articles"
             - "AWS Well-Architected Framework — Reliability pillar (free, docs.aws.amazon.com)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 40
 
         - id: sd-cost-estimation
           title: "Cost estimation (cloud pricing awareness)"
@@ -108,6 +128,8 @@
             - "Google Cloud Pricing overview (cloud.google.com/pricing)"
             - "The Cloud Cost Handbook (cloudcostshandbook.com, free)"
             - "FinOps Foundation: Introduction to FinOps (free, finops.org)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 50
 
         - id: sd-ai-components
           title: "AI-aware design: vector DBs, LLM APIs, RAG"
@@ -117,6 +139,8 @@
             - "LangChain docs: RAG architecture guide (python.langchain.com)"
             - "ByteByteGo: Designing a RAG System video (YouTube)"
             - "Book: AI Engineering (Chip Huyen, 2025)"
+          phase: phase-9-specialization
+          phaseOrder: 30
 
         - id: sd-cap-theorem
           title: "CAP theorem & consistency models"
@@ -126,6 +150,8 @@
             - "Book: Designing Data-Intensive Applications, Chapter 9 (Kleppmann)"
             - "Jepsen.io: consistency models reference (jepsen.io/consistency)"
             - "AWS re:Invent: Consistency Models in DynamoDB (YouTube)"
+          phase: phase-2-cs-foundations
+          phaseOrder: 70
 
         - id: sd-sql-interviews
           title: "SQL Interviews: ACID, isolation levels, deadlocks, normalization"
@@ -135,6 +161,8 @@
             - "CMU 15-445 Database Systems lectures (YouTube, free)"
             - "DataLemur: SQL interview question bank (datalemur.com)"
             - "Book: Database Internals (Alex Petrov) — ACID + isolation levels chapters"
+          phase: phase-2-cs-foundations
+          phaseOrder: 100
 
         - id: oltp-vs-olap
           title: "OLTP vs OLAP: workload and storage trade-offs"
@@ -145,6 +173,8 @@
             - "ClickHouse docs: Why columnar is fast (clickhouse.com/docs)"
             - "Snowflake: Data Warehouse whitepaper (snowflake.com/resources)"
             - "Jordan Tigani: Big Data is Dead (motherduck.com blog)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 60
 
         - id: resilience-patterns-practical
           title: "Resilience Patterns: bulkheads, timeouts, retry + jitter, rate limiting"
@@ -155,6 +185,8 @@
             - "AWS Architecture Blog: Exponential Backoff and Jitter (aws.amazon.com/blogs)"
             - "Book: Site Reliability Engineering, Chapter 22 — Addressing Cascading Failures (sre.google/sre-book)"
             - "Netflix Hystrix wiki (archived): design notes (github.com/Netflix/Hystrix/wiki)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 70
 
         - id: network-protocols
           title: "Network Protocols: HTTP/2, HTTP/3, gRPC, WebSocket"
@@ -165,6 +197,8 @@
             - "gRPC docs: Concepts + Performance (grpc.io/docs)"
             - "MDN: WebSockets API (developer.mozilla.org)"
             - "QUIC explained: RFC 9000 + Cloudflare posts"
+          phase: phase-5-system-design-hld
+          phaseOrder: 80
 
     # ---- LLD & Patterns ----
     - id: low-level-design
@@ -178,6 +212,8 @@
             - "Book: Clean Code, Chapters 7-10 (Robert Martin)"
             - "Pluralsight: SOLID Principles of Object-Oriented Design (video course)"
             - "GitHub: heycorey/solid-principles-java — practical examples"
+          phase: phase-3-software-design
+          phaseOrder: 10
 
         - id: gof-patterns
           title: "GoF patterns in modern context (Strategy, Observer, Builder)"
@@ -187,6 +223,8 @@
             - "Book: Head First Design Patterns, 2nd Ed (Freeman & Robson)"
             - "Educative: Design Patterns in Java — interactive course"
             - "iluwatar/java-design-patterns on GitHub — real-world implementations"
+          phase: phase-3-software-design
+          phaseOrder: 20
 
         - id: composition-over-inheritance
           title: "Composition over Inheritance"
@@ -196,6 +234,8 @@
             - "RefactoringGuru: Composite pattern (refactoring.guru)"
             - "ThoughtWorks Blog: 'Why composition is often better than inheritance'"
             - "Kotlin docs: delegation (kotlinlang.org/docs/delegation.html)"
+          phase: phase-3-software-design
+          phaseOrder: 30
 
         - id: lld-grokking
           title: "Educative: Grokking the Low Level Design Interview"
@@ -205,6 +245,8 @@
             - "GitHub: prasadgujar/low-level-design-primer — free OOD examples"
             - "YouTube: Gaurav Sen — Low Level Design playlist"
             - "NeetCode: OOP Design playlist (YouTube)"
+          phase: phase-3-software-design
+          phaseOrder: 40
 
         - id: hexagonal-architecture
           title: "Hexagonal Architecture / Ports & Adapters"
@@ -215,6 +257,8 @@
             - "Book: Clean Architecture, Chapters 21-22 (Robert C. Martin)"
             - "GitHub: thombergs/buckpal — reference hexagonal app in Java"
             - "InfoQ: Hexagonal Architecture explained (infoq.com)"
+          phase: phase-3-software-design
+          phaseOrder: 50
 
     # ---- DDD ----
     - id: ddd
@@ -228,6 +272,8 @@
             - "Martin Fowler: BoundedContext article (martinfowler.com)"
             - "DDD Community: ddd-community.com — free patterns reference"
             - "Udemy: Domain-Driven Design & Microservices for Architects (Owais Khan)"
+          phase: phase-3-software-design
+          phaseOrder: 60
 
         - id: ddd-aggregates
           title: "Aggregates, Entities, Value Objects"
@@ -237,6 +283,8 @@
             - "Book: Implementing Domain-Driven Design (Vaughn Vernon)"
             - "Microsoft: DDD guide for microservices (docs.microsoft.com/en-us/dotnet/architecture)"
             - "YouTube: Greg Young — DDD/CQRS conference talks"
+          phase: phase-3-software-design
+          phaseOrder: 70
 
         - id: ddd-events
           title: "Domain Events & Event Storming"
@@ -246,6 +294,8 @@
             - "Martin Fowler: Domain Event pattern (martinfowler.com)"
             - "EventStorming.com — official site with free guides"
             - "YouTube: Vaughn Vernon — Implementing Domain Events"
+          phase: phase-3-software-design
+          phaseOrder: 80
 
     # ---- Event-Driven Architecture ----
     - id: event-driven-arch
@@ -259,6 +309,8 @@
             - "EventStore: Getting Started with Event Sourcing (eventstore.com/blog)"
             - "Book: Designing Data-Intensive Applications, Chapter 11 (Kleppmann)"
             - "YouTube: Greg Young — CQRS and Event Sourcing (NDC conference)"
+          phase: phase-6-distributed-events
+          phaseOrder: 10
 
         - id: cqrs
           title: "CQRS"
@@ -268,6 +320,8 @@
             - "Microsoft: CQRS pattern guide (docs.microsoft.com/azure/architecture/patterns/cqrs)"
             - "Axon Framework docs: CQRS with Java (axoniq.io)"
             - "YouTube: Udi Dahan — CQRS pitfalls and patterns"
+          phase: phase-6-distributed-events
+          phaseOrder: 20
 
         - id: saga-pattern
           title: "Saga Pattern (orchestration vs choreography)"
@@ -277,6 +331,8 @@
             - "Book: Microservices Patterns, Chapter 4 (Chris Richardson)"
             - "YouTube: Chris Richardson — Saga pattern talk (SpringOne)"
             - "Temporal.io docs: Saga implementation guide"
+          phase: phase-6-distributed-events
+          phaseOrder: 30
 
         - id: outbox-pattern
           title: "Outbox Pattern for reliable publishing"
@@ -286,6 +342,8 @@
             - "Debezium blog: Outbox pattern with CDC (debezium.io/blog)"
             - "Book: Microservices Patterns, Chapter 3 (Chris Richardson)"
             - "Gunnar Morling: Outbox pattern blog post (morling.dev)"
+          phase: phase-6-distributed-events
+          phaseOrder: 40
 
         - id: rabbitmq-vs-kafka
           title: "RabbitMQ vs Kafka vs NATS/Pulsar: trade-offs"
@@ -296,6 +354,8 @@
             - "NATS docs: JetStream concepts (docs.nats.io)"
             - "Apache Pulsar docs: concepts (pulsar.apache.org/docs)"
             - "Martin Kleppmann: Kafka — A Distributed Messaging System (talk)"
+          phase: phase-6-distributed-events
+          phaseOrder: 50
 
         - id: schema-registry-evolution
           title: "Schema Registry: Avro, Protobuf, forward/backward compatibility"
@@ -306,6 +366,8 @@
             - "Avro specification: schema resolution (avro.apache.org/docs)"
             - "Book: Kafka: The Definitive Guide, 2nd Ed — Schemas chapter (Gwen Shapira et al.)"
             - "Baeldung: Confluent Schema Registry + Spring Kafka (baeldung.com)"
+          phase: phase-6-distributed-events
+          phaseOrder: 60
 
         - id: dlq-poison-messages
           title: "Dead-Letter Queues & Poison Message Handling"
@@ -316,6 +378,8 @@
             - "RabbitMQ docs: Dead Letter Exchanges (rabbitmq.com/dlx.html)"
             - "Spring Kafka: retry topic / DLT configuration (docs.spring.io/spring-kafka)"
             - "Book: Designing Event-Driven Systems (Ben Stopford, free at confluent.io)"
+          phase: phase-6-distributed-events
+          phaseOrder: 70
 
         - id: consumer-idempotency
           title: "Consumer Idempotency: dedup keys, offset management, compensations"
@@ -326,6 +390,8 @@
             - "Microservices.io: Idempotent Consumer pattern (microservices.io/patterns)"
             - "Debezium docs: idempotent sinks (debezium.io/documentation)"
             - "Chris Richardson: Microservices Patterns book (Chapter 3)"
+          phase: phase-6-distributed-events
+          phaseOrder: 80
 
     # ---- Microservices ----
     - id: microservices
@@ -339,6 +405,8 @@
             - "Linkerd docs: Architecture overview (linkerd.io/docs)"
             - "Book: The Service Mesh (Lee Calcote & Zack Butcher)"
             - "CNCF: Service Mesh landscape (cncf.io)"
+          phase: phase-6-distributed-events
+          phaseOrder: 200
 
         - id: api-gateway
           title: "API Gateway patterns"
@@ -348,6 +416,8 @@
             - "AWS API Gateway developer guide (docs.aws.amazon.com/apigateway)"
             - "Martin Fowler: BFF pattern (martinfowler.com/articles/BaekendForFrontend.html)"
             - "ByteByteGo: API Gateway deep dive (YouTube)"
+          phase: phase-6-distributed-events
+          phaseOrder: 210
 
         - id: distributed-tracing
           title: "Distributed Tracing (OpenTelemetry)"
@@ -357,6 +427,8 @@
             - "Jaeger docs: Architecture overview (jaegertracing.io/docs)"
             - "Book: Observability Engineering (Charity Majors et al.)"
             - "YouTube: CNCF — OpenTelemetry 101 session"
+          phase: phase-6-distributed-events
+          phaseOrder: 220
 
     # ---- Fintech ----
     - id: fintech-patterns
@@ -370,6 +442,8 @@
             - "AWS: Real-Time Payment Processing whitepaper (docs.aws.amazon.com)"
             - "Book: Payments Systems in the U.S. (Carol Coye Benson)"
             - "ISO 20022 overview (iso20022.org)"
+          phase: phase-9-specialization
+          phaseOrder: 100
 
         - id: fraud-detection
           title: "Fraud detection: rules + ML hybrid"
@@ -379,6 +453,8 @@
             - "Stripe Radar docs: rules configuration (stripe.com/docs/radar)"
             - "Book: Machine Learning for Financial Risk Management (Alexander McNeil et al.)"
             - "Fraud Detection with Graph Neural Networks — Neo4j blog"
+          phase: phase-9-specialization
+          phaseOrder: 110
 
         - id: pci-dss
           title: "PCI-DSS compliance basics"
@@ -388,6 +464,8 @@
             - "Stripe: PCI compliance overview (stripe.com/docs/security)"
             - "AWS: Architecting for PCI DSS whitepaper"
             - "Book: PCI Compliance, 4th Ed (Branden Williams & Anton Chuvakin)"
+          phase: phase-9-specialization
+          phaseOrder: 120
 
         - id: big-data-medallion
           title: "Medallion Architecture: Bronze → Silver → Gold"
@@ -397,6 +475,8 @@
             - "Delta Lake docs: medallion pattern (delta.io)"
             - "Book: Fundamentals of Data Engineering (Joe Reis & Matt Housley)"
             - "dbt Labs blog: data modeling best practices"
+          phase: phase-9-specialization
+          phaseOrder: 130
 
     # ---- Architecture-level Security ----
     - id: architecture-security
@@ -411,6 +491,8 @@
             - "BeyondCorp: Google's zero-trust whitepaper (research.google/pubs/beyondcorp)"
             - "Book: Zero Trust Networks (Evan Gilman, Doug Barth)"
             - "AWS IAM: Policy evaluation logic (docs.aws.amazon.com/IAM)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 200
 
         - id: threat-modeling-stride
           title: "Threat Modeling with STRIDE"
@@ -421,6 +503,8 @@
             - "OWASP: Threat Modeling Cheat Sheet (cheatsheetseries.owasp.org)"
             - "Tool: OWASP Threat Dragon (free, owasp.org/www-project-threat-dragon)"
             - "Book: Threats — What Every Engineer Should Learn from Star Wars (Adam Shostack)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 210
 
     # ---- Practice ----
     - id: arch-practice
@@ -433,6 +517,9 @@
             - "ByteByteGo.com — paid newsletter + video library"
             - "YouTube: ByteByteGo channel (free weekly videos)"
             - "Book: System Design Interview Vol 1 & 2 (Alex Xu)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 500
+          type: reference
 
         - id: codemia-io
           title: "Codemia.io — interactive system design problems"
@@ -440,6 +527,9 @@
           resources:
             - "Codemia.io — main platform (subscription)"
             - "Hello Interview blog: how to use Codemia (hellointerview.com)"
+          phase: phase-9-specialization
+          phaseOrder: 500
+          type: reference
 
         - id: hello-interview
           title: "Hello Interview — structured SD mock sessions"
@@ -447,6 +537,9 @@
           resources:
             - "Hello Interview platform (hellointerview.com)"
             - "Hello Interview: System Design guide library (free articles)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 510
+          type: reference
 
         - id: educative-grokking
           title: "Educative: Grokking System Design Interview"
@@ -454,6 +547,9 @@
           resources:
             - "Educative.io: Grokking Modern System Design Interview"
             - "Educative.io: Grokking the System Design Interview (original)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 520
+          type: reference
 
         - id: educative-lld
           title: "Educative: Grokking Low Level Design Interview"
@@ -461,6 +557,9 @@
           resources:
             - "Educative.io: Grokking the Low Level Design Interview Using OOD Principles"
             - "GitHub: prasadgujar/low-level-design-primer (free)"
+          phase: phase-9-specialization
+          phaseOrder: 520
+          type: reference
 
         - id: pramp-sd
           title: "Pramp: free peer system design mocks"
@@ -468,6 +567,9 @@
           resources:
             - "Pramp.com — free peer mock interviews"
             - "interviewing.io — paid mocks with FAANG engineers"
+          phase: phase-9-specialization
+          phaseOrder: 510
+          type: reference
 
     - id: arch-awesome-repos
       title: "Awesome GitHub Repos & Articles"
@@ -478,43 +580,67 @@
           resources:
             - "GitHub: github.com/donnemartin/system-design-primer (295k+ stars)"
             - "Translated to many languages, study sequentially"
+          phase: phase-5-system-design-hld
+          phaseOrder: 600
+          type: reference
         - id: awesome-system-design-repo
           title: "awesome-system-design-resources (ashishps1) — 38k+ stars"
           summary: "Curated catalog of articles, videos, courses, and books for learning system design from beginner to advanced. Complements system-design-primer with more current resources (LLM systems, modern cloud patterns)."
           resources:
             - "GitHub: github.com/ashishps1/awesome-system-design-resources (38k+ stars)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 610
+          type: reference
         - id: awesome-scalability
           title: "awesome-scalability (binhnguyennus) — 65k+ stars"
           summary: "Real-world architecture stories and tech blog post archive from companies (Netflix, Uber, Airbnb, etc.) — the best source for understanding how systems are actually built at scale."
           resources:
             - "GitHub: github.com/binhnguyennus/awesome-scalability (65k+ stars)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 620
+          type: reference
         - id: ddd-resources-repo
           title: "Awesome DDD (heynickc) — 13k+ stars"
           summary: "Comprehensive list of DDD resources: books, articles, videos, sample apps, communities. The reference index for all things Domain-Driven Design."
           resources:
             - "GitHub: github.com/heynickc/awesome-ddd (13k+ stars)"
             - "DDD Crew: github.com/ddd-crew (community templates and tools)"
+          phase: phase-3-software-design
+          phaseOrder: 600
+          type: reference
         - id: martin-fowler-articles
           title: "Martin Fowler's articles archive"
           summary: "Martin Fowler's blog and bliki — the canonical source for definitions and analyses of patterns: CQRS, Event Sourcing, Microservices, Strangler Fig, and many more. Authoritative."
           resources:
             - "Blog: martinfowler.com/articles.html"
             - "Bliki: martinfowler.com/bliki/ — short pattern definitions"
+          phase: phase-5-system-design-hld
+          phaseOrder: 630
+          type: reference
         - id: high-scalability-blog
           title: "HighScalability blog"
           summary: "Long-running blog publishing detailed real-world architecture case studies and weekly tech news roundups — invaluable for SD interview storytelling."
           resources:
             - "Blog: highscalability.com — Stuff The Internet Says weekly digest"
+          phase: phase-5-system-design-hld
+          phaseOrder: 640
+          type: reference
         - id: coding-interview-university
           title: "coding-interview-university (jwasham) — 320k+ stars"
           summary: "Multi-month self-study plan for becoming a software engineer — covers algorithms, data structures, system design, OS concepts. Comprehensive but heavyweight; cherry-pick relevant sections."
           resources:
             - "GitHub: github.com/jwasham/coding-interview-university (320k+ stars)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 650
+          type: reference
         - id: tech-interview-handbook
           title: "tech-interview-handbook (yangshun) — 130k+ stars"
           summary: "Curated FAANG interview prep covering coding, system design, behavioral, salary negotiation. More focused and practical than coding-interview-university."
           resources:
             - "GitHub: github.com/yangshun/tech-interview-handbook (130k+ stars)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 660
+          type: reference
 
     # ---- Books ----
     - id: arch-books
@@ -527,6 +653,9 @@
             - "O'Reilly: Designing Data-Intensive Applications (dataintensive.net)"
             - "Martin Kleppmann's companion site (dataintensive.net) — free chapter samples"
             - "Book reading group guides on GitHub"
+          phase: phase-5-system-design-hld
+          phaseOrder: 700
+          type: reference
 
         - id: book-sd-interview
           title: "Book: System Design Interview Vol 1 & 2 (Alex Xu)"
@@ -535,6 +664,9 @@
             - "ByteByteGo.com — companion site for both volumes"
             - "Amazon: System Design Interview Vol 1 (Alex Xu)"
             - "Amazon: System Design Interview Vol 2 (Alex Xu)"
+          phase: phase-5-system-design-hld
+          phaseOrder: 710
+          type: reference
 
         - id: book-ddd-evans
           title: "Book: Domain-Driven Design (Eric Evans)"
@@ -543,6 +675,9 @@
             - "Amazon: Domain-Driven Design (Eric Evans, Addison-Wesley)"
             - "DDD Community: ddd-community.com — supplementary resources"
             - "Book: Domain-Driven Design Distilled (Vernon) — lighter companion"
+          phase: phase-3-software-design
+          phaseOrder: 700
+          type: reference
 
         - id: book-clean-arch
           title: "Book: Clean Architecture (Robert Martin)"
@@ -551,6 +686,9 @@
             - "Amazon: Clean Architecture (Robert C. Martin)"
             - "8thlight.com/blog — Robert Martin's blog with free architecture articles"
             - "GitHub: mattia-battiston/clean-architecture-example — Java reference impl"
+          phase: phase-5-system-design-hld
+          phaseOrder: 720
+          type: reference
 
 # ============================================================
 # 3. DEVOPS & CLOUD
