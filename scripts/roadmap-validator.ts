@@ -120,3 +120,70 @@ export function checkPhaseOrderUniqueness(nodes: RoadmapNode[]): string[] {
   }
   return errors;
 }
+
+export function checkPhaseReferencesValid(
+  nodes: RoadmapNode[],
+  validPhases: Set<string>
+): string[] {
+  const flat = flattenNodes(nodes);
+  const errors: string[] = [];
+  for (const n of flat) {
+    if (n.phase && !validPhases.has(n.phase)) {
+      errors.push(`Topic "${n.id}" references unknown phase "${n.phase}"`);
+    }
+  }
+  return errors;
+}
+
+export function checkPhaseCoverage(
+  nodes: RoadmapNode[],
+  declaredPhases: string[]
+): string[] {
+  const flat = flattenNodes(nodes);
+  const usedPhases = new Set(flat.map((n) => n.phase).filter(Boolean) as string[]);
+  return declaredPhases
+    .filter((p) => !usedPhases.has(p))
+    .map((p) => `Phase "${p}" declared in path.yaml but no topic references it`);
+}
+
+export function checkEveryLeafHasPhaseOrType(nodes: RoadmapNode[]): string[] {
+  const errors: string[] = [];
+  function walk(ns: RoadmapNode[]) {
+    for (const n of ns) {
+      const isLeaf = !n.children || n.children.length === 0;
+      const isAlias = !!n.aliasOf;
+      if (isLeaf && !isAlias) {
+        const okByPhase = !!n.phase;
+        const okByType = n.type === "recurring" || n.type === "reference";
+        if (!okByPhase && !okByType) {
+          errors.push(`Leaf "${n.id}" has no phase and no type override`);
+        }
+      }
+      if (n.children) walk(n.children);
+    }
+  }
+  walk(nodes);
+  return errors;
+}
+
+export function checkRecurringTopicIds(
+  nodes: RoadmapNode[],
+  recurringIds: string[]
+): string[] {
+  const flat = flattenNodes(nodes);
+  const known = new Set(flat.map((n) => n.id));
+  return recurringIds
+    .filter((id) => !known.has(id))
+    .map((id) => `Recurring topicId "${id}" does not exist in roadmap`);
+}
+
+export function checkStudyPlanTopicIds(
+  nodes: RoadmapNode[],
+  studyPlanIds: string[]
+): string[] {
+  const flat = flattenNodes(nodes);
+  const known = new Set(flat.map((n) => n.id));
+  return studyPlanIds
+    .filter((id) => !known.has(id))
+    .map((id) => `study-plan topicId "${id}" does not resolve to any roadmap entry`);
+}

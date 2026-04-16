@@ -5,6 +5,11 @@ import {
   checkPrereqExistence,
   checkPrereqCycles,
   checkPhaseOrderUniqueness,
+  checkPhaseReferencesValid,
+  checkPhaseCoverage,
+  checkEveryLeafHasPhaseOrType,
+  checkRecurringTopicIds,
+  checkStudyPlanTopicIds,
 } from "../../scripts/roadmap-validator";
 import type { RoadmapNode } from "../types";
 
@@ -135,5 +140,80 @@ describe("checkPhaseOrderUniqueness", () => {
       { id: "b", title: "B", phase: "p1", phaseOrder: 10 },
     ];
     expect(checkPhaseOrderUniqueness(nodes)[0]).toContain("phaseOrder");
+  });
+});
+
+describe("checkPhaseReferencesValid", () => {
+  it("ok when all phase values match path.phases", () => {
+    const nodes = [{ id: "a", title: "A", phase: "p1" }];
+    const phases = new Set(["p1", "p2"]);
+    expect(checkPhaseReferencesValid(nodes, phases)).toEqual([]);
+  });
+  it("errors on unknown phase value", () => {
+    const nodes = [{ id: "a", title: "A", phase: "nope" }];
+    const phases = new Set(["p1"]);
+    expect(checkPhaseReferencesValid(nodes, phases)[0]).toContain("nope");
+  });
+});
+
+describe("checkPhaseCoverage", () => {
+  it("ok when every declared phase is referenced", () => {
+    const nodes = [{ id: "a", title: "A", phase: "p1" }];
+    expect(checkPhaseCoverage(nodes, ["p1"])).toEqual([]);
+  });
+  it("errors on orphan phase", () => {
+    const nodes = [{ id: "a", title: "A", phase: "p1" }];
+    expect(checkPhaseCoverage(nodes, ["p1", "p2"])[0]).toContain("p2");
+  });
+});
+
+describe("checkEveryLeafHasPhaseOrType", () => {
+  it("ok for recurring type without phase", () => {
+    const nodes = [{ id: "a", title: "A", type: "recurring" as const }];
+    expect(checkEveryLeafHasPhaseOrType(nodes)).toEqual([]);
+  });
+  it("ok for leaf with phase", () => {
+    const nodes = [{ id: "a", title: "A", phase: "p1" }];
+    expect(checkEveryLeafHasPhaseOrType(nodes)).toEqual([]);
+  });
+  it("errors on leaf without phase and no type override", () => {
+    const nodes = [{ id: "a", title: "A" }];
+    expect(checkEveryLeafHasPhaseOrType(nodes)[0]).toContain("a");
+  });
+  it("does not error on group node (has children)", () => {
+    const nodes = [{ id: "a", title: "A", children: [{ id: "b", title: "B", phase: "p1" }] }];
+    expect(checkEveryLeafHasPhaseOrType(nodes)).toEqual([]);
+  });
+  it("does not error on alias node", () => {
+    const nodes = [
+      { id: "a", title: "A", aliasOf: "b" },
+      { id: "b", title: "B", phase: "p1" },
+    ];
+    expect(checkEveryLeafHasPhaseOrType(nodes)).toEqual([]);
+  });
+});
+
+describe("checkRecurringTopicIds", () => {
+  it("ok when all recurring ids exist", () => {
+    const nodes = [{ id: "a", title: "A" }];
+    expect(checkRecurringTopicIds(nodes, ["a"])).toEqual([]);
+  });
+  it("errors on unknown recurring id", () => {
+    const nodes = [{ id: "a", title: "A" }];
+    expect(checkRecurringTopicIds(nodes, ["nope"])[0]).toContain("nope");
+  });
+});
+
+describe("checkStudyPlanTopicIds", () => {
+  it("ok when all study-plan topicIds resolve (directly or via alias)", () => {
+    const nodes = [
+      { id: "canonical", title: "C" },
+      { id: "alias", title: "A", aliasOf: "canonical" },
+    ];
+    expect(checkStudyPlanTopicIds(nodes, ["canonical", "alias"])).toEqual([]);
+  });
+  it("errors on unknown study-plan topicId", () => {
+    const nodes = [{ id: "a", title: "A" }];
+    expect(checkStudyPlanTopicIds(nodes, ["missing"])[0]).toContain("missing");
   });
 });

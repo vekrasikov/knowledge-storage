@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "yaml";
-import type { RoadmapNode } from "../src/types";
+import type { RoadmapNode, StudyPlan, PathFile } from "../src/types";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, "..", "data", "roadmap");
@@ -41,4 +41,38 @@ export function loadRoadmapFromYaml(): RoadmapNode[] {
     result.push(...loadOne(filename));
   }
   return result;
+}
+
+export function loadStudyPlanFromYaml(): StudyPlan {
+  const path = join(__dirname, "..", "data", "study-plan.yaml");
+  let content: string;
+  try {
+    content = readFileSync(path, "utf-8");
+  } catch (err) {
+    const cause = err instanceof Error ? err.message : String(err);
+    throw new Error(`Failed to read study-plan.yaml: ${cause}`);
+  }
+  try {
+    return parse(content) as StudyPlan;
+  } catch (err) {
+    const cause = err instanceof Error ? err.message : String(err);
+    throw new Error(`Failed to parse study-plan.yaml: ${cause}`);
+  }
+}
+
+export function loadPathFromYaml(): PathFile {
+  const path = join(__dirname, "..", "data", "path.yaml");
+  let content: string;
+  try {
+    content = readFileSync(path, "utf-8");
+  } catch (err) {
+    const cause = err instanceof Error ? err.message : String(err);
+    throw new Error(`Failed to read path.yaml: ${cause}`);
+  }
+  try {
+    return parse(content) as PathFile;
+  } catch (err) {
+    const cause = err instanceof Error ? err.message : String(err);
+    throw new Error(`Failed to parse path.yaml: ${cause}`);
+  }
 }
