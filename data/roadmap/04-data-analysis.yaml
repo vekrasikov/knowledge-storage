@@ -48,39 +48,19 @@
       children:
         - id: pandas
           title: "Pandas: DataFrame, groupby, merge, pivot"
-          summary: "Pandas is the universal Python library for structured data manipulation; mastering groupby aggregations, merge strategies, and pivot tables covers 90% of real-world data wrangling tasks an analyst encounters."
-          resources:
-            - "Pandas official docs: 10 minutes to pandas (pandas.pydata.org/docs)"
-            - "Kaggle: Pandas micro-course (free, kaggle.com/learn/pandas)"
-            - "Book: Python for Data Analysis, 3rd Ed (Wes McKinney, creator of Pandas)"
-            - "DataCamp: Data Manipulation with Pandas course"
+          aliasOf: py-pandas
 
         - id: numpy-basics
           title: "NumPy: array operations"
-          summary: "NumPy provides the high-performance n-dimensional array that underpins Pandas, Scikit-learn, and TensorFlow; understanding broadcasting and vectorised operations is essential for writing efficient data pipelines."
-          resources:
-            - "NumPy official docs: NumPy quickstart (numpy.org/doc/stable/user/quickstart.html)"
-            - "Kaggle: Intro to Machine Learning — NumPy section"
-            - "CS231n: Python/NumPy tutorial (cs231n.github.io/python-numpy-tutorial)"
-            - "Book: Python for Data Analysis, Chapter 4 (Wes McKinney)"
+          aliasOf: py-numpy
 
         - id: matplotlib-seaborn
           title: "Matplotlib & Seaborn: visualization"
-          summary: "Matplotlib is the foundation for Python plotting; Seaborn adds a high-level declarative interface for statistical charts that are directly portfolio-ready, covering distributions, correlations, and categorical comparisons."
-          resources:
-            - "Matplotlib docs: tutorials (matplotlib.org/stable/tutorials)"
-            - "Seaborn docs: gallery + API (seaborn.pydata.org)"
-            - "Kaggle: Data Visualization micro-course (free)"
-            - "Book: Storytelling with Data (Cole Knaflic) — visualization principles"
+          aliasOf: py-matplotlib
 
         - id: jupyter-notebooks
           title: "Jupyter Notebooks workflow"
-          summary: "Jupyter Notebooks are the standard environment for exploratory data analysis and sharing reproducible research; mastering cell execution order, magic commands, and export workflows is a baseline DA skill."
-          resources:
-            - "JupyterLab docs: getting started (jupyter.org/documentation)"
-            - "Kaggle: free Jupyter kernel environment for all notebooks"
-            - "Real Python: Jupyter Notebook introduction (realpython.com)"
-            - "nbviewer.org — share and view notebooks publicly"
+          aliasOf: py-jupyter
 
     - id: statistics
       title: "Statistics & Experimentation"
@@ -175,12 +155,7 @@
 
         - id: genai-awareness
           title: "GenAI/LLM: conceptual awareness for analysts"
-          summary: "Data analysts increasingly use LLMs for text analysis, report generation, and code assistance; understanding tokenisation, context windows, hallucination risks, and prompt engineering makes analysts 10x more productive with these tools."
-          resources:
-            - "Anthropic: Claude prompt engineering guide (docs.anthropic.com)"
-            - "OpenAI: ChatGPT for Data Analysis guide (openai.com)"
-            - "DeepLearning.AI: ChatGPT Prompt Engineering for Developers (free, short course)"
-            - "Ethan Mollick: One Useful Thing newsletter (substack) — practical AI for professionals"
+          aliasOf: prompt-engineering
 
     - id: da-interview-prep
       title: "DA Interview Prep"
