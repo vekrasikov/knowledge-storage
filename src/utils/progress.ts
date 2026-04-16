@@ -1,5 +1,29 @@
 import type { RoadmapNode, Status } from "../types";
 
+export function resolveProgressId(id: string, aliasMap: Map<string, string>): string {
+  return aliasMap.get(id) ?? id;
+}
+
+export function getProgressStatus(
+  id: string,
+  progress: Record<string, Status>,
+  aliasMap: Map<string, string>
+): Status | undefined {
+  const canonical = resolveProgressId(id, aliasMap);
+  return progress[canonical] ?? progress[id];
+}
+
+export function setProgressStatus(
+  id: string,
+  status: Status,
+  progress: Record<string, Status>,
+  aliasMap: Map<string, string>
+): void {
+  const canonical = resolveProgressId(id, aliasMap);
+  progress[canonical] = status;
+  if (canonical !== id) delete progress[id];
+}
+
 export interface ProgressInfo {
   total: number;
   done: number;

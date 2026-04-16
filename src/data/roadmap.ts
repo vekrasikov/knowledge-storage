@@ -8,7 +8,28 @@ import english from "../../data/roadmap/07-english.yaml";
 import aiDevTools from "../../data/roadmap/08-ai-dev-tools.yaml";
 import type { RoadmapNode } from "../types";
 
-const roadmap: RoadmapNode[] = [
+export function buildAliasMap(nodes: RoadmapNode[]): Map<string, string> {
+  const map = new Map<string, string>();
+  function walk(ns: RoadmapNode[]) {
+    for (const n of ns) {
+      if (n.aliasOf) map.set(n.id, n.aliasOf);
+      if (n.children) walk(n.children);
+    }
+  }
+  walk(nodes);
+  return map;
+}
+
+export function resolveAliases(nodes: RoadmapNode[]): RoadmapNode[] {
+  return nodes
+    .filter((n) => !n.aliasOf)
+    .map((n) => ({
+      ...n,
+      children: n.children ? resolveAliases(n.children) : undefined,
+    }));
+}
+
+const rawRoadmap: RoadmapNode[] = [
   ...(backend as RoadmapNode[]),
   ...(arch as RoadmapNode[]),
   ...(devops as RoadmapNode[]),
@@ -19,8 +40,19 @@ const roadmap: RoadmapNode[] = [
   ...(aiDevTools as RoadmapNode[]),
 ];
 
+const aliasMap = buildAliasMap(rawRoadmap);
+const roadmap = resolveAliases(rawRoadmap);
+
 export function getRoadmap(): RoadmapNode[] {
   return roadmap;
+}
+
+export function getRawRoadmap(): RoadmapNode[] {
+  return rawRoadmap;
+}
+
+export function getAliasMap(): Map<string, string> {
+  return aliasMap;
 }
 
 export function getAllNodeIds(): string[] {
