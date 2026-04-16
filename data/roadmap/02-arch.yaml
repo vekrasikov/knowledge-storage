@@ -176,6 +176,16 @@
             - "YouTube: Gaurav Sen — Low Level Design playlist"
             - "NeetCode: OOP Design playlist (YouTube)"
 
+        - id: hexagonal-architecture
+          title: "Hexagonal Architecture / Ports & Adapters"
+          summary: "Hexagonal architecture (Alistair Cockburn) isolates domain logic from infrastructure by routing all interactions through explicit ports and adapters — enabling tests without a database, swap of messaging backends, and clean dependency rule (outer depends on inner). It's the concrete implementation pattern behind Clean Architecture and the foundation for testable microservices."
+          resources:
+            - "Alistair Cockburn: Hexagonal Architecture original essay (alistair.cockburn.us/hexagonal-architecture)"
+            - "Book: Get Your Hands Dirty on Clean Architecture (Tom Hombergs, Packt)"
+            - "Book: Clean Architecture, Chapters 21-22 (Robert C. Martin)"
+            - "GitHub: thombergs/buckpal — reference hexagonal app in Java"
+            - "InfoQ: Hexagonal Architecture explained (infoq.com)"
+
     # ---- DDD ----
     - id: ddd
       title: "Domain-Driven Design"

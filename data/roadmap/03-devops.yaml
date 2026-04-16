@@ -162,6 +162,28 @@
             - "PortSwigger: JWT attacks lab (portswigger.net/web-security/jwt)"
             - "Book: OAuth 2 in Action (Justin Richer & Antonio Sanso)"
 
+    - id: security-fundamentals
+      title: "Security Fundamentals"
+      children:
+        - id: crypto-fundamentals
+          title: "Cryptography Fundamentals: symmetric, asymmetric, hashing, HMAC"
+          summary: "Every backend developer must distinguish symmetric (AES, ChaCha20) from asymmetric (RSA, ECDSA) crypto, understand hashing (SHA-2/3 vs password hashing with bcrypt/argon2/scrypt), and know when HMAC is needed instead of plain hash — wrong choices here cause real-world breaches. Foundational knowledge before touching TLS, JWT, or authn/authz code."
+          resources:
+            - "Book: Serious Cryptography, 2nd Ed (Jean-Philippe Aumasson)"
+            - "Cryptography I (Stanford, Dan Boneh) — free on Coursera"
+            - "OWASP Cheat Sheet: Password Storage (cheatsheetseries.owasp.org)"
+            - "libsodium docs: modern crypto library (doc.libsodium.org)"
+            - "Filippo Valsorda blog: practical cryptography posts (filippo.io)"
+        - id: secure-coding-basics
+          title: "Secure Coding Basics: input validation, output encoding, injection"
+          summary: "Secure coding boils down to treating all external input as hostile (validation at boundaries), encoding output for the correct context (HTML, SQL, shell), and using parameterized queries/prepared statements instead of string concatenation. Mastery of these three habits prevents 80%+ of OWASP Top 10 issues."
+          resources:
+            - "OWASP Secure Coding Practices Quick Reference (owasp.org)"
+            - "OWASP Cheat Sheets: Input Validation + Output Encoding (cheatsheetseries.owasp.org)"
+            - "Book: The Tangled Web (Michal Zalewski)"
+            - "PortSwigger Web Security Academy: Injection labs (portswigger.net/web-security)"
+            - "Book: Iron-Clad Java (Jim Manico, August Detlefsen)"
+
     - id: troubleshooting
       title: "Troubleshooting & Incidents"
       children:
