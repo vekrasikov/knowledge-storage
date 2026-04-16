@@ -136,6 +136,36 @@
             - "DataLemur: SQL interview question bank (datalemur.com)"
             - "Book: Database Internals (Alex Petrov) — ACID + isolation levels chapters"
 
+        - id: oltp-vs-olap
+          title: "OLTP vs OLAP: workload and storage trade-offs"
+          summary: "OLTP (transactional, row-oriented, high write throughput, narrow queries) and OLAP (analytical, columnar, batch ingestion, wide aggregations) have fundamentally different storage engines and optimization goals; conflating them leads to either slow analytics on operational DBs or inconsistent real-time queries on warehouses. Recognizing which system serves which workload is a core architecture decision."
+          resources:
+            - "Book: Designing Data-Intensive Applications, Chapter 3 (Kleppmann)"
+            - "Book: The Data Warehouse Toolkit, 3rd Ed (Kimball & Ross)"
+            - "ClickHouse docs: Why columnar is fast (clickhouse.com/docs)"
+            - "Snowflake: Data Warehouse whitepaper (snowflake.com/resources)"
+            - "Jordan Tigani: Big Data is Dead (motherduck.com blog)"
+
+        - id: resilience-patterns-practical
+          title: "Resilience Patterns: bulkheads, timeouts, retry + jitter, rate limiting"
+          summary: "Production systems survive dependency failures by combining bulkheads (resource isolation), timeouts (bounded waits), retry with exponential backoff + jitter (avoid thundering herd), and rate limiting (protect downstream); these four patterns — implemented together, not individually — are what separate availability-minded services from fragile ones."
+          resources:
+            - "Book: Release It!, 2nd Ed (Michael Nygard) — Stability Patterns chapters"
+            - "Resilience4j docs (resilience4j.readme.io)"
+            - "AWS Architecture Blog: Exponential Backoff and Jitter (aws.amazon.com/blogs)"
+            - "Book: Site Reliability Engineering, Chapter 22 — Addressing Cascading Failures (sre.google/sre-book)"
+            - "Netflix Hystrix wiki (archived): design notes (github.com/Netflix/Hystrix/wiki)"
+
+        - id: network-protocols
+          title: "Network Protocols: HTTP/2, HTTP/3, gRPC, WebSocket"
+          summary: "Modern service-to-service and client-server communication relies on HTTP/2 (multiplexing, header compression), HTTP/3 (QUIC over UDP, better under packet loss), gRPC (binary, streaming, code generation), and WebSocket (full duplex); choosing the wrong protocol leads to latency problems that can't be fixed at the application layer."
+          resources:
+            - "Cloudflare Learning: HTTP/2 + HTTP/3 explainers (cloudflare.com/learning)"
+            - "Book: High Performance Browser Networking (Ilya Grigorik, free at hpbn.co)"
+            - "gRPC docs: Concepts + Performance (grpc.io/docs)"
+            - "MDN: WebSockets API (developer.mozilla.org)"
+            - "QUIC explained: RFC 9000 + Cloudflare posts"
+
     # ---- LLD & Patterns ----
     - id: low-level-design
       title: "Low-Level Design (LLD) & Patterns"
@@ -327,6 +357,30 @@
             - "Delta Lake docs: medallion pattern (delta.io)"
             - "Book: Fundamentals of Data Engineering (Joe Reis & Matt Housley)"
             - "dbt Labs blog: data modeling best practices"
+
+    # ---- Architecture-level Security ----
+    - id: architecture-security
+      title: "Architecture-level Security"
+      children:
+        - id: authz-models
+          title: "Authorization Models: RBAC vs ABAC, zero-trust"
+          summary: "RBAC (role-based) is simple and auditable but rigid; ABAC (attribute-based) enables policy-as-code with dynamic rules (user + resource + context); zero-trust drops the perimeter assumption and verifies every request. Modern services layer these — RBAC for coarse roles, ABAC for fine-grained, mTLS + short-lived tokens for zero-trust networking."
+          resources:
+            - "NIST: ABAC Guide (csrc.nist.gov/publications/detail/sp/800-162/final)"
+            - "OPA (Open Policy Agent) docs: openpolicyagent.org/docs"
+            - "BeyondCorp: Google's zero-trust whitepaper (research.google/pubs/beyondcorp)"
+            - "Book: Zero Trust Networks (Evan Gilman, Doug Barth)"
+            - "AWS IAM: Policy evaluation logic (docs.aws.amazon.com/IAM)"
+
+        - id: threat-modeling-stride
+          title: "Threat Modeling with STRIDE"
+          summary: "STRIDE (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege) is the most used threat modeling framework — walking each category against a data-flow diagram surfaces architectural security risks before code is written. It's a senior-level design-review habit, not a security team exclusive."
+          resources:
+            - "Microsoft: STRIDE Threat Modeling overview (learn.microsoft.com)"
+            - "Book: Threat Modeling: Designing for Security (Adam Shostack)"
+            - "OWASP: Threat Modeling Cheat Sheet (cheatsheetseries.owasp.org)"
+            - "Tool: OWASP Threat Dragon (free, owasp.org/www-project-threat-dragon)"
+            - "Book: Threats — What Every Engineer Should Learn from Star Wars (Adam Shostack)"
 
     # ---- Practice ----
     - id: arch-practice
