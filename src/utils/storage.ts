@@ -1,4 +1,6 @@
 import type { UserData, Status, Note, Material } from "../types";
+import { getAliasMap } from "../data/roadmap";
+import { resolveProgressId } from "./progress";
 
 const STORAGE_KEY = "knowledge-storage";
 
@@ -9,11 +11,34 @@ export const EMPTY_USER_DATA: UserData = {
   materials: {},
 };
 
+export function migrateAliasProgress(
+  data: UserData,
+  aliasMap: Map<string, string>
+): UserData {
+  if (aliasMap.size === 0) return data;
+
+  const migrated: Record<string, Status> = {};
+  // First pass: write all entries under their canonical key (alias entries go to canonical)
+  for (const [id, status] of Object.entries(data.progress)) {
+    const canonical = resolveProgressId(id, aliasMap);
+    if (!(canonical in migrated)) {
+      migrated[canonical] = status;
+    }
+  }
+  // Second pass: canonical entries overwrite any alias-derived values (canonical wins)
+  for (const [id, status] of Object.entries(data.progress)) {
+    const canonical = resolveProgressId(id, aliasMap);
+    if (id === canonical) migrated[canonical] = status;
+  }
+  return { ...data, progress: migrated };
+}
+
 export function loadUserData(): UserData {
   const raw = localStorage.getItem(STORAGE_KEY);
   if (!raw) return { ...EMPTY_USER_DATA };
   try {
-    return JSON.parse(raw) as UserData;
+    const parsed = JSON.parse(raw) as UserData;
+    return migrateAliasProgress(parsed, getAliasMap());
   } catch {
     return { ...EMPTY_USER_DATA };
   }
@@ -28,10 +53,12 @@ export function setProgress(
   topicId: string,
   status: Status
 ): UserData {
-  return {
-    ...data,
-    progress: { ...data.progress, [topicId]: status },
-  };
+  const aliasMap = getAliasMap();
+  const canonical = resolveProgressId(topicId, aliasMap);
+  const progress = { ...data.progress, [canonical]: status };
+  // Remove the alias key if it differs from canonical
+  if (canonical !== topicId) delete progress[topicId];
+  return { ...data, progress };
 }
 
 export function addNote(

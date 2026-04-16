@@ -10,6 +10,7 @@ import {
   deleteMaterial,
   exportData,
   importData,
+  migrateAliasProgress,
   EMPTY_USER_DATA,
 } from "../../utils/storage";
 import type { UserData } from "../../types";
@@ -123,5 +124,54 @@ describe("exportData / importData", () => {
 
   it("importData throws on wrong schema", () => {
     expect(() => importData(JSON.stringify({ foo: "bar" }))).toThrow();
+  });
+});
+
+describe("migrateAliasProgress", () => {
+  it("returns data unchanged when aliasMap empty", () => {
+    const data: UserData = {
+      version: 1,
+      progress: { a: "done" },
+      notes: {},
+      materials: {},
+    };
+    expect(migrateAliasProgress(data, new Map())).toEqual(data);
+  });
+
+  it("rewrites alias key to canonical", () => {
+    const data: UserData = {
+      version: 1,
+      progress: { pandas: "done" },
+      notes: {},
+      materials: {},
+    };
+    const aliasMap = new Map([["pandas", "py-pandas"]]);
+    const out = migrateAliasProgress(data, aliasMap);
+    expect(out.progress).toEqual({ "py-pandas": "done" });
+  });
+
+  it("canonical wins when both alias and canonical have entries", () => {
+    const data: UserData = {
+      version: 1,
+      progress: { pandas: "in_progress", "py-pandas": "done" },
+      notes: {},
+      materials: {},
+    };
+    const aliasMap = new Map([["pandas", "py-pandas"]]);
+    const out = migrateAliasProgress(data, aliasMap);
+    expect(out.progress).toEqual({ "py-pandas": "done" });
+  });
+
+  it("keeps non-alias keys as-is", () => {
+    const data: UserData = {
+      version: 1,
+      progress: { "virtual-threads": "done" },
+      notes: {},
+      materials: {},
+    };
+    const aliasMap = new Map([["pandas", "py-pandas"]]);
+    expect(migrateAliasProgress(data, aliasMap).progress).toEqual({
+      "virtual-threads": "done",
+    });
   });
 });
