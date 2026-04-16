@@ -1,8 +1,8 @@
-import { getRoadmap } from "../src/data/roadmap";
+import { loadRoadmapFromYaml } from "./load-roadmap-yaml";
 import { checkUniqueIds } from "./roadmap-validator";
 
 function main() {
-  const roadmap = getRoadmap();
+  const roadmap = loadRoadmapFromYaml();
   const errors = [...checkUniqueIds(roadmap)];
 
   if (errors.length > 0) {
