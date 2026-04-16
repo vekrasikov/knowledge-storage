@@ -287,6 +287,46 @@
             - "Book: Microservices Patterns, Chapter 3 (Chris Richardson)"
             - "Gunnar Morling: Outbox pattern blog post (morling.dev)"
 
+        - id: rabbitmq-vs-kafka
+          title: "RabbitMQ vs Kafka vs NATS/Pulsar: trade-offs"
+          summary: "RabbitMQ (smart broker, dumb consumer — routing, per-message ack, priority queues) and Kafka (dumb broker, smart consumer — replayable log, high throughput, partitioned) solve different problems; picking the wrong one leads to either impossible scaling or re-implementing features you don't need. NATS and Pulsar fill the middle (Pulsar) and latency-first (NATS JetStream) niches."
+          resources:
+            - "Confluent blog: Kafka vs RabbitMQ comparison (confluent.io/blog)"
+            - "Book: RabbitMQ in Depth (Gavin Roy)"
+            - "NATS docs: JetStream concepts (docs.nats.io)"
+            - "Apache Pulsar docs: concepts (pulsar.apache.org/docs)"
+            - "Martin Kleppmann: Kafka — A Distributed Messaging System (talk)"
+
+        - id: schema-registry-evolution
+          title: "Schema Registry: Avro, Protobuf, forward/backward compatibility"
+          summary: "Production event-driven systems use Schema Registry (Confluent, Apicurio) to version message schemas in Avro or Protobuf and enforce compatibility rules (BACKWARD, FORWARD, FULL) at publish time; without it, a schema change in one team silently breaks downstream consumers weeks later."
+          resources:
+            - "Confluent: Schema Registry docs (docs.confluent.io/platform/current/schema-registry)"
+            - "Apicurio Registry docs (apicur.io/registry)"
+            - "Avro specification: schema resolution (avro.apache.org/docs)"
+            - "Book: Kafka: The Definitive Guide, 2nd Ed — Schemas chapter (Gwen Shapira et al.)"
+            - "Baeldung: Confluent Schema Registry + Spring Kafka (baeldung.com)"
+
+        - id: dlq-poison-messages
+          title: "Dead-Letter Queues & Poison Message Handling"
+          summary: "A single malformed message can block a Kafka partition or saturate a RabbitMQ queue unless you route it to a dead-letter destination after N retries; DLQ strategy (backoff, retry topic, DLQ, manual replay) is the operational difference between resilient and fragile consumers."
+          resources:
+            - "Confluent blog: Kafka Retry + DLQ patterns (confluent.io/blog)"
+            - "AWS SQS: Dead-letter queue docs (docs.aws.amazon.com/AWSSimpleQueueService)"
+            - "RabbitMQ docs: Dead Letter Exchanges (rabbitmq.com/dlx.html)"
+            - "Spring Kafka: retry topic / DLT configuration (docs.spring.io/spring-kafka)"
+            - "Book: Designing Event-Driven Systems (Ben Stopford, free at confluent.io)"
+
+        - id: consumer-idempotency
+          title: "Consumer Idempotency: dedup keys, offset management, compensations"
+          summary: "At-least-once delivery means the same message can arrive twice — idempotent consumers handle this with dedup tables keyed on message ID, careful offset commit order (after side effects, not before), or compensating actions for non-idempotent operations. This is mandatory for any financial/billing/inventory use case."
+          resources:
+            - "Confluent blog: Idempotent consumers in Kafka (confluent.io/blog)"
+            - "Book: Designing Data-Intensive Applications, Chapter 11 (Kleppmann)"
+            - "Microservices.io: Idempotent Consumer pattern (microservices.io/patterns)"
+            - "Debezium docs: idempotent sinks (debezium.io/documentation)"
+            - "Chris Richardson: Microservices Patterns book (Chapter 3)"
+
     # ---- Microservices ----
     - id: microservices
       title: "Microservices Patterns"
