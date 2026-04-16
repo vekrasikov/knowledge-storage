@@ -1,5 +1,11 @@
 import { describe, it, expect } from "vitest";
-import { checkUniqueIds } from "../../scripts/roadmap-validator";
+import {
+  checkUniqueIds,
+  checkAliasTargets,
+  checkPrereqExistence,
+  checkPrereqCycles,
+  checkPhaseOrderUniqueness,
+} from "../../scripts/roadmap-validator";
 import type { RoadmapNode } from "../types";
 
 describe("checkUniqueIds", () => {
@@ -20,5 +26,87 @@ describe("checkUniqueIds", () => {
     expect(errors).toHaveLength(1);
     expect(errors[0]).toContain("dup");
     expect(errors[0]).toContain("2 times");
+  });
+});
+
+describe("checkAliasTargets", () => {
+  it("ok when aliasOf points to existing id", () => {
+    const nodes = [
+      { id: "a", title: "A" },
+      { id: "b", title: "B", aliasOf: "a" },
+    ];
+    expect(checkAliasTargets(nodes)).toEqual([]);
+  });
+  it("errors when aliasOf points to unknown id", () => {
+    const nodes = [{ id: "b", title: "B", aliasOf: "nope" }];
+    const errors = checkAliasTargets(nodes);
+    expect(errors[0]).toContain("nope");
+  });
+  it("errors when alias points to another alias", () => {
+    const nodes = [
+      { id: "a", title: "A", aliasOf: "b" },
+      { id: "b", title: "B", aliasOf: "c" },
+      { id: "c", title: "C" },
+    ];
+    const errors = checkAliasTargets(nodes);
+    expect(errors[0]).toContain("chain");
+  });
+});
+
+describe("checkPrereqExistence", () => {
+  it("ok when prereqs exist and are not aliases", () => {
+    const nodes = [
+      { id: "a", title: "A" },
+      { id: "b", title: "B", prerequisites: ["a"] },
+    ];
+    expect(checkPrereqExistence(nodes)).toEqual([]);
+  });
+  it("errors on unknown prereq", () => {
+    const nodes = [{ id: "b", title: "B", prerequisites: ["missing"] }];
+    expect(checkPrereqExistence(nodes)[0]).toContain("missing");
+  });
+  it("errors when prereq is an alias", () => {
+    const nodes = [
+      { id: "a", title: "A", aliasOf: "c" },
+      { id: "c", title: "C" },
+      { id: "b", title: "B", prerequisites: ["a"] },
+    ];
+    expect(checkPrereqExistence(nodes)[0]).toContain("alias");
+  });
+});
+
+describe("checkPrereqCycles", () => {
+  it("ok on DAG", () => {
+    const nodes = [
+      { id: "a", title: "A" },
+      { id: "b", title: "B", prerequisites: ["a"] },
+      { id: "c", title: "C", prerequisites: ["a", "b"] },
+    ];
+    expect(checkPrereqCycles(nodes)).toEqual([]);
+  });
+  it("detects cycle", () => {
+    const nodes = [
+      { id: "a", title: "A", prerequisites: ["b"] },
+      { id: "b", title: "B", prerequisites: ["a"] },
+    ];
+    expect(checkPrereqCycles(nodes)[0]).toContain("cycle");
+  });
+});
+
+describe("checkPhaseOrderUniqueness", () => {
+  it("ok when phaseOrder values are distinct per phase", () => {
+    const nodes = [
+      { id: "a", title: "A", phase: "p1", phaseOrder: 10 },
+      { id: "b", title: "B", phase: "p1", phaseOrder: 20 },
+      { id: "c", title: "C", phase: "p2", phaseOrder: 10 },
+    ];
+    expect(checkPhaseOrderUniqueness(nodes)).toEqual([]);
+  });
+  it("errors on duplicate phaseOrder within same phase", () => {
+    const nodes = [
+      { id: "a", title: "A", phase: "p1", phaseOrder: 10 },
+      { id: "b", title: "B", phase: "p1", phaseOrder: 10 },
+    ];
+    expect(checkPhaseOrderUniqueness(nodes)[0]).toContain("phaseOrder");
   });
 });

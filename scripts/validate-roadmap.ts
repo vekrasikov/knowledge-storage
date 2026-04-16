@@ -1,9 +1,21 @@
 import { loadRoadmapFromYaml } from "./load-roadmap-yaml";
-import { checkUniqueIds } from "./roadmap-validator";
+import {
+  checkUniqueIds,
+  checkAliasTargets,
+  checkPrereqExistence,
+  checkPrereqCycles,
+  checkPhaseOrderUniqueness,
+} from "./roadmap-validator";
 
 function main() {
   const roadmap = loadRoadmapFromYaml();
-  const errors = [...checkUniqueIds(roadmap)];
+  const errors = [
+    ...checkUniqueIds(roadmap),
+    ...checkAliasTargets(roadmap),
+    ...checkPrereqExistence(roadmap),
+    ...checkPrereqCycles(roadmap),
+    ...checkPhaseOrderUniqueness(roadmap),
+  ];
 
   if (errors.length > 0) {
     console.error("Roadmap validation failed:");
