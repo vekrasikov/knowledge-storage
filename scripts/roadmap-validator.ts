@@ -78,24 +78,22 @@ export function checkPrereqCycles(nodes: RoadmapNode[]): string[] {
   const adj = new Map<string, string[]>();
   for (const n of flat) adj.set(n.id, n.prerequisites ?? []);
 
-  const WHITE = 0,
-    GRAY = 1,
-    BLACK = 2;
+  const WHITE = 0, GRAY = 1, BLACK = 2;
   const color = new Map<string, number>();
   for (const id of adj.keys()) color.set(id, WHITE);
   const errors: string[] = [];
 
-  function dfs(id: string, stack: string[]): boolean {
+  function dfs(id: string, stack: string[]): void {
     color.set(id, GRAY);
     for (const nxt of adj.get(id) ?? []) {
       if (color.get(nxt) === GRAY) {
         errors.push(`Prereq cycle: ${[...stack, id, nxt].join(" -> ")}`);
-        return true;
+        // do NOT early-return — let traversal finish so id reaches BLACK
+      } else if (color.get(nxt) === WHITE) {
+        dfs(nxt, [...stack, id]);
       }
-      if (color.get(nxt) === WHITE && dfs(nxt, [...stack, id])) return true;
     }
     color.set(id, BLACK);
-    return false;
   }
 
   for (const id of adj.keys()) {

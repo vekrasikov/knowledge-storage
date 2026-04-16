@@ -91,6 +91,33 @@ describe("checkPrereqCycles", () => {
     ];
     expect(checkPrereqCycles(nodes)[0]).toContain("cycle");
   });
+
+  it("detects self-loop cycle", () => {
+    const nodes = [{ id: "a", title: "A", prerequisites: ["a"] }];
+    const errors = checkPrereqCycles(nodes);
+    expect(errors).toHaveLength(1);
+    expect(errors[0]).toContain("a -> a");
+  });
+
+  it("does not emit phantom cycle for DAG nodes reachable from a cyclic component", () => {
+    // a <-> b form a cycle; d is a DAG node that depends on a.
+    // Previous early-return bug would wrongly flag d -> a as a cycle.
+    const nodes = [
+      { id: "a", title: "A", prerequisites: ["b"] },
+      { id: "b", title: "B", prerequisites: ["a"] },
+      { id: "d", title: "D", prerequisites: ["a"] },
+    ];
+    const errors = checkPrereqCycles(nodes);
+    // Exactly one cycle reported (a <-> b), no phantom involving d.
+    expect(errors).toHaveLength(1);
+    expect(errors.join()).not.toContain("d ->");
+  });
+
+  it("handles unknown prereq without throwing", () => {
+    const nodes = [{ id: "a", title: "A", prerequisites: ["ghost"] }];
+    expect(() => checkPrereqCycles(nodes)).not.toThrow();
+    expect(checkPrereqCycles(nodes)).toEqual([]);
+  });
 });
 
 describe("checkPhaseOrderUniqueness", () => {
