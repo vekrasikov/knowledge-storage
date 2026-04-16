@@ -79,3 +79,25 @@ export interface UserData {
   notes: Record<string, Note[]>;
   materials: Record<string, Material[]>;
 }
+
+export interface PathPhase {
+  id: string;
+  title: string;
+  summary?: string;
+}
+
+export interface PathRecurring {
+  topicId: string;
+  cadence: string;
+}
+
+export interface Path {
+  id: string;
+  title: string;
+  phases: PathPhase[];
+  recurring: PathRecurring[];
+}
+
+export interface PathFile {
+  path: Path;
+}

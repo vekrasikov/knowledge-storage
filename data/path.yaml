@@ -1,0 +1,62 @@
+path:
+  id: senior-backend-polyglot
+  title: "Senior Backend Polyglot Path"
+  phases:
+    - id: phase-1-programming
+      title: "Programming Fundamentals"
+      summary: "Язык и инструменты — Java core, Python basics, AI dev tools adoption"
+    - id: phase-2-cs-foundations
+      title: "CS Foundations"
+      summary: "Алгоритмы, DS, Big-O, SQL basics, capacity basics"
+    - id: phase-3-software-design
+      title: "Software Design"
+      summary: "OOP, SOLID, patterns, DDD, hexagonal, testing, security basics"
+    - id: phase-4-backend-engineering
+      title: "Backend Engineering"
+      summary: "JVM, concurrency, Spring, Persistence (SQL + NoSQL), applied security"
+    - id: phase-5-system-design-hld
+      title: "System Design Foundations"
+      summary: "HLD components, data stores, caching, resilience, network protocols, arch security"
+    - id: phase-6-distributed-events
+      title: "Distributed & Event-Driven"
+      summary: "Microservices, event-driven patterns, Kafka, messaging alternatives, schema evolution"
+    - id: phase-7-data-ml
+      title: "Data & ML Foundations"
+      summary: "Pandas, NumPy, statistics, visualization, ML basics, BI tools"
+    - id: phase-8-devops
+      title: "DevOps & Production"
+      summary: "K8s, observability, CI/CD (extended), security ops, troubleshooting, IaC, cloud"
+    - id: phase-9-specialization
+      title: "Specialization — AI + Fintech + Interview"
+      summary: "LLM/agents/MCP/RAG, fintech patterns, interview English, FAANG prep"
+  recurring:
+    - topicId: leetcode-practice
+      cadence: "3x/week"
+    - topicId: clozemaster-practice
+      cadence: "daily"
+    - topicId: talkio-ai
+      cadence: "2x/week"
+    - topicId: shadowing
+      cadence: "daily"
+    - topicId: anki-srs
+      cadence: "daily"
+    - topicId: elsa-speak
+      cadence: "daily-15min"
+    - topicId: lingvist
+      cadence: "daily"
+    - topicId: gliglish
+      cadence: "daily-free-tier"
+    - topicId: langua-call-mode
+      cadence: "weekly"
+    - topicId: javarush
+      cadence: "ongoing"
+    - topicId: exercism-java
+      cadence: "ongoing"
+    - topicId: codewars-java
+      cadence: "ongoing"
+    - topicId: codewars-python
+      cadence: "ongoing"
+    - topicId: exercism-python
+      cadence: "ongoing"
+    - topicId: ai-code-review
+      cadence: "ongoing"
