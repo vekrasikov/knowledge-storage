@@ -11,7 +11,7 @@ describe("checkUniqueIds", () => {
     expect(checkUniqueIds(nodes)).toEqual([]);
   });
 
-  it("reports duplicate IDs with paths", () => {
+  it("reports duplicate IDs with occurrence count", () => {
     const nodes: RoadmapNode[] = [
       { id: "a", title: "A", children: [{ id: "dup", title: "D1" }] },
       { id: "c", title: "C", children: [{ id: "dup", title: "D2" }] },
@@ -19,5 +19,6 @@ describe("checkUniqueIds", () => {
     const errors = checkUniqueIds(nodes);
     expect(errors).toHaveLength(1);
     expect(errors[0]).toContain("dup");
+    expect(errors[0]).toContain("2 times");
   });
 });

@@ -18,13 +18,27 @@ const FILES = [
   "08-ai-dev-tools.yaml",
 ];
 
+function loadOne(filename: string): RoadmapNode[] {
+  const path = join(DATA_DIR, filename);
+  let content: string;
+  try {
+    content = readFileSync(path, "utf-8");
+  } catch (err) {
+    const cause = err instanceof Error ? err.message : String(err);
+    throw new Error(`Failed to read ${filename}: ${cause}`);
+  }
+  try {
+    return parse(content) as RoadmapNode[];
+  } catch (err) {
+    const cause = err instanceof Error ? err.message : String(err);
+    throw new Error(`Failed to parse ${filename}: ${cause}`);
+  }
+}
+
 export function loadRoadmapFromYaml(): RoadmapNode[] {
   const result: RoadmapNode[] = [];
   for (const filename of FILES) {
-    const path = join(DATA_DIR, filename);
-    const content = readFileSync(path, "utf-8");
-    const parsed = parse(content) as RoadmapNode[];
-    result.push(...parsed);
+    result.push(...loadOne(filename));
   }
   return result;
 }
