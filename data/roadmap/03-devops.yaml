@@ -98,6 +98,16 @@
             - "OpenTelemetry: log correlation with traces guide"
             - "Book: Observability Engineering (Charity Majors, Liz Fong-Jones, George Miranda) — structured logging chapter"
 
+        - id: observability-3-pillars
+          title: "Observability: Metrics, Logs, Traces — the three pillars"
+          summary: "Metrics (aggregated, cheap, low cardinality), logs (detailed, high volume, unstructured-ish), and traces (causal, request-scoped) each answer different questions — metrics say 'is something wrong?', traces say 'where?', logs say 'what exactly happened?'. Modern observability (wide structured events, high-cardinality) unifies them; knowing which pillar to reach for first saves hours per incident."
+          resources:
+            - "Book: Observability Engineering (Charity Majors, Liz Fong-Jones, George Miranda)"
+            - "Honeycomb: What is Observability? (honeycomb.io/what-is-observability)"
+            - "CNCF: OpenTelemetry overview (opentelemetry.io/docs/concepts)"
+            - "Peter Bourgon: Metrics, Tracing, and Logging (peter.bourgon.org)"
+            - "Book: Site Reliability Engineering, Chapter 6 — Monitoring (sre.google/sre-book)"
+
     - id: ci-cd
       title: "CI/CD"
       children:
@@ -131,6 +141,56 @@
             - "CNCF: GitOps Principles (opengitops.dev)"
             - "Codefresh: GitOps vs CI/CD comparison article"
             - "Book: The DevOps Handbook (Kim, Humble, Debois, Willis) — deployment pipeline patterns"
+
+        - id: pipeline-principles
+          title: "CI/CD Pipeline Principles: stages, fail-fast, caching, artifacts"
+          summary: "A well-designed pipeline moves code through stages (lint → unit test → build → integration test → security scan → deploy) failing fast at the earliest cheap stage to minimize feedback loop; proper caching (deps, Docker layers) and artifact passing between stages are what turn a 40-min pipeline into a 6-min one."
+          resources:
+            - "Book: Continuous Delivery (Jez Humble & David Farley) — foundational"
+            - "Martin Fowler: Continuous Integration article (martinfowler.com)"
+            - "GitHub Actions: Dependency caching docs (docs.github.com/actions)"
+            - "Book: Accelerate (Forsgren, Humble, Kim) — pipeline metrics"
+            - "Jenkins Handbook: Pipeline section (jenkins.io/doc/book/pipeline)"
+
+        - id: deployment-strategies
+          title: "Deployment Strategies: blue-green, canary, rolling, shadow"
+          summary: "Blue-green (two full environments, switch traffic), canary (small fraction first, observe, expand), rolling (gradual replacement, default in K8s Deployment), and shadow (mirror traffic without user impact) each trade off rollback speed, resource cost, and risk exposure; picking the right one for a given change is a senior decision."
+          resources:
+            - "Martin Fowler: BlueGreenDeployment (martinfowler.com/bliki)"
+            - "Kubernetes docs: Deployment strategies (kubernetes.io/docs/concepts/workloads)"
+            - "Argo Rollouts: Canary and Blue-Green (argoproj.github.io/argo-rollouts)"
+            - "Book: Release It!, 2nd Ed — Deployment chapter (Michael Nygard)"
+            - "Google Cloud: Deployment strategies guide (cloud.google.com/architecture)"
+
+        - id: trunk-based-development
+          title: "Trunk-Based Development vs GitFlow + merge queue"
+          summary: "Trunk-based development (short-lived branches merged to main multiple times per day) is empirically correlated with higher delivery performance than long-lived feature branches (GitFlow); feature flags and merge queues make it viable at scale by decoupling 'code merged' from 'feature visible'."
+          resources:
+            - "trunkbaseddevelopment.com — canonical reference site"
+            - "Paul Hammant: Trunk-Based Development book (free online)"
+            - "Book: Accelerate (Forsgren, Humble, Kim) — branching research"
+            - "GitHub: merge queue docs (docs.github.com/en/pull-requests)"
+            - "Martin Fowler: FeatureToggle article (martinfowler.com)"
+
+        - id: release-management
+          title: "Release Management: SemVer, Conventional Commits, automated changelog"
+          summary: "Semantic Versioning (MAJOR.MINOR.PATCH), Conventional Commits (feat:/fix:/breaking), and automated tools (release-please, semantic-release) together reduce release to a machine-verifiable process — version bumps, changelog entries, and Git tags all flow from commit messages, eliminating human error in release notes."
+          resources:
+            - "SemVer spec (semver.org)"
+            - "Conventional Commits spec (conventionalcommits.org)"
+            - "release-please docs (github.com/googleapis/release-please)"
+            - "semantic-release docs (semantic-release.gitbook.io)"
+            - "Book: Version Control with Git, 3rd Ed — Tags and Releases (Loeliger, McCullough)"
+
+        - id: quality-gates
+          title: "Quality Gates: coverage thresholds, SonarQube, static analysis in CI"
+          summary: "Quality gates prevent regression by failing the build on coverage drops, new critical SonarQube issues, or SAST findings (Semgrep, CodeQL); the art is setting thresholds that catch real regressions without becoming box-ticking ceremony — start loose, tighten based on incident data."
+          resources:
+            - "SonarSource: Quality Gate docs (docs.sonarsource.com)"
+            - "Semgrep: rules and CI integration (semgrep.dev/docs)"
+            - "GitHub Advanced Security: CodeQL (docs.github.com/en/code-security)"
+            - "JaCoCo coverage + thresholds (jacoco.org)"
+            - "Book: Continuous Delivery, Chapter 4 — Implementing a Testing Strategy"
 
     - id: security
       title: "Security"
@@ -240,6 +300,29 @@
             - "Baeldung: Guide to Java OOM errors (baeldung.com)"
             - "pganalyze.com: EXPLAIN ANALYZE guide for slow query diagnosis"
             - "Book: Java Performance (Scott Oaks, O'Reilly)"
+
+    - id: infra-and-cloud
+      title: "Infrastructure & Cloud"
+      children:
+        - id: iac-terraform
+          title: "Infrastructure as Code: Terraform basics, state, modules"
+          summary: "Terraform expresses infrastructure as versioned declarative code; understanding state (remote backends, locking), modules (composable units), and plan/apply workflow is required for any cloud engineering work — without IaC, environments drift and reproducibility dies."
+          resources:
+            - "HashiCorp Learn: Terraform Getting Started (learn.hashicorp.com/terraform)"
+            - "Book: Terraform: Up & Running, 3rd Ed (Yevgeniy Brikman)"
+            - "Terraform Registry: module best practices (registry.terraform.io)"
+            - "Awesome Terraform: github.com/shuaibiyy/awesome-terraform"
+            - "Gruntwork blog: IaC patterns (gruntwork.io/blog)"
+
+        - id: cloud-fundamentals
+          title: "Cloud Fundamentals: AWS/GCP core services (compute, storage, network, IAM)"
+          summary: "Entry-level fluency across AWS (EC2, S3, VPC, IAM, RDS) and GCP (Compute Engine, Cloud Storage, VPC, IAM, Cloud SQL) is baseline for a backend senior — you don't need to be a cloud architect, but you do need to read the architecture review and ask good questions about VPC design, IAM roles, and cost."
+          resources:
+            - "AWS Cloud Practitioner Essentials (free, aws.amazon.com/training)"
+            - "Google Cloud Digital Leader learning path (free, cloud.google.com/training)"
+            - "AWS Well-Architected Framework (docs.aws.amazon.com/wellarchitected)"
+            - "Book: AWS Certified Solutions Architect Study Guide (Ben Piper, David Clinton)"
+            - "Cloud Resume Challenge: forrestbrazeal.com/the-cloud-resume-challenge"
 
     - id: devops-practice
       title: "Hands-on Practice"
