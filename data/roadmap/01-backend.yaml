@@ -12,6 +12,8 @@
             - "OpenJDK source: java.util.HashMap (github.com/openjdk/jdk)"
             - "Book: Effective Java, Items 11-12 (Joshua Bloch)"
             - "YouTube: Nikita Lipsky — HashMap internals (JPoint conference)"
+          phase: phase-1-programming
+          phaseOrder: 10
 
         - id: generics-deep
           title: "Generics: type erasure, wildcards, PECS principle"
@@ -21,6 +23,8 @@
             - "Angelika Langer: Java Generics FAQ (angelikalanger.com)"
             - "Book: Effective Java, Items 26-33 (Joshua Bloch)"
             - "Baeldung Pro: Wildcards in Java Generics (baeldung.com)"
+          phase: phase-1-programming
+          phaseOrder: 20
 
         - id: exceptions-patterns
           title: "Exceptions: checked vs unchecked, try-with-resources"
@@ -30,6 +34,8 @@
             - "Baeldung Pro: Exception Handling in Java (baeldung.com)"
             - "Oracle Tutorial: The try-with-resources Statement (docs.oracle.com)"
             - "Exercism: Java track — error handling exercises (exercism.org/tracks/java)"
+          phase: phase-1-programming
+          phaseOrder: 30
 
         - id: string-internals
           title: "String: immutability, String pool, StringBuilder"
@@ -39,6 +45,8 @@
             - "OpenJDK source: java.lang.String (github.com/openjdk/jdk)"
             - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter on String allocation"
             - "Book: Modern Java in Action (Urma, Fusco, Mycroft) — String/streams chapter"
+          phase: phase-1-programming
+          phaseOrder: 40
 
         - id: equals-hashcode
           title: "equals/hashCode contract, Comparable vs Comparator"
@@ -48,6 +56,8 @@
             - "Baeldung Pro: Java equals() and hashCode() Contracts (baeldung.com)"
             - "Oracle Tutorial: Object Ordering (docs.oracle.com)"
             - "Vlad Mihalcea: Why You Should Implement equals and hashCode in JPA Entities (vladmihalcea.com)"
+          phase: phase-1-programming
+          phaseOrder: 50
 
         - id: io-nio
           title: "Java I/O & NIO: Channels, Buffers, non-blocking I/O"
@@ -57,6 +67,8 @@
             - "Baeldung Pro: Introduction to Java NIO (baeldung.com)"
             - "Book: Java NIO (Ron Hitchens, O'Reilly)"
             - "Book: Java Performance (Scott Oaks, O'Reilly) — I/O and NIO performance chapter"
+          phase: phase-1-programming
+          phaseOrder: 60
 
     - id: java-modern
       title: "Modern Java (21-25)"
@@ -69,6 +81,8 @@
             - "Book: Java Concurrency in Practice (Goetz) — foundational concepts apply"
             - "Inside Java Podcast: Episode on Project Loom (inside.java)"
             - "Baeldung Pro: Guide to Virtual Threads in Java 21 (baeldung.com)"
+          phase: phase-1-programming
+          phaseOrder: 70
 
         - id: pattern-matching
           title: "Pattern Matching (switch, records, sealed classes)"
@@ -78,6 +92,8 @@
             - "Dev.java: Pattern Matching tutorials (dev.java)"
             - "Baeldung Pro: Pattern Matching in Java 21 (baeldung.com)"
             - "Book: Modern Java in Action, Part III (Urma, Fusco, Mycroft)"
+          phase: phase-1-programming
+          phaseOrder: 80
 
         - id: records-sealed
           title: "Records & Sealed Classes for Domain Modeling"
@@ -87,6 +103,8 @@
             - "JEP 409: Sealed Classes (openjdk.org/jeps/409)"
             - "Baeldung Pro: Java Records (baeldung.com)"
             - "Book: Modern Java in Action, Part IV (Urma, Fusco, Mycroft)"
+          phase: phase-1-programming
+          phaseOrder: 90
 
         - id: stream-gatherers
           title: "Stream Gatherers API"
@@ -96,6 +114,8 @@
             - "Inside Java: Stream Gatherers hands-on (inside.java)"
             - "Baeldung Pro: Stream Gatherers in Java 22 (baeldung.com)"
             - "Book: Modern Java in Action, Chapter 5 — Streams (Urma, Fusco, Mycroft)"
+          phase: phase-1-programming
+          phaseOrder: 100
 
         - id: foreign-function-api
           title: "Foreign Function & Memory API"
@@ -105,6 +125,8 @@
             - "Inside Java: FFM API tutorial (inside.java)"
             - "Baeldung Pro: Guide to the Foreign Function and Memory API (baeldung.com)"
             - "OpenJDK Wiki: Panama Developer Guide (wiki.openjdk.org)"
+          phase: phase-1-programming
+          phaseOrder: 110
 
         - id: scoped-values
           title: "Scoped Values (preview → finalization)"
@@ -114,6 +136,8 @@
             - "Inside Java: Scoped Values overview (inside.java)"
             - "Baeldung Pro: Scoped Values in Java 21 (baeldung.com)"
             - "Book: Java Concurrency in Practice, Chapter 3 (Goetz et al.) — thread-local context"
+          phase: phase-1-programming
+          phaseOrder: 120
 
     - id: jvm-internals
       title: "JVM Internals"
@@ -126,6 +150,8 @@
             - "Book: Java Concurrency in Practice, Chapter 16 (Goetz et al.)"
             - "Shipilev: Close Encounters of The Java Memory Model Kind (shipilev.net)"
             - "Baeldung Pro: Java Memory Model (baeldung.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 10
 
         - id: heap-stack-metaspace
           title: "Heap, Stack, Metaspace — object lifecycle"
@@ -135,6 +161,8 @@
             - "Baeldung Pro: Stack Memory and Heap Space in Java (baeldung.com)"
             - "OpenJDK Wiki: HotSpot Memory Management (wiki.openjdk.org)"
             - "YouTube: Nitsan Wakart — JVM Anatomy Park series (inside.java)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 20
 
         - id: gc-g1
           title: "G1GC: tuning, pause goals, mixed collections"
@@ -144,6 +172,8 @@
             - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter 6"
             - "GCeasy.io: GC log analysis tool (gceasy.io)"
             - "Baeldung Pro: Guide to G1 Garbage Collector (baeldung.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 30
 
         - id: gc-zgc-shenandoah
           title: "ZGC & Shenandoah: ultra-low latency GC"
@@ -153,6 +183,8 @@
             - "RedHat: Shenandoah GC — Using Shenandoah (redhat.com)"
             - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter 6"
             - "Baeldung Pro: ZGC vs Shenandoah comparison (baeldung.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 40
 
         - id: jfr-async-profiler
           title: "JFR & Async-Profiler: production profiling"
@@ -162,6 +194,8 @@
             - "async-profiler: GitHub repo + wiki (github.com/async-profiler/async-profiler)"
             - "Baeldung Pro: Guide to Java Flight Recorder (baeldung.com)"
             - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter 3"
+          phase: phase-4-backend-engineering
+          phaseOrder: 50
 
         - id: class-loading-aot
           title: "Class Loading & AOT (JEP 483)"
@@ -171,6 +205,8 @@
             - "Oracle: Understanding the Java ClassLoader (docs.oracle.com)"
             - "Baeldung Pro: Class Loaders in Java (baeldung.com)"
             - "Inside Java: CDS and AOT deep dive (inside.java)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 60
 
         - id: threadlocal-leaks
           title: "ThreadLocal leaks & memory dump analysis"
@@ -180,6 +216,8 @@
             - "Eclipse MAT documentation (eclipse.dev/mat/)"
             - "Shipilev: ThreadLocal and Memory Leaks (shipilev.net)"
             - "Book: Java Concurrency in Practice, Chapter 3 (Goetz et al.)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 70
 
     - id: concurrency
       title: "Concurrency & Multithreading"
@@ -192,6 +230,8 @@
             - "JEP 193: Variable Handles (openjdk.org/jeps/193)"
             - "Baeldung Pro: Guide to VarHandle (baeldung.com)"
             - "Shipilev: Using JDK 9 Memory Order Modes (shipilev.net)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 80
 
         - id: locks-synchronized
           title: "synchronized vs ReentrantLock strategies"
@@ -201,6 +241,8 @@
             - "Baeldung Pro: Guide to java.util.concurrent.Locks (baeldung.com)"
             - "Oracle: Intrinsic Locks and Synchronization (docs.oracle.com)"
             - "Exercism: Java concurrency exercises (exercism.org/tracks/java)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 90
 
         - id: concurrent-collections
           title: "ConcurrentHashMap, CopyOnWriteArrayList"
@@ -210,6 +252,8 @@
             - "Baeldung Pro: Guide to ConcurrentHashMap (baeldung.com)"
             - "OpenJDK source: java.util.concurrent (github.com/openjdk/jdk)"
             - "Baeldung Pro: CopyOnWriteArrayList (baeldung.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 100
 
         - id: completable-future
           title: "CompletableFuture patterns"
@@ -219,6 +263,8 @@
             - "Book: Modern Java in Action, Chapter 15 (Urma, Fusco, Mycroft)"
             - "Book: Java Concurrency in Practice, Chapter 6 (Goetz et al.) — task execution"
             - "Jenkov: Java CompletableFuture Tutorial (jenkov.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 110
 
         - id: virtual-threads-spring
           title: "Virtual Threads in Spring Boot 3.2+"
@@ -228,6 +274,8 @@
             - "Spring Blog: Virtual Threads in Spring 6.1 / Boot 3.2 (spring.io/blog)"
             - "Baeldung Pro: Virtual Threads in Spring Boot (baeldung.com)"
             - "Book: Spring in Action, 6th Ed. (Craig Walls) — concurrency chapter"
+          phase: phase-4-backend-engineering
+          phaseOrder: 120
 
     - id: spring-ecosystem
       title: "Spring Ecosystem"
@@ -240,6 +288,8 @@
             - "Spring Academy: Spring Boot course (spring.academy/courses/spring-boot)"
             - "Baeldung Pro: What's New in Spring Boot 3 (baeldung.com)"
             - "Book: Spring in Action, 6th Ed. (Craig Walls, Manning)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 150
 
         - id: spring-virtual-threads
           title: "spring.threads.virtual.enabled + WebMVC vs WebFlux"
@@ -249,6 +299,8 @@
             - "Spring Docs: Virtual Thread support (docs.spring.io)"
             - "Spring Blog: One step closer with Virtual Threads (spring.io/blog)"
             - "Baeldung Pro: Spring WebFlux vs Spring MVC (baeldung.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 160
 
         - id: spring-security-oauth2
           title: "Spring Security: OAuth2, OIDC, PKCE"
@@ -258,6 +310,8 @@
             - "Spring Security OAuth2 Docs (docs.spring.io/spring-security)"
             - "Baeldung Pro: Spring Security OAuth2 (baeldung.com)"
             - "Book: Spring in Action, 6th Ed., Chapter 5 — Security (Craig Walls, Manning)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 170
 
         - id: spring-data-jpa
           title: "Spring Data JPA: projections, specifications"
@@ -267,6 +321,8 @@
             - "Spring Data JPA Docs: Projections (docs.spring.io)"
             - "Baeldung Pro: Spring Data JPA Projections (baeldung.com)"
             - "Book: High-Performance Java Persistence (Vlad Mihalcea)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 180
 
         - id: rest-client
           title: "RestClient (replaces RestTemplate)"
@@ -276,6 +332,8 @@
             - "Spring Docs: RestClient (docs.spring.io)"
             - "Baeldung Pro: Spring RestClient (baeldung.com)"
             - "Book: Spring in Action, 6th Ed. (Craig Walls, Manning)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 190
 
         - id: jdbc-client
           title: "JdbcClient (fluent JDBC)"
@@ -285,6 +343,8 @@
             - "Spring Docs: JdbcClient (docs.spring.io)"
             - "Baeldung Pro: Spring JdbcClient (baeldung.com)"
             - "Book: High-Performance Java Persistence (Vlad Mihalcea) — JDBC chapter"
+          phase: phase-4-backend-engineering
+          phaseOrder: 200
 
         - id: spring-ai
           title: "Spring AI: LLM integration in Spring"
@@ -294,6 +354,8 @@
             - "Spring AI Docs (docs.spring.io/spring-ai)"
             - "Spring Blog: Introducing Spring AI (spring.io/blog)"
             - "Baeldung Pro: Guide to Spring AI (baeldung.com)"
+          phase: phase-9-specialization
+          phaseOrder: 10
 
         - id: micrometer-observability
           title: "Micrometer Observation API & OTEL bridge"
@@ -303,6 +365,8 @@
             - "Micrometer Observation Docs (micrometer.io/docs)"
             - "Spring Boot Observability Guide (docs.spring.io)"
             - "Baeldung Pro: Observability with Spring Boot 3 (baeldung.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 220
 
         - id: graalvm-native
           title: "GraalVM Native Image: AOT, reflection hints"
@@ -312,6 +376,8 @@
             - "Spring Boot Native Image Docs (docs.spring.io)"
             - "GraalVM Native Image Docs (graalvm.io/native-image/)"
             - "Baeldung Pro: Spring Boot Native with GraalVM (baeldung.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 230
 
         - id: spring-bean-lifecycle
           title: "Bean lifecycle: @PostConstruct, BeanPostProcessor, init/destroy"
@@ -321,6 +387,8 @@
             - "Spring Docs: Bean Lifecycle (docs.spring.io/spring-framework/reference/core/beans/factory-nature.html)"
             - "Baeldung Pro: Spring Bean Lifecycle (baeldung.com)"
             - "Book: Spring in Action, 6th Ed., Chapter 3 (Craig Walls, Manning)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 240
 
         - id: spring-transactional
           title: "@Transactional: propagation, isolation levels, proxy pitfalls"
@@ -330,6 +398,8 @@
             - "Spring Docs: Transaction Management (docs.spring.io/spring-framework/reference/data-access/transaction.html)"
             - "Baeldung Pro: Transaction Propagation and Isolation in Spring (baeldung.com)"
             - "Book: High-Performance Java Persistence, Part 3 (Vlad Mihalcea)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 250
 
         - id: spring-autoconfig
           title: "Auto-configuration: @Conditional, spring.factories mechanism"
@@ -339,6 +409,8 @@
             - "Baeldung: Create a Custom Auto-Configuration with Spring Boot (baeldung.com)"
             - "Spring Blog: Condition annotations deep dive (spring.io/blog)"
             - "Book: Spring Boot in Practice (Somnath Musib, Manning)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 260
 
         - id: spring-mvc-flow
           title: "Spring MVC: request lifecycle, DispatcherServlet, filters"
@@ -348,6 +420,8 @@
             - "Baeldung: Spring MVC Tutorial (baeldung.com)"
             - "Baeldung: Filters vs HandlerInterceptors in Spring (baeldung.com)"
             - "Book: Spring in Action, 6th Ed., Chapters 2-3 (Craig Walls, Manning)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 270
 
     - id: kotlin-backend
       title: "Kotlin"
@@ -360,6 +434,8 @@
             - "Book: Kotlin Coroutines: Deep Dive (Marcin Moskała, Kt.Academy)"
             - "Baeldung: Introduction to Kotlin Coroutines (baeldung.com)"
             - "Roman Elizarov: Structured Concurrency (elizarov.medium.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 130
 
         - id: kotlin-idioms
           title: "Sealed classes, data classes, extension functions"
@@ -369,6 +445,8 @@
             - "Book: Kotlin in Action, 2nd Ed. (Jemerov & Isakova, Manning)"
             - "Kotlin by Example (play.kotlinlang.org/byExample)"
             - "Baeldung: Kotlin Data Classes (baeldung.com)"
+          phase: phase-1-programming
+          phaseOrder: 130
 
         - id: kotlin-dsl
           title: "Kotlin DSL patterns"
@@ -378,6 +456,8 @@
             - "Book: Kotlin in Action, 2nd Ed., Chapter 11 (Manning)"
             - "Gradle Kotlin DSL Primer (docs.gradle.org/current/userguide/kotlin_dsl.html)"
             - "Baeldung: Kotlin DSL Basics (baeldung.com)"
+          phase: phase-3-software-design
+          phaseOrder: 100
 
         - id: ktor
           title: "Ktor 3.x basics"
@@ -387,6 +467,8 @@
             - "JetBrains: Ktor Tutorials (ktor.io/learn)"
             - "Baeldung: Introduction to Ktor (baeldung.com)"
             - "GitHub: Ktor samples (github.com/ktorio/ktor-samples)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 140
 
     - id: postgresql
       title: "PostgreSQL Deep Dive"
@@ -399,6 +481,8 @@
             - "PgBouncer Docs (pgbouncer.org/usage.html)"
             - "Citus: PostgreSQL Connection Pooling (citusdata.com/blog)"
             - "Baeldung: Connection Pooling with PgBouncer (baeldung.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 300
 
         - id: pg-memory
           title: "shared_buffers, work_mem, maintenance_work_mem"
@@ -408,6 +492,8 @@
             - "PGTune: automatic PostgreSQL config generator (pgtune.leopard.in.ua)"
             - "Citus: The Art of PostgreSQL (postgresql.org — EDB blog)"
             - "Book: PostgreSQL: Up and Running (Regina Obe & Leo Hsu, O'Reilly)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 310
 
         - id: pg-indexing
           title: "Indexes: B-Tree, GIN, BRIN, Partial"
@@ -417,6 +503,8 @@
             - "Cybertec: PostgreSQL Index Types (cybertec-postgresql.com/blog)"
             - "Baeldung: PostgreSQL Indexes Guide (baeldung.com)"
             - "Book: The Art of PostgreSQL (Dimitri Fontaine)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 320
 
         - id: pg-explain-analyze
           title: "EXPLAIN ANALYZE: plan reading & optimization"
@@ -426,6 +514,8 @@
             - "explain.dalibo.com: visual EXPLAIN ANALYZE viewer"
             - "Cybertec: EXPLAIN ANALYZE deep dive (cybertec-postgresql.com/blog)"
             - "pganalyze: EXPLAIN Insights documentation (pganalyze.com/docs)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 330
 
         - id: pg-mvcc
           title: "MVCC, autovacuum, table bloat"
@@ -435,6 +525,8 @@
             - "Cybertec: Table Bloat and VACUUM (cybertec-postgresql.com/blog)"
             - "Baeldung: PostgreSQL MVCC (baeldung.com)"
             - "Book: PostgreSQL Internals Mastery (Egor Rogov)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 340
 
         - id: pg-replication
           title: "Replication & sharding strategies"
@@ -444,6 +536,8 @@
             - "Citus Data: Distributed PostgreSQL (citusdata.com/blog)"
             - "Patroni: HA PostgreSQL (github.com/zalando/patroni)"
             - "Book: The Internals of PostgreSQL (Egor Rogov, postgrespro.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 350
 
         - id: pg-pgvector
           title: "pgvector: vector search for AI/RAG"
@@ -453,6 +547,8 @@
             - "Spring AI: Vector Store with pgvector (docs.spring.io/spring-ai)"
             - "Supabase: pgvector guide (supabase.com/docs/guides/database/extensions/pgvector)"
             - "Baeldung: pgvector with Spring AI (baeldung.com)"
+          phase: phase-9-specialization
+          phaseOrder: 20
 
     - id: nosql-and-transactions
       title: "NoSQL & Transaction Semantics"
@@ -466,6 +562,8 @@
             - "Book: MongoDB: The Definitive Guide, 3rd Ed (Bradshaw, Brazil, Chodorow)"
             - "Kyle Banker: The Little MongoDB Book (free PDF)"
             - "Baeldung: Spring Data MongoDB tutorials (baeldung.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 400
         - id: redis-deep
           title: "Redis Deep Dive: data types, persistence, cluster, pub/sub"
           summary: "Redis goes far beyond a key-value cache: lists, sorted sets, streams, HyperLogLog, and geospatial indexes enable specialized data structures server-side; persistence (RDB vs AOF), cluster mode (hash slots), and pub/sub patterns make Redis a lightweight alternative to full message brokers for many use cases."
@@ -475,6 +573,8 @@
             - "Book: Redis in Action (Josiah Carlson) — older but still the best conceptual guide"
             - "Salvatore Sanfilippo blog: antirez.com (Redis author, design notes)"
             - "Baeldung: Spring Data Redis tutorials (baeldung.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 410
         - id: isolation-levels-practical
           title: "Isolation Levels in Practice: RC, RR, SER, phantom, lost update"
           summary: "SQL isolation levels (Read Committed, Repeatable Read, Serializable) are not academic — each has distinct concurrent-write anomalies (lost update, phantom read, write skew) that appear under load; understanding how PostgreSQL MVCC, MySQL InnoDB locking, and optimistic concurrency implement these is the difference between a correct system and a data-corruption incident."
@@ -484,6 +584,8 @@
             - "PostgreSQL Docs: Transaction Isolation (postgresql.org/docs/current/transaction-iso.html)"
             - "Jepsen.io: consistency models reference (jepsen.io/consistency)"
             - "Blog: Peter Bailis — Weak Isolation in Modern Databases (bailis.org)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 420
 
     - id: kafka
       title: "Apache Kafka"
@@ -496,6 +598,8 @@
             - "Book: Kafka: The Definitive Guide, 2nd Ed., Chapter 5 (Gwen Shapira et al.)"
             - "Kafka Docs: Design (kafka.apache.org/documentation/#design)"
             - "Jay Kreps: The Log (engineering.linkedin.com/distributed-systems/log)"
+          phase: phase-6-distributed-events
+          phaseOrder: 100
 
         - id: kafka-partitions
           title: "Partitioning, consumer group rebalancing"
@@ -505,6 +609,8 @@
             - "Confluent: Incremental Cooperative Rebalancing (confluent.io/blog)"
             - "Kafka Docs: Consumer Group Protocol (kafka.apache.org/documentation)"
             - "Baeldung: Apache Kafka Consumer Groups (baeldung.com)"
+          phase: phase-6-distributed-events
+          phaseOrder: 110
 
         - id: kafka-exactly-once
           title: "Exactly-once semantics & idempotent producers"
@@ -514,6 +620,8 @@
             - "Book: Kafka: The Definitive Guide, 2nd Ed., Chapter 8 (Gwen Shapira et al.)"
             - "Kafka Docs: Transactions (kafka.apache.org/documentation/#transactions)"
             - "Baeldung: Kafka Exactly Once Semantics (baeldung.com)"
+          phase: phase-6-distributed-events
+          phaseOrder: 120
 
         - id: kafka-reliability
           title: "acks=all, min.insync.replicas, ISR"
@@ -523,6 +631,8 @@
             - "Confluent: Kafka Replication Deep Dive (confluent.io/blog)"
             - "Book: Kafka: The Definitive Guide, 2nd Ed., Chapter 6 (Gwen Shapira et al.)"
             - "Baeldung: Kafka Producer acks Configuration (baeldung.com)"
+          phase: phase-6-distributed-events
+          phaseOrder: 130
 
         - id: kafka-kraft
           title: "KRaft: ZooKeeper removal"
@@ -532,6 +642,8 @@
             - "Confluent: KRaft — Apache Kafka Without ZooKeeper (confluent.io/blog)"
             - "KIP-500: Replace ZooKeeper with a Self-Managed Metadata Quorum (cwiki.apache.org)"
             - "Baeldung: Kafka KRaft Mode (baeldung.com)"
+          phase: phase-6-distributed-events
+          phaseOrder: 140
 
         - id: kafka-streams
           title: "Kafka Streams basics"
@@ -541,6 +653,8 @@
             - "Confluent: Kafka Streams Tutorials (developer.confluent.io)"
             - "Book: Kafka Streams in Action, 2nd Ed. (Bill Bejeck, Manning)"
             - "Baeldung: Intro to Kafka Streams (baeldung.com)"
+          phase: phase-6-distributed-events
+          phaseOrder: 150
 
         - id: kafka-connect-debezium
           title: "Kafka Connect & Debezium CDC"
@@ -550,6 +664,8 @@
             - "Debezium Docs (debezium.io/documentation/)"
             - "Confluent: Change Data Capture with Debezium (confluent.io/blog)"
             - "Baeldung: CDC Using Debezium (baeldung.com)"
+          phase: phase-6-distributed-events
+          phaseOrder: 160
 
         - id: transactional-outbox
           title: "Transactional Outbox Pattern"
@@ -559,6 +675,8 @@
             - "Debezium: Outbox Event Router (debezium.io/documentation)"
             - "Baeldung: Transactional Outbox Pattern with Spring and Debezium (baeldung.com)"
             - "Book: Designing Data-Intensive Applications, Chapter 11 (Martin Kleppmann)"
+          phase: phase-6-distributed-events
+          phaseOrder: 180
 
     - id: testing-strategy
       title: "Testing Strategy"
@@ -571,6 +689,8 @@
             - "AssertJ Docs (assertj.github.io/assertj-core/)"
             - "Mockito Docs (site.mockito.org)"
             - "Baeldung: JUnit 5 + Mockito + AssertJ guides (baeldung.com)"
+          phase: phase-3-software-design
+          phaseOrder: 110
 
         - id: testcontainers
           title: "Testcontainers: PostgreSQL, Kafka, Redis"
@@ -580,6 +700,8 @@
             - "Spring Boot Testcontainers integration (docs.spring.io/spring-boot)"
             - "Baeldung: Testing with Testcontainers (baeldung.com)"
             - "Testcontainers Workshop (github.com/testcontainers/workshop-spring-boot)"
+          phase: phase-3-software-design
+          phaseOrder: 120
 
         - id: contract-testing
           title: "Contract Testing (Spring Cloud Contract / Pact)"
@@ -589,6 +711,8 @@
             - "Pact Docs (docs.pact.io)"
             - "Baeldung: Consumer Driven Contracts with Pact (baeldung.com)"
             - "Martin Fowler: Consumer-Driven Contracts (martinfowler.com/articles/consumerDrivenContracts.html)"
+          phase: phase-3-software-design
+          phaseOrder: 130
 
         - id: architecture-tests
           title: "ArchUnit: architecture rule enforcement"
@@ -598,6 +722,8 @@
             - "Baeldung: ArchUnit with Spring Boot (baeldung.com)"
             - "GitHub: TNG/ArchUnit-Examples (github.com/TNG/ArchUnit-Examples)"
             - "InfoQ: Enforcing Architecture with ArchUnit (infoq.com)"
+          phase: phase-3-software-design
+          phaseOrder: 140
 
     - id: backend-practice
       title: "Hands-on Practice"
@@ -608,6 +734,7 @@
           resources:
             - "JavaRush (javarush.com)"
             - "JavaRush Learning Path documentation (javarush.com/learning)"
+          type: recurring
 
         - id: exercism-java
           title: "Exercism: Java & Kotlin tracks (mentored)"
@@ -615,6 +742,7 @@
           resources:
             - "Exercism Java Track (exercism.org/tracks/java)"
             - "Exercism Kotlin Track (exercism.org/tracks/kotlin)"
+          type: recurring
 
         - id: codewars-java
           title: "Codewars: Java kata (5-6 kyu for warm-up)"
@@ -622,6 +750,7 @@
           resources:
             - "Codewars (codewars.com)"
             - "Codewars: Java kata collection (codewars.com/kata/search/java)"
+          type: recurring
 
         - id: leetcode-practice
           title: "LeetCode: NeetCode 150 (daily, no IDE hints)"
@@ -630,6 +759,7 @@
             - "NeetCode 150 roadmap (neetcode.io/roadmap)"
             - "LeetCode (leetcode.com)"
             - "NeetCode YouTube: video solutions (youtube.com/@NeetCode)"
+          type: recurring
 
         - id: educative-java
           title: "Educative: Java Multithreading, JVM Deep Dive"
@@ -637,6 +767,9 @@
           resources:
             - "Educative: Java Multithreading (educative.io)"
             - "Educative: JVM Deep Dive (educative.io)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 500
+          type: reference
 
         - id: hyperskill-kotlin
           title: "Hyperskill (JetBrains): Kotlin Developer track"
@@ -644,6 +777,9 @@
           resources:
             - "Hyperskill: Kotlin Developer (hyperskill.org/tracks/18)"
             - "JetBrains Academy (jetbrains.com/academy/)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 510
+          type: reference
 
         - id: spring-academy
           title: "Spring Academy: official Spring Boot courses"
@@ -651,6 +787,9 @@
           resources:
             - "Spring Academy (spring.academy)"
             - "Spring Academy: Spring Boot course (spring.academy/courses/spring-boot)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 520
+          type: reference
 
         - id: testcontainers-workshop
           title: "Testcontainers Workshop (GitHub)"
@@ -658,6 +797,9 @@
           resources:
             - "Testcontainers Workshop (github.com/testcontainers/workshop-spring-boot)"
             - "Testcontainers: Getting Started guide (testcontainers.com/guides/)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 530
+          type: reference
 
         - id: kafka-tutorials-confluent
           title: "Confluent Tutorials: hands-on Kafka labs"
@@ -665,6 +807,9 @@
           resources:
             - "Confluent Developer Tutorials (developer.confluent.io/tutorials/)"
             - "Confluent: Kafka 101 course (developer.confluent.io/courses/kafka/)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 540
+          type: reference
 
     - id: backend-awesome-repos
       title: "Awesome GitHub Repos"
@@ -674,41 +819,62 @@
           summary: "Curated list of awesome Java frameworks, libraries, software. The de-facto starting point for discovering quality Java tooling — covers web frameworks, persistence, concurrency, testing, distributed systems."
           resources:
             - "GitHub: github.com/akullpp/awesome-java (51k+ stars)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 600
+          type: reference
         - id: java-design-patterns-repo
           title: "java-design-patterns (iluwatar) — 90k+ stars"
           summary: "Comprehensive design patterns implemented in Java with explanations, UML diagrams, and runnable examples — the most popular GoF reference on GitHub. Covers creational, structural, behavioral, concurrency, architectural patterns."
           resources:
             - "GitHub: github.com/iluwatar/java-design-patterns (90k+ stars)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 610
+          type: reference
         - id: spring-petclinic
           title: "spring-petclinic — official Spring sample app"
           summary: "Reference Spring Boot application demonstrating idiomatic structure, JPA, REST, and CI/CD setup. Multiple variants (reactive, GraphQL, microservices) for studying different architectural approaches."
           resources:
             - "GitHub: github.com/spring-projects/spring-petclinic"
             - "Variants: spring-petclinic-microservices, spring-petclinic-reactive"
+          phase: phase-4-backend-engineering
+          phaseOrder: 620
+          type: reference
         - id: high-performance-java-samples
           title: "high-performance-java-persistence (Mihalcea)"
           summary: "Code samples from Vlad Mihalcea's High-Performance Java Persistence book — production-ready JPA/Hibernate patterns, N+1 fixes, batch operations, transaction strategies."
           resources:
             - "GitHub: github.com/vladmihalcea/high-performance-java-persistence"
             - "Author blog: vladmihalcea.com — JPA deep dives"
+          phase: phase-4-backend-engineering
+          phaseOrder: 630
+          type: reference
         - id: jvm-anatomy-park
           title: "JVM Anatomy Park (Shipilëv)"
           summary: "Aleksey Shipilëv's series of small JVM experiments demonstrating bytecode, JIT, GC behavior empirically — gold-standard reference for understanding JVM internals. Author also created JCStress, JOL."
           resources:
             - "Series: shipilev.net/jvm/anatomy-quarks/"
             - "Tools: JOL (jol.openjdk.org), JCStress"
+          phase: phase-4-backend-engineering
+          phaseOrder: 640
+          type: reference
         - id: kotlin-coroutines-samples
           title: "kotlinx.coroutines (JetBrains)"
           summary: "Official Kotlin coroutines library repository with comprehensive examples, guides, and design rationale — the canonical reference for understanding structured concurrency in Kotlin."
           resources:
             - "GitHub: github.com/Kotlin/kotlinx.coroutines"
             - "Coroutines guide: kotlinlang.org/docs/coroutines-guide.html"
+          phase: phase-4-backend-engineering
+          phaseOrder: 650
+          type: reference
         - id: awesome-kafka-repo
           title: "awesome-kafka — curated Kafka resources"
           summary: "Curated list of Apache Kafka tutorials, courses, books, tools, and Kafka Streams learning resources from the community."
           resources:
             - "GitHub: github.com/infoslack/awesome-kafka"
             - "Confluent Examples: github.com/confluentinc/examples (production patterns)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 660
+          type: reference
 
     - id: backend-platforms
       title: "Books & Certifications"
@@ -719,6 +885,9 @@
           resources:
             - "Java Specialists Newsletter (javaspecialists.eu)"
             - "Java Specialists: Concurrency Course (javaspecialists.eu/courses/)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 700
+          type: reference
 
         - id: confluent-kafka-cert
           title: "Confluent: CCDAK certification"
@@ -727,6 +896,9 @@
             - "Confluent CCDAK (confluent.io/certification/)"
             - "CCDAK Study Guide (confluent.io/learn/apache-kafka-certification/)"
             - "Udemy: Apache Kafka Series — Confluent Certification (udemy.com)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 710
+          type: reference
 
         - id: book-effective-java
           title: "Book: Effective Java (Joshua Bloch)"
@@ -734,6 +906,9 @@
           resources:
             - "Book: Effective Java, 3rd Ed. (Joshua Bloch, Addison-Wesley, 2018)"
             - "Summary notes: Effective Java 3rd Edition (github.com/david-sauvage/effective-java-summary)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 720
+          type: reference
 
         - id: book-kafka-definitive
           title: "Book: Kafka — The Definitive Guide 3rd Ed"
@@ -741,6 +916,9 @@
           resources:
             - "Book: Kafka: The Definitive Guide, 3rd Ed. (Gwen Shapira et al., O'Reilly, free PDF at confluent.io)"
             - "Confluent: free book download (confluent.io/resources/kafka-the-definitive-guide)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 730
+          type: reference
 
         - id: pg-internals-book
           title: "Book: PostgreSQL Internals Mastery"
@@ -748,6 +926,9 @@
           resources:
             - "PostgreSQL Internals (Egor Rogov, free at postgrespro.com/community/books/internals)"
             - "Book: PostgreSQL: Up and Running, 3rd Ed. (Regina Obe & Leo Hsu, O'Reilly)"
+          phase: phase-4-backend-engineering
+          phaseOrder: 740
+          type: reference
 
 # ============================================================
 # 2. ARCHITECTURE & SYSTEM DESIGN
