@@ -1,11 +1,18 @@
 export type Status = "not_started" | "in_progress" | "done";
 
+export type RoadmapNodeType = "topic" | "reference" | "recurring";
+
 export interface RoadmapNode {
   id: string;
   title: string;
   summary?: string;
   resources?: string[];
   children?: RoadmapNode[];
+  prerequisites?: string[];
+  phase?: string;
+  phaseOrder?: number;
+  aliasOf?: string;
+  type?: RoadmapNodeType;
 }
 
 export interface GitHubConfig {
