@@ -454,6 +454,37 @@
             - "Supabase: pgvector guide (supabase.com/docs/guides/database/extensions/pgvector)"
             - "Baeldung: pgvector with Spring AI (baeldung.com)"
 
+    - id: nosql-and-transactions
+      title: "NoSQL & Transaction Semantics"
+      children:
+        - id: mongodb-fundamentals
+          title: "MongoDB: document model, indexes, aggregation pipeline"
+          summary: "MongoDB's document model (BSON documents grouped in collections) fits hierarchical/semi-structured data well, but schema flexibility shifts validation into the application layer; mastering indexes (compound, multikey, text) and the aggregation pipeline ($match → $group → $lookup) is essential for any production MongoDB usage."
+          resources:
+            - "MongoDB University: M001 + M121 (free, university.mongodb.com)"
+            - "MongoDB Docs: Aggregation Pipeline (docs.mongodb.com/manual/aggregation)"
+            - "Book: MongoDB: The Definitive Guide, 3rd Ed (Bradshaw, Brazil, Chodorow)"
+            - "Kyle Banker: The Little MongoDB Book (free PDF)"
+            - "Baeldung: Spring Data MongoDB tutorials (baeldung.com)"
+        - id: redis-deep
+          title: "Redis Deep Dive: data types, persistence, cluster, pub/sub"
+          summary: "Redis goes far beyond a key-value cache: lists, sorted sets, streams, HyperLogLog, and geospatial indexes enable specialized data structures server-side; persistence (RDB vs AOF), cluster mode (hash slots), and pub/sub patterns make Redis a lightweight alternative to full message brokers for many use cases."
+          resources:
+            - "Redis University: RU101 + RU201 (free, university.redis.io)"
+            - "Redis docs: Data types + persistence (redis.io/docs)"
+            - "Book: Redis in Action (Josiah Carlson) — older but still the best conceptual guide"
+            - "Salvatore Sanfilippo blog: antirez.com (Redis author, design notes)"
+            - "Baeldung: Spring Data Redis tutorials (baeldung.com)"
+        - id: isolation-levels-practical
+          title: "Isolation Levels in Practice: RC, RR, SER, phantom, lost update"
+          summary: "SQL isolation levels (Read Committed, Repeatable Read, Serializable) are not academic — each has distinct concurrent-write anomalies (lost update, phantom read, write skew) that appear under load; understanding how PostgreSQL MVCC, MySQL InnoDB locking, and optimistic concurrency implement these is the difference between a correct system and a data-corruption incident."
+          resources:
+            - "Martin Kleppmann: Hermitage — isolation level test suite (github.com/ept/hermitage)"
+            - "Book: Designing Data-Intensive Applications, Chapter 7 (Kleppmann)"
+            - "PostgreSQL Docs: Transaction Isolation (postgresql.org/docs/current/transaction-iso.html)"
+            - "Jepsen.io: consistency models reference (jepsen.io/consistency)"
+            - "Blog: Peter Bailis — Weak Isolation in Modern Databases (bailis.org)"
+
     - id: kafka
       title: "Apache Kafka"
       children:
