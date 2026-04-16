@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "validate": "tsx scripts/validate-roadmap.ts",
     "preview": "vite preview",
     "test": "vitest run --passWithNoTests"
   },
@@ -34,6 +35,7 @@
     "globals": "^17.4.0",
     "jsdom": "^29.0.2",
     "tailwindcss": "^4.2.2",
+    "tsx": "^4.21.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.0",
     "vite": "^8.0.4",
