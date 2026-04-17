@@ -13,6 +13,8 @@
             - "DataLemur: Window Functions question bank (datalemur.com)"
             - "PostgreSQL docs: Window Functions (postgresql.org/docs/current/tutorial-window.html)"
             - "Book: SQL for Data Analysis, Chapter 4 (Cathy Tanimura)"
+          phase: phase-2-cs-foundations
+          phaseOrder: 200
 
         - id: ctes-recursive
           title: "CTEs (including recursive)"
@@ -22,6 +24,8 @@
             - "StrataScratch: CTE practice problems (stratascratch.com)"
             - "Mode Analytics: Advanced SQL — CTEs module"
             - "Book: SQL for Data Analysis, Chapter 5 (Cathy Tanimura)"
+          phase: phase-2-cs-foundations
+          phaseOrder: 210
 
         - id: complex-joins
           title: "Complex multi-table joins, self-joins"
@@ -32,6 +36,8 @@
             - "Mode Analytics: SQL Joins tutorial (mode.com/sql-tutorial)"
             - "pgexercises.com: free PostgreSQL exercises with joins"
             - "Book: SQL for Data Analysis (Cathy Tanimura) — Chapter 3: complex join patterns"
+          phase: phase-2-cs-foundations
+          phaseOrder: 220
 
         - id: sql-interview-practice
           title: "DataLemur + StrataScratch: daily practice"
@@ -42,6 +48,8 @@
             - "LeetCode: SQL 50 study plan (free)"
             - "HackerRank: SQL domain challenges (free)"
             - "Book: SQL for Data Analysis (Cathy Tanimura) — real-world analytical SQL patterns"
+          phase: phase-2-cs-foundations
+          phaseOrder: 230
 
     - id: python-data
       title: "Python for Data Analysis"
@@ -73,6 +81,8 @@
             - "StatQuest: Statistics fundamentals playlist (YouTube, free)"
             - "Book: Practical Statistics for Data Scientists, Ch 1-2 (Bruce & Bruce)"
             - "DataLemur: Statistics interview questions (datalemur.com)"
+          phase: phase-7-data-ml
+          phaseOrder: 10
 
         - id: distributions
           title: "Distributions: normal, binomial, CLT"
@@ -82,6 +92,8 @@
             - "Khan Academy: Statistics — distributions module"
             - "Book: Practical Statistics for Data Scientists, Ch 2 (Bruce & Bruce)"
             - "Seeing Theory: interactive statistics visualizations (seeing-theory.brown.edu, free)"
+          phase: phase-7-data-ml
+          phaseOrder: 20
 
         - id: hypothesis-testing
           title: "Hypothesis testing: t-test, chi-square, p-value"
@@ -91,6 +103,8 @@
             - "Book: Practical Statistics for Data Scientists, Ch 3 (Bruce & Bruce)"
             - "DataLemur: Statistics interview problems (datalemur.com)"
             - "Khan Academy: Significance Tests module"
+          phase: phase-7-data-ml
+          phaseOrder: 30
 
         - id: ab-testing
           title: "A/B Testing: power, sample size, Bonferroni"
@@ -100,6 +114,8 @@
             - "Udacity: A/B Testing course by Google (free, YouTube/Udacity)"
             - "Book: Trustworthy Online Controlled Experiments (Kohavi, Tang, Xu)"
             - "Optimizely: Stats Engine white paper (free)"
+          phase: phase-7-data-ml
+          phaseOrder: 40
 
         - id: correlation-causation
           title: "Correlation vs Causation"
@@ -109,6 +125,8 @@
             - "Book: The Book of Why (Judea Pearl & Dana Mackenzie)"
             - "StatQuest: Correlation vs Causation video (YouTube)"
             - "Coursera: A Crash Course in Causality (UPenn, free audit)"
+          phase: phase-7-data-ml
+          phaseOrder: 50
 
     - id: visualization-tools
       title: "BI & Visualization"
@@ -122,6 +140,8 @@
             - "sqlbi.com: DAX guide and SQLBI courses"
             - "Microsoft: Power BI documentation (docs.microsoft.com/power-bi)"
             - "Book: Storytelling with Data (Cole Nussbaumer Knaflic) — visualization principles for BI reports"
+          phase: phase-7-data-ml
+          phaseOrder: 100
 
         - id: tableau-basics
           title: "Tableau basics (secondary)"
@@ -131,6 +151,8 @@
             - "Tableau Training: free e-learning (training.tableau.com)"
             - "YouTube: Andy Kriebel — Makeover Monday tutorials"
             - "Book: Storytelling with Data (Cole Knaflic) — applicable to Tableau"
+          phase: phase-7-data-ml
+          phaseOrder: 110
 
     - id: ml-basics
       title: "ML Basics (DA-level)"
@@ -143,6 +165,8 @@
             - "Kaggle: Intro to Machine Learning micro-course (free)"
             - "Book: An Introduction to Statistical Learning (James et al., free PDF at statlearning.com)"
             - "Coursera: Machine Learning Specialization (Andrew Ng)"
+          phase: phase-7-data-ml
+          phaseOrder: 200
 
         - id: overfitting-crossval
           title: "Overfitting, cross-validation"
@@ -152,6 +176,8 @@
             - "Scikit-learn docs: Cross-validation guide (scikit-learn.org)"
             - "Kaggle: Intermediate Machine Learning — Overfitting module"
             - "Book: Practical Statistics for Data Scientists, Ch 6 (Bruce & Bruce)"
+          phase: phase-7-data-ml
+          phaseOrder: 210
 
         - id: genai-awareness
           title: "GenAI/LLM: conceptual awareness for analysts"
@@ -168,6 +194,8 @@
             - "DataMetis: DAU drop framework (datametis.com)"
             - "YouTube: Emma Ding — Product Analytics Case Studies"
             - "Exponent: Product Analytics Interview prep (tryexponent.com)"
+          phase: phase-7-data-ml
+          phaseOrder: 300
 
         - id: take-home-project
           title: "Kaggle: EDA portfolio project"
@@ -177,6 +205,8 @@
             - "Kaggle: EDA competitions (kaggle.com/competitions)"
             - "GitHub Pages: host your EDA project publicly"
             - "Towards Data Science: EDA tutorial articles (towardsdatascience.com)"
+          phase: phase-7-data-ml
+          phaseOrder: 310
 
         - id: behavioral-star
           title: "STAR-format behavioral answers"
@@ -186,6 +216,8 @@
             - "Exponent: Data Analyst behavioral interview guide"
             - "Book: Cracking the PM Interview — STAR chapter (applicable to analysts)"
             - "Pramp: free behavioral mock interviews (pramp.com)"
+          phase: phase-7-data-ml
+          phaseOrder: 320
 
     - id: da-practice
       title: "Hands-on Practice"
@@ -196,6 +228,7 @@
           resources:
             - "DataLemur.com — free daily SQL + statistics problems (free/$10/mo premium)"
             - "DataLemur: SQL Question Guide blog (datalemur.com/blog)"
+          type: recurring
 
         - id: stratascratch
           title: "StrataScratch: real FAANG analyst questions"
@@ -203,6 +236,9 @@
           resources:
             - "StrataScratch.com — company-tagged SQL & Python questions ($99/yr, 1000+ questions)"
             - "StrataScratch: Data Analytics Interview Prep guide"
+          phase: phase-7-data-ml
+          phaseOrder: 410
+          type: reference
 
         - id: mode-analytics
           title: "Mode Analytics: SQL tutorial + sandbox"
@@ -211,6 +247,9 @@
             - "Mode Analytics: SQL Tutorial (mode.com/sql-tutorial) — free, beginner to advanced"
             - "Mode Analytics: free sandbox workspace for running real queries"
             - "Book: SQL for Data Analysis (Cathy Tanimura) — advanced SQL companion"
+          phase: phase-7-data-ml
+          phaseOrder: 420
+          type: reference
 
         - id: kaggle-eda
           title: "Kaggle: EDA competitions + micro-courses"
@@ -220,6 +259,9 @@
             - "Kaggle: Getting Started competitions (titanic, house prices)"
             - "Kaggle: Notebooks gallery — browse public EDA examples"
             - "Book: Python for Data Analysis, 3rd Ed (Wes McKinney) — Pandas and NumPy companion"
+          phase: phase-7-data-ml
+          phaseOrder: 430
+          type: reference
 
         - id: power-bi-learn
           title: "Microsoft Learn: Power BI (free, official)"
@@ -229,6 +271,9 @@
             - "Microsoft: PL-300 certification learning path (free)"
             - "Power BI Community: forums + sample reports (community.powerbi.com)"
             - "Book: Storytelling with Data (Cole Nussbaumer Knaflic) — visual communication principles"
+          phase: phase-7-data-ml
+          phaseOrder: 440
+          type: reference
 
     - id: da-books
       title: "Books & Courses"
@@ -239,6 +284,9 @@
           resources:
             - "O'Reilly: Practical Statistics for Data Scientists, 2nd Ed (Bruce, Bruce & Gedeck)"
             - "GitHub: gedeck/practical-statistics-for-data-scientists — code examples (free)"
+          phase: phase-7-data-ml
+          phaseOrder: 500
+          type: reference
 
         - id: book-storytelling-data
           title: "Book: Storytelling with Data (Cole Knaflic)"
@@ -247,6 +295,9 @@
             - "Amazon: Storytelling with Data (Cole Nussbaumer Knaflic)"
             - "StorytellingWithData.com — free blog + SWD challenge exercises"
             - "YouTube: Cole Knaflic — Storytelling with Data talks"
+          phase: phase-7-data-ml
+          phaseOrder: 510
+          type: reference
 
         - id: book-sql-analysis
           title: "Book: SQL for Data Analysis (Cathy Tanimura)"
@@ -254,6 +305,9 @@
           resources:
             - "O'Reilly: SQL for Data Analysis (Cathy Tanimura)"
             - "GitHub: cathytanimura/sql_book — code examples (free)"
+          phase: phase-7-data-ml
+          phaseOrder: 520
+          type: reference
 
         - id: google-da-cert
           title: "Coursera: Google Data Analytics Certificate"
@@ -262,6 +316,9 @@
             - "Coursera: Google Data Analytics Professional Certificate (coursera.org)"
             - "Google Career Certificates: employer recognition info (grow.google/certificates)"
             - "Reddit: r/dataanalysis — learner experiences and tips"
+          phase: phase-7-data-ml
+          phaseOrder: 530
+          type: reference
 
     - id: da-awesome-repos
       title: "Awesome GitHub Repos"
@@ -271,28 +328,43 @@
           summary: "Curated catalog of data science resources: courses, books, tools, datasets, podcasts. The reference index for discovering DA/DS learning materials."
           resources:
             - "GitHub: github.com/academic/awesome-datascience (27k+ stars)"
+          phase: phase-7-data-ml
+          phaseOrder: 600
+          type: reference
         - id: data-engineering-roadmap
           title: "data-engineer-roadmap (datastacktv)"
           summary: "Visual roadmap of skills/tools to become a Data Engineer — useful for Data Analysts who want to understand the upstream data pipeline (relevant for cross-functional interview questions)."
           resources:
             - "GitHub: github.com/datastacktv/data-engineer-roadmap"
+          phase: phase-7-data-ml
+          phaseOrder: 610
+          type: reference
         - id: dataset-collections
           title: "awesome-public-datasets"
           summary: "Curated list of free public datasets organized by topic — endless source of practice projects for your DA portfolio."
           resources:
             - "GitHub: github.com/awesomedata/awesome-public-datasets"
             - "Kaggle Datasets: kaggle.com/datasets"
+          phase: phase-7-data-ml
+          phaseOrder: 620
+          type: reference
         - id: 100-days-ml
           title: "100-Days-Of-ML-Code (Avik-Jain) — 47k+ stars"
           summary: "Day-by-day ML learning path with code examples — pragmatic introduction to ML concepts that every Data Analyst should understand at conceptual level."
           resources:
             - "GitHub: github.com/Avik-Jain/100-Days-Of-ML-Code (47k+ stars)"
+          phase: phase-7-data-ml
+          phaseOrder: 630
+          type: reference
         - id: sql-leetcode-repo
           title: "LeetCode-SQL Solutions"
           summary: "Community-maintained SQL solutions for LeetCode database problems with explanations — pair with DataLemur for comprehensive interview practice."
           resources:
             - "GitHub: search 'LeetCode SQL Solutions' for top community repos"
             - "Mode SQL Tutorial: mode.com/sql-tutorial"
+          phase: phase-7-data-ml
+          phaseOrder: 640
+          type: reference
 
 # ============================================================
 # 5. PYTHON

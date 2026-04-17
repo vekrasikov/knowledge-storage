@@ -12,6 +12,8 @@
             - "Official Python Tutorial (docs.python.org/3/tutorial) — especially chapters 3-5"
             - "Book: Fluent Python (Luciano Ramalho) — chapters 1-3"
             - "Exercism: Python track — first 10 exercises focus on syntax"
+          phase: phase-1-programming
+          phaseOrder: 150
         - id: python-oop
           title: "OOP in Python vs Java: dunder methods, decorators"
           summary: "Python OOP uses duck typing, multiple inheritance, and special dunder methods (__init__, __repr__, __eq__) instead of Java's rigid class hierarchies; decorators replace Java annotations with runtime function transformation. Understanding these unlocks Pythonic class design."
@@ -20,6 +22,8 @@
             - "Real Python: Python Decorators 101 — realpython.com/primer-on-python-decorators"
             - "Book: Fluent Python (Luciano Ramalho) — Part II: Data Structures & Special Methods"
             - "Python docs: Data Model (dunder methods) — docs.python.org/3/reference/datamodel.html"
+          phase: phase-1-programming
+          phaseOrder: 160
         - id: python-modules
           title: "Modules, packages, virtual environments (venv/poetry)"
           summary: "Python's module system and dependency management (venv, pip, Poetry) are analogous to Maven/Gradle but have important differences like flat import namespaces and global site-packages conflicts. Proper isolation via virtual environments is a mandatory hygiene skill."
@@ -28,6 +32,8 @@
             - "Poetry docs: python-poetry.org/docs"
             - "Real Python: Python import system — realpython.com/python-import"
             - "Python Packaging User Guide: packaging.python.org/en/latest"
+          phase: phase-1-programming
+          phaseOrder: 170
         - id: python-typing
           title: "Type hints & mypy (static typing for Python)"
           summary: "Type hints (PEP 484+) bring Java-like static analysis to Python without runtime overhead; mypy is the primary type checker used in production codebases. For a Java dev accustomed to compile-time safety, this closes the gap and prevents entire classes of bugs."
@@ -36,6 +42,8 @@
             - "Real Python: Python Type Checking Guide — realpython.com/python-type-checking"
             - "PEP 484 – Type Hints: peps.python.org/pep-0484"
             - "Book: Robust Python (Patrick Viafore) — chapters on type system"
+          phase: phase-1-programming
+          phaseOrder: 180
         - id: python-async
           title: "asyncio basics (coroutines, event loop)"
           summary: "Python's asyncio provides cooperative multitasking via coroutines and a single-threaded event loop — conceptually similar to Project Loom virtual threads but with explicit async/await syntax. Essential for writing non-blocking I/O in FastAPI, LangChain, and agent frameworks."
@@ -45,6 +53,8 @@
             - "ArjanCodes YouTube: asyncio explained — youtube.com/c/ArjanCodes"
             - "Book: Using Asyncio in Python (Caleb Hattingh)"
             - "Book: High Performance Python, 2nd Ed (Gorelick & Ozsvald) — async and concurrency chapters"
+          phase: phase-1-programming
+          phaseOrder: 190
         - id: python-testing
           title: "pytest: fixtures, parametrize, mocking"
           summary: "pytest is the de facto Python testing framework — more flexible than JUnit with powerful fixtures, parametrize decorators, and plugin ecosystem. A Java dev can transfer testing intuition quickly but must learn pytest-specific idioms like conftest.py and fixture scoping."
@@ -54,6 +64,8 @@
             - "Python docs: unittest.mock — docs.python.org/3/library/unittest.mock.html"
             - "Book: Python Testing with pytest (Brian Okken)"
             - "Book: Architecture Patterns with Python (Percival & Gregory) — TDD and DDD in Python"
+          phase: phase-1-programming
+          phaseOrder: 200
 
     - id: python-data-libs
       title: "Data Libraries"
@@ -67,6 +79,8 @@
             - "Real Python: Pandas DataFrames — realpython.com/pandas-dataframe"
             - "Book: Python for Data Analysis, 3rd Ed (Wes McKinney, creator of Pandas)"
             - "DataCamp: Data Manipulation with Pandas course (datacamp.com)"
+          phase: phase-7-data-ml
+          phaseOrder: 400
         - id: py-numpy
           title: "NumPy: array operations, broadcasting"
           summary: "NumPy provides fast N-dimensional array operations that underpin Pandas, scikit-learn, and virtually every ML library — broadcasting rules replace explicit loops with vectorized math. Without NumPy intuition, ML library code reads like black magic."
@@ -76,6 +90,8 @@
             - "Real Python: Look Ma, No For-Loops — realpython.com/numpy-array-programming"
             - "Book: Python Data Science Handbook (Jake VanderPlas) — Chapter 2"
             - "Book: Python for Data Analysis, 3rd Ed (Wes McKinney) — Chapter 4: NumPy basics"
+          phase: phase-7-data-ml
+          phaseOrder: 405
         - id: py-matplotlib
           title: "Matplotlib & Seaborn: visualization"
           summary: "Matplotlib is the foundational Python plotting library; Seaborn builds on top of it with statistical chart types and better defaults for exploratory data analysis. Visualization is a must-have skill for DA interviews and portfolio projects."
@@ -84,6 +100,8 @@
             - "Seaborn docs: seaborn.pydata.org/tutorial.html"
             - "Kaggle: Data Visualization micro-course — kaggle.com/learn/data-visualization"
             - "Real Python: Python Plotting With Matplotlib — realpython.com/python-matplotlib-guide"
+          phase: phase-7-data-ml
+          phaseOrder: 415
         - id: py-jupyter
           title: "Jupyter Notebooks workflow"
           summary: "Jupyter Notebooks provide an interactive REPL-with-output format that is the standard for data exploration, EDA, and sharing analytical findings — every DA interview take-home uses them. Learning keyboard shortcuts and cell magic commands dramatically speeds up analysis."
@@ -92,6 +110,8 @@
             - "Real Python: Jupyter Notebook Intro — realpython.com/jupyter-notebook-introduction"
             - "Kaggle: all notebooks run in Jupyter — practice there daily"
             - "JupyterLab docs: jupyterlab.readthedocs.io"
+          phase: phase-7-data-ml
+          phaseOrder: 425
         - id: py-polars
           title: "Polars: fast DataFrame alternative"
           summary: "Polars is a Rust-backed DataFrame library that is 5-50x faster than Pandas for large datasets — it's rapidly becoming the production standard for data pipelines. As a Java/Kotlin dev you'll appreciate its strongly-typed, lazy evaluation model similar to Java Streams."
@@ -101,6 +121,8 @@
             - "Real Python: Polars overview — realpython.com/polars-python"
             - "GitHub: pola-rs/polars — read the examples directory"
             - "Kaggle: Polars tutorial notebooks — search on kaggle.com (free)"
+          phase: phase-7-data-ml
+          phaseOrder: 445
 
     - id: python-ml
       title: "ML & AI Libraries"
@@ -113,6 +135,8 @@
             - "Kaggle: Intro to Machine Learning + Intermediate ML micro-courses"
             - "Book: Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow (Aurélien Géron) — Part 1"
             - "Real Python: Machine Learning with scikit-learn — realpython.com/machine-learning-with-python"
+          phase: phase-7-data-ml
+          phaseOrder: 500
         - id: py-langchain
           title: "LangChain / LangGraph for agents"
           summary: "LangChain and LangGraph are the dominant Python frameworks for building LLM-powered applications and stateful agent workflows — they provide chains, tools, memory, and graph-based orchestration out of the box. For AI agent expertise, these are the foundational libraries to master alongside the Anthropic/OpenAI SDKs."
@@ -121,6 +145,8 @@
             - "LangGraph docs: langchain-ai.github.io/langgraph"
             - "DeepLearning.AI: AI Agents in LangGraph — deeplearning.ai (free)"
             - "LangChain GitHub tutorials: github.com/langchain-ai/langchain/tree/master/cookbook"
+          phase: phase-9-specialization
+          phaseOrder: 200
         - id: py-fastapi
           title: "FastAPI: REST APIs for ML models"
           summary: "FastAPI is the leading Python web framework for building APIs — it uses Python type hints for automatic OpenAPI generation and validation, making it feel familiar to Java devs used to Spring Boot contracts. It's the standard way to serve ML models and AI agents as REST endpoints."
@@ -129,6 +155,8 @@
             - "Real Python: FastAPI intro — realpython.com/fastapi-python-web-apis"
             - "TestDriven.io: FastAPI TDD — testdriven.io/courses/tdd-fastapi"
             - "ArjanCodes YouTube: FastAPI best practices — youtube.com/c/ArjanCodes"
+          phase: phase-9-specialization
+          phaseOrder: 210
         - id: py-pyspark
           title: "PySpark: distributed data processing"
           summary: "PySpark brings Apache Spark's distributed processing to Python, enabling analysis of datasets too large for Pandas on a single machine — common in fintech for ETL and analytical pipelines. It bridges the gap between data engineering and data science roles."
@@ -137,6 +165,8 @@
             - "Databricks: PySpark Getting Started — docs.databricks.com"
             - "Kaggle: PySpark tutorial notebooks — search on kaggle.com"
             - "Book: Learning Spark (Jules Damji et al.) — O'Reilly 2nd Ed"
+          phase: phase-7-data-ml
+          phaseOrder: 510
 
     - id: python-practice
       title: "Hands-on Practice"
@@ -147,18 +177,23 @@
           resources:
             - "Educative: Become a Python Developer — educative.io/path/python-developer"
             - "Educative: Python for Programmers (fast-track for experienced devs)"
+          phase: phase-1-programming
+          phaseOrder: 210
+          type: reference
         - id: exercism-python
           title: "Exercism: Python track (mentored)"
           summary: "Exercism offers 130+ Python exercises with free human mentor feedback — the mentored mode provides code review from experienced Python developers who point out non-idiomatic patterns. For a Java dev, this is the fastest way to learn what 'Pythonic' actually means in practice."
           resources:
             - "Exercism Python track: exercism.org/tracks/python"
             - "Exercism: mentored mode — enable in track settings for human code review"
+          type: recurring
         - id: codewars-python
           title: "Codewars: Python kata"
           summary: "Codewars provides gamified coding challenges (kata) in Python rated from beginner to expert, with community solutions to learn idiomatic approaches after solving. A great daily warm-up to build Python muscle memory alongside your Java kata habit."
           resources:
             - "Codewars: codewars.com — filter by Python, start at 7-6 kyu"
             - "After solving: study top-rated community solutions for Pythonic patterns"
+          type: recurring
         - id: leetcode-python
           title: "LeetCode: solve NeetCode 150 in Python too"
           summary: "Solving the same NeetCode 150 problems in Python that you already know in Java forces you to learn Python's data structures (list, dict, set, deque, heapq) and their idiomatic usage patterns. This dual-language practice maximizes efficiency — algorithms knowledge transfers, syntax fluency is what you're training."
@@ -166,24 +201,36 @@
             - "LeetCode: leetcode.com — set language to Python 3"
             - "NeetCode 150: neetcode.io/practice — structured study order"
             - "NeetCode YouTube: Python solutions with explanation — youtube.com/@NeetCode"
+          phase: phase-1-programming
+          phaseOrder: 220
+          type: reference
         - id: kaggle-notebooks
           title: "Kaggle: micro-courses + notebook competitions"
           summary: "Kaggle micro-courses (Pandas, SQL, ML, Data Visualization) are free, hands-on, and certificate-backed — each takes 4-6 hours and runs entirely in the browser. Kaggle notebook competitions provide real datasets and peer comparison to build a portfolio."
           resources:
             - "Kaggle Learn: kaggle.com/learn — start with Pandas, then ML, then Data Viz"
             - "Kaggle Getting Started competitions: titanic, house prices, digit recognizer"
+          phase: phase-1-programming
+          phaseOrder: 230
+          type: reference
         - id: datacamp-python
           title: "DataCamp: Data Analyst with Python track"
           summary: "DataCamp's Data Analyst with Python career track is one of the most structured learning paths for DA skills — it covers Pandas, visualization, statistics, and SQL in Python with bite-sized interactive lessons. It's particularly strong for interview preparation because the curriculum mirrors what hiring managers test."
           resources:
             - "DataCamp: Data Analyst with Python — datacamp.com/tracks/data-analyst-with-python"
             - "DataCamp: free first chapter of every course; subscription needed for full access"
+          phase: phase-1-programming
+          phaseOrder: 240
+          type: reference
         - id: coursera-python-umich
           title: "Coursera: Python for Everybody (U of Michigan)"
           summary: "Python for Everybody (py4e.com) by Dr. Chuck Severance is the most-enrolled Python course on Coursera — it's beginner-friendly but comprehensive, covering syntax, data structures, web APIs, and databases. For a Java dev, it serves as a fast orientation that can be done at 2x speed."
           resources:
             - "Coursera: Python for Everybody Specialization — coursera.org/specializations/python"
             - "Free version: py4e.com (same content, no certificate)"
+          phase: phase-1-programming
+          phaseOrder: 250
+          type: reference
         - id: realpython
           title: "Real Python: tutorials & deep-dives"
           summary: "Real Python is the highest-quality Python tutorial site — articles are peer-reviewed, practical, and go from beginner to expert; the podcast and video courses complement the text. It's the go-to reference when you need a trustworthy deep-dive on any Python topic."
@@ -191,6 +238,9 @@
             - "Real Python: realpython.com — bookmark and search first before Googling"
             - "Real Python Podcast: realpython.com/podcasts/rpp"
             - "Real Python: Learning Path for Python Basics — realpython.com/learning-paths/python-basics"
+          phase: phase-1-programming
+          phaseOrder: 260
+          type: reference
 
     - id: python-awesome-repos
       title: "Awesome GitHub Repos"
@@ -201,21 +251,33 @@
           resources:
             - "GitHub: github.com/vinta/awesome-python (230k+ stars)"
             - "Mirror site: awesome-python.com"
+          phase: phase-1-programming
+          phaseOrder: 300
+          type: reference
         - id: python-cheatsheet
           title: "python-cheatsheet (gto76) — 38k+ stars"
           summary: "The most comprehensive single-file Python cheatsheet covering syntax, collections, types, regex, classes, decorators, async — invaluable quick reference for Java developers."
           resources:
             - "GitHub: github.com/gto76/python-cheatsheet (38k+ stars)"
+          phase: phase-1-programming
+          phaseOrder: 310
+          type: reference
         - id: full-stack-fastapi
           title: "full-stack-fastapi-template (tiangolo) — 35k+ stars"
           summary: "Production-ready full-stack template by FastAPI's author: backend (FastAPI + SQLModel), frontend (React + TypeScript), CI/CD, Docker. Best reference for FastAPI patterns."
           resources:
             - "GitHub: github.com/fastapi/full-stack-fastapi-template (35k+ stars)"
+          phase: phase-1-programming
+          phaseOrder: 320
+          type: reference
         - id: scientific-python-lectures
           title: "Scientific Python Lectures (jrjohansson)"
           summary: "Comprehensive Jupyter notebooks teaching NumPy, SciPy, Matplotlib, Pandas — used in many university courses, well-structured for self-study."
           resources:
             - "GitHub: github.com/jrjohansson/scientific-python-lectures"
+          phase: phase-1-programming
+          phaseOrder: 330
+          type: reference
 
     - id: python-articles
       title: "Articles & Long-form References"
@@ -225,11 +287,17 @@
           summary: "The official Python style guide — required reading for writing idiomatic Python. Java developers especially benefit from understanding naming conventions and import organization."
           resources:
             - "PEP 8: peps.python.org/pep-0008/"
+          phase: phase-1-programming
+          phaseOrder: 400
+          type: reference
         - id: hitchhikers-guide
           title: "The Hitchhiker's Guide to Python"
           summary: "Best-practices Python guide covering project structure, packaging, virtualenvs, testing, deployment — community-maintained, regularly updated."
           resources:
             - "Site: docs.python-guide.org"
+          phase: phase-1-programming
+          phaseOrder: 410
+          type: reference
 
 # ============================================================
 # 6. AI AGENTS & LLM
