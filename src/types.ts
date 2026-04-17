@@ -101,3 +101,40 @@ export interface Path {
 export interface PathFile {
   path: Path;
 }
+
+export interface CheatSheet {
+  key_facts?: string[];
+  commands?: string[];
+  trade_offs?: { headers: string[]; rows: string[][] };
+  pitfalls?: string[];
+  interview_questions?: string[];
+  extras_markdown?: string;
+}
+
+export interface CapacityInput {
+  name: string;
+  value: string;
+  unit: string;
+}
+
+export interface CapacityPlanning {
+  inputs: CapacityInput[];
+  formulas: string[];
+  worked_example: string;
+  numbers_to_memorize: string[];
+}
+
+export interface Visualization {
+  type: "mermaid" | "image";
+  content?: string;
+  src?: string;
+  alt: string;
+}
+
+export interface TopicContent {
+  id: string;
+  overview?: string;
+  cheat_sheet?: CheatSheet;
+  capacity_planning?: CapacityPlanning;
+  visualization?: Visualization;
+}
