@@ -299,7 +299,7 @@
             - "SmallStep docs: Everything about mTLS (smallstep.com/hello-mtls)"
             - "OpenSSL Cookbook (feistyduck.com, free)"
           phase: phase-4-backend-engineering
-          phaseOrder: 500
+          phaseOrder: 550
         - id: session-csrf-headers
           title: "Session Management, CSRF, and Security Headers"
           summary: "Sessions (cookie vs token, SameSite, HttpOnly, Secure flags), CSRF protection (synchronizer tokens, double-submit cookies), and security headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options) are the defensive layer against session hijacking, cross-site attacks, and MIME sniffing — every web backend developer needs this baseline."
@@ -310,7 +310,7 @@
             - "Spring Security docs: CSRF + Session Management (docs.spring.io/spring-security)"
             - "PortSwigger: CSRF and session fixation labs (portswigger.net/web-security)"
           phase: phase-4-backend-engineering
-          phaseOrder: 510
+          phaseOrder: 560
         - id: secret-management
           title: "Secret Management: Vault, KMS, env-var anti-patterns"
           summary: "Storing secrets in env vars or config files leaks them into logs, crash dumps, and CI artifacts; production systems use HashiCorp Vault or cloud KMS (AWS KMS, GCP Secret Manager) with short-lived leases, automatic rotation, and audit trails. Understanding the threat model (who can read the process memory, filesystem, env) drives the choice."
@@ -321,7 +321,7 @@
             - "CNCF: Secrets Management whitepaper (cncf.io)"
             - "Spring Cloud Vault docs (docs.spring.io/spring-cloud-vault)"
           phase: phase-4-backend-engineering
-          phaseOrder: 520
+          phaseOrder: 570
 
     - id: troubleshooting
       title: "Troubleshooting & Incidents"

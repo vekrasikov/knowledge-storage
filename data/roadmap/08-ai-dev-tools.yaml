@@ -10,7 +10,7 @@
         - "YouTube: GitHub Copilot for Java developers — search GitHub's official YouTube channel"
         - "Book: AI-Assisted Programming (Tom Taulli) — O'Reilly"
       phase: phase-1-programming
-      phaseOrder: 250
+      phaseOrder: 800
     - id: cursor-ide
       title: "Cursor / Windsurf: IDE-native AI"
       summary: "Cursor and Windsurf embed LLM assistance deeply into the IDE workflow — multi-file edits, codebase-aware Q&A, and automated refactoring are all first-class features that GitHub Copilot doesn't yet match. Learning Cursor's Composer mode (multi-file agentic editing) and Windsurf's Cascade feature makes large-scale refactoring dramatically faster."
@@ -20,7 +20,7 @@
         - "YouTube: Cursor AI IDE tutorial — search on YouTube for recent tutorials"
         - "Reddit: r/cursor — real-world tips and workflows from daily users"
       phase: phase-1-programming
-      phaseOrder: 260
+      phaseOrder: 810
     - id: claude-code
       title: "Claude Code: agentic terminal coding"
       summary: "Claude Code is an agentic CLI that can autonomously explore codebases, write and run tests, fix bugs, and execute multi-step coding tasks from the terminal — you are actively using it right now. Mastering Claude Code means learning effective task decomposition, when to trust it vs verify, and how to use CLAUDE.md to prime context."
@@ -30,7 +30,7 @@
         - "GitHub: anthropics/claude-code — release notes and changelog"
         - "Practice: use Claude Code for your next real work task; compare to doing it manually"
       phase: phase-1-programming
-      phaseOrder: 270
+      phaseOrder: 820
     - id: ai-code-review
       title: "AI code review & audit skills"
       summary: "Using AI for code review means knowing the right prompts to surface security vulnerabilities, architectural anti-patterns, and performance issues — it's not just 'review this code' but structured prompts targeting specific concern categories. This skill also includes knowing AI's blind spots (outdated knowledge, confident hallucinations) and how to verify its findings."

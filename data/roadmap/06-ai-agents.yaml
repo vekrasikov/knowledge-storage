@@ -125,7 +125,7 @@
             - "LangChain blog: Why we built LangGraph — blog.langchain.dev"
             - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — most structured LangGraph curriculum"
           phase: phase-9-specialization
-          phaseOrder: 500
+          phaseOrder: 550
         - id: openai-agents-sdk
           title: "OpenAI Agents SDK"
           summary: "The OpenAI Agents SDK (formerly Swarm) provides a lightweight, opinionated framework for building multi-agent systems with OpenAI models — it uses handoffs between agents as the primary coordination primitive. It's simpler than LangGraph and good for OpenAI-centric stacks."
@@ -135,7 +135,7 @@
             - "OpenAI blog: Introducing the Agents SDK — openai.com/blog"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — compares agent SDK approaches and handoff patterns"
           phase: phase-9-specialization
-          phaseOrder: 510
+          phaseOrder: 560
         - id: claude-agent-sdk
           title: "Claude Agent SDK (Anthropic)"
           summary: "Anthropic's Claude Agent SDK enables building sophisticated agentic workflows on top of Claude models with built-in tool use, computer use, and multi-step task capabilities. As a user of Claude Code (this very tool), you have direct practical experience — studying the SDK formalizes that knowledge."
@@ -146,7 +146,7 @@
             - "Claude Code source patterns — study how Claude Code itself is built"
             - "Anthropic Cookbook: MCP server examples — github.com/anthropics/anthropic-cookbook/tree/main/mcp"
           phase: phase-9-specialization
-          phaseOrder: 520
+          phaseOrder: 570
         - id: spring-ai-agents
           title: "Spring AI: JVM-native agent building"
           summary: "Spring AI brings LLM integration into the Spring Boot ecosystem — chat clients, embedding models, vector stores, and tool calling all work with familiar Spring idioms like dependency injection and autoconfiguration. For a Java/Kotlin backend developer, this is the path of least resistance to production AI features in existing services."

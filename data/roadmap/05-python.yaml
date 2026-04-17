@@ -136,7 +136,7 @@
             - "Book: Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow (Aurélien Géron) — Part 1"
             - "Real Python: Machine Learning with scikit-learn — realpython.com/machine-learning-with-python"
           phase: phase-7-data-ml
-          phaseOrder: 500
+          phaseOrder: 550
         - id: py-langchain
           title: "LangChain / LangGraph for agents"
           summary: "LangChain and LangGraph are the dominant Python frameworks for building LLM-powered applications and stateful agent workflows — they provide chains, tools, memory, and graph-based orchestration out of the box. For AI agent expertise, these are the foundational libraries to master alongside the Anthropic/OpenAI SDKs."
@@ -166,7 +166,7 @@
             - "Kaggle: PySpark tutorial notebooks — search on kaggle.com"
             - "Book: Learning Spark (Jules Damji et al.) — O'Reilly 2nd Ed"
           phase: phase-7-data-ml
-          phaseOrder: 510
+          phaseOrder: 560
 
     - id: python-practice
       title: "Hands-on Practice"
