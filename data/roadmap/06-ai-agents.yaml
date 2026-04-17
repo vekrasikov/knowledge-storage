@@ -13,6 +13,8 @@
             - "DeepLearning.AI: ChatGPT Prompt Engineering for Developers (free) — deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers"
             - "Anthropic Prompt Library: console.anthropic.com/library"
             - "Book: Prompt Engineering for Developers (various) — covers chain-of-thought, few-shot, structured output patterns in production"
+          phase: phase-9-specialization
+          phaseOrder: 300
         - id: embeddings
           title: "Embeddings: models, similarity, use cases"
           summary: "Embeddings are dense vector representations of text that capture semantic meaning — they power semantic search, RAG retrieval, recommendation, and clustering. Understanding cosine similarity, embedding dimensionality, and model choice (OpenAI ada-002 vs local alternatives) is required for building any RAG system."
@@ -23,6 +25,8 @@
             - "Pinecone: What are Embeddings? — pinecone.io/learn/vector-embeddings"
             - "Hugging Face Learn: AI Agents course (free) — huggingface.co/learn/agents-course — covers open-source LLM embeddings"
             - "Book: Natural Language Processing with Transformers (Tunstall, von Werra, Wolf) — O'Reilly — HuggingFace ecosystem deep dive"
+          phase: phase-9-specialization
+          phaseOrder: 310
         - id: rag-vs-finetuning
           title: "RAG vs Fine-tuning trade-offs"
           summary: "RAG retrieves relevant context at inference time (updatable, no training cost) while fine-tuning adjusts model weights for style or domain knowledge (static, expensive) — choosing wrong wastes significant time and money. Most production use cases are solved better by RAG, so understanding the decision criteria is a critical architect-level skill."
@@ -33,6 +37,8 @@
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — Chapter on training vs prompting strategies; definitive modern reference"
             - "Book: Designing Machine Learning Systems (Chip Huyen) — O'Reilly — ML systems design context for RAG vs fine-tuning decisions"
             - "Book: Building LLM Powered Applications (Valentina Alto) — Packt — LLM fundamentals and RAG patterns"
+          phase: phase-9-specialization
+          phaseOrder: 320
         - id: tokenization
           title: "Tokenization & context window management"
           summary: "Tokens are the unit of LLM billing and context limits — a misunderstanding of tokenization leads to truncated prompts, hallucinations, and unexpected costs. Managing context windows (what to include, summarization strategies, sliding windows) is critical for production agents that process long documents."
@@ -42,6 +48,8 @@
             - "Real Python: Tokenization with tiktoken — search realpython.com"
             - "Blog: LLM Token Counting and Cost Estimation — cookbook.openai.com"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — covers context window management strategies in production systems"
+          phase: phase-9-specialization
+          phaseOrder: 330
 
     - id: agent-architectures
       title: "Agent Architectures"
@@ -56,6 +64,8 @@
             - "DeepLearning.AI: AI Agents in LangGraph (free) — deeplearning.ai/short-courses/ai-agents-in-langgraph (ReAct module)"
             - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — structured deep dive on ReAct and agent loops"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — agent architecture chapter"
+          phase: phase-9-specialization
+          phaseOrder: 400
         - id: plan-execute
           title: "Plan-and-Execute pattern"
           summary: "Plan-and-Execute separates planning (generate a complete task plan) from execution (carry it out step by step), enabling better long-horizon task completion and easier debugging of where agents fail. It's the right architecture for complex multi-step tasks like automated code review or report generation."
@@ -65,6 +75,8 @@
             - "OpenAI Cookbook: Planning agents — github.com/openai/openai-cookbook"
             - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — includes Plan-and-Execute pattern"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — agent architecture and task decomposition strategies"
+          phase: phase-9-specialization
+          phaseOrder: 410
         - id: multi-agent
           title: "Multi-agent orchestration"
           summary: "Multi-agent systems decompose complex tasks across specialized agents (planner, researcher, critic, executor) — they mirror microservices architecture and are the key to building agents that exceed single-model context limits. For a backend developer, this section connects directly to distributed systems thinking."
@@ -75,6 +87,8 @@
             - "Anthropic: Building effective agents — anthropic.com/research/building-effective-agents"
             - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — multi-agent module"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — multi-agent systems chapter"
+          phase: phase-9-specialization
+          phaseOrder: 420
         - id: human-in-loop
           title: "Human-in-the-loop checkpoints"
           summary: "Human-in-the-loop (HITL) patterns allow an agent to pause and request human approval or input before taking irreversible actions — this is critical for production safety in fintech contexts (e.g., before executing a payment or sending a customer-facing message). LangGraph's interrupt mechanism is the current standard implementation."
@@ -84,6 +98,8 @@
             - "Blog: Designing safe AI agents — anthropic.com/research/building-effective-agents"
             - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — HITL and interrupt module"
             - "Anthropic Cookbook: github.com/anthropics/anthropic-cookbook — human-in-the-loop patterns with Claude"
+          phase: phase-9-specialization
+          phaseOrder: 430
         - id: tool-calling
           title: "Tool use / function calling patterns"
           summary: "Tool calling (function calling) lets LLMs invoke external APIs, databases, or code execution — it's the mechanism that makes agents actually useful beyond text generation. Designing good tool schemas (clear names, typed parameters, descriptions) has an outsized impact on agent reliability."
@@ -93,6 +109,8 @@
             - "LangChain: Tools and toolkits — python.langchain.com/docs/modules/tools"
             - "DeepLearning.AI: Functions, Tools and Agents with LangChain (free) — deeplearning.ai/short-courses/functions-tools-agents-langchain"
             - "Anthropic Cookbook: Tool use examples — github.com/anthropics/anthropic-cookbook/tree/main/tool_use"
+          phase: phase-9-specialization
+          phaseOrder: 440
 
     - id: agent-frameworks
       title: "Agent Frameworks"
@@ -106,6 +124,8 @@
             - "LangGraph: Tutorials — github.com/langchain-ai/langgraph/tree/main/examples"
             - "LangChain blog: Why we built LangGraph — blog.langchain.dev"
             - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — most structured LangGraph curriculum"
+          phase: phase-9-specialization
+          phaseOrder: 500
         - id: openai-agents-sdk
           title: "OpenAI Agents SDK"
           summary: "The OpenAI Agents SDK (formerly Swarm) provides a lightweight, opinionated framework for building multi-agent systems with OpenAI models — it uses handoffs between agents as the primary coordination primitive. It's simpler than LangGraph and good for OpenAI-centric stacks."
@@ -114,6 +134,8 @@
             - "OpenAI Cookbook: Agents examples — github.com/openai/openai-cookbook/tree/main/examples/agents"
             - "OpenAI blog: Introducing the Agents SDK — openai.com/blog"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — compares agent SDK approaches and handoff patterns"
+          phase: phase-9-specialization
+          phaseOrder: 510
         - id: claude-agent-sdk
           title: "Claude Agent SDK (Anthropic)"
           summary: "Anthropic's Claude Agent SDK enables building sophisticated agentic workflows on top of Claude models with built-in tool use, computer use, and multi-step task capabilities. As a user of Claude Code (this very tool), you have direct practical experience — studying the SDK formalizes that knowledge."
@@ -123,6 +145,8 @@
             - "Anthropic: Computer use guide — docs.anthropic.com/en/docs/build-with-claude/computer-use"
             - "Claude Code source patterns — study how Claude Code itself is built"
             - "Anthropic Cookbook: MCP server examples — github.com/anthropics/anthropic-cookbook/tree/main/mcp"
+          phase: phase-9-specialization
+          phaseOrder: 520
         - id: spring-ai-agents
           title: "Spring AI: JVM-native agent building"
           summary: "Spring AI brings LLM integration into the Spring Boot ecosystem — chat clients, embedding models, vector stores, and tool calling all work with familiar Spring idioms like dependency injection and autoconfiguration. For a Java/Kotlin backend developer, this is the path of least resistance to production AI features in existing services."
@@ -132,6 +156,8 @@
             - "Spring Academy: Spring AI course — spring.academy"
             - "InfoQ: Spring AI deep-dive articles — infoq.com"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — architecture principles applicable to Spring AI integration"
+          phase: phase-9-specialization
+          phaseOrder: 530
         - id: crewai
           title: "CrewAI: role-based multi-agent"
           summary: "CrewAI defines agents as team members with roles, goals, and backstories — it abstracts multi-agent coordination into a crew metaphor with sequential or parallel task execution. It's popular for automating business workflows and a good practical introduction to multi-agent thinking."
@@ -140,6 +166,8 @@
             - "DeepLearning.AI: Multi AI Agent Systems with CrewAI (free) — deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai"
             - "CrewAI GitHub: github.com/crewAIInc/crewAI (study examples/)"
             - "Book: Building LLM Powered Applications (Valentina Alto, Packt) — covers multi-agent workflow patterns"
+          phase: phase-9-specialization
+          phaseOrder: 540
 
     - id: mcp-protocol
       title: "MCP (Model Context Protocol)"
@@ -153,6 +181,8 @@
             - "Anthropic blog: Introducing MCP — anthropic.com/news/model-context-protocol"
             - "MCP GitHub: github.com/modelcontextprotocol/specification"
             - "Anthropic Cookbook: MCP server patterns — github.com/anthropics/anthropic-cookbook/tree/main/mcp"
+          phase: phase-9-specialization
+          phaseOrder: 600
         - id: mcp-server-building
           title: "Building custom MCP servers"
           summary: "Building a custom MCP server means exposing your own data sources and tools to Claude and other MCP clients — it's the highest-leverage AI integration skill for a backend developer who wants to make internal company systems AI-accessible. The server can be written in Python (FastMCP) or TypeScript."
@@ -162,6 +192,8 @@
             - "MCP TypeScript SDK: github.com/modelcontextprotocol/typescript-sdk"
             - "Anthropic Cookbook: MCP examples — github.com/anthropics/anthropic-cookbook/tree/main/mcp — authoritative MCP server patterns"
             - "Book: Building LLM Powered Applications (Valentina Alto, Packt) — LLM integration patterns relevant to MCP server design"
+          phase: phase-9-specialization
+          phaseOrder: 610
         - id: mcp-reference-servers
           title: "Study: modelcontextprotocol/servers repo"
           summary: "The official modelcontextprotocol/servers repository contains reference implementations for 20+ popular services (GitHub, Slack, PostgreSQL, filesystem, etc.) — studying their source code is the fastest way to learn MCP patterns, error handling, and best practices. It's also a practical resource pool of servers to use immediately."
@@ -170,6 +202,8 @@
             - "MCP server registry: glama.ai/mcp/servers (community servers list)"
             - "Awesome MCP servers: github.com/punkpeye/awesome-mcp-servers"
             - "Anthropic Cookbook: MCP examples — github.com/anthropics/anthropic-cookbook/tree/main/mcp"
+          phase: phase-9-specialization
+          phaseOrder: 620
 
     - id: rag-vectordb
       title: "RAG & Vector Databases"
@@ -183,6 +217,8 @@
             - "Spring AI: PgVector store docs — docs.spring.io/spring-ai/reference/api/vectordbs/pgvector.html"
             - "Timescale blog: pgvector performance guide — timescale.com/blog"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — vector store selection and RAG infrastructure chapter"
+          phase: phase-9-specialization
+          phaseOrder: 700
         - id: chroma-local
           title: "Chroma: local vector DB"
           summary: "Chroma is a lightweight, embeddable vector database that runs locally without any infrastructure setup — it's the easiest way to experiment with RAG pipelines before committing to a production vector store. Perfect for prototyping agent projects and portfolio demos."
@@ -191,6 +227,8 @@
             - "LangChain + Chroma integration — python.langchain.com/docs/integrations/vectorstores/chroma"
             - "DeepLearning.AI: LangChain Chat with Your Data (free) — deeplearning.ai/short-courses/langchain-chat-with-your-data — uses Chroma throughout"
             - "Book: Building LLM Powered Applications (Valentina Alto, Packt) — hands-on RAG with vector stores"
+          phase: phase-9-specialization
+          phaseOrder: 710
         - id: rag-pipeline
           title: "End-to-end RAG pipeline design"
           summary: "A production RAG pipeline involves document loading, chunking, embedding, storing, retrieval, reranking, and generation — each step has multiple design choices that compound into overall quality. Understanding the full pipeline is essential to debug retrieval failures and optimize answer quality."
@@ -201,6 +239,8 @@
             - "LlamaIndex docs: RAG pipeline guide — docs.llamaindex.ai"
             - "Book: Building LLM Powered Applications (Valentina Alto, Packt) — end-to-end RAG pipeline chapter"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — RAG evaluation and production pipeline design"
+          phase: phase-9-specialization
+          phaseOrder: 720
         - id: chunking-strategies
           title: "Chunking & retrieval strategies"
           summary: "How you split documents before embedding (fixed-size, semantic, recursive, sentence-window) dramatically affects retrieval quality — bad chunking is the most common cause of RAG hallucinations. Advanced strategies like HyDE (hypothetical document embeddings) and reranking with cross-encoders significantly improve precision."
@@ -211,6 +251,8 @@
             - "LlamaIndex: Node parsers and chunking — docs.llamaindex.ai/en/stable/module_guides/loading/node_parsers"
             - "Hugging Face Learn: AI Agents course (free) — huggingface.co/learn/agents-course — retrieval strategies module"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — chunking and retrieval quality optimization"
+          phase: phase-9-specialization
+          phaseOrder: 730
 
     - id: agent-evals
       title: "Agent Evaluation & Observability"
@@ -224,6 +266,8 @@
             - "LangChain YouTube: LangSmith tutorials — youtube.com/@LangChain"
             - "LangChain Academy: Introduction to LangGraph (free) — academy.langchain.com — includes LangSmith tracing module"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — agent evaluation and observability chapter"
+          phase: phase-9-specialization
+          phaseOrder: 800
         - id: agent-testing
           title: "Agent testing patterns"
           summary: "Testing agents requires a different approach than unit testing — LLM outputs are non-deterministic, so tests use semantic similarity checks, criteria-based graders, and human eval datasets rather than exact string matching. Building a test suite for your agents is what separates professional AI engineering from demo-ware."
@@ -233,6 +277,8 @@
             - "OpenAI Evals framework: github.com/openai/evals"
             - "Blog: Testing LLM Applications (Hamel Husain) — hamel.dev"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — eval frameworks and production testing strategies"
+          phase: phase-9-specialization
+          phaseOrder: 810
         - id: guardrails
           title: "Safety & guardrails"
           summary: "Production AI agents need guardrails to prevent prompt injection, PII leakage, off-topic responses, and harmful outputs — especially critical in fintech where compliance and security are non-negotiable. Implementing input/output validation, content filtering, and rate limiting is a professional responsibility."
@@ -243,6 +289,8 @@
             - "Microsoft: Responsible AI guidelines — learn.microsoft.com/en-us/azure/ai-services/responsible-use-of-ai-overview"
             - "Anthropic Cookbook: Safety patterns — github.com/anthropics/anthropic-cookbook"
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — safety, guardrails, and responsible AI production chapter"
+          phase: phase-9-specialization
+          phaseOrder: 820
 
     - id: ai-portfolio
       title: "GitHub Portfolio Projects"
@@ -256,6 +304,8 @@
             - "Reference: github.com/modelcontextprotocol/servers/tree/main/src/github (study this first)"
             - "FastMCP (Python): github.com/jlowin/fastmcp (recommended framework)"
             - "Anthropic Cookbook: MCP server examples - github.com/anthropics/anthropic-cookbook/tree/main/mcp"
+          phase: phase-9-specialization
+          phaseOrder: 900
         - id: project-rag-codebase
           title: "Project: RAG over codebase (pgvector)"
           summary: "Building a RAG system that lets developers query a large codebase in natural language is a practical, portfolio-ready project that uses your existing PostgreSQL expertise alongside LLM skills. It demonstrates end-to-end AI engineering: embedding, vector search, retrieval, and generation."
@@ -263,6 +313,8 @@
             - "pgvector + Spring AI quickstart — docs.spring.io/spring-ai/reference/api/vectordbs/pgvector.html"
             - "LangChain: Code understanding tutorial — python.langchain.com/docs/use_cases/code_understanding"
             - "Blog: Building a RAG system over code (various on medium.com/towards-ai)"
+          phase: phase-9-specialization
+          phaseOrder: 910
         - id: project-multi-agent-reviewer
           title: "Project: Multi-agent code reviewer"
           summary: "A multi-agent code reviewer (one agent for security, one for style, one for architecture) demonstrates practical multi-agent orchestration on a problem every developer cares about. It makes an excellent portfolio piece because it's immediately deployable as a GitHub Action."
@@ -270,6 +322,8 @@
             - "LangGraph: Supervisor pattern — langchain-ai.github.io/langgraph/tutorials/multi_agent/agent_supervisor"
             - "CrewAI: Code review crew example — github.com/crewAIInc/crewAI-examples"
             - "GitHub Actions: Using AI in workflows — docs.github.com/en/actions"
+          phase: phase-9-specialization
+          phaseOrder: 920
         - id: project-spring-ai-api
           title: "Project: Spring AI agent REST API"
           summary: "Building a Spring Boot REST API that exposes an AI agent (with tool calling, vector search, and session memory) demonstrates that you can ship AI features using your primary tech stack — a key differentiator for a Java backend developer. This is the project that makes you hireable for AI-adjacent backend roles."
@@ -277,6 +331,8 @@
             - "Spring AI docs: docs.spring.io/spring-ai/reference"
             - "Spring AI examples: github.com/spring-projects/spring-ai-examples"
             - "Spring Academy: Spring AI hands-on — spring.academy"
+          phase: phase-9-specialization
+          phaseOrder: 930
 
     - id: ai-practice
       title: "Hands-on Practice"
@@ -287,18 +343,27 @@
           resources:
             - "Course link: deeplearning.ai/short-courses/ai-agents-in-langgraph"
             - "All DeepLearning.AI short courses: deeplearning.ai/short-courses (most are free)"
+          phase: phase-9-specialization
+          phaseOrder: 1000
+          type: reference
         - id: deeplearning-crewai
           title: "DeepLearning.AI: Multi AI Agent Systems with CrewAI"
           summary: "This free course covers building multi-agent crews with CrewAI for automating complex business workflows — it introduces role-based agent design, hierarchical orchestration, and agent collaboration patterns. Complements the LangGraph course by showing a higher-level abstraction."
           resources:
             - "Course link: deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai"
             - "CrewAI docs: docs.crewai.com (for going deeper after the course)"
+          phase: phase-9-specialization
+          phaseOrder: 1010
+          type: reference
         - id: anthropic-cookbook
           title: "Anthropic Cookbook: hands-on examples (GitHub)"
           summary: "The Anthropic Cookbook is the authoritative collection of practical Claude API examples — tool use, RAG, multi-turn conversation, computer use, and prompt caching all have working code notebooks. It's the first place to look when building with Claude APIs."
           resources:
             - "Anthropic Cookbook: github.com/anthropics/anthropic-cookbook"
             - "Anthropic docs: docs.anthropic.com/en/docs/build-with-claude"
+          phase: phase-9-specialization
+          phaseOrder: 1020
+          type: reference
         - id: langchain-tutorials
           title: "LangChain/LangGraph: official tutorials"
           summary: "The official LangChain and LangGraph tutorials provide the most up-to-date patterns for building with these frameworks — the ecosystem evolves fast and official docs are often months ahead of blog posts and courses. Start with the LangGraph quickstart and then explore use-case tutorials."
@@ -306,24 +371,36 @@
             - "LangGraph quickstart: langchain-ai.github.io/langgraph/tutorials/introduction"
             - "LangChain tutorials: python.langchain.com/docs/tutorials"
             - "LangChain YouTube: youtube.com/@LangChain"
+          phase: phase-9-specialization
+          phaseOrder: 1030
+          type: reference
         - id: openai-cookbook
           title: "OpenAI Cookbook: agents + function calling (GitHub)"
           summary: "The OpenAI Cookbook has extensive examples for function calling, agents, assistants API, and multi-agent patterns — even if you primarily use Claude, the patterns and techniques transfer directly. It's particularly strong on function calling schema design."
           resources:
             - "OpenAI Cookbook: github.com/openai/openai-cookbook"
             - "OpenAI: Assistants API overview — platform.openai.com/docs/assistants/overview"
+          phase: phase-9-specialization
+          phaseOrder: 1040
+          type: reference
         - id: spring-ai-samples
           title: "Spring AI: sample projects (GitHub)"
           summary: "The official Spring AI examples repository contains runnable Spring Boot applications for chat, RAG, image generation, function calling, and vector stores — the fastest way to understand Spring AI idioms is to clone and run these. Essential for Java developers building AI features in Spring Boot microservices."
           resources:
             - "Spring AI examples: github.com/spring-projects/spring-ai-examples"
             - "Spring AI docs: docs.spring.io/spring-ai/reference"
+          phase: phase-9-specialization
+          phaseOrder: 1050
+          type: reference
         - id: huggingface-courses
           title: "Hugging Face: NLP & Transformers course (free)"
           summary: "The Hugging Face NLP course teaches transformers, fine-tuning, and the HF ecosystem from scratch with practical PyTorch/Keras examples — it's the standard free curriculum for understanding how LLMs actually work under the hood. Understanding the architecture helps you use LLMs more effectively and debug unexpected behavior."
           resources:
             - "Hugging Face NLP Course: huggingface.co/learn/nlp-course"
             - "Hugging Face: transformers docs — huggingface.co/docs/transformers"
+          phase: phase-9-specialization
+          phaseOrder: 1060
+          type: reference
 
     - id: ai-books
       title: "Books"
@@ -335,6 +412,9 @@
             - "Book: Building LLM Powered Applications (Valentina Alto) — Packt Publishing"
             - "GitHub repo accompanying the book: github.com/PacktPublishing/Building-LLM-Powered-Applications"
             - "Companion reading: LangChain docs — python.langchain.com"
+          phase: phase-9-specialization
+          phaseOrder: 1100
+          type: reference
         - id: book-ai-engineering
           title: "Book: AI Engineering (Chip Huyen, 2025)"
           summary: "AI Engineering by Chip Huyen (O'Reilly, 2025) is the definitive modern reference on building production AI systems — covering model selection, evaluation, fine-tuning, RAG, deployment, and organizational practices from the perspective of a systems thinker. Required reading for anyone serious about AI as a professional discipline rather than a hobby."
@@ -342,6 +422,9 @@
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025)"
             - "Chip Huyen blog: huyenchip.com (free articles previewing book content)"
             - "Previous book: Designing Machine Learning Systems (Chip Huyen) — also recommended"
+          phase: phase-9-specialization
+          phaseOrder: 1110
+          type: reference
 
     - id: ai-awesome-repos
       title: "Awesome GitHub Repos"
@@ -352,43 +435,67 @@
           resources:
             - "GitHub: github.com/anthropics/anthropic-cookbook"
             - "Anthropic Courses: github.com/anthropics/courses (free skill-building)"
+          phase: phase-9-specialization
+          phaseOrder: 1200
+          type: reference
         - id: openai-cookbook-repo
           title: "openai-cookbook (OpenAI) — 70k+ stars"
           summary: "Official OpenAI cookbook with examples for embeddings, function calling, fine-tuning, RAG, agents — applicable to many LLM patterns regardless of provider."
           resources:
             - "GitHub: github.com/openai/openai-cookbook (70k+ stars)"
+          phase: phase-9-specialization
+          phaseOrder: 1210
+          type: reference
         - id: langchain-templates
           title: "langchain (langchain-ai) — 110k+ stars"
           summary: "Reference repository for the LangChain framework — explore examples/, langchain/agents/, and langgraph/ for production-ready agent patterns. The de-facto standard for building LLM apps in Python."
           resources:
             - "GitHub: github.com/langchain-ai/langchain (110k+ stars)"
             - "GitHub: github.com/langchain-ai/langgraph (stateful agents)"
+          phase: phase-9-specialization
+          phaseOrder: 1220
+          type: reference
         - id: awesome-llm-apps
           title: "awesome-llm-apps (Shubhamsaboo) — 65k+ stars"
           summary: "Collection of LLM apps with AI agents and RAG using OpenAI, Anthropic, Gemini, and open-source models — excellent for inspiration and copying patterns into your own portfolio."
           resources:
             - "GitHub: github.com/Shubhamsaboo/awesome-llm-apps (65k+ stars)"
+          phase: phase-9-specialization
+          phaseOrder: 1230
+          type: reference
         - id: mcp-servers-repo
           title: "modelcontextprotocol/servers — official MCP reference"
           summary: "Reference implementations of MCP servers for filesystem, GitHub, Postgres, Slack, Google Drive — read these to understand the protocol and build your own."
           resources:
             - "GitHub: github.com/modelcontextprotocol/servers"
             - "MCP spec: modelcontextprotocol.io"
+          phase: phase-9-specialization
+          phaseOrder: 1240
+          type: reference
         - id: awesome-mcp-servers
           title: "awesome-mcp-servers (punkpeye) — 30k+ stars"
           summary: "Curated catalog of community MCP servers — discover what's been built and what gaps still exist for portfolio project ideas."
           resources:
             - "GitHub: github.com/punkpeye/awesome-mcp-servers (30k+ stars)"
+          phase: phase-9-specialization
+          phaseOrder: 1250
+          type: reference
         - id: awesome-prompts
           title: "awesome-chatgpt-prompts (f) — 130k+ stars"
           summary: "Massive collection of curated prompts for various roles and tasks — useful library for prompt engineering practice and as inspiration for your own system prompts."
           resources:
             - "GitHub: github.com/f/awesome-chatgpt-prompts (130k+ stars)"
+          phase: phase-9-specialization
+          phaseOrder: 1260
+          type: reference
         - id: papers-with-code
           title: "Papers with Code"
           summary: "ML papers paired with their code implementations and benchmarks — best source for understanding state-of-the-art and finding production-quality reference implementations."
           resources:
             - "Site: paperswithcode.com"
+          phase: phase-9-specialization
+          phaseOrder: 1270
+          type: reference
 
     - id: ai-newsletters-blogs
       title: "Newsletters & Blogs to Follow"
@@ -399,17 +506,26 @@
           resources:
             - "Blog: simonwillison.net"
             - "Newsletter: subscribe via the blog"
+          phase: phase-9-specialization
+          phaseOrder: 1300
+          type: reference
         - id: anthropic-research
           title: "Anthropic Research & Engineering Blogs"
           summary: "Anthropic's official engineering and research blog — articles on Constitutional AI, prompt caching, agent design patterns, and case studies from real customer deployments."
           resources:
             - "Engineering: anthropic.com/research, anthropic.com/engineering"
             - "Claude Code best practices: anthropic.com/engineering/claude-code-best-practices"
+          phase: phase-9-specialization
+          phaseOrder: 1310
+          type: reference
         - id: latent-space-newsletter
           title: "Latent Space (Swyx)"
           summary: "Premier AI engineering newsletter and podcast — interviews founders/engineers from OpenAI, Anthropic, etc.; deep technical analysis of new models and frameworks."
           resources:
             - "Newsletter: latent.space"
+          phase: phase-9-specialization
+          phaseOrder: 1320
+          type: reference
 
 # ============================================================
 # 6. ENGLISH (B2 → C1/Fluent)
