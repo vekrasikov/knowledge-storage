@@ -82,6 +82,35 @@ When you start actively studying a topic from Phase 5/6:
 7. `npm run validate` — must pass before commit
 8. Commit: `git commit -m "docs(content): author <topic-id>"`
 
+## Deferred UX improvements
+
+### Full-page topic view (post-MVP priority)
+
+**Problem surfaced during smoke test (2026-04-17):** the `TopicPanel` side-sheet is 420 px wide on desktop — too narrow for:
+
+- Long-form overview markdown (300-800 words wraps into a tall, narrow column that's uncomfortable to read).
+- Wide `trade_offs` tables (3-4 columns force heavy word-wrapping inside cells).
+- Mermaid diagrams of non-trivial complexity (horizontal diagrams get squeezed).
+- Worked examples in `capacity_planning` with multi-line arithmetic.
+
+**Proposed fix — new route `/topic/:directionId/:topicId` (full page):**
+
+1. Add a real route using the currently-orphaned `TopicDetail.tsx` pattern (or a fresh component). Full-page layout (max-width 4xl / prose), same four accordion sections but with comfortable reading width.
+2. In `TopicPanel.tsx`, keep the accordion as-is for quick peek, but add a prominent "Open full page →" link at the top that navigates to the new route.
+3. Breadcrumb at the top of the full page: `← Back to <direction name>`.
+4. Consider: on full page, default Cheat Sheet / Visualization to expanded (full width makes them readable); keep side-panel defaults as they are.
+
+**Scope estimate:** 1-2 hours (router + component + link). No data changes.
+
+**Alternative considered:** widen the side-panel to 600-800px on large screens. Simpler but still cramped for Mermaid, and steals horizontal space from the roadmap tree. Full-page wins.
+
+### Other UX polish candidates (lower priority)
+
+- Mermaid diagrams: default theme uses light colors that blend with light Tailwind prose. Consider theme override to match Tailwind slate palette.
+- KaTeX for `capacity_planning.formulas` if the current `<code>` blocks feel under-dressed for math.
+- Collapse-all / expand-all toggle at the top of the accordion region.
+- Link prereq topics in overview markdown automatically (`gc-g1` → link to its topic view).
+
 ## Known technical debt
 
 - **Main bundle size (~610 KB).** Project B added mermaid but bundle didn't grow meaningfully. Either mermaid was already lazy-split successfully or Vite 8 / rolldown is inlining it. If performance becomes a concern, inspect with `npm run build -- --mode analyze` or add explicit chunking via `build.rollupOptions.output.manualChunks` in `vite.config.ts`.
