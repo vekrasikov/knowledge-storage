@@ -191,6 +191,7 @@
             - "Google Cloud: Deployment strategies guide (cloud.google.com/architecture)"
           phase: phase-8-devops
           phaseOrder: 240
+          prerequisites: [pipeline-principles]
 
         - id: trunk-based-development
           title: "Trunk-Based Development vs GitFlow + merge queue"
@@ -215,6 +216,7 @@
             - "Book: Version Control with Git, 3rd Ed — Tags and Releases (Loeliger, McCullough)"
           phase: phase-8-devops
           phaseOrder: 260
+          prerequisites: [trunk-based-development]
 
         - id: quality-gates
           title: "Quality Gates: coverage thresholds, SonarQube, static analysis in CI"
@@ -227,6 +229,7 @@
             - "Book: Continuous Delivery, Chapter 4 — Implementing a Testing Strategy"
           phase: phase-8-devops
           phaseOrder: 270
+          prerequisites: [pipeline-principles]
 
     - id: security
       title: "Security"
@@ -289,6 +292,7 @@
             - "Book: Iron-Clad Java (Jim Manico, August Detlefsen)"
           phase: phase-3-software-design
           phaseOrder: 210
+          prerequisites: [crypto-fundamentals]
         - id: tls-mtls
           title: "TLS & mTLS: handshake, certificates, mutual auth"
           summary: "TLS 1.3 handshake (ClientHello → ServerHello → certificate exchange → finished) establishes encrypted connections, and mTLS adds client certificate verification for service-to-service authentication in microservices or service meshes; knowing how to debug handshake failures with openssl s_client is a required troubleshooting skill."
@@ -300,6 +304,7 @@
             - "OpenSSL Cookbook (feistyduck.com, free)"
           phase: phase-4-backend-engineering
           phaseOrder: 550
+          prerequisites: [crypto-fundamentals]
         - id: session-csrf-headers
           title: "Session Management, CSRF, and Security Headers"
           summary: "Sessions (cookie vs token, SameSite, HttpOnly, Secure flags), CSRF protection (synchronizer tokens, double-submit cookies), and security headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options) are the defensive layer against session hijacking, cross-site attacks, and MIME sniffing — every web backend developer needs this baseline."
@@ -373,6 +378,7 @@
             - "Gruntwork blog: IaC patterns (gruntwork.io/blog)"
           phase: phase-8-devops
           phaseOrder: 500
+          prerequisites: [cloud-fundamentals]
 
         - id: cloud-fundamentals
           title: "Cloud Fundamentals: AWS/GCP core services (compute, storage, network, IAM)"

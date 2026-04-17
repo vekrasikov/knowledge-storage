@@ -187,6 +187,7 @@
             - "Netflix Hystrix wiki (archived): design notes (github.com/Netflix/Hystrix/wiki)"
           phase: phase-5-system-design-hld
           phaseOrder: 70
+          prerequisites: [sd-failure-modes]
 
         - id: network-protocols
           title: "Network Protocols: HTTP/2, HTTP/3, gRPC, WebSocket"
@@ -259,6 +260,7 @@
             - "InfoQ: Hexagonal Architecture explained (infoq.com)"
           phase: phase-3-software-design
           phaseOrder: 50
+          prerequisites: [solid-principles, ddd-aggregates]
 
     # ---- DDD ----
     - id: ddd
@@ -333,6 +335,7 @@
             - "Temporal.io docs: Saga implementation guide"
           phase: phase-6-distributed-events
           phaseOrder: 30
+          prerequisites: [event-sourcing]
 
         - id: outbox-pattern
           title: "Outbox Pattern for reliable publishing"
@@ -344,6 +347,7 @@
             - "Gunnar Morling: Outbox pattern blog post (morling.dev)"
           phase: phase-6-distributed-events
           phaseOrder: 40
+          prerequisites: [spring-transactional, kafka-connect-debezium]
 
         - id: rabbitmq-vs-kafka
           title: "RabbitMQ vs Kafka vs NATS/Pulsar: trade-offs"
@@ -368,6 +372,7 @@
             - "Baeldung: Confluent Schema Registry + Spring Kafka (baeldung.com)"
           phase: phase-6-distributed-events
           phaseOrder: 60
+          prerequisites: [kafka-partitions]
 
         - id: dlq-poison-messages
           title: "Dead-Letter Queues & Poison Message Handling"
@@ -392,6 +397,7 @@
             - "Chris Richardson: Microservices Patterns book (Chapter 3)"
           phase: phase-6-distributed-events
           phaseOrder: 80
+          prerequisites: [kafka-exactly-once]
 
     # ---- Microservices ----
     - id: microservices
@@ -493,6 +499,7 @@
             - "AWS IAM: Policy evaluation logic (docs.aws.amazon.com/IAM)"
           phase: phase-5-system-design-hld
           phaseOrder: 200
+          prerequisites: [jwt-oauth2-deep]
 
         - id: threat-modeling-stride
           title: "Threat Modeling with STRIDE"
@@ -505,6 +512,7 @@
             - "Book: Threats — What Every Engineer Should Learn from Star Wars (Adam Shostack)"
           phase: phase-5-system-design-hld
           phaseOrder: 210
+          prerequisites: [owasp-top10]
 
     # ---- Practice ----
     - id: arch-practice

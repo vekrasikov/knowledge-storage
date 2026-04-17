@@ -185,6 +185,7 @@
             - "Baeldung Pro: ZGC vs Shenandoah comparison (baeldung.com)"
           phase: phase-4-backend-engineering
           phaseOrder: 40
+          prerequisites: [gc-g1]
 
         - id: jfr-async-profiler
           title: "JFR & Async-Profiler: production profiling"
@@ -196,6 +197,7 @@
             - "Book: Java Performance (Scott Oaks, O'Reilly) — Chapter 3"
           phase: phase-4-backend-engineering
           phaseOrder: 50
+          prerequisites: [heap-stack-metaspace]
 
         - id: class-loading-aot
           title: "Class Loading & AOT (JEP 483)"
@@ -218,6 +220,7 @@
             - "Book: Java Concurrency in Practice, Chapter 3 (Goetz et al.)"
           phase: phase-4-backend-engineering
           phaseOrder: 70
+          prerequisites: [heap-stack-metaspace]
 
     - id: concurrency
       title: "Concurrency & Multithreading"
@@ -276,6 +279,7 @@
             - "Book: Spring in Action, 6th Ed. (Craig Walls) — concurrency chapter"
           phase: phase-4-backend-engineering
           phaseOrder: 120
+          prerequisites: [virtual-threads, completable-future]
 
     - id: spring-ecosystem
       title: "Spring Ecosystem"
@@ -301,6 +305,7 @@
             - "Baeldung Pro: Spring WebFlux vs Spring MVC (baeldung.com)"
           phase: phase-4-backend-engineering
           phaseOrder: 160
+          prerequisites: [virtual-threads, spring-mvc-flow]
 
         - id: spring-security-oauth2
           title: "Spring Security: OAuth2, OIDC, PKCE"
@@ -400,6 +405,7 @@
             - "Book: High-Performance Java Persistence, Part 3 (Vlad Mihalcea)"
           phase: phase-4-backend-engineering
           phaseOrder: 250
+          prerequisites: [spring-bean-lifecycle, spring-data-jpa]
 
         - id: spring-autoconfig
           title: "Auto-configuration: @Conditional, spring.factories mechanism"
@@ -411,6 +417,7 @@
             - "Book: Spring Boot in Practice (Somnath Musib, Manning)"
           phase: phase-4-backend-engineering
           phaseOrder: 260
+          prerequisites: [spring-bean-lifecycle]
 
         - id: spring-mvc-flow
           title: "Spring MVC: request lifecycle, DispatcherServlet, filters"
@@ -549,6 +556,7 @@
             - "Baeldung: pgvector with Spring AI (baeldung.com)"
           phase: phase-9-specialization
           phaseOrder: 20
+          prerequisites: [pg-indexing, embeddings]
 
     - id: nosql-and-transactions
       title: "NoSQL & Transaction Semantics"
@@ -622,6 +630,7 @@
             - "Baeldung: Kafka Exactly Once Semantics (baeldung.com)"
           phase: phase-6-distributed-events
           phaseOrder: 120
+          prerequisites: [kafka-partitions, kafka-reliability]
 
         - id: kafka-reliability
           title: "acks=all, min.insync.replicas, ISR"
@@ -655,6 +664,7 @@
             - "Baeldung: Intro to Kafka Streams (baeldung.com)"
           phase: phase-6-distributed-events
           phaseOrder: 150
+          prerequisites: [kafka-partitions]
 
         - id: kafka-connect-debezium
           title: "Kafka Connect & Debezium CDC"
@@ -677,6 +687,7 @@
             - "Book: Designing Data-Intensive Applications, Chapter 11 (Martin Kleppmann)"
           phase: phase-6-distributed-events
           phaseOrder: 180
+          prerequisites: [outbox-pattern]
 
     - id: testing-strategy
       title: "Testing Strategy"

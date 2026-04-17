@@ -194,6 +194,7 @@
             - "Book: Building LLM Powered Applications (Valentina Alto, Packt) — LLM integration patterns relevant to MCP server design"
           phase: phase-9-specialization
           phaseOrder: 610
+          prerequisites: [mcp-spec, tool-calling]
         - id: mcp-reference-servers
           title: "Study: modelcontextprotocol/servers repo"
           summary: "The official modelcontextprotocol/servers repository contains reference implementations for 20+ popular services (GitHub, Slack, PostgreSQL, filesystem, etc.) — studying their source code is the fastest way to learn MCP patterns, error handling, and best practices. It's also a practical resource pool of servers to use immediately."
@@ -241,6 +242,7 @@
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — RAG evaluation and production pipeline design"
           phase: phase-9-specialization
           phaseOrder: 720
+          prerequisites: [embeddings, chunking-strategies]
         - id: chunking-strategies
           title: "Chunking & retrieval strategies"
           summary: "How you split documents before embedding (fixed-size, semantic, recursive, sentence-window) dramatically affects retrieval quality — bad chunking is the most common cause of RAG hallucinations. Advanced strategies like HyDE (hypothetical document embeddings) and reranking with cross-encoders significantly improve precision."
@@ -253,6 +255,7 @@
             - "Book: AI Engineering (Chip Huyen, O'Reilly 2025) — chunking and retrieval quality optimization"
           phase: phase-9-specialization
           phaseOrder: 730
+          prerequisites: [embeddings]
 
     - id: agent-evals
       title: "Agent Evaluation & Observability"
@@ -306,6 +309,7 @@
             - "Anthropic Cookbook: MCP server examples - github.com/anthropics/anthropic-cookbook/tree/main/mcp"
           phase: phase-9-specialization
           phaseOrder: 900
+          prerequisites: [mcp-server-building, python-async]
         - id: project-rag-codebase
           title: "Project: RAG over codebase (pgvector)"
           summary: "Building a RAG system that lets developers query a large codebase in natural language is a practical, portfolio-ready project that uses your existing PostgreSQL expertise alongside LLM skills. It demonstrates end-to-end AI engineering: embedding, vector search, retrieval, and generation."
@@ -315,6 +319,7 @@
             - "Blog: Building a RAG system over code (various on medium.com/towards-ai)"
           phase: phase-9-specialization
           phaseOrder: 910
+          prerequisites: [pgvector-rag, rag-pipeline]
         - id: project-multi-agent-reviewer
           title: "Project: Multi-agent code reviewer"
           summary: "A multi-agent code reviewer (one agent for security, one for style, one for architecture) demonstrates practical multi-agent orchestration on a problem every developer cares about. It makes an excellent portfolio piece because it's immediately deployable as a GitHub Action."
@@ -333,6 +338,7 @@
             - "Spring Academy: Spring AI hands-on — spring.academy"
           phase: phase-9-specialization
           phaseOrder: 930
+          prerequisites: [spring-ai, tool-calling]
 
     - id: ai-practice
       title: "Hands-on Practice"
