@@ -1,4 +1,5 @@
 import type { RoadmapNode } from "../src/types";
+import type { LoadedTopicFile } from "./load-topic-content";
 
 export function collectAllIds(nodes: RoadmapNode[]): Map<string, number> {
   const counts = new Map<string, number>();
@@ -186,4 +187,43 @@ export function checkStudyPlanTopicIds(
   return studyPlanIds
     .filter((id) => !known.has(id))
     .map((id) => `study-plan topicId "${id}" does not resolve to any roadmap entry`);
+}
+
+export function checkTopicContentIds(
+  nodes: RoadmapNode[],
+  contentIds: string[]
+): string[] {
+  const flat = flattenNodes(nodes);
+  const byId = new Map(flat.map((n) => [n.id, n]));
+  const errors: string[] = [];
+  for (const id of contentIds) {
+    const node = byId.get(id);
+    if (!node) {
+      errors.push(`Topic content file id "${id}" does not match any roadmap topic`);
+      continue;
+    }
+    if (node.aliasOf) {
+      errors.push(
+        `Topic content file id "${id}" targets an alias; use the canonical id "${node.aliasOf}" instead`
+      );
+    }
+  }
+  return errors;
+}
+
+export function checkVisualizationImageExists(
+  loaded: LoadedTopicFile[],
+  publicFiles: Set<string>
+): string[] {
+  const errors: string[] = [];
+  for (const { filename, content } of loaded) {
+    const viz = content.visualization;
+    if (!viz || viz.type !== "image") continue;
+    if (!viz.src || !publicFiles.has(viz.src)) {
+      errors.push(
+        `[${filename}] visualization.src "${viz.src}" not found in /public`
+      );
+    }
+  }
+  return errors;
 }

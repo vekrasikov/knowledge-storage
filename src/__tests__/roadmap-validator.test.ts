@@ -10,6 +10,8 @@ import {
   checkEveryLeafHasPhaseOrType,
   checkRecurringTopicIds,
   checkStudyPlanTopicIds,
+  checkTopicContentIds,
+  checkVisualizationImageExists,
 } from "../../scripts/roadmap-validator";
 import type { RoadmapNode } from "../types";
 
@@ -215,5 +217,72 @@ describe("checkStudyPlanTopicIds", () => {
   it("errors on unknown study-plan topicId", () => {
     const nodes = [{ id: "a", title: "A" }];
     expect(checkStudyPlanTopicIds(nodes, ["missing"])[0]).toContain("missing");
+  });
+});
+
+describe("checkTopicContentIds", () => {
+  it("ok when all content ids reference canonical roadmap topics", () => {
+    const roadmap: RoadmapNode[] = [{ id: "gc-g1", title: "G1" }];
+    expect(checkTopicContentIds(roadmap, ["gc-g1"])).toEqual([]);
+  });
+
+  it("errors on orphan content id (no matching roadmap topic)", () => {
+    const roadmap: RoadmapNode[] = [{ id: "gc-g1", title: "G1" }];
+    const errors = checkTopicContentIds(roadmap, ["ghost-topic"]);
+    expect(errors[0]).toContain("ghost-topic");
+  });
+
+  it("errors when content id targets an alias instead of canonical", () => {
+    const roadmap: RoadmapNode[] = [
+      { id: "canonical", title: "C" },
+      { id: "alias", title: "A", aliasOf: "canonical" },
+    ];
+    const errors = checkTopicContentIds(roadmap, ["alias"]);
+    expect(errors[0]).toContain("alias");
+    expect(errors[0]).toContain("canonical");
+  });
+});
+
+describe("checkVisualizationImageExists", () => {
+  it("ok when all visualization images exist", () => {
+    const loaded = [
+      {
+        filename: "foo.md",
+        content: {
+          id: "foo",
+          visualization: { type: "image" as const, src: "/exists.svg", alt: "x" },
+        },
+      },
+    ];
+    const publicFiles = new Set(["/exists.svg"]);
+    expect(checkVisualizationImageExists(loaded, publicFiles)).toEqual([]);
+  });
+
+  it("errors on missing image file", () => {
+    const loaded = [
+      {
+        filename: "foo.md",
+        content: {
+          id: "foo",
+          visualization: { type: "image" as const, src: "/missing.svg", alt: "x" },
+        },
+      },
+    ];
+    const errors = checkVisualizationImageExists(loaded, new Set<string>());
+    expect(errors[0]).toContain("/missing.svg");
+  });
+
+  it("skips topics with mermaid or no visualization", () => {
+    const loaded = [
+      { filename: "a.md", content: { id: "a" } },
+      {
+        filename: "b.md",
+        content: {
+          id: "b",
+          visualization: { type: "mermaid" as const, content: "graph LR", alt: "x" },
+        },
+      },
+    ];
+    expect(checkVisualizationImageExists(loaded, new Set<string>())).toEqual([]);
   });
 });

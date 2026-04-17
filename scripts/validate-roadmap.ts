@@ -1,4 +1,12 @@
-import { loadRoadmapFromYaml, loadPathFromYaml, loadStudyPlanFromYaml } from "./load-roadmap-yaml";
+import { readdirSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import {
+  loadRoadmapFromYaml,
+  loadPathFromYaml,
+  loadStudyPlanFromYaml,
+} from "./load-roadmap-yaml";
+import { loadAllTopicContent } from "./load-topic-content";
 import {
   checkUniqueIds,
   checkAliasTargets,
@@ -10,12 +18,39 @@ import {
   checkEveryLeafHasPhaseOrType,
   checkRecurringTopicIds,
   checkStudyPlanTopicIds,
+  checkTopicContentIds,
+  checkVisualizationImageExists,
 } from "./roadmap-validator";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+function listPublicFiles(): Set<string> {
+  const publicDir = join(__dirname, "..", "public");
+  const out = new Set<string>();
+  function walk(dir: string, rel: string) {
+    let entries;
+    try {
+      entries = readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const e of entries) {
+      const nextRel = rel + "/" + e.name;
+      if (e.isDirectory()) walk(join(dir, e.name), nextRel);
+      else out.add(nextRel);
+    }
+  }
+  walk(publicDir, "");
+  return out;
+}
 
 function main() {
   const roadmap = loadRoadmapFromYaml();
   const { path } = loadPathFromYaml();
   const studyPlan = loadStudyPlanFromYaml();
+  const topicFiles = loadAllTopicContent();
+  const topicContentIds = topicFiles.map((f) => f.content.id);
+  const publicFiles = listPublicFiles();
 
   // Include english-* phases as valid (cross-cutting, not listed in path.phases)
   const validPhases = new Set<string>([
@@ -38,6 +73,8 @@ function main() {
     ...checkEveryLeafHasPhaseOrType(roadmap),
     ...checkRecurringTopicIds(roadmap, path.recurring.map((r) => r.topicId)),
     ...checkStudyPlanTopicIds(roadmap, studyPlanIds),
+    ...checkTopicContentIds(roadmap, topicContentIds),
+    ...checkVisualizationImageExists(topicFiles, publicFiles),
   ];
 
   if (errors.length > 0) {
