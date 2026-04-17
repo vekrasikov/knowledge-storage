@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import { findNode } from "../data/roadmap";
+import { findNode, getAliasMap } from "../data/roadmap";
+import { getTopicContent } from "../data/topicContent";
 import { useUserData } from "../hooks/useUserData";
+import { useAccordionState } from "../hooks/useAccordionState";
 import { StatusToggle } from "../components/StatusToggle";
+import { TopicAccordionSection } from "../components/TopicAccordionSection";
+import { OverviewSection } from "../components/OverviewSection";
+import { CheatSheetSection } from "../components/CheatSheetSection";
+import { VisualizationSection } from "../components/VisualizationSection";
+import { CapacityPlanningSection } from "../components/CapacityPlanningSection";
 import type { Status } from "../types";
 
 export function TopicDetail() {
@@ -32,6 +39,16 @@ export function TopicDetail() {
   const [matExcerpt, setMatExcerpt] = useState("");
 
   const node = findNode(topicId!);
+  const topicContent = getTopicContent(topicId!, undefined, getAliasMap());
+  const { state: accordionState, toggle: toggleAccordion } = useAccordionState(
+    topicId ?? "unknown",
+    {
+      overview: true,
+      cheat_sheet: false,
+      visualization: false,
+      capacity_planning: false,
+    }
+  );
   if (!node) return <div className="p-4">Topic not found</div>;
 
   const status: Status = data.progress[topicId!] ?? "not_started";
@@ -82,6 +99,44 @@ export function TopicDetail() {
         <h1 className="text-2xl font-bold">{node.title}</h1>
         <StatusToggle status={status} onChange={(s) => setProgress(topicId!, s)} />
       </div>
+
+      {/* Project B content sections */}
+      {topicContent ? (
+        <div className="mb-8">
+          <TopicAccordionSection
+            title="Overview"
+            expanded={accordionState.overview}
+            onToggle={() => toggleAccordion("overview")}
+          >
+            <OverviewSection markdown={topicContent.overview} />
+          </TopicAccordionSection>
+          <TopicAccordionSection
+            title="Cheat Sheet"
+            expanded={accordionState.cheat_sheet}
+            onToggle={() => toggleAccordion("cheat_sheet")}
+          >
+            <CheatSheetSection cheatSheet={topicContent.cheat_sheet} />
+          </TopicAccordionSection>
+          <TopicAccordionSection
+            title="Visualization"
+            expanded={accordionState.visualization}
+            onToggle={() => toggleAccordion("visualization")}
+          >
+            <VisualizationSection visualization={topicContent.visualization} />
+          </TopicAccordionSection>
+          {topicContent.capacity_planning && (
+            <TopicAccordionSection
+              title="Capacity Planning"
+              expanded={accordionState.capacity_planning}
+              onToggle={() => toggleAccordion("capacity_planning")}
+            >
+              <CapacityPlanningSection capacity={topicContent.capacity_planning} />
+            </TopicAccordionSection>
+          )}
+        </div>
+      ) : (
+        <p className="my-4 text-sm italic text-gray-500">No extended content yet.</p>
+      )}
 
       {/* Notes Section */}
       <section className="mb-8">
