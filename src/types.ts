@@ -138,3 +138,8 @@ export interface TopicContent {
   capacity_planning?: CapacityPlanning;
   visualization?: Visualization;
 }
+
+export interface LoadedTopicFile {
+  filename: string;
+  content: TopicContent;
+}

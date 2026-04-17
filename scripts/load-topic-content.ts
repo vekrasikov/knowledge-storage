@@ -2,15 +2,10 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseTopicContent } from "../src/utils/topicContentFrontmatter";
-import type { TopicContent } from "../src/types";
+import type { LoadedTopicFile } from "../src/types";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const TOPICS_DIR = join(__dirname, "..", "data", "topics");
-
-export interface LoadedTopicFile {
-  filename: string;
-  content: TopicContent;
-}
 
 export function loadAllTopicContent(): LoadedTopicFile[] {
   let entries: string[];

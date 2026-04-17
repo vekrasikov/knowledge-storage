@@ -1,5 +1,4 @@
-import type { RoadmapNode } from "../src/types";
-import type { LoadedTopicFile } from "./load-topic-content";
+import type { RoadmapNode, LoadedTopicFile } from "../src/types";
 
 export function collectAllIds(nodes: RoadmapNode[]): Map<string, number> {
   const counts = new Map<string, number>();

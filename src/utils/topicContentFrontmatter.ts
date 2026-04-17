@@ -8,9 +8,13 @@ import type {
 } from "../types";
 
 export class ValidationError extends Error {
-  constructor(public filename: string, public field: string, message: string) {
+  readonly filename: string;
+  readonly field: string;
+  constructor(filename: string, field: string, message: string) {
     super(`[${filename}] ${field}: ${message}`);
     this.name = "ValidationError";
+    this.filename = filename;
+    this.field = field;
   }
 }
 
