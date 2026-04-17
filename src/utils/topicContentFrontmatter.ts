@@ -1,4 +1,4 @@
-import matter from "gray-matter";
+import { parse as parseYaml } from "yaml";
 import type {
   TopicContent,
   CheatSheet,
@@ -135,15 +135,32 @@ function parseVisualization(raw: unknown, filename: string): Visualization | und
   return { type, src: r.src, alt };
 }
 
+// Matches a leading YAML frontmatter block (between --- fences) followed by body.
+// Handles files with or without body content, trims the body.
+const FRONTMATTER_RE = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/;
+
+export function splitFrontmatter(raw: string): { frontmatter: string; body: string } {
+  const match = raw.match(FRONTMATTER_RE);
+  if (!match) return { frontmatter: "", body: raw };
+  return { frontmatter: match[1], body: match[2] ?? "" };
+}
+
 export function parseTopicContent(raw: string, filename: string): TopicContent {
-  const { data, content } = matter(raw);
+  const { frontmatter, body } = splitFrontmatter(raw);
+  let data: Record<string, unknown>;
+  try {
+    data = (parseYaml(frontmatter) as Record<string, unknown>) ?? {};
+  } catch (err) {
+    const cause = err instanceof Error ? err.message : String(err);
+    throw new ValidationError(filename, "frontmatter", `invalid YAML: ${cause}`);
+  }
   if (typeof data.id !== "string" || data.id.trim() === "") {
     throw new ValidationError(filename, "id", "missing id in frontmatter");
   }
-  const body = content.trim();
+  const trimmedBody = body.trim();
   return {
     id: data.id,
-    overview: body === "" ? undefined : body,
+    overview: trimmedBody === "" ? undefined : trimmedBody,
     cheat_sheet: parseCheatSheet(data.cheat_sheet, filename),
     capacity_planning: parseCapacityPlanning(data.capacity_planning, filename),
     visualization: parseVisualization(data.visualization, filename),
