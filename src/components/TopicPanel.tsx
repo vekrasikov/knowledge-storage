@@ -1,9 +1,16 @@
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { findNode } from "../data/roadmap";
+import { findNode, getAliasMap } from "../data/roadmap";
+import { getTopicContent } from "../data/topicContent";
 import { useUserData } from "../hooks/useUserData";
 import { useMediaQuery } from "../hooks/useMediaQuery";
+import { useAccordionState } from "../hooks/useAccordionState";
 import { StatusToggle } from "./StatusToggle";
+import { TopicAccordionSection } from "./TopicAccordionSection";
+import { OverviewSection } from "./OverviewSection";
+import { CheatSheetSection } from "./CheatSheetSection";
+import { VisualizationSection } from "./VisualizationSection";
+import { CapacityPlanningSection } from "./CapacityPlanningSection";
 import type { Status } from "../types";
 
 interface TopicPanelProps {
@@ -34,6 +41,16 @@ export function TopicPanel({ topicId, directionId: _directionId, onClose }: Topi
   const [matExcerpt, setMatExcerpt] = useState("");
 
   const node = findNode(topicId);
+  const topicContent = getTopicContent(topicId, undefined, getAliasMap());
+  const { state: accordionState, toggle: toggleAccordion } = useAccordionState(
+    topicId,
+    {
+      overview: true,
+      cheat_sheet: false,
+      visualization: false,
+      capacity_planning: false,
+    }
+  );
   if (!node) return null;
 
   const status: Status = data.progress[topicId] ?? "not_started";
@@ -115,6 +132,42 @@ export function TopicPanel({ topicId, directionId: _directionId, onClose }: Topi
             </ul>
           </section>
         )}
+
+        {/* Project B content sections */}
+        {topicContent ? (
+          <section>
+            <TopicAccordionSection
+              title="Overview"
+              expanded={accordionState.overview}
+              onToggle={() => toggleAccordion("overview")}
+            >
+              <OverviewSection markdown={topicContent.overview} />
+            </TopicAccordionSection>
+            <TopicAccordionSection
+              title="Cheat Sheet"
+              expanded={accordionState.cheat_sheet}
+              onToggle={() => toggleAccordion("cheat_sheet")}
+            >
+              <CheatSheetSection cheatSheet={topicContent.cheat_sheet} />
+            </TopicAccordionSection>
+            <TopicAccordionSection
+              title="Visualization"
+              expanded={accordionState.visualization}
+              onToggle={() => toggleAccordion("visualization")}
+            >
+              <VisualizationSection visualization={topicContent.visualization} />
+            </TopicAccordionSection>
+            {topicContent.capacity_planning && (
+              <TopicAccordionSection
+                title="Capacity Planning"
+                expanded={accordionState.capacity_planning}
+                onToggle={() => toggleAccordion("capacity_planning")}
+              >
+                <CapacityPlanningSection capacity={topicContent.capacity_planning} />
+              </TopicAccordionSection>
+            )}
+          </section>
+        ) : null}
 
         {/* Notes Section */}
         <section>
