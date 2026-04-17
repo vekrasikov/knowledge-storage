@@ -12,12 +12,15 @@
             - "Ozdic.com: online collocation dictionary — free, searchable"
             - "Book: English Phrasal Verbs in Use (Advanced) — Cambridge University Press"
             - "YouGlish.com: see idioms/collocations in real YouTube context — youglish.com"
+          phase: english-phase1-activation
+          phaseOrder: 10
         - id: clozemaster-practice
           title: "Clozemaster: Fluency Fast Track (50-100/day)"
           summary: "Clozemaster presents vocabulary in full sentence context using cloze (fill-in-the-blank) exercises derived from real texts — this trains collocations and grammar simultaneously. The Fluency Fast Track mode targets the most frequency-impactful words, making it highly efficient for B2→C1 progression."
           resources:
             - "Clozemaster: clozemaster.com — use Fluency Fast Track, set 50-100 sentences/day"
             - "Clozemaster Pro: worth subscribing for grammar challenges and listening mode"
+          type: recurring
         - id: anki-srs
           title: "Anki SRS: Cambridge Vocab + Phrasal Verbs decks"
           summary: "Anki's spaced repetition system (SRS) is the most scientifically proven method for long-term vocabulary retention — cards are shown just before you'd forget them, maximizing memory efficiency. Pre-built Cambridge Vocabulary for Advanced decks eliminate card creation time so you can focus on review."
@@ -25,6 +28,7 @@
             - "Anki: apps.ankiweb.net (free desktop, paid iOS, free Android)"
             - "AnkiWeb shared decks: ankiweb.net/shared/decks — search 'Cambridge Advanced Vocabulary'"
             - "r/Anki: reddit.com/r/Anki — community tips and recommended decks"
+          type: recurring
         - id: advanced-grammar
           title: "Advanced grammar: inversion, cleft sentences, mixed conditionals"
           summary: "Advanced grammatical structures like inversion ('Not only did he fail...'), cleft sentences ('It was the report that caused...'), and mixed conditionals mark the difference between B2 and C1 in writing and formal speaking. These structures appear constantly in professional English and academic texts."
@@ -33,12 +37,15 @@
             - "British Council: Advanced Grammar — learnenglish.britishcouncil.org/grammar/advanced"
             - "Perfect English Grammar: perfect-english-grammar.com — advanced structures section"
             - "Cambridge English: Grammar for Advanced (student's book with answers)"
+          phase: english-phase1-activation
+          phaseOrder: 20
         - id: lingvist
           title: "Lingvist: adaptive vocabulary learning"
           summary: "Lingvist uses machine learning to identify your vocabulary gaps and present the most impactful words in spaced repetition with sentence context — it adapts faster than manual Anki decks. It's particularly good for vocabulary in domain-specific contexts including technology."
           resources:
             - "Lingvist: lingvist.com — start with the English course, enable tech vocabulary"
             - "Lingvist Space mode: unlocks with subscription, adds sentence context"
+          type: recurring
 
     - id: speaking
       title: "Speaking & Pronunciation"
@@ -49,24 +56,28 @@
           resources:
             - "ELSA Speak: elsaspeak.com — use 15 min/day, focus on your weakest phonemes"
             - "ELSA Pro: premium unlocks full curriculum and detailed analytics"
+          type: recurring
         - id: talkio-ai
           title: "Talkio AI: 400+ tutors, dialect practice"
           summary: "Talkio AI provides AI conversation practice with 400+ voice personas covering different accents and scenarios — it offers instant pronunciation feedback, translation help, and topic-guided conversations. It's one of the most complete AI conversation tools for intermediate-to-advanced learners."
           resources:
             - "Talkio AI: talkio.ai — try different dialects and scenarios"
             - "Comparison: Talkio vs Speak vs Langua — search on reddit.com/r/languagelearning"
+          type: recurring
         - id: langua-call-mode
           title: "Langua: Call Mode — hands-free AI dialog"
           summary: "Langua's Call Mode simulates a phone call with an AI tutor — hands-free, voice-only interaction that forces you to rely on hearing and speaking without reading cues, which is closer to real conversation conditions. This mode specifically trains listening comprehension under pressure, a common weak point at B2."
           resources:
             - "Langua: langua.app — enable Call Mode for hands-free sessions"
             - "Langua blog: tips for using Call Mode effectively"
+          type: recurring
         - id: gliglish
           title: "Gliglish: free 10min/day conversation (NEW)"
           summary: "Gliglish offers free AI conversation practice (10 min/day free tier) with speech recognition and immediate feedback — newer than ELSA and Talkio but gaining traction for its simplicity and quality of conversational AI. Good as a free daily warm-up or supplement to paid tools."
           resources:
             - "Gliglish: gliglish.com — use the free daily allowance consistently"
             - "Reddit reviews: search 'gliglish review' on r/languagelearning"
+          type: recurring
         - id: shadowing
           title: "Shadowing: TED/news 15 min daily"
           summary: "Shadowing (repeating native speaker audio in real time or with slight delay) is one of the most effective techniques for acquiring natural intonation, rhythm, and connected speech — it trains your mouth to produce English at native speed. 15 minutes daily of deliberate shadowing produces noticeable accent improvement within 3-4 weeks."
@@ -75,6 +86,7 @@
             - "Method: Antimoon shadowing guide — antimoon.com/how/shadowing.htm"
             - "News: VOA Learning English (slightly slower) — learningenglish.voanews.com"
             - "YouTube: 6 Minute English (BBC) — bbc.co.uk/learningenglish/english/features/6-minute-english"
+          type: recurring
         - id: record-transcribe-fix
           title: "Record-Transcribe-Fix: self-correction method"
           summary: "The Record-Transcribe-Fix method involves recording yourself speaking for 2-3 minutes, transcribing it with a tool like Whisper or Otter.ai, then reviewing the transcript for errors — this creates a feedback loop that professional tutors use in high-ticket lessons. It's the most efficient self-study technique for speaking improvement."
@@ -82,6 +94,8 @@
             - "Whisper (OpenAI): via web interfaces like whisper.openai.com or Descript"
             - "Otter.ai: otter.ai — free tier sufficient for daily practice sessions"
             - "Method guide: r/languagelearning — search 'shadowing and transcription method'"
+          phase: english-phase2-immersion
+          phaseOrder: 10
         - id: style-shift-drills
           title: "Style-Shift Drills: formal/neutral/slang"
           summary: "C1 fluency requires the ability to adapt register — saying the same thing formally in a written report, neutrally in a Slack message, and informally in a conversation. Style-Shift Drills practice reformulating one idea across registers, which is critical for professional communication in an international tech company."
@@ -89,6 +103,8 @@
             - "Book: Speak English Like an American (Amy Gillett) — covers informal registers"
             - "Business English Pod: businessenglishpod.com — formal register in tech contexts"
             - "Practice prompt: ask ChatGPT/Claude to give you register-shifting exercises daily"
+          phase: english-phase2-immersion
+          phaseOrder: 20
 
     - id: writing
       title: "Academic & Professional Writing"
@@ -99,6 +115,8 @@
           resources:
             - "Write & Improve: writeandimprove.cambridge.org — free, no registration needed"
             - "Cambridge: English levels explained — cambridgeenglish.org/learning-english"
+          phase: english-phase2-immersion
+          phaseOrder: 100
         - id: grammarly
           title: "Grammarly: tone & clarity coaching"
           summary: "Grammarly's advanced suggestions go beyond spell-checking to flag passive voice overuse, weak word choices, and unclear sentence structure — the tone detection feature helps you calibrate professional vs casual register. For a non-native speaker, it serves as a constant style coach in every email and document."
@@ -106,12 +124,16 @@
             - "Grammarly: grammarly.com — use the browser extension + app everywhere"
             - "Grammarly Premium: unlocks advanced suggestions (tone, vocabulary, style)"
             - "Alternative: LanguageTool (free, open-source) — languagetool.org"
+          phase: english-phase2-immersion
+          phaseOrder: 110
         - id: google-tech-writing
           title: "Google Technical Writing Course (free)"
           summary: "Google's Technical Writing courses (One and Two) teach clear, concise technical documentation — active voice, sentence structure, audience awareness, and document design. These skills directly transfer to writing RFCs, Confluence pages, and design docs in English at work."
           resources:
             - "Google Technical Writing: developers.google.com/tech-writing (free, ~2 hours each)"
             - "Supplement: The Sense of Style (Steven Pinker) — most readable style guide"
+          phase: english-phase2-immersion
+          phaseOrder: 120
         - id: blog-linkedin-writing
           title: "Practice: blog posts & LinkedIn in English"
           summary: "Writing blog posts and LinkedIn articles in English is deliberate output practice that also builds professional visibility — the process of crafting a post for a real audience is far more motivating than writing exercises. Even one post per month provides meaningful writing practice and a portfolio of evidence."
@@ -119,6 +141,8 @@
             - "Medium: medium.com — publish technical posts, observe reader engagement"
             - "LinkedIn: document posts are high-engagement for technical content"
             - "Dev.to: dev.to — developer community, good feedback on technical writing"
+          phase: english-phase2-immersion
+          phaseOrder: 130
 
     - id: reading-listening
       title: "Reading & Listening"
@@ -130,12 +154,16 @@
             - "LingQ: lingq.com — import your own technical articles"
             - "Steve Kaufmann YouTube: youtube.com/@languagelearningwithsteve"
             - "LingQ blog: lingq.com/en/learn-english-online"
+          phase: english-phase2-immersion
+          phaseOrder: 200
         - id: language-reactor
           title: "Language Reactor: Netflix/YouTube + dual subs"
           summary: "Language Reactor (formerly Language Learning with Netflix) adds dual subtitles, word lookup, and saved vocabulary to Netflix and YouTube — turning entertainment into immersive input with low cognitive friction. It's one of the best tools for acquiring natural spoken English through content you actually enjoy."
           resources:
             - "Language Reactor: languagereactor.com — Chrome extension, free tier available"
             - "Recommended shows: tech interviews, documentaries, anything you'd watch anyway"
+          phase: english-phase2-immersion
+          phaseOrder: 210
         - id: guardian-nyt
           title: "Daily article: The Guardian / NYT"
           summary: "Reading one full-length quality journalism article daily builds C1+ reading speed, exposes you to formal written register, and expands vocabulary in context — this is the type of reading that separates C1 from B2. The Guardian's tech section is particularly relevant for a software developer."
@@ -143,6 +171,8 @@
             - "The Guardian: theguardian.com/technology"
             - "New York Times: nytimes.com (limited free articles)"
             - "Tip: use LingQ browser extension to annotate unknown words while reading"
+          phase: english-phase2-immersion
+          phaseOrder: 220
         - id: tech-podcasts
           title: "Podcasts: Syntax, The Changelog, Software Engineering Daily"
           summary: "Listening to English-language tech podcasts develops comprehension of conversational technical speech — the vocabulary, speed, and accent variation in podcasts like Syntax (frontend) and Software Engineering Daily mirror what you'd hear in a real international team. Daily background listening accelerates passive acquisition."
@@ -151,12 +181,16 @@
             - "The Changelog: changelog.com/podcast — open source, dev culture"
             - "Software Engineering Daily: softwareengineeringdaily.com — deeper technical interviews"
             - "CoRecursive: corecursive.com — engineering stories, excellent pronunciation for shadowing"
+          phase: english-phase2-immersion
+          phaseOrder: 230
         - id: beelinguapp
           title: "Beelinguapp: parallel text reading"
           summary: "Beelinguapp shows the same text in English and your native language side-by-side, with audio narration — it's designed for reading comprehension with a safety net that you progressively remove. Good for building reading confidence with longer texts before going fully English-only."
           resources:
             - "Beelinguapp: beelinguapp.com — available on iOS and Android"
             - "Alternative: ReadLang.com — browser extension for parallel reading of any webpage"
+          phase: english-phase2-immersion
+          phaseOrder: 240
 
     - id: tech-english
       title: "Technical English"
@@ -169,6 +203,8 @@
             - "Anki deck: System Design Terms — search AnkiWeb for pre-made decks"
             - "Podcast: Software Engineering Daily — absorb technical vocab in context"
             - "Glosbe / Reverso Context: for precise technical translation verification"
+          phase: english-phase2-immersion
+          phaseOrder: 300
         - id: tech-writing-practice
           title: "RFC/Design doc writing in English"
           summary: "Writing RFCs and design documents in English is the highest-leverage technical writing practice — it forces precision, logical structure, and audience awareness while producing artifacts that are directly useful at work. The process of explaining a complex design decision in English exposes vocabulary gaps faster than any drill."
@@ -177,6 +213,8 @@
             - "RFC template: ietf.org/rfc/rfc2119.txt (standard terminology for specs)"
             - "Rust RFC process: github.com/rust-lang/rfcs (excellent examples of clear eng writing)"
             - "Write & Improve (Cambridge): writeandimprove.cambridge.org — submit drafts for feedback"
+          phase: english-phase2-immersion
+          phaseOrder: 310
         - id: code-review-english
           title: "Code review comments in English"
           summary: "Writing constructive, precise code review comments in English is a daily professional skill — a polite but clear 'This approach introduces a race condition because...' is very different from blunt feedback that can damage team relationships. Building a repertoire of review phrases also trains professional register."
@@ -184,12 +222,16 @@
             - "GitHub: review example comments on popular open-source repos (Spring, Kotlin, etc.)"
             - "Blog: How to write a good code review — google.github.io/eng-practices/review"
             - "Practice: comment on open-source PRs that match your stack"
+          phase: english-phase2-immersion
+          phaseOrder: 320
         - id: business-english-pod
           title: "Business English Pod: tech episodes"
           summary: "Business English Pod provides dialogue-based lessons for professional English situations — negotiating, presenting, managing up, and running meetings in a corporate environment. The tech-focused episodes are directly applicable to working in an international fintech company."
           resources:
             - "Business English Pod: businessenglishpod.com — free episodes, podcast feed available"
             - "Focus episodes: technical presentations, project meetings, stakeholder communication"
+          phase: english-phase2-immersion
+          phaseOrder: 330
 
     - id: interview-english
       title: "Interview English"
@@ -200,24 +242,32 @@
           resources:
             - "SmallTalk2Me: smalltalk2.me — take the mock interview, get CEFR score"
             - "Use before real interviews: run mock sessions weekly in the month before"
+          phase: phase-9-specialization
+          phaseOrder: 1400
         - id: yoodli
           title: "Yoodli: AI speech coach for interviews (NEW)"
           summary: "Yoodli analyzes your recorded speech for filler words (um, uh), pacing, word choice, and eye contact (if video) — it's designed specifically for interview and presentation coaching. For non-native speakers, the filler word detection and pacing feedback are particularly valuable."
           resources:
             - "Yoodli: yoodli.ai — free tier includes several coaching sessions"
             - "Yoodli: practice interview mode, presentation mode"
+          phase: phase-9-specialization
+          phaseOrder: 1410
         - id: pramp-english
           title: "Pramp: peer mock interviews (explain solutions in English)"
           summary: "Pramp connects you with peers for free live mock interviews — the discipline of explaining your coding approach clearly in English under time pressure is exactly the skill tested in FAANG-style interviews. Even B2-level English is sufficient for technical coding interviews; clarity and structure matter more than perfect grammar."
           resources:
             - "Pramp: pramp.com — free, schedule system design or coding sessions"
             - "Tip: explicitly request English-speaking partners from different countries"
+          phase: phase-9-specialization
+          phaseOrder: 1420
         - id: interviewing-io
           title: "interviewing.io: real FAANG engineers"
           summary: "Interviewing.io provides anonymous mock technical interviews with real FAANG and Big Tech engineers — the English communication aspect is embedded naturally since all interviews are in English. Paid but worth it for senior-level interview preparation; recordings let you review your speaking performance."
           resources:
             - "Interviewing.io: interviewing.io — paid sessions, free practice with the platform's tools"
             - "Free alternative: Pramp (peer-based) or Exponent (structured mock interviews)"
+          phase: phase-9-specialization
+          phaseOrder: 1430
         - id: star-method-english
           title: "STAR behavioral answers in English"
           summary: "Behavioral interviews at senior-level positions require structured storytelling (Situation, Task, Action, Result) delivered confidently in English — the STAR method provides a framework that compensates for language hesitation by giving you a predictable narrative structure to follow. Preparing 8-10 stories in advance is the highest-ROI interview prep activity."
@@ -226,6 +276,8 @@
             - "Practice tool: Big Interview — biginterview.com (STAR method practice)"
             - "Book: Cracking the Coding Interview — behavioral section"
             - "Yoodli: record and analyze your STAR answers for delivery quality"
+          phase: phase-9-specialization
+          phaseOrder: 1440
 
     - id: immersion
       title: "Immersion & Community"
@@ -236,6 +288,8 @@
           resources:
             - "Action: change phone, laptop, IDE, browser to English now"
             - "Challenge: watch one show per week with no subtitles (start with familiar content)"
+          phase: english-phase3-polish
+          phaseOrder: 10
         - id: discord-english
           title: "Discord: English + English Speaking Practice servers"
           summary: "Discord language learning servers provide real-time text and voice interaction with native speakers and other learners — the informal register and topic variety (including tech) makes them excellent for developing conversational fluency in low-stakes contexts. Text chat is good for writing; voice channels are where speaking confidence is built."
@@ -243,18 +297,24 @@
             - "English Speaking Practice Discord: search on Discord server discovery (disboard.org)"
             - "r/languagelearning Discord: linked from reddit.com/r/languagelearning"
             - "Language Exchange Discord servers: disboard.org/servers/tag/language-exchange"
+          phase: english-phase3-polish
+          phaseOrder: 20
         - id: hellotalk-tandem
           title: "HelloTalk & Tandem: language exchange"
           summary: "HelloTalk and Tandem connect you with native English speakers who want to learn Russian — language exchange removes the cost of tutors and creates authentic conversation motivation. Even 30 minutes of async text exchange daily provides meaningful input and output practice."
           resources:
             - "HelloTalk: hellotalk.com — iOS/Android, text and audio messages"
             - "Tandem: tandem.net — iOS/Android, video calls available, more curated matching"
+          phase: english-phase3-polish
+          phaseOrder: 30
         - id: toastmasters-online
           title: "Toastmasters Online: presentation practice"
           summary: "Toastmasters provides structured practice for public speaking in English — prepared speeches, impromptu speaking (Table Topics), and evaluation skills that directly transfer to conference talks, team presentations, and stakeholder demos. Online clubs mean you can join from anywhere without relocating."
           resources:
             - "Toastmasters: toastmasters.org — find an online club via club search"
             - "Online-only clubs: search 'Toastmasters online club' — many run via Zoom"
+          phase: english-phase3-polish
+          phaseOrder: 40
         - id: chatgpt-claude-tutor
           title: "ChatGPT/Claude: 24/7 conversation partner & grammar coach"
           summary: "Using ChatGPT or Claude as a conversation partner provides unlimited, judgment-free English practice available at any hour — you can ask for grammar corrections, request topic discussions, practice difficult conversation scenarios, or get explanations of idioms in context. Prompt it explicitly to correct every mistake for maximum learning value."
@@ -263,6 +323,8 @@
             - "Topic prompts: discuss tech architecture, explain your recent project, do mock code review"
             - "Claude: claude.ai — voice mode available on mobile"
             - "ChatGPT: chatgpt.com — voice mode provides speaking practice"
+          phase: english-phase3-polish
+          phaseOrder: 50
 
     - id: english-phases
       title: "Phases (Timeline)"
@@ -275,6 +337,9 @@
             - "Clozemaster: start Fluency Fast Track immediately, 50 sentences/day"
             - "ELSA Speak: diagnose and fix your 5 worst phoneme errors in month 1"
             - "Write & Improve: submit one writing piece per week for CEFR feedback"
+          phase: english-phase3-polish
+          phaseOrder: 500
+          type: reference
         - id: phase2-immersion
           title: "Phase 2 (4-8 мес): Deep immersion — think in English"
           summary: "Phase 2 aims for automatic English production without mental translation — you should be drafting work documents, thinking through technical problems, and having internal monologues in English. Heavy input (podcasts, reading, video) combined with daily speaking output is the recipe."
@@ -283,6 +348,9 @@
             - "Talkio AI or Gliglish: daily 15-20 min conversation practice"
             - "Shadowing: TED talks 15 min daily, transcript available for checking"
             - "Journaling in English: 5 minutes daily — reflect on your workday in English"
+          phase: english-phase3-polish
+          phaseOrder: 510
+          type: reference
         - id: phase3-polish
           title: "Phase 3 (9-12 мес): Polish — charisma, register mastery"
           summary: "Phase 3 refines fluency into professional excellence — C1 charisma means using humor appropriately, adapting tone to audience (CTO vs junior dev vs client), and handling unexpected questions without filler words. This phase is about sounding like a senior professional, not just a competent speaker."
@@ -291,6 +359,9 @@
             - "Yoodli: weekly speech analysis sessions to eliminate filler words"
             - "SmallTalk2Me: monthly mock interviews to track CEFR progress"
             - "Style-Shift Drills: daily 5-minute exercise reformulating the same message in 3 registers"
+          phase: english-phase3-polish
+          phaseOrder: 520
+          type: reference
 
     - id: english-awesome-repos
       title: "Awesome Repos & Communities"
@@ -302,24 +373,36 @@
             - "AnkiWeb shared decks: ankiweb.net/shared/decks/english"
             - "Recommended: 'English Vocabulary in Use Advanced' deck"
             - "Recommended: 'AWL — Academic Word List' deck"
+          phase: english-phase2-immersion
+          phaseOrder: 500
+          type: reference
         - id: english-tech-vocab-repo
           title: "tech-vocab GitHub repos"
           summary: "Community-curated lists of IT/tech vocabulary with Russian translations, common interview phrases, and English for code reviews."
           resources:
             - "Search GitHub: 'english for developers', 'tech vocabulary'"
             - "Repo: github.com/ZuzooVn/machine-learning-for-software-engineers (mixed content but English-heavy)"
+          phase: english-phase2-immersion
+          phaseOrder: 510
+          type: reference
         - id: tech-podcast-list
           title: "Curated tech podcast lists"
           summary: "Lists of advanced English tech podcasts ideal for B2+ listening practice — covers diverse accents and technical registers."
           resources:
             - "GitHub: github.com/rShetty/awesome-podcasts"
             - "Recommended: Software Engineering Daily, The Changelog, Syntax, Lex Fridman Podcast"
+          phase: english-phase2-immersion
+          phaseOrder: 520
+          type: reference
         - id: english-discord-communities
           title: "Discord & Reddit Communities"
           summary: "Active English-practice communities for daily exposure and live conversation — pick 1-2 to join and participate weekly."
           resources:
             - "Discord: 'English' server (1M+ members), 'English Speaking Practice' server"
             - "Reddit: r/EnglishLearning (advanced threads), r/JustEnglish"
+          phase: english-phase2-immersion
+          phaseOrder: 530
+          type: reference
         - id: writing-toolkit
           title: "Writing Toolkit (free tools)"
           summary: "Combination of free writing tools that complement Grammarly: Hemingway Editor (clarity), DeepL Write (rephrasing), Vale (style linting for technical docs)."
@@ -327,6 +410,9 @@
             - "Hemingway Editor: hemingwayapp.com (free web)"
             - "DeepL Write: deepl.com/write (free, AI rephrasing)"
             - "Vale: vale.sh (CLI prose linter for tech docs)"
+          phase: english-phase2-immersion
+          phaseOrder: 540
+          type: reference
 
 # ============================================================
 # 7. AI-ASSISTED DEVELOPMENT (Cross-cutting skill)

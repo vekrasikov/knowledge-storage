@@ -9,6 +9,8 @@
         - "GitHub blog: Copilot best practices — github.blog (search 'Copilot best practices')"
         - "YouTube: GitHub Copilot for Java developers — search GitHub's official YouTube channel"
         - "Book: AI-Assisted Programming (Tom Taulli) — O'Reilly"
+      phase: phase-1-programming
+      phaseOrder: 250
     - id: cursor-ide
       title: "Cursor / Windsurf: IDE-native AI"
       summary: "Cursor and Windsurf embed LLM assistance deeply into the IDE workflow — multi-file edits, codebase-aware Q&A, and automated refactoring are all first-class features that GitHub Copilot doesn't yet match. Learning Cursor's Composer mode (multi-file agentic editing) and Windsurf's Cascade feature makes large-scale refactoring dramatically faster."
@@ -17,6 +19,8 @@
         - "Windsurf docs: docs.codeium.com/windsurf"
         - "YouTube: Cursor AI IDE tutorial — search on YouTube for recent tutorials"
         - "Reddit: r/cursor — real-world tips and workflows from daily users"
+      phase: phase-1-programming
+      phaseOrder: 260
     - id: claude-code
       title: "Claude Code: agentic terminal coding"
       summary: "Claude Code is an agentic CLI that can autonomously explore codebases, write and run tests, fix bugs, and execute multi-step coding tasks from the terminal — you are actively using it right now. Mastering Claude Code means learning effective task decomposition, when to trust it vs verify, and how to use CLAUDE.md to prime context."
@@ -25,6 +29,8 @@
         - "Claude Code best practices: docs.anthropic.com/en/docs/claude-code/best-practices"
         - "GitHub: anthropics/claude-code — release notes and changelog"
         - "Practice: use Claude Code for your next real work task; compare to doing it manually"
+      phase: phase-1-programming
+      phaseOrder: 270
     - id: ai-code-review
       title: "AI code review & audit skills"
       summary: "Using AI for code review means knowing the right prompts to surface security vulnerabilities, architectural anti-patterns, and performance issues — it's not just 'review this code' but structured prompts targeting specific concern categories. This skill also includes knowing AI's blind spots (outdated knowledge, confident hallucinations) and how to verify its findings."
@@ -33,6 +39,7 @@
         - "OWASP: Code review guide — owasp.org/www-project-code-review-guide"
         - "Blog: AI-assisted code review patterns — search on martinfowler.com and security blogs"
         - "Practice: review a PR with AI assistance, then compare to your unaided review"
+      type: recurring
     - id: ai-limitations
       title: "AI limitations: hallucinations, bloat, security risks"
       summary: "Understanding AI limitations — confident hallucinations about APIs that don't exist, generated code that introduces subtle security vulnerabilities, and context window blindness — is essential to using AI tools professionally without shipping bugs. A senior developer's value with AI tools is precisely the ability to validate output that a junior would blindly accept."
@@ -41,18 +48,26 @@
         - "Blog: When AI writes insecure code — search security.googleblog.com and snyk.io/blog"
         - "Anthropic: Claude's limitations — docs.anthropic.com/en/docs/about-claude/limitations"
         - "Paper: Hallucination in Large Language Models — search arxiv.org for recent surveys"
+      phase: phase-9-specialization
+      phaseOrder: 1500
     - id: awesome-claude-code
       title: "awesome-claude-code (community)"
       summary: "Curated catalog of Claude Code workflows, slash commands, MCP servers, and skills built by the community — best place to discover patterns and steal ideas for your own configuration."
       resources:
         - "GitHub: search 'awesome-claude-code' for community lists"
         - "Anthropic Skills marketplace: docs.anthropic.com/en/docs/claude-code/skills"
+      phase: phase-9-specialization
+      phaseOrder: 1600
+      type: reference
     - id: awesome-cursor
       title: "awesome-cursorrules + Cursor Directory"
       summary: "Curated repository of .cursorrules files and Cursor-specific configurations for various languages and frameworks — saves significant tuning time when adopting Cursor."
       resources:
         - "GitHub: github.com/PatrickJS/awesome-cursorrules"
         - "Cursor Directory: cursor.directory"
+      phase: phase-9-specialization
+      phaseOrder: 1610
+      type: reference
     - id: ai-coding-benchmarks
       title: "AI coding benchmarks (SWE-Bench, etc.)"
       summary: "Tracking benchmarks (SWE-Bench, HumanEval, LiveCodeBench) helps you understand which models are actually best for which coding tasks — informed model selection saves money and time."
@@ -60,3 +75,6 @@
         - "SWE-Bench: swebench.com — real GitHub issue resolution benchmark"
         - "Aider leaderboard: aider.chat/docs/leaderboards"
         - "LiveCodeBench: livecodebench.github.io"
+      phase: phase-9-specialization
+      phaseOrder: 1620
+      type: reference
