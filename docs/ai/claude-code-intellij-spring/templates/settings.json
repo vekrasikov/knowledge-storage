@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew --offline compileJava*)",
+      "Bash(./gradlew --offline compileTestJava*)",
+      "Bash(./gradlew --offline spotlessApply*)",
+      "Bash(./gradlew --offline spotlessCheck*)",
+      "Bash(./gradlew --offline test --tests *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add *)",
+      "mcp__ide__getDiagnostics",
+      "mcp__jetbrains__get_file_problems",
+      "mcp__jetbrains__search_in_files_by_text",
+      "mcp__jetbrains__get_symbol_info",
+      "mcp__amplicode__get_project_summary",
+      "mcp__amplicode__list_project_endpoints",
+      "mcp__amplicode__get_entity_details",
+      "mcp__amplicode__list_all_domain_entities"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(./gradlew bootRun*)",
+      "Bash(docker *)",
+      "mcp__jetbrains__rename_refactoring",
+      "mcp__jetbrains__execute_run_configuration",
+      "mcp__jetbrains__reformat_file"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./**/.env.*)",
+      "Read(./**/application-prod*.yml)",
+      "Read(./**/application-prod*.properties)",
+      "Read(./**/*secret*)",
+      "Bash(./gradlew flywayClean*)",
+      "Bash(git push --force*)"
+    ]
+  },
+
+  "$comment_permissions": [
+    "Имена mcp__jetbrains__* и mcp__amplicode__* зависят от ключа сервера в .mcp.json.",
+    "Проверьте фактические имена через /mcp и поправьте.",
+    "Read-deny на секреты блокирует не только чтение файла, но и утечку выделения",
+    "из редактора IDE в промпт."
+  ],
+
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/java-change-gate.sh",
+            "timeout": 180,
+            "statusMessage": "Компиляция и проверка изменений..."
+          }
+        ]
+      }
+    ],
+
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/inject-env.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/check-ide.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/final-check.sh",
+            "timeout": 600,
+            "statusMessage": "Финальная проверка: тесты и архитектура..."
+          }
+        ]
+      }
+    ]
+  },
+
+  "env": {
+    "MAX_MCP_OUTPUT_TOKENS": "30000",
+    "GRADLE_OPTS": "-Dorg.gradle.daemon=true -Dorg.gradle.configuration-cache=true"
+  }
+}

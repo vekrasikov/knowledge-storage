@@ -1,0 +1,31 @@
+{
+  "$comment": [
+    "Проектный scope MCP: файл кладётся в корень репозитория и коммитится.",
+    "ВАЖНО: блок jetbrains — это заглушка формы. Реальную команду возьмите в IDE:",
+    "Settings -> Tools -> MCP Server -> Enable -> Copy Stdio Config, и вставьте её сюда.",
+    "Имя сервера (ключ) определяет префикс инструментов: mcp__<ключ>__<tool>.",
+    "После подключения выполните /mcp и выпишите фактические имена инструментов —",
+    "они нужны для permissions в settings.json.",
+    "Приоритет транспорта для Claude Code: stdio -> http -> sse."
+  ],
+  "mcpServers": {
+    "jetbrains": {
+      "type": "stdio",
+      "command": "REPLACE_WITH_COPY_STDIO_CONFIG",
+      "args": [],
+      "env": {}
+    },
+    "amplicode": {
+      "$comment": "Spring MCP от плагина Amplicode. Включается: Settings -> Tools -> Amplicode -> MCP Server. Ставьте alwaysLoad:false, чтобы описания 11+ инструментов не висели в контексте постоянно.",
+      "type": "sse",
+      "url": "http://127.0.0.1:64442/sse",
+      "alwaysLoad": false,
+      "timeout": 30000
+    },
+    "context7": {
+      "$comment": "Актуальная документация Spring под конкретную версию из build.gradle. Спасает от API, которого больше нет.",
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp"
+    }
+  }
+}
